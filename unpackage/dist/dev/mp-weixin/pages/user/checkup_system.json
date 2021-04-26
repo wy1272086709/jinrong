@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "考核指标",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "u-dropdown": "/uview-ui/components/u-dropdown/u-dropdown",
+    "u-dropdown-item": "/uview-ui/components/u-dropdown-item/u-dropdown-item",
+    "u-line-progress": "/uview-ui/components/u-line-progress/u-line-progress",
+    "u-circle-progress": "/uview-ui/components/u-circle-progress/u-circle-progress",
+    "u-toast": "/uview-ui/components/u-toast/u-toast"
+  }
+}

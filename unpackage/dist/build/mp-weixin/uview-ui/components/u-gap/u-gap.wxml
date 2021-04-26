@@ -1,0 +1,1 @@
+<view class="u-gap data-v-066f93f4" style="{{$root.s0}}"><slot></slot></view>

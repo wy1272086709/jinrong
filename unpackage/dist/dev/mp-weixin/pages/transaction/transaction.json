@@ -1,0 +1,17 @@
+{
+  "navigationBarTitleText": "交易",
+  "enablePullDownRefresh": false,
+  "disableScroll": true,
+  "usingComponents": {
+    "u-tabs-swiper": "/uview-ui/components/u-tabs-swiper/u-tabs-swiper",
+    "u-button": "/uview-ui/components/u-button/u-button",
+    "u-gap": "/uview-ui/components/u-gap/u-gap",
+    "u-icon": "/uview-ui/components/u-icon/u-icon",
+    "u-empty": "/uview-ui/components/u-empty/u-empty",
+    "u-loadmore": "/uview-ui/components/u-loadmore/u-loadmore",
+    "u-modal": "/uview-ui/components/u-modal/u-modal",
+    "easy-select": "/components/easy-select",
+    "single-select-row": "/components/single_select_row",
+    "delegate-component-item": "/components/delegate-component-item"
+  }
+}

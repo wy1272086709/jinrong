@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/user/login_v2",
+    "pages/user/overall_view",
+    "pages/user/checkup_system",
+    "pages/user/category_view",
+    "pages/user/overall_stat",
+    "pages/transaction/list",
+    "pages/transaction/transaction",
+    "pages/user/history_income",
+    "pages/user/history_delegate_log",
+    "pages/user/detail_page",
+    "pages/user/income_balance",
+    "pages/user/income_detail",
+    "pages/user/user_index_new",
+    "pages/user/bond"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#333333",
+    "backgroundColor": "#333333"
+  },
+  "tabBar": {
+    "color": "#c2c2c2",
+    "selectedColor": "#0bf4fe",
+    "borderStyle": "black",
+    "backgroundColor": "#333333",
+    "list": [
+      {
+        "pagePath": "pages/user/overall_view",
+        "iconPath": "./static/image/overall_view/strategy.png",
+        "selectedIconPath": "static/image/overall_view/strategy_active.png",
+        "text": "策略"
+      },
+      {
+        "pagePath": "pages/transaction/list",
+        "iconPath": "static/image/overall_view/trade.png",
+        "selectedIconPath": "static/image/overall_view/trade_avtive.png",
+        "text": "交易"
+      },
+      {
+        "pagePath": "pages/user/user_index_new",
+        "iconPath": "static/image/overall_view/gerenzhongxin.png",
+        "selectedIconPath": "static/image/overall_view/gerenzhongxin_avtive.png",
+        "text": "个人中心"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

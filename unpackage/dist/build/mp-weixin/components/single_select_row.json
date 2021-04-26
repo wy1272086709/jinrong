@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "u-button": "/uview-ui/components/u-button/u-button",
+    "u-input": "/uview-ui/components/u-input/u-input",
+    "easy-select": "/components/easy-select"
+  },
+  "component": true
+}

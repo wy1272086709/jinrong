@@ -1,0 +1,1 @@
+.currency-view-row{display:-webkit-box;display:-webkit-flex;display:flex;margin-top:10rpx;text-align:center;padding-left:32rpx;padding-right:32rpx;-webkit-box-align:center;-webkit-align-items:center;align-items:center;color:#b1b7bc}.currency-view-row-btn{display:-webkit-box;display:-webkit-flex;display:flex}

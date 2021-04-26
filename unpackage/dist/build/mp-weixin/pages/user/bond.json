@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "保证金明细",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "u-dropdown": "/uview-ui/components/u-dropdown/u-dropdown",
+    "u-dropdown-item": "/uview-ui/components/u-dropdown-item/u-dropdown-item",
+    "u-subsection": "/uview-ui/components/u-subsection/u-subsection",
+    "u-empty": "/uview-ui/components/u-empty/u-empty"
+  }
+}
