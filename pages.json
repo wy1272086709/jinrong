@@ -49,7 +49,9 @@
             "path" : "pages/user/overall_stat",
             "style" : {
                 "navigationBarTitleText": "总收益统计",
-                "enablePullDownRefresh": false
+                "enablePullDownRefresh": false,
+				"navigationStyle":"custom",
+				"disableScroll":true
             }
         }
         ,{

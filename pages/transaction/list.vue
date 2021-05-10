@@ -152,8 +152,12 @@
 					this.isShowStatus = false
 					
 					const res = await getTransactionInfoList(this.strategistId, this.value2, this.value1, this.searchKeyword);
-					this.transactionList = res.strategy_list;
-					totalpage = res.totalpage;
+					if (!res || (Array.isArray(res) && res.length == 0)) {
+						this.transactionList = []
+					} else {
+						this.transactionList = res.strategy_list;
+						totalpage = res.totalpage;
+					}
 				}
 				
 				if (!this.isShowContract && this.isShowStatus) {
@@ -167,8 +171,12 @@
 					this.isShowStatus = false
 					
 					const res = await getTransactionInfoList(this.strategistId, this.value2, this.value1, this.searchKeyword);
-					this.transactionList = res.strategy_list;
-					totalpage = res.totalpage;
+					if (!res || (Array.isArray(res) && res.length == 0)) {
+						this.transactionList = []
+					} else {
+						this.transactionList = res.strategy_list;
+						totalpage = res.totalpage;
+					}
 				}
 			},
 			selectStatus() {
@@ -186,10 +194,18 @@
 			},
 			async initTransactionList(isStopRefresh) {
 				const res = await getTransactionInfoList(this.strategistId, this.value2, this.contractTitle, this.searchKeyword);
-				this.transactionList = res.strategy_list;
-				this.options1 = [{ label: '所有合约', value: '所有合约' }].concat(this.transformContract(res.contract));
+				if (!res || (Array.isArray(res) && res.length == 0)) {
+					this.transactionList = []
+					this.options1 = [{ label: '所有合约', value: '所有合约' }]
+				} else {
+					this.transactionList = res.strategy_list;
+					totalpage = res.totalpage;
+					this.options1 = [{ label: '所有合约', value: '所有合约' }].concat(this.transformContract(res.contract));
+				}
+				//this.transactionList = res.strategy_list;
+				
 				console.log('init transaction list')
-				totalpage = res.totalpage;
+				//totalpage = res.totalpage;
 				if (isStopRefresh) {
 					uni.stopPullDownRefresh();
 				}
@@ -200,8 +216,14 @@
 			},
 			async clearKeyword() {
 				const res = await getTransactionInfoList(this.strategistId, this.value2, this.value1);
-				this.transactionList = res.strategy_list;
-				totalpage = res.totalpage;
+				if (!res || (Array.isArray(res) && res.length == 0)) {
+					this.transactionList = []
+				} else {
+					this.transactionList = res.strategy_list;
+					totalpage = res.totalpage;
+				}
+				//this.transactionList = res.strategy_list;
+				//totalpage = res.totalpage;
 			},
 			closeDropdown(index) {
 				this.dropdownIndex = '';
@@ -221,7 +243,7 @@
 					winRatio: item.profit_loss.rate,
 					accumulatedIncome: item.accumulated_income,
 					// 累计收益率
-					accumulatedIncomeRatio: item.cumulative_rate,
+					accumulatedIncomeRatio: item.yield_strategy.total !== undefined ? item.yield_strategy.total: 0,
 					totalStorings: item.positions.pos,// 总仓位
 					kaiduoStorings: item.positions.long_pos,
 					kaikongStrorings: item.positions.short_pos,
@@ -272,8 +294,13 @@
 				this.contractTitle = this.options1[index].label;
 				this.value1 = this.contractTitle;
 				const res = await getTransactionInfoList(this.strategistId, this.value2, this.value1, this.searchKeyword);
-				this.transactionList = res.strategy_list;
-				totalpage = res.totalpage;
+				if (!res || (Array.isArray(res) && res.length == 0)) {
+					this.transactionList = []
+				} else {
+					this.transactionList = res.strategy_list;
+					totalpage = res.totalpage;
+				}
+				
 				console.log('change value1:'+v)
 			},
 			async changeValue2(v) {
@@ -283,9 +310,12 @@
 				});
 				this.statusTitle = this.options2[index].label;
 				const res = await getTransactionInfoList(this.strategistId, this.value2, this.value1, this.searchKeyword);
-				this.transactionList = res.strategy_list;
-				totalpage = res.totalpage;
-				console.log('change value2:'+v)
+				if (!res || (Array.isArray(res) && res.length == 0)) {
+					this.transactionList = []
+				} else {
+					this.transactionList = res.strategy_list;
+					totalpage = res.totalpage;
+				}
 			},
 			lower() {
 				console.log('lower!');
@@ -310,7 +340,13 @@
 			async confirmSearch() {
 				console.log("searchword is: ",this.searchKeyword);
 				const res = await getTransactionInfoList(this.strategistId, this.value2, this.value1, this.searchKeyword);
-				this.transactionList = res.strategy_list;
+				if (!res || (Array.isArray(res) && res.length == 0)) {
+					this.transactionList = []
+				} else {
+					this.transactionList = res.strategy_list;
+					totalpage = res.totalpage;
+				}
+				
 			},
 			async pingkongFunc(sid) {
 				const resp = await oneKeyDoneFunc(this.strategistId, sid, 'short');

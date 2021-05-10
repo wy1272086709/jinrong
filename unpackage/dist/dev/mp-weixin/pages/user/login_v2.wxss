@@ -32,6 +32,7 @@
   /*margin-bottom: 80rpx;*/
 }
 #root-view {
+  background: -webkit-gradient(linear, left bottom, left top, from(#2C2C2C), to(#3D3D3D));
   background: -webkit-linear-gradient(bottom, #2C2C2C, #3D3D3D);
   background: linear-gradient(0deg, #2C2C2C, #3D3D3D);
   height: 100vh;
@@ -80,7 +81,8 @@
   top: 100rpx;
   position: absolute;
   /*opacity: 0.4;*/
-  border-radius: 23rpx;
+  -webkit-border-radius: 23rpx;
+          border-radius: 23rpx;
 }
 #root-view #top-view-left > image {
   width: 145rpx;
@@ -98,8 +100,10 @@
   margin-left: 40rpx;
   width: 670rpx;
   height: 88rpx;
-  border-radius: 200rpx;
+  -webkit-border-radius: 200rpx;
+          border-radius: 200rpx;
   margin-top: 80rpx;
+  background: -webkit-gradient(linear, right top, left top, from(#4F7AED), to(#91AEFE));
   background: -webkit-linear-gradient(right, #4F7AED, #91AEFE);
   background: linear-gradient(-90deg, #4F7AED, #91AEFE);
 }

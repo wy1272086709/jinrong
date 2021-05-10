@@ -137,7 +137,8 @@
   top: 0rpx;
   right: 0px;
   z-index: 100;
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+          box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
 }
 .no-bad-table-wrap .fixed-left {
   position: absolute;
@@ -146,7 +147,8 @@
   z-index: 100;
   border-right: 1rpx solid #666;
   border-left: 1rpx solid #666;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+          box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
 }
 @media screen and (-webkit-device-pixel-ratio: 1) {
 .no-bad-table-wrap .fixed-left {
@@ -236,7 +238,8 @@
   display: table-cell;
   vertical-align: middle;
   text-align: center;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   z-index: 1;
   position: relative;
   overflow: hidden;
@@ -244,7 +247,8 @@
 .no-bad-table-wrap .td .td_wrap {
   position: relative;
   padding: 10rpx;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   overflow: hidden;
   line-height: 20px;
   font-size: 12px;
@@ -315,7 +319,8 @@
 .no-bad-table-wrap .div-table {
   display: table;
   border: 1rpx solid #666;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   table-layout: fixed;
   position: relative;
 }

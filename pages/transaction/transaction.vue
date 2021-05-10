@@ -31,7 +31,7 @@
 							<input :style="{'background-color':'rgba(103,109,129,0.2)', width: '470rpx', height: '50rpx', 'min-height': '50rpx','border-radius':'10rpx', border: '1px solid rgba(255,255,255,0.2)', textAlign:'left', paddingLeft:'20rpx', boxSizing: 'border-box'}" :placeholder="qualityPlaceHoladerText" placeholder-style="rgba(255,255,255,0.5)"  v-model="qualityVal" class="my-input"  type="digit" @input="changeQuality" />
 						</single-select-row>
 						
-						<single-select-row :is-one-button="false" input-type="custom">
+						<single-select-row :is-one-button="false" input-type="custom1" button-type="label" buttonText="" btnWidth="210rpx">
 							<view id="select-quality-btn">
 							<u-button hover-class="none" size="mini" type="primary" class="my-blue-btn" :custom-style="{backgroundColor: qualityBtnIndex==0?'#676D81':'rgba(255,255,255,0.1)', width: '110rpx'}" @click="qualitySelect(0)" throttle-time="500">10%</u-button>
 							<u-button hover-class="none" size="mini" type="primary" class="my-blue-btn" :custom-style="{backgroundColor: qualityBtnIndex==1?'#676D81':'rgba(255,255,255,0.1)', width: '110rpx'}" @click="qualitySelect(1)" throttle-time="500">25%</u-button>
@@ -406,7 +406,7 @@
 				this.getStoreResByPositions(result.positions)
 				if(this.curDelegateOption.value=='MARKET')
 				{
-					this.holderValue = this.strategyIncomeInfo.strategyValue;
+					this.holderValue = this.strategyIncomeInfo.strategyValue + '';
 					console.log("now price is,",this.holderValue);
 				}
 				else{
@@ -499,7 +499,8 @@
 					return 0;
 				}
 				// 筛选开多的
-				const rows = this.delegateLogList.filter(( item, index )=> {
+				const logsList = this.delegateLogList
+				const rows = logsList.filter(( item, index )=> {
 					return item.description.indexOf('开多')!== -1
 				})
 				console.log(JSON.stringify(rows))
@@ -509,7 +510,8 @@
 				if (this.delegateLogList.length==0) {
 						return 0;
 				}
-				const rows = this.delegateLogList.filter(( item, index )=> {
+				const logsList = this.delegateLogList
+				const rows = logsList.filter(( item, index )=> {
 					return item.description.indexOf('开空')!== -1
 				})
 				if (rows.length>0)

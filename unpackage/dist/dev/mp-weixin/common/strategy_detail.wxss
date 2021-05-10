@@ -87,7 +87,8 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding-left: 30rpx;
   padding-right: 30rpx;
-  border-radius: 5px;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
   color: #FFFFFF;
   height: 74rpx;
   -webkit-box-align: center;

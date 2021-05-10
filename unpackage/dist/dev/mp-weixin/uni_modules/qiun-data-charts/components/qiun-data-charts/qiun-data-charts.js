@@ -1,6 +1,6 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts"],{
 
-/***/ 498:
+/***/ 495:
 /*!****************************************************************************************************************************************!*\
   !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts.vue ***!
   \****************************************************************************************************************************************/
@@ -9,10 +9,10 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _qiun_data_charts_vue_vue_type_template_id_fe947b98_scoped_true_filter_modules_eyJyZGNoYXJ0cyI6eyJ0eXBlIjoicmVuZGVyanMiLCJjb250ZW50IjoiIiwic3RhcnQiOjMyNTcwLCJhdHRycyI6eyJtb2R1bGUiOiJyZGNoYXJ0cyIsImxhbmciOiJqcyJ9LCJlbmQiOjQ0NDEzfX0_3D___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./qiun-data-charts.vue?vue&type=template&id=fe947b98&scoped=true&filter-modules=eyJyZGNoYXJ0cyI6eyJ0eXBlIjoicmVuZGVyanMiLCJjb250ZW50IjoiIiwic3RhcnQiOjMyNTcwLCJhdHRycyI6eyJtb2R1bGUiOiJyZGNoYXJ0cyIsImxhbmciOiJqcyJ9LCJlbmQiOjQ0NDEzfX0%3D& */ 499);
-/* harmony import */ var _qiun_data_charts_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./qiun-data-charts.vue?vue&type=script&lang=js& */ 501);
+/* harmony import */ var _qiun_data_charts_vue_vue_type_template_id_fe947b98_scoped_true_filter_modules_eyJyZGNoYXJ0cyI6eyJ0eXBlIjoicmVuZGVyanMiLCJjb250ZW50IjoiIiwic3RhcnQiOjM1ODI2LCJhdHRycyI6eyJtb2R1bGUiOiJyZGNoYXJ0cyIsImxhbmciOiJqcyJ9LCJlbmQiOjQ4MDYzfX0_3D___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./qiun-data-charts.vue?vue&type=template&id=fe947b98&scoped=true&filter-modules=eyJyZGNoYXJ0cyI6eyJ0eXBlIjoicmVuZGVyanMiLCJjb250ZW50IjoiIiwic3RhcnQiOjM1ODI2LCJhdHRycyI6eyJtb2R1bGUiOiJyZGNoYXJ0cyIsImxhbmciOiJqcyJ9LCJlbmQiOjQ4MDYzfX0%3D& */ 496);
+/* harmony import */ var _qiun_data_charts_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./qiun-data-charts.vue?vue&type=script&lang=js& */ 498);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _qiun_data_charts_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _qiun_data_charts_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _qiun_data_charts_vue_vue_type_style_index_0_id_fe947b98_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./qiun-data-charts.vue?vue&type=style&index=0&id=fe947b98&scoped=true&lang=css& */ 509);
+/* harmony import */ var _qiun_data_charts_vue_vue_type_style_index_0_id_fe947b98_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./qiun-data-charts.vue?vue&type=style&index=0&id=fe947b98&scoped=true&lang=css& */ 506);
 /* harmony import */ var _E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/runtime/componentNormalizer.js */ 10);
 
 var renderjs
@@ -25,14 +25,14 @@ var renderjs
 
 var component = Object(_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _qiun_data_charts_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _qiun_data_charts_vue_vue_type_template_id_fe947b98_scoped_true_filter_modules_eyJyZGNoYXJ0cyI6eyJ0eXBlIjoicmVuZGVyanMiLCJjb250ZW50IjoiIiwic3RhcnQiOjMyNTcwLCJhdHRycyI6eyJtb2R1bGUiOiJyZGNoYXJ0cyIsImxhbmciOiJqcyJ9LCJlbmQiOjQ0NDEzfX0_3D___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _qiun_data_charts_vue_vue_type_template_id_fe947b98_scoped_true_filter_modules_eyJyZGNoYXJ0cyI6eyJ0eXBlIjoicmVuZGVyanMiLCJjb250ZW50IjoiIiwic3RhcnQiOjMyNTcwLCJhdHRycyI6eyJtb2R1bGUiOiJyZGNoYXJ0cyIsImxhbmciOiJqcyJ9LCJlbmQiOjQ0NDEzfX0_3D___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _qiun_data_charts_vue_vue_type_template_id_fe947b98_scoped_true_filter_modules_eyJyZGNoYXJ0cyI6eyJ0eXBlIjoicmVuZGVyanMiLCJjb250ZW50IjoiIiwic3RhcnQiOjM1ODI2LCJhdHRycyI6eyJtb2R1bGUiOiJyZGNoYXJ0cyIsImxhbmciOiJqcyJ9LCJlbmQiOjQ4MDYzfX0_3D___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _qiun_data_charts_vue_vue_type_template_id_fe947b98_scoped_true_filter_modules_eyJyZGNoYXJ0cyI6eyJ0eXBlIjoicmVuZGVyanMiLCJjb250ZW50IjoiIiwic3RhcnQiOjM1ODI2LCJhdHRycyI6eyJtb2R1bGUiOiJyZGNoYXJ0cyIsImxhbmciOiJqcyJ9LCJlbmQiOjQ4MDYzfX0_3D___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   "fe947b98",
   null,
   false,
-  _qiun_data_charts_vue_vue_type_template_id_fe947b98_scoped_true_filter_modules_eyJyZGNoYXJ0cyI6eyJ0eXBlIjoicmVuZGVyanMiLCJjb250ZW50IjoiIiwic3RhcnQiOjMyNTcwLCJhdHRycyI6eyJtb2R1bGUiOiJyZGNoYXJ0cyIsImxhbmciOiJqcyJ9LCJlbmQiOjQ0NDEzfX0_3D___WEBPACK_IMPORTED_MODULE_0__["components"],
+  _qiun_data_charts_vue_vue_type_template_id_fe947b98_scoped_true_filter_modules_eyJyZGNoYXJ0cyI6eyJ0eXBlIjoicmVuZGVyanMiLCJjb250ZW50IjoiIiwic3RhcnQiOjM1ODI2LCJhdHRycyI6eyJtb2R1bGUiOiJyZGNoYXJ0cyIsImxhbmciOiJqcyJ9LCJlbmQiOjQ4MDYzfX0_3D___WEBPACK_IMPORTED_MODULE_0__["components"],
   renderjs
 )
 
@@ -41,31 +41,31 @@ component.options.__file = "uni_modules/qiun-data-charts/components/qiun-data-ch
 
 /***/ }),
 
-/***/ 499:
+/***/ 496:
 /*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts.vue?vue&type=template&id=fe947b98&scoped=true&filter-modules=eyJyZGNoYXJ0cyI6eyJ0eXBlIjoicmVuZGVyanMiLCJjb250ZW50IjoiIiwic3RhcnQiOjMyNTcwLCJhdHRycyI6eyJtb2R1bGUiOiJyZGNoYXJ0cyIsImxhbmciOiJqcyJ9LCJlbmQiOjQ0NDEzfX0%3D& ***!
+  !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts.vue?vue&type=template&id=fe947b98&scoped=true&filter-modules=eyJyZGNoYXJ0cyI6eyJ0eXBlIjoicmVuZGVyanMiLCJjb250ZW50IjoiIiwic3RhcnQiOjM1ODI2LCJhdHRycyI6eyJtb2R1bGUiOiJyZGNoYXJ0cyIsImxhbmciOiJqcyJ9LCJlbmQiOjQ4MDYzfX0%3D& ***!
   \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_16_0_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_qiun_data_charts_vue_vue_type_template_id_fe947b98_scoped_true_filter_modules_eyJyZGNoYXJ0cyI6eyJ0eXBlIjoicmVuZGVyanMiLCJjb250ZW50IjoiIiwic3RhcnQiOjMyNTcwLCJhdHRycyI6eyJtb2R1bGUiOiJyZGNoYXJ0cyIsImxhbmciOiJqcyJ9LCJlbmQiOjQ0NDEzfX0_3D___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./qiun-data-charts.vue?vue&type=template&id=fe947b98&scoped=true&filter-modules=eyJyZGNoYXJ0cyI6eyJ0eXBlIjoicmVuZGVyanMiLCJjb250ZW50IjoiIiwic3RhcnQiOjMyNTcwLCJhdHRycyI6eyJtb2R1bGUiOiJyZGNoYXJ0cyIsImxhbmciOiJqcyJ9LCJlbmQiOjQ0NDEzfX0%3D& */ 500);
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_16_0_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_qiun_data_charts_vue_vue_type_template_id_fe947b98_scoped_true_filter_modules_eyJyZGNoYXJ0cyI6eyJ0eXBlIjoicmVuZGVyanMiLCJjb250ZW50IjoiIiwic3RhcnQiOjMyNTcwLCJhdHRycyI6eyJtb2R1bGUiOiJyZGNoYXJ0cyIsImxhbmciOiJqcyJ9LCJlbmQiOjQ0NDEzfX0_3D___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_16_0_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_qiun_data_charts_vue_vue_type_template_id_fe947b98_scoped_true_filter_modules_eyJyZGNoYXJ0cyI6eyJ0eXBlIjoicmVuZGVyanMiLCJjb250ZW50IjoiIiwic3RhcnQiOjM1ODI2LCJhdHRycyI6eyJtb2R1bGUiOiJyZGNoYXJ0cyIsImxhbmciOiJqcyJ9LCJlbmQiOjQ4MDYzfX0_3D___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./qiun-data-charts.vue?vue&type=template&id=fe947b98&scoped=true&filter-modules=eyJyZGNoYXJ0cyI6eyJ0eXBlIjoicmVuZGVyanMiLCJjb250ZW50IjoiIiwic3RhcnQiOjM1ODI2LCJhdHRycyI6eyJtb2R1bGUiOiJyZGNoYXJ0cyIsImxhbmciOiJqcyJ9LCJlbmQiOjQ4MDYzfX0%3D& */ 497);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_16_0_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_qiun_data_charts_vue_vue_type_template_id_fe947b98_scoped_true_filter_modules_eyJyZGNoYXJ0cyI6eyJ0eXBlIjoicmVuZGVyanMiLCJjb250ZW50IjoiIiwic3RhcnQiOjM1ODI2LCJhdHRycyI6eyJtb2R1bGUiOiJyZGNoYXJ0cyIsImxhbmciOiJqcyJ9LCJlbmQiOjQ4MDYzfX0_3D___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_16_0_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_qiun_data_charts_vue_vue_type_template_id_fe947b98_scoped_true_filter_modules_eyJyZGNoYXJ0cyI6eyJ0eXBlIjoicmVuZGVyanMiLCJjb250ZW50IjoiIiwic3RhcnQiOjMyNTcwLCJhdHRycyI6eyJtb2R1bGUiOiJyZGNoYXJ0cyIsImxhbmciOiJqcyJ9LCJlbmQiOjQ0NDEzfX0_3D___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_16_0_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_qiun_data_charts_vue_vue_type_template_id_fe947b98_scoped_true_filter_modules_eyJyZGNoYXJ0cyI6eyJ0eXBlIjoicmVuZGVyanMiLCJjb250ZW50IjoiIiwic3RhcnQiOjM1ODI2LCJhdHRycyI6eyJtb2R1bGUiOiJyZGNoYXJ0cyIsImxhbmciOiJqcyJ9LCJlbmQiOjQ4MDYzfX0_3D___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return _E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_16_0_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_qiun_data_charts_vue_vue_type_template_id_fe947b98_scoped_true_filter_modules_eyJyZGNoYXJ0cyI6eyJ0eXBlIjoicmVuZGVyanMiLCJjb250ZW50IjoiIiwic3RhcnQiOjMyNTcwLCJhdHRycyI6eyJtb2R1bGUiOiJyZGNoYXJ0cyIsImxhbmciOiJqcyJ9LCJlbmQiOjQ0NDEzfX0_3D___WEBPACK_IMPORTED_MODULE_0__["recyclableRender"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return _E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_16_0_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_qiun_data_charts_vue_vue_type_template_id_fe947b98_scoped_true_filter_modules_eyJyZGNoYXJ0cyI6eyJ0eXBlIjoicmVuZGVyanMiLCJjb250ZW50IjoiIiwic3RhcnQiOjM1ODI2LCJhdHRycyI6eyJtb2R1bGUiOiJyZGNoYXJ0cyIsImxhbmciOiJqcyJ9LCJlbmQiOjQ4MDYzfX0_3D___WEBPACK_IMPORTED_MODULE_0__["recyclableRender"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "components", function() { return _E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_16_0_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_qiun_data_charts_vue_vue_type_template_id_fe947b98_scoped_true_filter_modules_eyJyZGNoYXJ0cyI6eyJ0eXBlIjoicmVuZGVyanMiLCJjb250ZW50IjoiIiwic3RhcnQiOjMyNTcwLCJhdHRycyI6eyJtb2R1bGUiOiJyZGNoYXJ0cyIsImxhbmciOiJqcyJ9LCJlbmQiOjQ0NDEzfX0_3D___WEBPACK_IMPORTED_MODULE_0__["components"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "components", function() { return _E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_16_0_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_qiun_data_charts_vue_vue_type_template_id_fe947b98_scoped_true_filter_modules_eyJyZGNoYXJ0cyI6eyJ0eXBlIjoicmVuZGVyanMiLCJjb250ZW50IjoiIiwic3RhcnQiOjM1ODI2LCJhdHRycyI6eyJtb2R1bGUiOiJyZGNoYXJ0cyIsImxhbmciOiJqcyJ9LCJlbmQiOjQ4MDYzfX0_3D___WEBPACK_IMPORTED_MODULE_0__["components"]; });
 
 
 
 /***/ }),
 
-/***/ 500:
+/***/ 497:
 /*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts.vue?vue&type=template&id=fe947b98&scoped=true&filter-modules=eyJyZGNoYXJ0cyI6eyJ0eXBlIjoicmVuZGVyanMiLCJjb250ZW50IjoiIiwic3RhcnQiOjMyNTcwLCJhdHRycyI6eyJtb2R1bGUiOiJyZGNoYXJ0cyIsImxhbmciOiJqcyJ9LCJlbmQiOjQ0NDEzfX0%3D& ***!
+  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts.vue?vue&type=template&id=fe947b98&scoped=true&filter-modules=eyJyZGNoYXJ0cyI6eyJ0eXBlIjoicmVuZGVyanMiLCJjb250ZW50IjoiIiwic3RhcnQiOjM1ODI2LCJhdHRycyI6eyJtb2R1bGUiOiJyZGNoYXJ0cyIsImxhbmciOiJqcyJ9LCJlbmQiOjQ4MDYzfX0%3D& ***!
   \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -80,10 +80,10 @@ var components
 try {
   components = {
     qiunLoading: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/qiun-data-charts/components/qiun-loading/qiun-loading */ "uni_modules/qiun-data-charts/components/qiun-loading/qiun-loading").then(__webpack_require__.bind(null, /*! @/uni_modules/qiun-data-charts/components/qiun-loading/qiun-loading.vue */ 525))
+      return __webpack_require__.e(/*! import() | uni_modules/qiun-data-charts/components/qiun-loading/qiun-loading */ "uni_modules/qiun-data-charts/components/qiun-loading/qiun-loading").then(__webpack_require__.bind(null, /*! @/uni_modules/qiun-data-charts/components/qiun-loading/qiun-loading.vue */ 522))
     },
     qiunError: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/qiun-data-charts/components/qiun-error/qiun-error */ "uni_modules/qiun-data-charts/components/qiun-error/qiun-error").then(__webpack_require__.bind(null, /*! @/uni_modules/qiun-data-charts/components/qiun-error/qiun-error.vue */ 530))
+      return __webpack_require__.e(/*! import() | uni_modules/qiun-data-charts/components/qiun-error/qiun-error */ "uni_modules/qiun-data-charts/components/qiun-error/qiun-error").then(__webpack_require__.bind(null, /*! @/uni_modules/qiun-data-charts/components/qiun-error/qiun-error.vue */ 527))
     }
   }
 } catch (e) {
@@ -116,7 +116,7 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ 501:
+/***/ 498:
 /*!*****************************************************************************************************************************************************************!*\
   !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts.vue?vue&type=script&lang=js& ***!
   \*****************************************************************************************************************************************************************/
@@ -125,14 +125,14 @@ render._withStripped = true
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_qiun_data_charts_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./qiun-data-charts.vue?vue&type=script&lang=js& */ 502);
+/* harmony import */ var _E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_qiun_data_charts_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./qiun-data-charts.vue?vue&type=script&lang=js& */ 499);
 /* harmony import */ var _E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_qiun_data_charts_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_qiun_data_charts_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_qiun_data_charts_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_qiun_data_charts_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
  /* harmony default export */ __webpack_exports__["default"] = (_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_qiun_data_charts_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
-/***/ 502:
+/***/ 499:
 /*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts.vue?vue&type=script&lang=js& ***!
   \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
@@ -264,166 +264,200 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _uChartsV = _interopRequireDefault(__webpack_require__(/*! ../../js_sdk/u-charts/u-charts-v2.0.0.js */ 508));
-var _configUcharts = _interopRequireDefault(__webpack_require__(/*! ../../js_sdk/u-charts/config-ucharts.js */ 388));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-function deepCloneAssign() {var origin = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {args[_key - 1] = arguments[_key];}for (var i in args) {for (var key in args[i]) {if (args[i].hasOwnProperty(key)) {origin[key] = args[i][key] && typeof args[i][key] === 'object' ? deepCloneAssign(Array.isArray(args[i][key]) ? [] : {}, origin[key], args[i][key]) : args[i][key];}}}return origin;}function formatterAssign(args, formatter) {for (var key in args) {if (typeof args[key] === 'object') {formatterAssign(args[key], formatter);} else if (key === 'format' && typeof args[key] === 'string') {args['formatter'] = formatter[args[key]] ? formatter[args[key]] : undefined;}}return args;} // 时间转换函数，为了匹配uniClinetDB读取出的时间与categories不同
-function getFormatDate(date) {var seperator = "-";var year = date.getFullYear();var month = date.getMonth() + 1;var strDate = date.getDate();if (month >= 1 && month <= 9) {month = "0" + month;}if (strDate >= 0 && strDate <= 9) {strDate = "0" + strDate;}var currentdate = year + seperator + month + seperator + strDate;return currentdate;}var lastMoveTime = null;var _default2 = { name: 'qiun-data-charts', mixins: [uniCloud.mixinDatacom], props: { type: { type: String, default: null }, canvasId: { type: String, default: 'uchartsid' }, canvas2d: { type: Boolean, default: false }, background: { type: String, default: 'none' }, animation: { type: Boolean, default: true }, chartData: { type: Object, default: function _default() {return { categories: [], series: [] };} }, opts: { type: Object, default: function _default() {return {};} }, eopts: { type: Object, default: function _default() {return {};} }, loadingType: { type: Number, default: 2 }, errorShow: { type: Boolean, default: true }, errorMessage: { type: String, default: null }, inScrollView: { type: Boolean, default: false }, reshow: { type: Boolean, default: false }, reload: { type: Boolean, default: false }, disableScroll: { type: Boolean, default: false }, ontap: { type: Boolean, default: true }, ontouch: { type: Boolean, default: false },
 
-    onmouse: {
-      type: Boolean,
-      default: true },
 
-    onmovetip: {
-      type: Boolean,
-      default: false },
 
-    echartsH5: {
-      type: Boolean,
-      default: false },
 
-    echartsApp: {
-      type: Boolean,
-      default: false },
 
-    tooltipShow: {
-      type: Boolean,
-      default: true },
 
-    tooltipFormat: {
-      type: String,
-      default: undefined },
 
-    tooltipCustom: {
-      default: undefined },
 
-    startDate: {
-      type: String,
-      default: undefined },
 
-    endDate: {
-      type: String,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _uChartsV = _interopRequireDefault(__webpack_require__(/*! ../../js_sdk/u-charts/u-charts-v2.0.0.js */ 505));
+var _configUcharts = _interopRequireDefault(__webpack_require__(/*! ../../js_sdk/u-charts/config-ucharts.js */ 385));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+function deepCloneAssign() {var origin = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {args[_key - 1] = arguments[_key];}for (var i in args) {for (var key in args[i]) {if (args[i].hasOwnProperty(key)) {origin[key] = args[i][key] && typeof args[i][key] === 'object' ? deepCloneAssign(Array.isArray(args[i][key]) ? [] : {}, origin[key], args[i][key]) : args[i][key];}}}return origin;}function formatterAssign(args, formatter) {for (var key in args) {if (args[key] !== null && typeof args[key] === 'object') {formatterAssign(args[key], formatter);} else if (key === 'format' && typeof args[key] === 'string') {args['formatter'] = formatter[args[key]] ? formatter[args[key]] : undefined;}}return args;} // 时间转换函数，为了匹配uniClinetDB读取出的时间与categories不同
+function getFormatDate(date) {var seperator = "-";var year = date.getFullYear();var month = date.getMonth() + 1;var strDate = date.getDate();if (month >= 1 && month <= 9) {month = "0" + month;}if (strDate >= 0 && strDate <= 9) {strDate = "0" + strDate;}var currentdate = year + seperator + month + seperator + strDate;return currentdate;}var lastMoveTime = null;var _default2 = { name: 'qiun-data-charts', mixins: [uniCloud.mixinDatacom], props: { type: { type: String, default: null }, canvasId: { type: String, default: 'uchartsid' }, canvas2d: { type: Boolean, default: false }, background: { type: String, default: 'none' }, animation: { type: Boolean, default: true }, chartData: { type: Object, default: function _default() {return { categories: [], series: [] };} }, opts: { type: Object, default: function _default() {return {};} }, eopts: { type: Object, default: function _default() {return {};} }, loadingType: { type: Number, default: 2 }, errorShow: { type: Boolean, default: true }, errorMessage: { type: String, default: null }, inScrollView: { type: Boolean, default: false }, reshow: { type: Boolean, default: false }, reload: { type: Boolean, default: false }, disableScroll: { type: Boolean, default: false }, ontap: { type: Boolean, default: true }, ontouch: { type: Boolean, default: false }, onmouse: { type: Boolean, default: true }, onmovetip: { type: Boolean, default: false }, echartsH5: { type: Boolean, default: false }, echartsApp: { type: Boolean, default: false }, tooltipShow: { type: Boolean, default: true }, tooltipFormat: { type: String, default: undefined }, tooltipCustom: { default: undefined }, startDate: { type: String, default: undefined }, endDate: { type: String,
       default: undefined },
 
     textEnum: {
@@ -440,16 +474,23 @@ function getFormatDate(date) {var seperator = "-";var year = date.getFullYear();
 
     pageScrollTop: {
       type: Number,
-      default: 0 } },
+      default: 0 },
+
+    directory: {
+      type: String,
+      default: '/' } },
 
 
   data: function data() {
     return {
       cid: 'uchartsid',
       inWx: false,
+      inAli: false,
+      inTt: false,
+      inBd: false,
       inH5: false,
       inApp: false,
-      type2d: false,
+      type2d: true,
       disScroll: false,
       pixel: 1,
       cWidth: 375,
@@ -463,7 +504,7 @@ function getFormatDate(date) {var seperator = "-";var year = date.getFullYear();
       lastDrawTime: null };
 
   },
-  mounted: function mounted() {var _this = this;
+  created: function created() {
     this.cid = this.canvasId;
     if (this.canvasId == 'uchartsid' || this.canvasId == '') {
       var t = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -474,31 +515,55 @@ function getFormatDate(date) {var seperator = "-";var year = date.getFullYear();
       }
       this.cid = id;
     }
-
-
-
-
-
-
-
-
-
-
-
-
+    var systemInfo = uni.getSystemInfoSync();
 
     this.inWx = true;
-    if (this.canvas2d === true) {
-      this.type2d = true;
-      this.pixel = uni.getSystemInfoSync().pixelRatio;
+    if (this.canvas2d === false || systemInfo.platform === 'windows') {
+      this.type2d = false;
+    } else {
+      this.pixel = systemInfo.pixelRatio;
+      if (this.canvasId === 'uchartsid' || this.canvasId == '') {
+        console.log('[uCharts]:开启canvas2d模式，必须指定canvasId，否则会出现偶尔获取不到dom节点的问题！');
+      }
     }
 
-    if (this.type2d === true && this.canvasId === 'uchartsid') {
-      console.log('[uCharts]:开启canvas2d模式，必须指定canvasId，否则会出现偶尔获取不到dom节点的问题！');
-    }
+    //非微信小程序端强制关闭canvas2d模式
+
+
+
+
+
+
+
+
+
+
+
+
+
     this.disScroll = this.disableScroll;
-    this.beforeInit();
+  },
+  mounted: function mounted() {var _this = this;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    this.$nextTick(function () {
+      _this.beforeInit();
+    });
 
     uni.onWindowResize(function (res) {
       if (_this.mixinDatacomLoading == true) {
@@ -516,7 +581,6 @@ function getFormatDate(date) {var seperator = "-";var year = date.getFullYear();
         }
       }, 200);
     });
-
 
   },
   destroyed: function destroyed() {
@@ -648,6 +712,7 @@ function getFormatDate(date) {var seperator = "-";var year = date.getFullYear();
 
   methods: {
     beforeInit: function beforeInit() {
+      this.mixinDatacomErrorMessage = null;
       if (typeof this.chartData === 'object' && this.chartData != null && this.chartData.series !== undefined && this.chartData.series.length > 0) {
         this.mixinDatacomLoading = true;
         //拷贝一下chartData，为了opts变更后统一数据来源
@@ -787,7 +852,7 @@ function getFormatDate(date) {var seperator = "-";var year = date.getFullYear();
         this.beforeInit();
       }
     },
-    checkData: function checkData(anyData) {
+    checkData: function checkData(anyData) {var _this3 = this;
       var cid = this.cid;
       //复位opts或eopts
       if (this.echarts === true) {
@@ -824,15 +889,19 @@ function getFormatDate(date) {var seperator = "-";var year = date.getFullYear();
             var Template = deepCloneAssign({}, cfe.option[cid].seriesTemplate, newData.series[i]);
             cfe.option[cid].series.push(Template);
           }
-          this.init();
+          this.$nextTick(function () {
+            _this3.init();
+          });
         } else {
           _configUcharts.default.option[cid].categories = newData.categories;
           _configUcharts.default.option[cid].series = newData.series;
-          this.init();
+          this.$nextTick(function () {
+            _this3.init();
+          });
         }
       }
     },
-    resizeHandler: function resizeHandler() {var _this3 = this;
+    resizeHandler: function resizeHandler() {var _this4 = this;
       //渲染防抖
       var currTime = Date.now();
       var lastDrawTime = this.lastDrawTime ? this.lastDrawTime : currTime - 3000;
@@ -840,32 +909,34 @@ function getFormatDate(date) {var seperator = "-";var year = date.getFullYear();
       if (duration < 1000) return;
       var chartdom = uni.
       createSelectorQuery().
+
       in(this).
-      select('.chartsview').
+
+      select('#ChartBoxId' + this.cid).
       boundingClientRect(function (data) {
-        _this3.showchart = true;
+        _this4.showchart = true;
         if (data.width > 0 && data.height > 0) {
-          if (data.width !== _this3.cWidth || data.height !== _this3.cHeight) {
-            _this3.checkData(_this3.drawData);
+          if (data.width !== _this4.cWidth || data.height !== _this4.cHeight) {
+            _this4.checkData(_this4.drawData);
           }
         }
       }).
       exec();
     },
-    getCloudData: function getCloudData() {var _this4 = this;
+    getCloudData: function getCloudData() {var _this5 = this;
       if (this.mixinDatacomLoading == true) {
         return;
       }
       this.mixinDatacomLoading = true;
       this.mixinDatacomGet().
       then(function (res) {
-        _this4.mixinDatacomResData = res.result.data;
-        _this4.localdataInit(_this4.mixinDatacomResData);
+        _this5.mixinDatacomResData = res.result.data;
+        _this5.localdataInit(_this5.mixinDatacomResData);
       }).
       catch(function (err) {
-        _this4.mixinDatacomLoading = false;
-        _this4.showchart = false;
-        _this4.mixinDatacomErrorMessage = '请求错误：' + err;
+        _this5.mixinDatacomLoading = false;
+        _this5.showchart = false;
+        _this5.mixinDatacomErrorMessage = '请求错误：' + err;
       });
     },
     onMixinDatacomPropsChange: function onMixinDatacomPropsChange(needReset, changed) {
@@ -884,88 +955,101 @@ function getFormatDate(date) {var seperator = "-";var year = date.getFullYear();
         ctx.draw();
       }
     },
-    init: function init() {var _this5 = this;
+    init: function init() {var _this6 = this;
       var cid = this.cid;
       var chartdom = uni.
       createSelectorQuery().
+
       in(this).
-      select('.chartsview').
+
+      select('#ChartBoxId' + cid).
       boundingClientRect(function (data) {
         if (data.width > 0 && data.height > 0) {
-          _this5.lastDrawTime = Date.now();
-          _this5.cWidth = data.width;
-          _this5.cHeight = data.height;
-          if (_this5.echarts !== true) {
-            _configUcharts.default.option[cid].background = _this5.background == 'none' ? '#FFFFFF' : _this5.background;
-            _configUcharts.default.option[cid].canvas2d = _this5.type2d;
-            _configUcharts.default.option[cid].pixelRatio = _this5.pixel;
-            _configUcharts.default.option[cid].animation = _this5.animation;
-            _configUcharts.default.option[cid].width = data.width * _this5.pixel;
-            _configUcharts.default.option[cid].height = data.height * _this5.pixel;
-            _configUcharts.default.option[cid].ontap = _this5.ontap;
-            _configUcharts.default.option[cid].ontouch = _this5.ontouch;
-            _configUcharts.default.option[cid].onmouse = _this5.onmouse;
-            _configUcharts.default.option[cid].onmovetip = _this5.onmovetip;
-            _configUcharts.default.option[cid].tooltipShow = _this5.tooltipShow;
-            _configUcharts.default.option[cid].tooltipFormat = _this5.tooltipFormat;
-            _configUcharts.default.option[cid].tooltipCustom = _this5.tooltipCustom;
-            _configUcharts.default.option[cid].lastDrawTime = _this5.lastDrawTime;
+          _this6.lastDrawTime = Date.now();
+          _this6.cWidth = data.width;
+          _this6.cHeight = data.height;
+          if (_this6.echarts !== true) {
+            _configUcharts.default.option[cid].background = _this6.background == 'none' ? '#FFFFFF' : _this6.background;
+            _configUcharts.default.option[cid].canvas2d = _this6.type2d;
+            _configUcharts.default.option[cid].pixelRatio = _this6.pixel;
+            _configUcharts.default.option[cid].animation = _this6.animation;
+            _configUcharts.default.option[cid].width = data.width * _this6.pixel;
+            _configUcharts.default.option[cid].height = data.height * _this6.pixel;
+            _configUcharts.default.option[cid].ontap = _this6.ontap;
+            _configUcharts.default.option[cid].ontouch = _this6.ontouch;
+            _configUcharts.default.option[cid].onmouse = _this6.onmouse;
+            _configUcharts.default.option[cid].onmovetip = _this6.onmovetip;
+            _configUcharts.default.option[cid].tooltipShow = _this6.tooltipShow;
+            _configUcharts.default.option[cid].tooltipFormat = _this6.tooltipFormat;
+            _configUcharts.default.option[cid].tooltipCustom = _this6.tooltipCustom;
+            _configUcharts.default.option[cid].inScrollView = _this6.inScrollView;
+            _configUcharts.default.option[cid].lastDrawTime = _this6.lastDrawTime;
           }
           //如果是H5或者App端，采用renderjs渲染图表
-          if (_this5.inH5 || _this5.inApp) {
-            if (_this5.echarts == true) {
-              _this5.mixinDatacomLoading = false;
-              _this5.showchart = true;
-              cfe.option[cid].ontap = _this5.ontap;
-              cfe.option[cid].onmouse = _this5.onmouse;
-              cfe.option[cid].tooltipShow = _this5.tooltipShow;
-              cfe.option[cid].tooltipFormat = _this5.tooltipFormat;
-              cfe.option[cid].tooltipCustom = _this5.tooltipCustom;
-              cfe.option[cid].lastDrawTime = _this5.lastDrawTime;
-              _this5.echartsOpts = deepCloneAssign({}, cfe.option[cid]);
+          if (_this6.inH5 || _this6.inApp) {
+            if (_this6.echarts == true) {
+              _this6.mixinDatacomLoading = false;
+              _this6.showchart = true;
+              cfe.option[cid].ontap = _this6.ontap;
+              cfe.option[cid].onmouse = _this6.onmouse;
+              cfe.option[cid].tooltipShow = _this6.tooltipShow;
+              cfe.option[cid].tooltipFormat = _this6.tooltipFormat;
+              cfe.option[cid].tooltipCustom = _this6.tooltipCustom;
+              cfe.option[cid].lastDrawTime = _this6.lastDrawTime;
+              cfe.option[cid].rotateLock = cfe.option[cid].rotate;
+              _this6.echartsOpts = deepCloneAssign({}, cfe.option[cid]);
             } else {
-              _this5.mixinDatacomLoading = false;
-              _this5.showchart = true;
-              _this5.uchartsOpts = deepCloneAssign({}, _configUcharts.default.option[cid]);
+              _configUcharts.default.option[cid].rotateLock = _configUcharts.default.option[cid].rotate;
+              _this6.mixinDatacomLoading = false;
+              _this6.showchart = true;
+              _this6.uchartsOpts = deepCloneAssign({}, _configUcharts.default.option[cid]);
             }
             //如果是小程序端，采用uCharts渲染
           } else {
             _configUcharts.default.option[cid] = formatterAssign(_configUcharts.default.option[cid], _configUcharts.default.formatter);
-            _this5.mixinDatacomErrorMessage = null;
-            _this5.mixinDatacomLoading = false;
-            _this5.showchart = true;
-            if (_this5.type2d === true) {
-              var query = uni.createSelectorQuery().in(_this5);
-              query.
-              select('#' + cid).
-              fields({ node: true, size: true }).
-              exec(function (res) {
-                if (res[0]) {
-                  var canvas = res[0].node;
-                  var ctx = canvas.getContext('2d');
-                  _configUcharts.default.option[cid].context = ctx;
-                  canvas.width = data.width * _this5.pixel;
-                  canvas.height = data.height * _this5.pixel;
-                  canvas._width = data.width * _this5.pixel;
-                  canvas._height = data.height * _this5.pixel;
-                  _this5._newChart(cid);
-                } else {
-                  _this5.showchart = false;
-                  _this5.mixinDatacomErrorMessage = '参数错误：未获取到dom节点，请检查是否传入canvasID';
+            _this6.mixinDatacomErrorMessage = null;
+            _this6.mixinDatacomLoading = false;
+            _this6.showchart = true;
+            _this6.$nextTick(function () {
+              if (_this6.type2d === true) {
+                var query = uni.createSelectorQuery().in(_this6);
+                query.
+                select('#' + cid).
+                fields({ node: true, size: true }).
+                exec(function (res) {
+                  if (res[0]) {
+                    var canvas = res[0].node;
+                    var ctx = canvas.getContext('2d');
+                    _configUcharts.default.option[cid].context = ctx;
+                    canvas.width = data.width * _this6.pixel;
+                    canvas.height = data.height * _this6.pixel;
+                    canvas._width = data.width * _this6.pixel;
+                    canvas._height = data.height * _this6.pixel;
+                    _configUcharts.default.option[cid].rotateLock = _configUcharts.default.option[cid].rotate;
+                    _configUcharts.default.option[cid].context.restore();
+                    _configUcharts.default.option[cid].context.save();
+                    _this6._newChart(cid);
+                  } else {
+                    _this6.showchart = false;
+                    _this6.mixinDatacomErrorMessage = '参数错误：开启2d模式后，未获取到dom节点，canvas-id:' + cid;
+                  }
+                });
+              } else {
+                if (_this6.inAli) {
+                  _configUcharts.default.option[cid].rotateLock = _configUcharts.default.option[cid].rotate;
                 }
-              });
-            } else {
-              _this5.$nextTick(function () {
-                _configUcharts.default.option[cid].context = uni.createCanvasContext(cid, _this5);
-                _this5._newChart(cid);
-              });
-            }
+                _configUcharts.default.option[cid].context = uni.createCanvasContext(cid, _this6);
+                _configUcharts.default.option[cid].context.restore();
+                _configUcharts.default.option[cid].context.save();
+                _this6._newChart(cid);
+              }
+            });
           }
         } else {
-          _this5.mixinDatacomLoading = false;
-          _this5.showchart = false;
-          if (_this5.reshow == true) {
-            _this5.mixinDatacomErrorMessage = '布局错误：未获取到父元素宽高尺寸！canvas-id:' + cid;
+          _this6.mixinDatacomLoading = false;
+          _this6.showchart = false;
+          if (_this6.reshow == true) {
+            _this6.mixinDatacomErrorMessage = '布局错误：未获取到父元素宽高尺寸！canvas-id:' + cid;
           }
         }
       }).
@@ -997,26 +1081,30 @@ function getFormatDate(date) {var seperator = "-";var year = date.getFullYear();
       this);
     },
 
-    _newChart: function _newChart(cid) {var _this6 = this;
+    _newChart: function _newChart(cid) {var _this7 = this;
       if (this.mixinDatacomLoading == true) {
         return;
       }
       this.showchart = true;
       _configUcharts.default.instance[cid] = new _uChartsV.default(_configUcharts.default.option[cid]);
       _configUcharts.default.instance[cid].addEventListener('renderComplete', function () {
-        _this6.emitMsg({ name: 'complete', params: { type: "complete", complete: true, id: cid } });
+        _this7.emitMsg({ name: 'complete', params: { type: "complete", complete: true, id: cid } });
         _configUcharts.default.instance[cid].delEventListener('renderComplete');
       });
       _configUcharts.default.instance[cid].addEventListener('scrollLeft', function () {
-        _this6.emitMsg({ name: 'scrollLeft', params: { type: "scrollLeft", scrollLeft: true, id: cid } });
+        _this7.emitMsg({ name: 'scrollLeft', params: { type: "scrollLeft", scrollLeft: true, id: cid } });
       });
       _configUcharts.default.instance[cid].addEventListener('scrollRight', function () {
-        _this6.emitMsg({ name: 'scrollRight', params: { type: "scrollRight", scrollRight: true, id: cid } });
+        _this7.emitMsg({ name: 'scrollRight', params: { type: "scrollRight", scrollRight: true, id: cid } });
       });
     },
     _tooltipDefault: function _tooltipDefault(item, category, index, opts) {
       if (category) {
-        return category + ' ' + item.name + ':' + item.data;
+        var data = item.data;
+        if (typeof item.data === "object") {
+          data = item.data.value;
+        }
+        return category + ' ' + item.name + ':' + data;
       } else {
         if (item.properties !== undefined) {
           return item.properties.name;
@@ -1025,7 +1113,7 @@ function getFormatDate(date) {var seperator = "-";var year = date.getFullYear();
         }
       }
     },
-    _showTooltip: function _showTooltip(e) {var _this7 = this;
+    _showTooltip: function _showTooltip(e) {var _this8 = this;
       var cid = this.cid;
       var tc = _configUcharts.default.option[cid].tooltipCustom;
       if (tc && tc !== undefined && tc !== null) {
@@ -1041,7 +1129,7 @@ function getFormatDate(date) {var seperator = "-";var year = date.getFullYear();
             if (typeof _configUcharts.default.option[cid].tooltipFormat === 'string' && _configUcharts.default.formatter[_configUcharts.default.option[cid].tooltipFormat]) {
               return _configUcharts.default.formatter[_configUcharts.default.option[cid].tooltipFormat](item, category, index, opts);
             } else {
-              return _this7._tooltipDefault(item, category, index, opts);
+              return _this8._tooltipDefault(item, category, index, opts);
             }
           } });
 
@@ -1051,37 +1139,45 @@ function getFormatDate(date) {var seperator = "-";var year = date.getFullYear();
             if (typeof _configUcharts.default.option[cid].tooltipFormat === 'string' && _configUcharts.default.formatter[_configUcharts.default.option[cid].tooltipFormat]) {
               return _configUcharts.default.formatter[_configUcharts.default.option[cid].tooltipFormat](item, category, index, opts);
             } else {
-              return _this7._tooltipDefault(item, category, index, opts);
+              return _this8._tooltipDefault(item, category, index, opts);
             }
           } });
 
       }
     },
-    _tap: function _tap(e, move) {var _this8 = this;
+    _tap: function _tap(e, move) {var _this9 = this;
       var cid = this.cid;
       var currentIndex = null;
       var legendIndex = null;
-      if (this.inScrollView === true) {
+      if (this.inScrollView === true || this.inAli) {
         var chartdom = uni.
         createSelectorQuery().
+
         in(this).
-        select('.chartsview').
+        select('#ChartBoxId' + cid).
+
+
+
+
         boundingClientRect(function (data) {
-          if (e.detail.x) {
-            e.changedTouches.unshift({ x: e.detail.x - data.left, y: e.detail.y - data.top - _this8.pageScrollTop });
+          e.changedTouches = [];
+          if (_this9.inAli) {
+            e.changedTouches.unshift({ x: e.detail.clientX - data.left, y: e.detail.clientY - data.top });
+          } else {
+            e.changedTouches.unshift({ x: e.detail.x - data.left, y: e.detail.y - data.top - _this9.pageScrollTop });
           }
           if (move) {
-            if (_this8.tooltipShow === true) {
-              _this8._showTooltip(e);
+            if (_this9.tooltipShow === true) {
+              _this9._showTooltip(e);
             }
           } else {
             currentIndex = _configUcharts.default.instance[cid].getCurrentDataIndex(e);
             legendIndex = _configUcharts.default.instance[cid].getLegendDataIndex(e);
             _configUcharts.default.instance[cid].touchLegend(e);
-            if (_this8.tooltipShow === true) {
-              _this8._showTooltip(e);
+            if (_this9.tooltipShow === true) {
+              _this9._showTooltip(e);
             }
-            _this8.emitMsg({ name: 'getIndex', params: { type: "getIndex", event: { x: e.detail.x - data.left, y: e.detail.y - data.top }, currentIndex: currentIndex, legendIndex: legendIndex, id: cid } });
+            _this9.emitMsg({ name: 'getIndex', params: { type: "getIndex", event: { x: e.detail.x - data.left, y: e.detail.y - data.top }, currentIndex: currentIndex, legendIndex: legendIndex, id: cid } });
           }
         }).
         exec();
@@ -1091,7 +1187,8 @@ function getFormatDate(date) {var seperator = "-";var year = date.getFullYear();
             this._showTooltip(e);
           }
         } else {
-          e.changedTouches.unshift({ x: e.detail.x, y: e.detail.y - e.currentTarget.offsetTop });
+          e.changedTouches = [];
+          e.changedTouches.unshift({ x: e.detail.x - e.currentTarget.offsetLeft, y: e.detail.y - e.currentTarget.offsetTop });
           currentIndex = _configUcharts.default.instance[cid].getCurrentDataIndex(e);
           legendIndex = _configUcharts.default.instance[cid].getLegendDataIndex(e);
           _configUcharts.default.instance[cid].touchLegend(e);
@@ -1107,8 +1204,8 @@ function getFormatDate(date) {var seperator = "-";var year = date.getFullYear();
       lastMoveTime = Date.now();
       if (_configUcharts.default.option[cid].enableScroll === true) {
         _configUcharts.default.instance[cid].scrollStart(e);
-        this.emitMsg({ name: 'getTouchStart', params: { type: "touchStart", event: e.changedTouches[0], id: cid } });
       }
+      this.emitMsg({ name: 'getTouchStart', params: { type: "touchStart", event: e.changedTouches[0], id: cid } });
     },
     _touchMove: function _touchMove(e) {
       var cid = this.cid;
@@ -1118,8 +1215,8 @@ function getFormatDate(date) {var seperator = "-";var year = date.getFullYear();
       lastMoveTime = currMoveTime;
       if (_configUcharts.default.option[cid].enableScroll === true) {
         _configUcharts.default.instance[cid].scroll(e);
-        this.emitMsg({ name: 'getTouchMove', params: { type: "touchMove", event: e.changedTouches[0], id: cid } });
       }
+      this.emitMsg({ name: 'getTouchMove', params: { type: "touchMove", event: e.changedTouches[0], id: cid } });
       if (this.ontap === true && _configUcharts.default.option[cid].enableScroll === false && this.onmovetip === true) {
         this._tap(e, true);
       }
@@ -1128,8 +1225,8 @@ function getFormatDate(date) {var seperator = "-";var year = date.getFullYear();
       var cid = this.cid;
       if (_configUcharts.default.option[cid].enableScroll === true) {
         _configUcharts.default.instance[cid].scrollEnd(e);
-        this.emitMsg({ name: 'getTouchEnd', params: { type: "touchEnd", event: e.changedTouches[0], id: cid } });
       }
+      this.emitMsg({ name: 'getTouchEnd', params: { type: "touchEnd", event: e.changedTouches[0], id: cid } });
       if (this.ontap === true && _configUcharts.default.option[cid].enableScroll === false && this.onmovetip === true) {
         this._tap(e, true);
       }
@@ -1146,12 +1243,15 @@ function getFormatDate(date) {var seperator = "-";var year = date.getFullYear();
       if (this.echarts === true && this.mixinDatacomLoading === false) {
         this.beforeInit();
       }
+    },
+    toJSON: function toJSON() {
+      return this;
     } } };exports.default = _default2;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/uni-cloud/dist/index.js */ 503)["default"], __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/uni-cloud/dist/index.js */ 500)["default"], __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 
-/***/ 509:
+/***/ 506:
 /*!*************************************************************************************************************************************************************************************************!*\
   !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts.vue?vue&type=style&index=0&id=fe947b98&scoped=true&lang=css& ***!
   \*************************************************************************************************************************************************************************************************/
@@ -1160,14 +1260,14 @@ function getFormatDate(date) {var seperator = "-";var year = date.getFullYear();
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_2_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_qiun_data_charts_vue_vue_type_style_index_0_id_fe947b98_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-2!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./qiun-data-charts.vue?vue&type=style&index=0&id=fe947b98&scoped=true&lang=css& */ 510);
+/* harmony import */ var _E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_2_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_qiun_data_charts_vue_vue_type_style_index_0_id_fe947b98_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-2!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./qiun-data-charts.vue?vue&type=style&index=0&id=fe947b98&scoped=true&lang=css& */ 507);
 /* harmony import */ var _E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_2_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_qiun_data_charts_vue_vue_type_style_index_0_id_fe947b98_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_2_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_qiun_data_charts_vue_vue_type_style_index_0_id_fe947b98_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_2_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_qiun_data_charts_vue_vue_type_style_index_0_id_fe947b98_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_2_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_qiun_data_charts_vue_vue_type_style_index_0_id_fe947b98_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
  /* harmony default export */ __webpack_exports__["default"] = (_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_2_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_E_HBuilderX_2_6_16_20200424_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_qiun_data_charts_vue_vue_type_style_index_0_id_fe947b98_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
-/***/ 510:
+/***/ 507:
 /*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-2!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts.vue?vue&type=style&index=0&id=fe947b98&scoped=true&lang=css& ***!
   \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
@@ -1186,7 +1286,7 @@ __webpack_require__.r(__webpack_exports__);
     'uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts-create-component',
     {
         'uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts-create-component':(function(module, exports, __webpack_require__){
-            __webpack_require__('1')['createComponent'](__webpack_require__(498))
+            __webpack_require__('1')['createComponent'](__webpack_require__(495))
         })
     },
     [['uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts-create-component']]

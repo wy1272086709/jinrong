@@ -46,7 +46,8 @@
   color: #606266;
   -webkit-align-self: stretch;
           align-self: stretch;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   height: 100%;
 }
 

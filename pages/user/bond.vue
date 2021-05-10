@@ -123,6 +123,7 @@
 				}
 				console.log("current",this.current);
 				this.change(this.current);
+				
 			},
 			change(index) {
 				this.current = index;
@@ -158,6 +159,7 @@
 		},
 		async onLoad() {
 			const res1 = uni.getStorageSync('wx_strategist_list');
+			console.log("res1: " + JSON.stringify(res1));
 			console.log("res",res1);
 			// this.title = this.userName;
 			console.log("title",this.title);

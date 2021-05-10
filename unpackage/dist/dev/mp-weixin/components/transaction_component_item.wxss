@@ -130,7 +130,8 @@
   width: 100rpx;
   height: 40rpx;
   border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 8rpx;
+  -webkit-border-radius: 8rpx;
+          border-radius: 8rpx;
   margin-right: 40rpx;
 }
 .jiaoyi .jiaoyi1.data-v-b4f5b1de {
@@ -315,7 +316,8 @@
   font-size: 24rpx;
 }
 .bk.data-v-b4f5b1de {
-  border-radius: 8rpx;
+  -webkit-border-radius: 8rpx;
+          border-radius: 8rpx;
   background-color: rgba(255, 255, 255, 0.1);
 }
 .no-store.data-v-b4f5b1de {

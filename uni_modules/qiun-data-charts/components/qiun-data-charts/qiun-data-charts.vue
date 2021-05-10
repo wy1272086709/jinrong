@@ -1,5 +1,5 @@
 <!-- 
- * qiun-data-charts 秋云高性能跨全端图表组件 v1.0.0-20210406
+ * qiun-data-charts 秋云高性能跨全端图表组件 v2.0.0-20210426
  * Copyright (c) 2021 QIUN® 秋云 https://www.ucharts.cn All rights reserved.
  * Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
  * 复制使用请保留本段注释，感谢支持开源！
@@ -16,7 +16,7 @@
  * 
  -->
 <template>
-  <view class="chartsview">
+  <view class="chartsview" :id="'ChartBoxId'+cid">
     <view v-if="mixinDatacomLoading">
       <!-- 自定义加载状态，请改这里 -->
       <qiun-loading :loadingType="loadingType" />
@@ -26,11 +26,12 @@
       <qiun-error :errorMessage="errorMessage" />
     </view>
     <!-- APP和H5采用renderjs渲染图表 -->
-    <!-- #ifdef APP-PLUS || H5 -->
+    <!-- #ifdef APP-VUE || H5 -->
     <block v-if="echarts">
       <view
         :style="{ background: background }"
         style="width: 100%;height: 100%;"
+        :data-directory="directory"
         :id="'EC'+cid" 
         :prop="echartsOpts" 
         :change:prop="rdcharts.ecinit" 
@@ -63,8 +64,40 @@
       </view>
     </block>
     <!-- #endif -->
-    <!-- 其他平台通过vue渲染图表 -->
-    <!-- #ifndef APP-PLUS || H5 -->
+    <!-- 支付宝小程序 -->
+    <!-- #ifdef MP-ALIPAY -->
+    <block v-if="ontouch">
+      <canvas
+        :id="cid"
+        :canvasId="cid"
+        :width="cWidth * pixel"
+        :height="cHeight * pixel"
+        :style="{ width: cWidth + 'px', height: cHeight + 'px', background: background }"
+        :disable-scroll="disScroll"
+        @tap="_tap"
+        @touchstart="_touchStart"
+        @touchmove="_touchMove"
+        @touchend="_touchEnd"
+        @error="_error"
+        v-if="showchart"
+      />
+    </block>
+    <block v-if="!ontouch">
+      <canvas
+        :id="cid"
+        :canvasId="cid"
+        :width="cWidth * pixel"
+        :height="cHeight * pixel"
+        :style="{ width: cWidth + 'px', height: cHeight + 'px', background: background }"
+        :disable-scroll="disScroll"
+        @tap="_tap"
+        @error="_error"
+        v-if="showchart"
+      />
+    </block>
+    <!-- #endif -->
+    <!-- 其他小程序通过vue渲染图表 -->
+    <!-- #ifdef MP-360 || MP-BAIDU || MP-QQ || MP-TOUTIAO || MP-WEIXIN -->
     <block v-if="type2d">
       <view v-if="ontouch" @tap="_tap">
         <canvas
@@ -106,12 +139,13 @@
           v-if="showchart"
         />
       </view>
-      <view v-if="!ontouch" @tap="_tap">
+      <view v-if="!ontouch" >
         <canvas
           :id="cid"
           :canvasId="cid"
           :style="{ width: cWidth + 'px', height: cHeight + 'px', background: background }"
           :disable-scroll="disScroll"
+          @tap="_tap"
           @error="_error"
           v-if="showchart"
         />
@@ -124,7 +158,7 @@
 <script>
 import uChartsMp from '../../js_sdk/u-charts/u-charts-v2.0.0.js';
 import cfu from '../../js_sdk/u-charts/config-ucharts.js';
-// #ifdef APP-PLUS || H5
+// #ifdef APP-VUE || H5
 import cfe from '../../js_sdk/u-charts/config-echarts.js';
 // #endif
 
@@ -141,7 +175,7 @@ function deepCloneAssign(origin = {}, ...args) {
 
 function formatterAssign(args,formatter) {
   for (let key in args) {
-    if(typeof args[key] === 'object'){
+    if(args[key] !== null && typeof args[key] === 'object'){
       formatterAssign(args[key],formatter)
     }else if(key === 'format' && typeof args[key] === 'string'){
       args['formatter'] = formatter[args[key]] ? formatter[args[key]] : undefined;
@@ -299,15 +333,22 @@ export default {
     pageScrollTop: {
       type: Number,
       default: 0
+    },
+    directory: {
+      type: String,
+      default: '/'
     }
   },
   data() {
     return {
       cid: 'uchartsid',
       inWx: false,
+      inAli: false,
+      inTt:false,
+      inBd:false,
       inH5: false,
       inApp: false,
-      type2d: false,
+      type2d: true,
       disScroll: false,
       pixel: 1,
       cWidth: 375,
@@ -321,7 +362,7 @@ export default {
       lastDrawTime:null,
     };
   },
-  mounted() {
+  created(){
     this.cid = this.canvasId
     if (this.canvasId == 'uchartsid' || this.canvasId == '') {
       let t = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
@@ -332,11 +373,45 @@ export default {
       }
       this.cid = id
     }
-    // #ifdef APP-PLUS
+    const systemInfo = uni.getSystemInfoSync()
+    // #ifdef MP-WEIXIN
+    this.inWx = true;
+    if (this.canvas2d === false || systemInfo.platform === 'windows') {
+      this.type2d = false;
+    }else{
+      this.pixel = systemInfo.pixelRatio;
+      if (this.canvasId === 'uchartsid' || this.canvasId == '') {
+        console.log('[uCharts]:开启canvas2d模式，必须指定canvasId，否则会出现偶尔获取不到dom节点的问题！');
+      }
+    }
+    // #endif
+    //非微信小程序端强制关闭canvas2d模式
+    // #ifndef MP-WEIXIN
+    this.type2d = false;
+    // #endif
+    // #ifdef MP-ALIPAY
+    this.inAli = true;
+    this.pixel = systemInfo.pixelRatio;
+    // #endif
+    // #ifdef MP-BAIDU
+    this.inBd = true;
+    // #endif
+    // #ifdef MP-TOUTIAO
+    this.inTt = true;
+    // #endif
+    this.disScroll = this.disableScroll;
+  },
+  mounted() {
+    // #ifdef APP-VUE
     this.inApp = true;
     if (this.echartsApp === true) {
       this.echarts = true;
     }
+    // #endif
+    // #ifdef APP-NVUE
+    this.inApp = true;
+    this.mixinDatacomLoading = false
+    this.mixinDatacomErrorMessage = "暂不支持NVUE"
     // #endif
     // #ifdef H5
     this.inH5 = true;
@@ -344,19 +419,9 @@ export default {
       this.echarts = true;
     }
     // #endif
-    // #ifdef MP-WEIXIN
-    this.inWx = true;
-    if (this.canvas2d === true) {
-      this.type2d = true;
-      this.pixel = uni.getSystemInfoSync().pixelRatio;
-    }
-    // #endif
-    if (this.type2d === true && this.canvasId === 'uchartsid') {
-      console.log('[uCharts]:开启canvas2d模式，必须指定canvasId，否则会出现偶尔获取不到dom节点的问题！');
-    }
-    this.disScroll = this.disableScroll;
-    this.beforeInit();
-    
+    this.$nextTick(()=>{
+      this.beforeInit();
+    })
     // #ifndef MP-ALIPAY || MP-BAIDU || MP-TOUTIAO
     uni.onWindowResize(res => {
       if (this.mixinDatacomLoading == true) {
@@ -375,7 +440,6 @@ export default {
       }, 200);
     });
     // #endif
-    
   },
   destroyed(){
     if(this.echarts === true){
@@ -506,6 +570,7 @@ export default {
   },
   methods: {
     beforeInit(){
+      this.mixinDatacomErrorMessage = null;
       if (typeof this.chartData === 'object' && this.chartData != null && this.chartData.series !== undefined && this.chartData.series.length > 0) {
         this.mixinDatacomLoading = true;
         //拷贝一下chartData，为了opts变更后统一数据来源
@@ -682,11 +747,15 @@ export default {
             let Template = deepCloneAssign({},cfe.option[cid].seriesTemplate,newData.series[i])
             cfe.option[cid].series.push(Template)
           }
-          this.init();
+          this.$nextTick(()=>{
+            this.init()
+          })
         }else{
           cfu.option[cid].categories = newData.categories;
           cfu.option[cid].series = newData.series;
-          this.init();
+          this.$nextTick(()=>{
+            this.init()
+          })
         }
       }
     },
@@ -698,8 +767,10 @@ export default {
       if (duration < 1000) return;
       let chartdom = uni
         .createSelectorQuery()
+        // #ifndef MP-ALIPAY
         .in(this)
-        .select('.chartsview')
+        // #endif
+        .select('#ChartBoxId'+this.cid)
         .boundingClientRect(data => {
           this.showchart = true;
           if (data.width > 0 && data.height > 0) {
@@ -746,8 +817,10 @@ export default {
       let cid = this.cid
       let chartdom = uni
         .createSelectorQuery()
+        // #ifndef MP-ALIPAY
         .in(this)
-        .select('.chartsview')
+        // #endif
+        .select('#ChartBoxId'+cid)
         .boundingClientRect(data => {
           if (data.width > 0 && data.height > 0) {
             this.lastDrawTime = Date.now();
@@ -767,6 +840,7 @@ export default {
               cfu.option[cid].tooltipShow = this.tooltipShow;
               cfu.option[cid].tooltipFormat = this.tooltipFormat;
               cfu.option[cid].tooltipCustom = this.tooltipCustom;
+              cfu.option[cid].inScrollView = this.inScrollView;
               cfu.option[cid].lastDrawTime = this.lastDrawTime;
             }
             //如果是H5或者App端，采用renderjs渲染图表
@@ -780,8 +854,10 @@ export default {
                 cfe.option[cid].tooltipFormat = this.tooltipFormat;
                 cfe.option[cid].tooltipCustom = this.tooltipCustom;
                 cfe.option[cid].lastDrawTime = this.lastDrawTime;
+                cfe.option[cid].rotateLock = cfe.option[cid].rotate;
                 this.echartsOpts = deepCloneAssign({}, cfe.option[cid]);
               } else {
+                cfu.option[cid].rotateLock = cfu.option[cid].rotate;
                 this.mixinDatacomLoading = false;
                 this.showchart = true;
                 this.uchartsOpts = deepCloneAssign({}, cfu.option[cid]);
@@ -792,32 +868,40 @@ export default {
               this.mixinDatacomErrorMessage = null;
               this.mixinDatacomLoading = false;
               this.showchart = true;
-              if (this.type2d === true) {
-                const query = uni.createSelectorQuery().in(this);
-                query
-                  .select('#' + cid)
-                  .fields({ node: true, size: true })
-                  .exec(res => {
-                    if (res[0]) {
-                      const canvas = res[0].node;
-                      const ctx = canvas.getContext('2d');
-                      cfu.option[cid].context = ctx;
-                      canvas.width = data.width * this.pixel;
-                      canvas.height = data.height * this.pixel;
-                      canvas._width = data.width * this.pixel;
-                      canvas._height = data.height * this.pixel;
-                      this._newChart(cid);
-                    } else {
-                      this.showchart = false;
-                      this.mixinDatacomErrorMessage = '参数错误：未获取到dom节点，请检查是否传入canvasID';
-                    }
-                  });
-              } else {
-                this.$nextTick(() => {
+              this.$nextTick(()=>{
+                if (this.type2d === true) {
+                  const query = uni.createSelectorQuery().in(this)
+                  query
+                    .select('#' + cid)
+                    .fields({ node: true, size: true })
+                    .exec(res => {
+                      if (res[0]) {
+                        const canvas = res[0].node;
+                        const ctx = canvas.getContext('2d');
+                        cfu.option[cid].context = ctx;
+                        canvas.width = data.width * this.pixel;
+                        canvas.height = data.height * this.pixel;
+                        canvas._width = data.width * this.pixel;
+                        canvas._height = data.height * this.pixel;
+                        cfu.option[cid].rotateLock = cfu.option[cid].rotate;
+                        cfu.option[cid].context.restore();
+                        cfu.option[cid].context.save();
+                        this._newChart(cid);
+                      } else {
+                        this.showchart = false;
+                        this.mixinDatacomErrorMessage = '参数错误：开启2d模式后，未获取到dom节点，canvas-id:' + cid;
+                      }
+                    });
+                } else {
+                  if(this.inAli){
+                    cfu.option[cid].rotateLock = cfu.option[cid].rotate;
+                  }
                   cfu.option[cid].context = uni.createCanvasContext(cid, this);
+                  cfu.option[cid].context.restore();
+                  cfu.option[cid].context.save();
                   this._newChart(cid);
-                });
-              }
+                }
+              })
             }
           } else {
             this.mixinDatacomLoading = false;
@@ -854,7 +938,7 @@ export default {
     	  } 
     	},this);
     },
-    // #ifndef APP-PLUS || H5
+    // #ifndef APP-VUE || H5
     _newChart(cid) {
       if (this.mixinDatacomLoading == true) {
         return;
@@ -874,7 +958,11 @@ export default {
     },
     _tooltipDefault(item, category, index, opts) {
       if (category) {
-        return category + ' ' + item.name + ':' + item.data;
+        let data = item.data
+        if(typeof item.data === "object"){
+          data = item.data.value
+        }
+        return category + ' ' + item.name + ':' + data;
       } else {
         if (item.properties !== undefined) {
           return item.properties.name;
@@ -919,13 +1007,21 @@ export default {
       let cid = this.cid
       let currentIndex = null;
       let legendIndex = null;
-      if (this.inScrollView === true) {
+      if (this.inScrollView === true || this.inAli) {
         let chartdom = uni
           .createSelectorQuery()
+          // #ifndef MP-ALIPAY
           .in(this)
-          .select('.chartsview')
+          .select('#ChartBoxId'+cid)
+          // #endif
+          // #ifdef MP-ALIPAY
+          .select('#'+this.cid)
+          // #endif
           .boundingClientRect(data => {
-            if (e.detail.x) {
+            e.changedTouches=[];
+            if (this.inAli) {
+              e.changedTouches.unshift({ x: e.detail.clientX - data.left, y: e.detail.clientY - data.top});
+            }else{
               e.changedTouches.unshift({ x: e.detail.x - data.left, y: e.detail.y - data.top - this.pageScrollTop});
             }
             if(move){
@@ -949,7 +1045,8 @@ export default {
             this._showTooltip(e);
           }
         }else{
-          e.changedTouches.unshift({ x: e.detail.x, y: e.detail.y - e.currentTarget.offsetTop });
+          e.changedTouches=[];
+          e.changedTouches.unshift({ x: e.detail.x - e.currentTarget.offsetLeft, y: e.detail.y - e.currentTarget.offsetTop });
           currentIndex = cfu.instance[cid].getCurrentDataIndex(e);
           legendIndex = cfu.instance[cid].getLegendDataIndex(e);
           cfu.instance[cid].touchLegend(e);
@@ -965,8 +1062,8 @@ export default {
       lastMoveTime=Date.now();
       if(cfu.option[cid].enableScroll === true){
         cfu.instance[cid].scrollStart(e);
-        this.emitMsg({name:'getTouchStart', params:{type:"touchStart", event:e.changedTouches[0], id:cid}});
       }
+      this.emitMsg({name:'getTouchStart', params:{type:"touchStart", event:e.changedTouches[0], id:cid}});
     },
     _touchMove(e) {
       let cid = this.cid
@@ -976,8 +1073,8 @@ export default {
       lastMoveTime = currMoveTime;
       if(cfu.option[cid].enableScroll === true){
         cfu.instance[cid].scroll(e);
-        this.emitMsg({name: 'getTouchMove', params: {type:"touchMove", event:e.changedTouches[0], id: cid}});
       }
+      this.emitMsg({name: 'getTouchMove', params: {type:"touchMove", event:e.changedTouches[0], id: cid}});
       if(this.ontap === true && cfu.option[cid].enableScroll === false && this.onmovetip === true){
         this._tap(e,true)
       }
@@ -986,8 +1083,8 @@ export default {
       let cid = this.cid
       if(cfu.option[cid].enableScroll === true){
         cfu.instance[cid].scrollEnd(e);
-        this.emitMsg({name:'getTouchEnd', params:{type:"touchEnd", event:e.changedTouches[0], id:cid}});
       }
+      this.emitMsg({name:'getTouchEnd', params:{type:"touchEnd", event:e.changedTouches[0], id:cid}});
       if(this.ontap === true && cfu.option[cid].enableScroll === false && this.onmovetip === true){
         this._tap(e,true)
       }
@@ -1004,12 +1101,15 @@ export default {
       if(this.echarts===true && this.mixinDatacomLoading===false){
         this.beforeInit()
       }
+    },
+    toJSON(){
+      return this
     }
   }
 };
 </script>
 
-<!-- #ifdef APP-PLUS || H5 -->
+<!-- #ifdef APP-VUE || H5 -->
 <script module="rdcharts" lang="renderjs">
 import uChartsRD from '../../js_sdk/u-charts/u-charts-v2.0.0.js';
 import cfu from '../../js_sdk/u-charts/config-ucharts.js';
@@ -1020,7 +1120,7 @@ var rootdom = null;
 
 function rdformatterAssign(args,formatter) {
   for (let key in args) {
-    if(typeof args[key] === 'object'){
+    if(args[key] !== null && typeof args[key] === 'object'){
       rdformatterAssign(args[key],formatter)
     }else if(key === 'format' && typeof args[key] === 'string'){
       args['formatter'] = formatter[args[key]] ? formatter[args[key]] : undefined;
@@ -1067,11 +1167,13 @@ export default {
           this.newEChart()
       }else{
         const script = document.createElement('script')
-        // #ifdef APP-PLUS
+        // #ifdef APP-VUE
         script.src = './uni_modules/qiun-data-charts/static/app-plus/echarts.min.js'
         // #endif
         // #ifdef H5
-        script.src = '/uni_modules/qiun-data-charts/static/h5/echarts.min.js'
+        const rooturl = window.location.origin 
+        const directory = instance.getDataset().directory
+        script.src = rooturl + directory + 'uni_modules/qiun-data-charts/static/h5/echarts.min.js'
         // #endif
         script.onload = this.newEChart
         document.head.appendChild(script)
@@ -1123,7 +1225,9 @@ export default {
       cfe.instance[cid].setOption(option, option.notMerge)
       cfe.instance[cid].on('finished', function(){
         that[cid].callMethod('emitMsg',{name:"complete",params:{type:"complete",complete:true,id:cid}})
-        cfe.instance[cid].off('finished')
+        if(cfe.instance[cid]){
+          cfe.instance[cid].off('finished')
+        }
       })
     },
     tooltipPosition(){
@@ -1155,6 +1259,8 @@ export default {
       let canvasdom = document.getElementById(cid)
       if(canvasdom && canvasdom.children[0]){
         cfu.option[cid].context = canvasdom.children[0].getContext("2d")
+        cfu.option[cid].context.restore();
+        cfu.option[cid].context.save();
         this.newUChart()
       }
     },
@@ -1174,7 +1280,11 @@ export default {
     },
     tooltipDefault(item, category, index, opts) {
       if (category) {
-        return category + ' ' + item.name + ':' + item.data;
+        let data = item.data
+        if(typeof item.data === "object"){
+          data = item.data.value
+        }
+        return category + ' ' + item.name + ':' + data;
       } else {
         if (item.properties !== undefined) {
           return item.properties.name;

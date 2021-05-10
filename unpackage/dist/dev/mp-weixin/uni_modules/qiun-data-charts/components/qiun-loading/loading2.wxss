@@ -9,7 +9,8 @@
           transform: rotate(10deg);
 }
 .container.loading2 .shape.data-v-e4cb3aec {
-  border-radius: 5px;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
 }
 .container.loading2.data-v-e4cb3aec{
   -webkit-animation: rotation 1s infinite;
@@ -19,7 +20,8 @@
   position: absolute;
   width: 10px;
   height: 10px;
-  border-radius: 1px;
+  -webkit-border-radius: 1px;
+          border-radius: 1px;
 }
 .container .shape.shape1.data-v-e4cb3aec {
   left: 0;

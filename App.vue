@@ -7,6 +7,13 @@
 			if (modelmes.search('iPhone X') != -1 || modelmes.search('iPhoneX')!=-1) {
 				this.globalData.isIphoneX = true;
 			}
+			let platform = res.platform.toLowerCase();
+			//android: 安卓, ios: IOS, devtools:PC
+			if (platform == 'android' || platform == 'devtools') {
+				_self.globalData.platform = 1;	
+			} else if(platform == 'ios' ){
+				_self.globalData.platform = 2;
+			}
 		},
 		onShow: function() {
 			console.log('App Show')

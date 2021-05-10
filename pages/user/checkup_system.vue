@@ -34,7 +34,10 @@
 					</view>
 				</view>
 				<view class="content_bottom">
-					<u-line-progress active-color="#51DEFF" :percent="line_percent1" :striped="true" :striped-active="true"></u-line-progress>
+					<view class="content_bottom_progress">
+						<u-line-progress active-color="#51DEFF" :percent="line_percent1" :show-percent="false" :striped="true" :striped-active="true"></u-line-progress>
+					</view>
+					<text class="u-font-20">{{line_percent1+'%'}}</text>
 				</view>
 			</view>
 			<view class="content">
@@ -49,7 +52,10 @@
 					</view>
 				</view>
 				<view class="content_bottom">
-					<u-line-progress active-color="#FF3F6A" :percent="line_percent2" :striped="true" :striped-active="true"></u-line-progress>
+					<view class="content_bottom_progress">
+						<u-line-progress active-color="#FF3F6A" :percent="line_percent2" :show-percent="false" :striped="true" :striped-active="true"></u-line-progress>
+					</view>
+					<text class="u-font-20">{{line_percent2+'%'}}</text>
 				</view>
 			</view>
 			<view class="content">
@@ -64,7 +70,10 @@
 					</view>
 				</view>
 				<view class="content_bottom">
-					<u-line-progress active-color="#51DEFF" :percent="line_percent3" :striped="true" :striped-active="true"></u-line-progress>
+					<view class="content_bottom_progress">
+						<u-line-progress active-color="#51DEFF" :percent="line_percent3" :show-percent="false" :striped="true" :striped-active="true"></u-line-progress>
+					</view>
+					<text class="u-font-20">{{line_percent3+'%'}}</text>
 				</view>
 			</view>
 			<view class="content">
@@ -79,7 +88,10 @@
 					</view>
 				</view>
 				<view class="content_bottom">
-					<u-line-progress active-color="#FF3F6A" :percent="line_percent4" :striped="true" :striped-active="true"></u-line-progress>
+					<view class="content_bottom_progress">
+						<u-line-progress active-color="#FF3F6A" :percent="line_percent4" :show-percent="false" :striped="true" :striped-active="true"></u-line-progress>
+					</view>
+					<text class="u-font-20">{{line_percent4+'%'}}</text>
 				</view>
 			</view>
 		</view>
@@ -123,7 +135,7 @@
 		mapState
 	} from 'vuex';
 	
-	import {getCheckUpList} from "@/api/user_view.js";
+	import {getCheckUpList, getUpgradeLevel} from "@/api/user_view.js";
 	export default {
 		data() {
 			return {
@@ -146,20 +158,26 @@
 				mask: true,
 				self_close: true,
 				user:'asdad',
-				line_percent1:0,
+				line_percent1: 0,
 				line_percent2:0,
 				line_percent3:0,
 				line_percent4:0,
 				circle_percent:0,
 				activeColor: '#FFFFFF',
-				userList:[]
+				userList:[],
+				hasUpgrade:false,
+				apply:0,
+				periodDate:''
 			}
 		},
 		onLoad() {
 			const res = uni.getStorageSync('wx_strategist_list');
 			console.log("res",res);
 			// this.title = this.userName;
+			
 			this.userList = JSON.parse(res);
+			
+			//this.userList = res;
 			console.log("userList: "+" "+ this.userList);
 			this.getDate(this.strategistId);
 			if(this.strategistId)
@@ -171,6 +189,18 @@
 			}
 		},
 		methods: {
+			format(data) {
+				var data1 = 0;
+				if(data >100)
+				{
+					data1 = 100;
+				}
+				else
+				{
+					data1 = Math.round(data);
+				}
+				return data1;
+			},
 			async getDate(index) {
 				
 				console.log('title',this.title);
@@ -179,37 +209,71 @@
 				// 本月交易次数百分比
 				this.month_trade_target = data.standard.month_tradingCount;
 				this.month_trade_now = data.this_month.trading_count;
-				this.line_percent1 = (this.month_trade_now/this.month_trade_target).toFixed(2)*100;
+				if(this.month_trade_now === undefined)
+				{
+					this.month_trade_now =0;
+				}
+				
+				var percent1 = 0;
+				var percent2 = 0;
+				var percent3 = 0;
+				var percent4 = 0;
+				
+				percent1 = this.month_trade_now/this.month_trade_target * 100;
+				this.line_percent1 = this.format(percent1);
+				console.log("now: ",this.month_trade_now);
+				console.log('target',this.month_trade_target);
+				console.log("line1",this.line_percent1);
+				
+				
 				//本月收益率百分比
 				this.month_profit_target = data.standard.month_yield;
+				
 				this.month_profit_now =data.this_month.yield;
-				if(this.month_profit_now < 0)
+				
+				if(  isNaN(this.month_profit_now))
+				{
+					this.month_profit_now = 0;
+				}
+				
+				if(this.month_profit_now <= 0)
 				{
 					this.line_percent2 = 0;
 				}
 				else{
-					this.line_percent2 = (this.month_profit_now / this.month_profit_target).toFixed(2)*100;
+					percent2 = this.month_profit_now / this.month_profit_target * 100;
+					this.line_percent2 = this.format(percent2);
 				}
 				
 				//本期交易次数百分比
 				this.threeMonth_trade_target = data.standard.period_tradingCount;
 				this.threeMonth_trade_now = data.period.trade_count;
-				this.line_percent3 = (this.threeMonth_trade_now / this.threeMonth_trade_target).toFixed(2)*100;
+				percent3 = this.threeMonth_trade_now / this.threeMonth_trade_target * 100;
+				this.line_percent3 = this.format(percent3);
 				
 				//本期收益率百分比
 				this.threeMonth_profit_target = data.standard.period_yield;
 				this.threeMonth_profit_now = data.period.yield;
-				if(this.threeMonth_profit_now < 0)
+				if(this.threeMonth_profit_now <= 0)
 				{
 					this.line_percent4 = 0;
 				}
 				else{
-					this.line_percent4 = (this.threeMonth_profit_now / this.threeMonth_profit_target).toFixed(2)*100;
+					percent4 = this.threeMonth_profit_now / this.threeMonth_profit_target * 100;
+					this.line_percent4 =this.format(percent4);
 				}
 				
 				//本期最大回撤
 				this.max_retracement = data.period.drawdown.drawdown_rate;
 				this.circle_percent = this.max_retracement;
+				
+				//是否能够申请提升等级
+				if(data.period.results == 1)
+				{
+					this.hasUpgrade = true;
+				}
+				this.apply = data.period.apply;
+				this.periodDate = data.period.date_range;
 			},
 			tagClick(index) {
 				console.log("index",index);
@@ -218,10 +282,30 @@
 				this.$refs.uDropdown.close();
 				this.title = this.userList[index];
 			},
-			upGrade() {
-				this.$refs.uToast.show({
-					title:'暂未开通升级申请!'
-				})
+			async upGrade() {
+				// const res =await getUpgradeLevel(this.periodDate);
+				// console.log("resssssssss"+ res.msg);
+				// this.$refs.uToast.show({
+				// 	title: res.msg
+				// })
+				if(this.hasUpgrade && this.apply == 0)
+				{
+					const res = getUpgradeLevel(this.periodDate);
+					this.$refs.uToast.show({
+						title: res.msg
+					})
+				}
+				else if(this.hasUpgrade && this.apply == 1)
+				{
+					this.$refs.uToast.show({
+						title:'您已经申请过了，请等待审核!!!'
+					})
+				}
+				else{
+					this.$refs.uToast.show({
+						title:'没有申请权限，请继续努力!!!'
+					})
+				}
 			}
 		},
 		
@@ -334,11 +418,19 @@
 				color: rgba(255,255,255,0.7);
 			}
 			.content_bottom{
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
 				width: 80%;
 				margin: 10rpx;
 				align-items: center;
 				height: 50%;
-			
+				.content_bottom_progress{
+					height: 30rpx;
+					align-items: center;
+					width: 85%;
+				}
 			}
 		}
 	}

@@ -121,6 +121,7 @@ scroll-view {
   background: #333;
 }
 #root-view  .my-black-mask {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#333), to(rgba(255, 255, 255, 0.1))), -webkit-gradient(linear, left bottom, left top, from(#333), to(rgba(255, 255, 255, 0.1)));
   background-image: -webkit-linear-gradient(top, #333, rgba(255, 255, 255, 0.1)), -webkit-linear-gradient(bottom, #333, rgba(255, 255, 255, 0.1));
   background-image: linear-gradient(180deg, #333, rgba(255, 255, 255, 0.1)), linear-gradient(0deg, #333, rgba(255, 255, 255, 0.1));
 }
@@ -128,6 +129,7 @@ scroll-view {
   background-color: rgba(255, 255, 255, 0.1);
 }
 #root-view  .my-datepicker-mask {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#333), to(rgba(255, 255, 255, 0.1))), -webkit-gradient(linear, left bottom, left top, from(#333), to(rgba(255, 255, 255, 0.1)));
   background-image: -webkit-linear-gradient(top, #333, rgba(255, 255, 255, 0.1)), -webkit-linear-gradient(bottom, #333, rgba(255, 255, 255, 0.1));
   background-image: linear-gradient(180deg, #333, rgba(255, 255, 255, 0.1)), linear-gradient(0deg, #333, rgba(255, 255, 255, 0.1));
 }

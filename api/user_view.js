@@ -56,3 +56,13 @@ export function getCheckUpList(strategistId){
 	});
 	return resp;
 }
+
+export function getUpgradeLevel(period){
+	const url = getApp().globalData.serverUrl+"/strategys/profit/upgrade_level";
+	const token = uni.getStorageSync('wx_login_token');
+	const resp  = http.request(url, {
+		token: token,
+		period: period,
+	});
+	return resp;
+}

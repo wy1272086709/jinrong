@@ -30,7 +30,7 @@
 			<!-- 总金额 -->
 			<view class="flex-1">
 				<view class="total_amount_text">
-					<text class="">总金额(元)</text>
+					<text class="">总金额($)</text>
 				</view>
 				<view class="total_amount_number vertical-center-css ">
 					<text class="white-number-color large-text">
@@ -65,7 +65,7 @@
 					<text class="">开仓价</text>
 				</view>
 				<view class="white-number-color vertical-center-css">
-					<text class="large-text">{{item.positions.short_open_price!==undefined && item.positions.short_open_price!==0?item.positions.short_open_price:(item.positions.long_open_price!==undefined && item.positions.long_open_price!==0 ? item.positions.long_open_price: '- -')}}</text>
+					<text class="large-text">{{item.positions.short_open_price!==undefined && item.positions.short_open_price!==0?item.positions.short_open_price.toFixed(2):(item.positions.long_open_price!==undefined && item.positions.long_open_price!==0 ? item.positions.long_open_price.toFixed(2): '- -')}}</text>
 				</view>
 			</view>
 			<view class=" flex-1">
@@ -105,8 +105,8 @@
 						<text class="">累计收益率</text>
 					</view>
 					<view class="cumulative_rate_number">
-						<text class="light-green-number-color" :style="item.cumulative_rate>0? 'color:#24F5FD;': 'color:#ED4066;'">
-							{{ item.cumulative_rate+'%' }}
+						<text class="light-green-number-color" :style="item.yield_strategy.total>0? 'color:#24F5FD;': 'color:#ED4066;'">
+							{{ item.yield_strategy.total+'%' }}
 						</text>
 					</view>
 				</view>
@@ -115,8 +115,8 @@
 						<text>近一周</text>
 					</view>
 					<view class="cumulative_rate_number">
-						<text class="light-green-number-color" :style="item.nearly_week>0? 'color:#24F5FD': 'color:#ED4066;'">
-							{{ item.nearly_week+'%' }}
+						<text class="light-green-number-color" :style="item.yield_strategy.week>0? 'color:#24F5FD': 'color:#ED4066;'">
+							{{ item.yield_strategy.week+'%' }}
 						</text>
 					</view>
 				</view>
@@ -125,8 +125,8 @@
 						<text>近一月</text>
 					</view>
 					<view class="cumulative_rate_number">
-						<text class="light-green-number-color" :style="item.nearly_month>0? 'color:#24F5FD;': 'color:#ED4066;'">
-							{{ item.nearly_month+'%' }}
+						<text class="light-green-number-color" :style="item.yield_strategy.month>0? 'color:#24F5FD;': 'color:#ED4066;'">
+							{{ item.yield_strategy.month+'%' }}
 						</text>
 					</view>
 				</view>

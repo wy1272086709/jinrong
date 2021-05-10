@@ -61,7 +61,8 @@
 }
 .common-btn {
   background: rgba(255, 255, 255, 0.2);
-  border-radius: 8rpx;
+  -webkit-border-radius: 8rpx;
+          border-radius: 8rpx;
 }
 .mini-font {
   font-size: 24rpx;
@@ -143,7 +144,8 @@
   margin: 10rpx;
   background: #ff9933;
   font-size: 30rpx;
-  border-radius: 8rpx;
+  -webkit-border-radius: 8rpx;
+          border-radius: 8rpx;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
           justify-content: center;

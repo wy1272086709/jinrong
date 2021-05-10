@@ -95,7 +95,8 @@ page{
   border-bottom: 2px solid rgba(255, 255, 255, 0.2);
   width: 100%;
   height: 104rpx;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   -webkit-box-align: center;
   -webkit-align-items: center;
           align-items: center;

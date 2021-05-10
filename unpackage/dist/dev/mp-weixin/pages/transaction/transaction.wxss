@@ -274,7 +274,8 @@ page{
   margin-top: 10px;
   /*margin-bottom: 10px;*/
   height: 74rpx;
-  border-radius: 8rpx;
+  -webkit-border-radius: 8rpx;
+          border-radius: 8rpx;
   background-color: rgba(255, 255, 255, 0.1);
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
@@ -308,7 +309,8 @@ page{
   height: 50rpx;
   width: 140rpx;
   border: 1px solid #a1a1a1;
-  border-radius: 8rpx;
+  -webkit-border-radius: 8rpx;
+          border-radius: 8rpx;
   margin-right: 10rpx;
   display: -webkit-box;
   display: -webkit-flex;
@@ -372,7 +374,8 @@ page{
   height: 300rpx;
   margin: 20rpx;
   background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 8rpx;
+  -webkit-border-radius: 8rpx;
+          border-radius: 8rpx;
   margin-top: 110rpx;
 }
 .cangwei-header .cangwei-title {
@@ -417,7 +420,8 @@ page{
   -webkit-box-pack: center;
   -webkit-justify-content: center;
           justify-content: center;
-  border-radius: 8rpx;
+  -webkit-border-radius: 8rpx;
+          border-radius: 8rpx;
   height: 30rpx;
   width: 60rpx;
   color: #2979ff;
@@ -619,7 +623,8 @@ page{
   -webkit-flex-direction: row;
           flex-direction: row;
   border: 1px solid #24F5FD;
-  border-radius: 8rpx;
+  -webkit-border-radius: 8rpx;
+          border-radius: 8rpx;
   color: #24F5FD;
   font-weight: bold;
   width: 260rpx;
@@ -636,7 +641,8 @@ page{
   -webkit-flex-direction: row;
           flex-direction: row;
   border: 1px solid #FB3F69;
-  border-radius: 8rpx;
+  -webkit-border-radius: 8rpx;
+          border-radius: 8rpx;
   width: 260rpx;
   color: #FB3F69;
   height: 70rpx;

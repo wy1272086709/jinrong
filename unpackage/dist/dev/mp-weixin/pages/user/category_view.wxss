@@ -89,7 +89,8 @@
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   height: 52px;
   background-color: #333333;
   position: fixed;

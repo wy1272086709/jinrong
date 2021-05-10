@@ -39,7 +39,8 @@
   -webkit-flex-direction: column;
           flex-direction: column;
   /*border: 1px solid #FFFFFF;*/
-  border-radius: 20rpx;
+  -webkit-border-radius: 20rpx;
+          border-radius: 20rpx;
   margin-bottom: 27rpx;
   margin-top: 27rpx;
 }
@@ -395,8 +396,10 @@
   width: 100rpx;
   height: 44rpx;
   right: 0rpx;
-  border-bottom-left-radius: 20rpx;
-  border-top-right-radius: 20rpx;
+  -webkit-border-bottom-left-radius: 20rpx;
+          border-bottom-left-radius: 20rpx;
+  -webkit-border-top-right-radius: 20rpx;
+          border-top-right-radius: 20rpx;
   color: #FFFFFF;
   font-size: 24rpx;
 }

@@ -1,9 +1,0 @@
-{
-  "navigationBarTitleText": "交易详情",
-  "enablePullDownRefresh": false,
-  "usingComponents": {
-    "u-sticky": "/uview-ui/components/u-sticky/u-sticky",
-    "u-tabs": "/uview-ui/components/u-tabs/u-tabs",
-    "category-component-item": "/common/category_component_item"
-  }
-}

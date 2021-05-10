@@ -98,19 +98,19 @@ var components
 try {
   components = {
     uDropdown: function() {
-      return __webpack_require__.e(/*! import() | uview-ui/components/u-dropdown/u-dropdown */ "uview-ui/components/u-dropdown/u-dropdown").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-dropdown/u-dropdown.vue */ 201))
+      return __webpack_require__.e(/*! import() | uview-ui/components/u-dropdown/u-dropdown */ "uview-ui/components/u-dropdown/u-dropdown").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-dropdown/u-dropdown.vue */ 198))
     },
     uDropdownItem: function() {
-      return __webpack_require__.e(/*! import() | uview-ui/components/u-dropdown-item/u-dropdown-item */ "uview-ui/components/u-dropdown-item/u-dropdown-item").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-dropdown-item/u-dropdown-item.vue */ 208))
+      return __webpack_require__.e(/*! import() | uview-ui/components/u-dropdown-item/u-dropdown-item */ "uview-ui/components/u-dropdown-item/u-dropdown-item").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-dropdown-item/u-dropdown-item.vue */ 205))
     },
     uLineProgress: function() {
-      return __webpack_require__.e(/*! import() | uview-ui/components/u-line-progress/u-line-progress */ "uview-ui/components/u-line-progress/u-line-progress").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-line-progress/u-line-progress.vue */ 215))
+      return __webpack_require__.e(/*! import() | uview-ui/components/u-line-progress/u-line-progress */ "uview-ui/components/u-line-progress/u-line-progress").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-line-progress/u-line-progress.vue */ 212))
     },
     uCircleProgress: function() {
-      return __webpack_require__.e(/*! import() | uview-ui/components/u-circle-progress/u-circle-progress */ "uview-ui/components/u-circle-progress/u-circle-progress").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-circle-progress/u-circle-progress.vue */ 222))
+      return __webpack_require__.e(/*! import() | uview-ui/components/u-circle-progress/u-circle-progress */ "uview-ui/components/u-circle-progress/u-circle-progress").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-circle-progress/u-circle-progress.vue */ 219))
     },
     uToast: function() {
-      return __webpack_require__.e(/*! import() | uview-ui/components/u-toast/u-toast */ "uview-ui/components/u-toast/u-toast").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-toast/u-toast.vue */ 229))
+      return __webpack_require__.e(/*! import() | uview-ui/components/u-toast/u-toast */ "uview-ui/components/u-toast/u-toast").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-toast/u-toast.vue */ 226))
     }
   }
 } catch (e) {
@@ -288,6 +288,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 var _vuex = __webpack_require__(/*! vuex */ 12);
 
 
@@ -321,14 +333,20 @@ var _user_view = __webpack_require__(/*! @/api/user_view.js */ 65);function _int
       line_percent4: 0,
       circle_percent: 0,
       activeColor: '#FFFFFF',
-      userList: [] };
+      userList: [],
+      hasUpgrade: false,
+      apply: 0,
+      periodDate: '' };
 
   },
   onLoad: function onLoad() {
     var res = uni.getStorageSync('wx_strategist_list');
     console.log("res", res);
     // this.title = this.userName;
+
     this.userList = JSON.parse(res);
+
+    //this.userList = res;
     console.log("userList: " + " " + this.userList);
     this.getDate(this.strategistId);
     if (this.strategistId)
@@ -340,7 +358,19 @@ var _user_view = __webpack_require__(/*! @/api/user_view.js */ 65);function _int
     }
   },
   methods: {
-    getDate: function getDate(index) {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var data;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
+    format: function format(data) {
+      var data1 = 0;
+      if (data > 100)
+      {
+        data1 = 100;
+      } else
+
+      {
+        data1 = Math.round(data);
+      }
+      return data1;
+    },
+    getDate: function getDate(index) {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var data, percent1, percent2, percent3, percent4;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
 
                 console.log('title', _this.title);_context.next = 3;return (
                   (0, _user_view.getCheckUpList)(index));case 3:data = _context.sent;
@@ -348,37 +378,71 @@ var _user_view = __webpack_require__(/*! @/api/user_view.js */ 65);function _int
                 // 本月交易次数百分比
                 _this.month_trade_target = data.standard.month_tradingCount;
                 _this.month_trade_now = data.this_month.trading_count;
-                _this.line_percent1 = (_this.month_trade_now / _this.month_trade_target).toFixed(2) * 100;
+                if (_this.month_trade_now === undefined)
+                {
+                  _this.month_trade_now = 0;
+                }
+
+                percent1 = 0;
+                percent2 = 0;
+                percent3 = 0;
+                percent4 = 0;
+
+                percent1 = _this.month_trade_now / _this.month_trade_target * 100;
+                _this.line_percent1 = _this.format(percent1);
+                console.log("now: ", _this.month_trade_now);
+                console.log('target', _this.month_trade_target);
+                console.log("line1", _this.line_percent1);
+
+
                 //本月收益率百分比
                 _this.month_profit_target = data.standard.month_yield;
+
                 _this.month_profit_now = data.this_month.yield;
-                if (_this.month_profit_now < 0)
+
+                if (isNaN(_this.month_profit_now))
+                {
+                  _this.month_profit_now = 0;
+                }
+
+                if (_this.month_profit_now <= 0)
                 {
                   _this.line_percent2 = 0;
                 } else
                 {
-                  _this.line_percent2 = (_this.month_profit_now / _this.month_profit_target).toFixed(2) * 100;
+                  percent2 = _this.month_profit_now / _this.month_profit_target * 100;
+                  _this.line_percent2 = _this.format(percent2);
                 }
 
                 //本期交易次数百分比
                 _this.threeMonth_trade_target = data.standard.period_tradingCount;
                 _this.threeMonth_trade_now = data.period.trade_count;
-                _this.line_percent3 = (_this.threeMonth_trade_now / _this.threeMonth_trade_target).toFixed(2) * 100;
+                percent3 = _this.threeMonth_trade_now / _this.threeMonth_trade_target * 100;
+                _this.line_percent3 = _this.format(percent3);
 
                 //本期收益率百分比
                 _this.threeMonth_profit_target = data.standard.period_yield;
                 _this.threeMonth_profit_now = data.period.yield;
-                if (_this.threeMonth_profit_now < 0)
+                if (_this.threeMonth_profit_now <= 0)
                 {
                   _this.line_percent4 = 0;
                 } else
                 {
-                  _this.line_percent4 = (_this.threeMonth_profit_now / _this.threeMonth_profit_target).toFixed(2) * 100;
+                  percent4 = _this.threeMonth_profit_now / _this.threeMonth_profit_target * 100;
+                  _this.line_percent4 = _this.format(percent4);
                 }
 
                 //本期最大回撤
                 _this.max_retracement = data.period.drawdown.drawdown_rate;
-                _this.circle_percent = _this.max_retracement;case 19:case "end":return _context.stop();}}}, _callee);}))();
+                _this.circle_percent = _this.max_retracement;
+
+                //是否能够申请提升等级
+                if (data.period.results == 1)
+                {
+                  _this.hasUpgrade = true;
+                }
+                _this.apply = data.period.apply;
+                _this.periodDate = data.period.date_range;case 33:case "end":return _context.stop();}}}, _callee);}))();
     },
     tagClick: function tagClick(index) {
       console.log("index", index);
@@ -387,10 +451,30 @@ var _user_view = __webpack_require__(/*! @/api/user_view.js */ 65);function _int
       this.$refs.uDropdown.close();
       this.title = this.userList[index];
     },
-    upGrade: function upGrade() {
-      this.$refs.uToast.show({
-        title: '暂未开通升级申请!' });
+    upGrade: function upGrade() {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var res;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:
+                // const res =await getUpgradeLevel(this.periodDate);
+                // console.log("resssssssss"+ res.msg);
+                // this.$refs.uToast.show({
+                // 	title: res.msg
+                // })
+                if (_this2.hasUpgrade && _this2.apply == 0)
+                {
+                  res = (0, _user_view.getUpgradeLevel)(_this2.periodDate);
+                  _this2.$refs.uToast.show({
+                    title: res.msg });
 
+                } else
+                if (_this2.hasUpgrade && _this2.apply == 1)
+                {
+                  _this2.$refs.uToast.show({
+                    title: '您已经申请过了，请等待审核!!!' });
+
+                } else
+                {
+                  _this2.$refs.uToast.show({
+                    title: '没有申请权限，请继续努力!!!' });
+
+                }case 1:case "end":return _context2.stop();}}}, _callee2);}))();
     } },
 
 

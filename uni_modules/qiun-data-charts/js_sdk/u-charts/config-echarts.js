@@ -104,7 +104,7 @@ module.exports = {
 				"lineStyle": {
 					"color": '#CCCCCC'
 				}
-			},
+			}
 		},
 		"seriesTemplate": {
 			"name": '',
@@ -112,7 +112,7 @@ module.exports = {
 			"data": [],
 			"barwidth": 20,
 			"label": {
-				"show": true,
+				"show": false,
         "color": "#666666",
 				"position": 'top',
 			},

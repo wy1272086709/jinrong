@@ -2,12 +2,14 @@
 .easy-select.data-v-e75fd888 {
 	position: relative;
 	/*border: 1px solid #dcdfe6;*/
-	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	        border-radius: 4px;
 	/* font-size: 28rpx; */
 	color: #606266;
 	outline: none;
 	text-align: left;
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 	
 	height: 30px;
 }
@@ -19,13 +21,15 @@
 	text-overflow: ellipsis;
 	height: 100% !important;
 	width: 100%;
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 	padding-left: 20rpx;
 	min-height: 100% !important;
 }
 .easy-select .easy-select-suffix.data-v-e75fd888 {
 	position: absolute;
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 	height: 100%;
 	right: 5px;
 	top: 0;
@@ -55,10 +59,13 @@
 	padding: 6px 0;
 	margin-top: 54rpx;
 	border: 1px solid rgba(255,255,255,0.2);
-	border-radius: 10rpx;
+	-webkit-border-radius: 10rpx;
+	        border-radius: 10rpx;
 	background-color: #333;
-	box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
-	box-sizing: border-box;
+	-webkit-box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
+	        box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 	-webkit-transform-origin: center top;
 	        transform-origin: center top;
 	z-index: 2238;
@@ -74,7 +81,8 @@
 	height: 33px;
 	text-align: left;
 	line-height: 33px;
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 }
 .easy-select .active.data-v-e75fd888 {
 	background-color: #333

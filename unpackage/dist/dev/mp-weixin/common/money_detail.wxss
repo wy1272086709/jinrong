@@ -42,7 +42,8 @@
   -webkit-flex-direction: column;
           flex-direction: column;
   /*margin-top:20px;*/
-  border-radius: 40rpx;
+  -webkit-border-radius: 40rpx;
+          border-radius: 40rpx;
   padding-top: 20rpx;
   /*padding-bottom:20px;*/
 }
@@ -118,7 +119,8 @@
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
           flex-direction: column;
-  border-radius: 40rpx;
+  -webkit-border-radius: 40rpx;
+          border-radius: 40rpx;
   padding-bottom: 20px;
 }
 .root-view-bottom #root-view-header {

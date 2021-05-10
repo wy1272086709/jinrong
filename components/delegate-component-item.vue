@@ -167,11 +167,14 @@
 			}
 		},
 		created() {
-			console.log('hasSlot:',this.hasSlot)
+			console.log('hasSlot:',this.hasSlot);
+			this.info = this.delegateInfo.info;
+			console.log("info",this.info);
 		},
 		data() {
 			return {
-				floatProfit:""
+				floatProfit:"",
+				info: 0
 			};
 		},
 		methods: {
@@ -183,6 +186,8 @@
 				'COMPLETE':"条件完成",
 				'INVALID' : "条件无效"
 				}
+				// this.info = parseFloat(this.delegateInfo.info);
+				// console.log("info2",this.info);
 				return map[status] ?map[status]: ''
 			},
 			getFloatProfit(item){
@@ -195,21 +200,21 @@
 				{
 					if(parseFloat(this.delegateInfo.prof_price) > 0)
 					{
-						this.floatProfit = (parseFloat(this.delegateInfo.open_price) - parseFloat(this.delegateInfo.prof_price)) *parseFloat(volume1) *parseFloat(this.delegateInfo.info);
-						return "(预估盈利"+ Math.abs(parseFloat(this.floatProfit).toFixed(2))  + ")";
+						const floatProfit = (parseFloat(this.delegateInfo.open_price) - parseFloat(this.delegateInfo.prof_price)) *parseFloat(volume1) *this.info;
+						return "(预估盈利"+ Math.abs(parseFloat(floatProfit).toFixed(2))  + ")";
 					}
 					else{
-						return "(预估盈利"+ 0  + ")";
+						return "(预估盈利 0)";
 					}
 				}
 				else{
 					if(parseFloat(this.delegateInfo.loss_price) > 0)
 					{
-						this.floatProfit = (parseFloat(this.delegateInfo.open_price) - parseFloat(this.delegateInfo.loss_price))*parseFloat(volume1) *parseFloat(this.delegateInfo.info);
-						return "(预估亏损"+ Math.abs(parseFloat(this.floatProfit).toFixed(2))  + ")";
+						const floatProfit = (parseFloat(this.delegateInfo.open_price) - parseFloat(this.delegateInfo.loss_price))*parseFloat(volume1) *this.info;
+						return "(预估亏损"+ Math.abs(parseFloat(floatProfit).toFixed(2))  + ")";
 					}
 					else{
-						return "(预估盈利"+ 0  + ")";
+						return "(预估亏损 0)";
 					}
 				}
 				

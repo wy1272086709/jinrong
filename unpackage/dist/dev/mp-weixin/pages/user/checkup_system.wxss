@@ -45,7 +45,8 @@ page{
 .u-width {
   width: 40%;
   background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 8rpx;
+  -webkit-border-radius: 8rpx;
+          border-radius: 8rpx;
   margin-left: 20rpx;
   margin-right: 20rpx;
 }
@@ -75,7 +76,8 @@ page{
   border: 1px solid #b2b2b2;
   color: #b2b2b2;
   background-color: #333;
-  border-radius: 8rpx;
+  -webkit-border-radius: 8rpx;
+          border-radius: 8rpx;
   height: 80rpx;
   display: -webkit-box;
   display: -webkit-flex;
@@ -93,7 +95,8 @@ page{
   width: 40%;
   height: 60rpx;
   background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 8rpx;
+  -webkit-border-radius: 8rpx;
+          border-radius: 8rpx;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -121,7 +124,8 @@ page{
   margin-top: 20rpx;
   margin-bottom: 10rpx;
   height: 160rpx;
-  border-radius: 8rpx;
+  -webkit-border-radius: 8rpx;
+          border-radius: 8rpx;
   background-color: rgba(255, 255, 255, 0.1);
   display: -webkit-box;
   display: -webkit-flex;
@@ -155,12 +159,30 @@ page{
   color: rgba(255, 255, 255, 0.7);
 }
 .body .content .content_bottom {
-  width: 80%;
-  margin: 10rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
   -webkit-box-align: center;
   -webkit-align-items: center;
           align-items: center;
+  width: 80%;
+  margin: 10rpx;
+  align-items: center;
   height: 50%;
+}
+.body .content .content_bottom .content_bottom_progress {
+  height: 30rpx;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  width: 85%;
 }
 .foot {
   display: -webkit-box;
@@ -188,7 +210,8 @@ page{
   -webkit-box-align: center;
   -webkit-align-items: center;
           align-items: center;
-  border-radius: 8rpx;
+  -webkit-border-radius: 8rpx;
+          border-radius: 8rpx;
 }
 .u-progress-content {
   display: -webkit-box;
