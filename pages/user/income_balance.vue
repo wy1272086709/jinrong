@@ -1,5 +1,5 @@
 <template>
-	<view  class="list global-css">
+	<view  :class="['global-css', isIphoneX?'list': '']">
 		<view id="header-view">
 			<u-row>
 				
@@ -119,6 +119,7 @@
 				billList: [
 					
 				],
+				isIphoneX: false,
 				// 默认人工
 				current: 0,
 				billPeriodList: [],
@@ -132,6 +133,7 @@
 		onLoad() {
 			const info = uni.getSystemInfoSync();
 			const isIphoneX = getApp().globalData.isIphoneX;
+			this.isIphoneX = isIphoneX
 			this.scrollHeight = info.windowHeight -uni.upx2px(160) - (isIphoneX ? uni.upx2px(68): 0)+'px';
 		},
 		methods: {
@@ -198,6 +200,7 @@
 	.global-css {
 		background-color: $kp-bg-color;
 		color: $kp-font-color;
+		height: 100vh;
 	}
 	scroll-view ::-webkit-scrollbar {
 		display: none;
@@ -365,7 +368,7 @@
 }
 .list {
 	padding-bottom: 0;
-	padding-bottom: constant(safe-area-inset-bottom);  
-	padding-bottom: env(safe-area-inset-bottom);  
+	padding-bottom: 68rpx;
+	padding-bottom: 68rpx;
 }
 </style>

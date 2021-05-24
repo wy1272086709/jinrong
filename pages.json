@@ -49,9 +49,7 @@
             "path" : "pages/user/overall_stat",
             "style" : {
                 "navigationBarTitleText": "总收益统计",
-                "enablePullDownRefresh": false,
-				"navigationStyle":"custom",
-				"disableScroll":true
+                "enablePullDownRefresh": false
             }
         }
         ,{
@@ -155,7 +153,7 @@
 	        "selectedIconPath": "static/image/overall_view/strategy_active.png",
 	        "text": "策略"
 	    },{
-			"pagePath": "pages/transaction/list",
+			"pagePath": "pages/transaction/transaction",
 			"iconPath": "static/image/overall_view/trade.png",
 			"selectedIconPath": "static/image/overall_view/trade_avtive.png",
 			"text": "交易"

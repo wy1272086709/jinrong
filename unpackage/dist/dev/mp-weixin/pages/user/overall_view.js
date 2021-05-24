@@ -96,13 +96,13 @@ var components
 try {
   components = {
     uLine: function() {
-      return __webpack_require__.e(/*! import() | uview-ui/components/u-line/u-line */ "uview-ui/components/u-line/u-line").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-line/u-line.vue */ 184))
+      return __webpack_require__.e(/*! import() | uview-ui/components/u-line/u-line */ "uview-ui/components/u-line/u-line").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-line/u-line.vue */ 189))
     },
     uniDrawer: function() {
-      return __webpack_require__.e(/*! import() | components/uni-drawer/uni-drawer */ "components/uni-drawer/uni-drawer").then(__webpack_require__.bind(null, /*! @/components/uni-drawer/uni-drawer.vue */ 191))
+      return __webpack_require__.e(/*! import() | components/uni-drawer/uni-drawer */ "components/uni-drawer/uni-drawer").then(__webpack_require__.bind(null, /*! @/components/uni-drawer/uni-drawer.vue */ 196))
     },
     uModal: function() {
-      return __webpack_require__.e(/*! import() | uview-ui/components/u-modal/u-modal */ "uview-ui/components/u-modal/u-modal").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-modal/u-modal.vue */ 177))
+      return __webpack_require__.e(/*! import() | uview-ui/components/u-modal/u-modal */ "uview-ui/components/u-modal/u-modal").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-modal/u-modal.vue */ 182))
     }
   }
 } catch (e) {
@@ -413,6 +413,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
+
+
 var _vuex = __webpack_require__(/*! vuex */ 12);
 
 
@@ -440,26 +447,18 @@ var statData = {};var _default =
     console.log('onShow ....');
     this.pageNo = 1;
     this.getCategorySumStats();
-    // 半个小时的缓存时间
-    //let cacheRes = this.cache('ovallRes', null);
-    // 未过期
-    //if (cacheRes) {
-    /*	let res = JSON.parse(cacheRes);
-    	this.overall_info = res.overall;
-    	let list = res.category;
-    	for(let j = 0;j<list.length;j++) {
-    		list[j].isOpenEyes = 1;
-    	}
-    	this.category_list = list;
-    } else {*/
-    //this.getCategorySumStats();
-    //}
   },
   onHide: function onHide() {
 
   },
   computed: _objectSpread(_objectSpread({},
-  (0, _vuex.mapState)(['hasLogin', 'userName', 'strategistId'])), {}, {
+  (0, _vuex.mapState)(['hasLogin', 'strategistId'])), {}, {
+    userName: function userName() {
+      if (this.$store.state && this.$store.state.userName) {
+        return this.$store.state.userName;
+      }
+      return uni.getStorageSync('wx_login_username');
+    },
     iconSrc: function iconSrc() {
       return this.isOpenEyes ? '../../static/image/overall_view/open-eyes.png' : '../../static/image/overall_view/closeeye.png';
     },
@@ -498,6 +497,7 @@ var statData = {};var _default =
       initialCapital: 0.0,
       userList: [],
       strategyData: [],
+      userListHeight: '',
       scrollHeight: '',
       status: 'loadmore',
       username: "",
@@ -543,11 +543,6 @@ var statData = {};var _default =
         duration: 100 });
 
     }
-    //const result = getStrategyGroupList(this.pageNo, 10);
-    //this.totalpage = result.totalpage;
-    // const name = uni.getStorageSync("wx_login_username");
-    // this.username = name + ", 欢迎使用鲲鹏资管管理系统";
-
     var str = uni.getStorageSync('wx_strategist_list');
     this.userList = str ? JSON.parse(str) : [];
     var systemInfo = uni.getSystemInfoSync();
@@ -555,8 +550,8 @@ var statData = {};var _default =
     console.log('h' + h);
     this.marginTop = uni.upx2px(48) + 44 + systemInfo.statusBarHeight - 10 + 'px';
     this.scrollHeight = h - uni.upx2px(48) - 44 + 10 - systemInfo.statusBarHeight;
+    this.userListHeight = h - this.lineHeight - 30 - 26 + 'px';
     console.log('userList', this.userList);
-    //this.getCategorySumStats();
   },
   methods: {
     gotoStrategyGroupDetail: function gotoStrategyGroupDetail(strategy) {
@@ -567,8 +562,10 @@ var statData = {};var _default =
     },
     setIosBackground: function setIosBackground() {
       uni.setBackgroundColor({
-        backgroundColorBottom: "#FFFFFF" // 底部窗口的背景色为绿
-      });
+        backgroundColorBottom: "#333333", // 底部窗口的背景色为绿
+        backgroundColorTop: "#333333",
+        backgroundColor: "#333333" });
+
     },
     showUserList: function showUserList() {
       var _self = this;
@@ -579,7 +576,6 @@ var statData = {};var _default =
           _self.showDrawer('showLeft');
         } });
 
-      //this.visible = true;
     },
     confirm: function confirm(e) {
       console.log('confirm', e);

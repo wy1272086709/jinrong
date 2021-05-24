@@ -21,7 +21,7 @@ _vue.default.use(_uviewUi.default);
 
 //重写console.log方法，判断是否开启日志调试模式，否则就不输出
 console.log = function (oriLogFunc) {
-  var debug = true;
+  var debug = false;
   return function (str) {
     if (debug) {//判断配置文件是否开启日志调试
       var args = arguments;
@@ -116,6 +116,14 @@ __webpack_require__.r(__webpack_exports__);
     var modelmes = res.model;
     if (modelmes.search('iPhone X') != -1 || modelmes.search('iPhoneX') != -1) {
       this.globalData.isIphoneX = true;
+    }
+    var platform = res.platform.toLowerCase();
+    var _self = this;
+    //android: 安卓, ios: IOS, devtools:PC
+    if (platform == 'android' || platform == 'devtools') {
+      _self.globalData.platform = 1;
+    } else if (platform == 'ios') {
+      _self.globalData.platform = 2;
     }
   },
   onShow: function onShow() {

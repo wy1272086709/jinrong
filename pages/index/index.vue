@@ -15,10 +15,28 @@
 			}
 		},
 		onLoad() {
-
+			this.test()
 		},
 		methods: {
-
+			async test() {
+				var p1 = Promise.resolve(3).catch(function(err) {
+				      return err;
+				    });
+				    var p2 = Promise.reject(2).catch(function(err) {
+						throw "hahaha";
+				      return 5
+				    }).catch(err => {
+						return err
+					});
+				    var p3 = new Promise((resolve, reject) => {
+				      setTimeout(resolve, 100, "foo");
+				    }).catch(function(err) {
+				      return err;
+				    }); 
+				    
+				    let values =  await Promise.all([p1, p2, p3])
+				    console.log(values); // [3, 2, "foo"]
+			}
 		}
 	}
 </script>

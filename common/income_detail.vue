@@ -10,27 +10,27 @@
 			<view class="basic-info-border">
 				<text>基本信息</text>
 			</view>
-			<view class="basic-info-list">
+			<view class="basic-info-list u-font-30">
 				<view class="basic-info-left">
-					<view>
+					<view class="u-m-t-10">
 						<text>策略周期:</text>
 					</view>
-					<view>
+					<view  class="u-m-t-10">
 						<text>开始运行时间:</text>
 					</view>
-					<view>
+					<view class="u-m-t-10">
 						<text>策略运行时长:</text>
 					</view>
-					<view>
+					<view class="u-m-t-10">
 						<text>合约:</text>
 					</view>
-					<view>
+					<view class="u-m-t-10">
 						<text>交易所:</text>
 					</view>
 				</view>
 				<view class="basic-info-right">
-					<view v-for="basic in basicInfoList" :key="basic.name">
-						<text>{{basic.val}}</text>
+					<view class="u-m-t-10" v-for="basic in basicInfoList" :key="basic.name">
+						<text >{{basic.val}}</text>
 					</view>
 				</view>
 			</view>
@@ -48,6 +48,9 @@
 					<u-button type="my" class="stat-button" size="mini" @click="getStatData(0)" :custom-style="{ color: days == 0 ?  '#FFFFFF': '#ADADBD', backgroundColor: 'rgba(0,0, 0, 0.2)'}">累计</u-button>
 				</view>
 			</view> -->
+			<view class="basic-info-border u-m-t-40 u-m-b-20">
+				<text>收益曲线</text>
+			</view>
 			<view class="u-m-t-20">
 				<view class="charts-box">
 				  <qiun-data-charts
@@ -77,11 +80,14 @@
 			</view>
 			-->
 			<!-- 收益对比 -->
-			<view class="income-contrast u-m-l-10">
+			<view class="basic-info-border u-m-t-20 u-m-b-20">
+				<text>收益情况</text>
+			</view>
+			<view class="income-contrast ">
 				<!--
 				<vtable :columns="columns" :list="data" :row-class-name="'rowClassName'"></vtable>
 				-->
-				<u-table align="center" color="#b8b8b8" bg-color="#333" style="width: 686rpx;display: flex;">
+				<u-table font-size="30" align="center" color="#b8b8b8" bg-color="#333" style="width: 686rpx;display: flex;">
 					<u-tr style="background-color: #333333;">
 						<u-th width="171.5rpx">
 							<text class="mini-font">收益情况</text>
@@ -103,10 +109,10 @@
 							{{item.strategy_profit}}
 						</u-td>
 						<u-td width="171.5rpx" :customStyle="{
-							color:getColor(item.strategy_profit)}">
+							color:getColor(item.market_profit)}">
 							{{item.market_profit}}
 						</u-td>
-						<u-td width="171.5rpx" :customStyle="{color:getColor(item.strategy_profit)}">
+						<u-td width="171.5rpx" :customStyle="{color:getColor(item.profit_drawdown)}">
 							{{item.profit_drawdown}}
 						</u-td>
 					</u-tr>
@@ -606,7 +612,7 @@
 			}
 		}
 		.basic-info-list {
-			margin-top:10px;
+			//margin-top:10px;
 			color: #B8B8B8;;
 			display: flex;
 			flex-direction: row;

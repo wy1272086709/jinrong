@@ -71,11 +71,14 @@
 					</view>
 				</view>
 			</view>
-			<view id="user-list">
-				<text id="blockchain-product">区块链产品</text>
+			
+			<view id="blockchain-product" style="margin-bottom:30px;margin-left:35px;margin-top:32px;">
+				<text>区块链产品</text>
+			</view>
+			<scroll-view id="user-list" :scroll-y="true" :style="{height: userListHeight, width:'185px'}">
 				<view id="user-list-view">
 					<view class="user-account-css" @tap="switchStrategist('')">
-						<text>总体一览</text>
+						<text>{{userName}}</text>
 						<icon type="success_no_circle" v-if="strategistId===''"></icon>
 					</view>
 					<view v-for="(user, index) in userList" :key="index" class="user-account-css" @tap="switchStrategist(index)">
@@ -84,7 +87,11 @@
 						<icon type="success_no_circle" v-if="strategistId===index"></icon>
 					</view>
 				</view>
-			</view>
+				<view style="height:20px;">
+					
+				</view>
+			</scroll-view>
+			
 		</uni-drawer>
 		
 		<u-modal @confirm="confirmLogout" :cancel-style="{color:'#b1b7bc'}" :confirm-style="{color:'#ffffff'}"  :title-style="{color:'#FFFFFF'}" :modalStyle="{backgroundColor:'#333'}" :content-style="{ color: '#b1b7bc'}" v-model="showMsg"  show-cancel-button mask-close-able content="你确定要退出吗?"></u-modal>
@@ -121,6 +128,9 @@
 					// 本期收益
 					profit: '',
 				},
+				statRes: {
+				},
+				userListHeight: '',
 				//result: [],
 				showMsg: false,
 				current: 0,
@@ -129,79 +139,78 @@
 			}
 		},
 		computed: {
-			...mapState([ 'hasLogin', 'userName', 'strategistId']),
+			...mapState([ 'hasLogin',  'strategistId']),
+			userName: function() {
+				if (this.$store.state && this.$store.state.userName) {
+					return this.$store.state.userName
+				}
+				return uni.getStorageSync('wx_login_username')
+			},
 			canSwithStrategIst: function() {
 				if (Object.keys(this.userList).length<=0) {
 					return false
 				}
 				return true
-			},
-			statRes: function() {
-				// 判断是人工，还是量化的数据
-				const isManual = this.current == 0 ? 1: 0;
-				return isManual ? this.manual_res: this.quantify_res
 			}
 		},
 		onPullDownRefresh() {
 			this.initPageInfo(true);
 		},
 		onShow() {
-			this.initPageInfo(1);
-			this.initPageInfo(0);
+			this.initPageInfo()
 		},
 		onLoad() {
 			console.log("1");
 			const str = uni.getStorageSync('wx_strategist_list');
 			console.log('str:'+str);
-			const obj = JSON.parse(str);
+			const obj = str ? JSON.parse(str): {};
 			this.userList = obj;
 			console.log('this.userList',this.userList);
 			const info = uni.getSystemInfoSync();
 			this.scrollHeight = info.windowHeight - uni.upx2px(76) - 80+'px';
+			this.userListHeight = info.windowHeight -  30- 26 + 'px'
 		},
 		methods: {
 			changeTabs(index) {
 				console.log(index)
 				this.current = index
+				this.statRes = index == 0 ? this.manual_res: this.quantify_res
 				//this.initPageInfo()
 			},
 			open() {
 				this.$refs.calendar.open()
 			},
-			async initPageInfo(isManualValue) {
+			async initPageInfo() {
 				// 0 为人工,1不为人工
 				let isManual = 0;
-				if (isManualValue!==undefined) {
-					isManual = isManualValue
-				} else {
-					isManual = this.current == 0 ? 1: 0;
-				}
-				try {
-					const res = await getStrategIstIncome(this.strategistId, isManual);
-					const { profit, strategist_name, date_range, allowance, level_name, earnings_yesterday } = res;
-					
+				isManual = this.current == 0 ? 1: 0;
+				const promise1 = getStrategIstIncome(this.strategistId, 1).catch(err =>{
+					return err
+				})
+				const promise2 = getStrategIstIncome(this.strategistId, 0).catch(err => {
+					return err
+				})
+				const [ manualRes, quantifyRes ] = await Promise.all([ promise1, promise2 ])
+				const {  strategist_name,  level_name, date_range } = manualRes
+				if (strategist_name !== undefined) {
 					this.strategIst = strategist_name;
 					this.job = level_name;
-					
 					uni.setStorageSync('date_range', date_range);
-					console.log('earnings_yesterday'+earnings_yesterday)
-					if (isManualValue) {
-						this.manual_res = {
-							earnings_yesterday: earnings_yesterday,
-							profit: profit,
-							allowance: allowance
-						}
-					} else {
-						this.quantify_res = {
-							earnings_yesterday: earnings_yesterday,
-							profit: profit,
-							allowance: allowance
-						}
+					this.manual_res = {
+						earnings_yesterday: manualRes.earnings_yesterday,
+						profit: manualRes.profit,
+						allowance: manualRes.allowance
 					}
-				} catch(e) {
+					this.quantify_res = {
+						earnings_yesterday: quantifyRes.earnings_yesterday,
+						profit: quantifyRes.profit,
+						allowance: quantifyRes.allowance
+					}
+					this.statRes = isManual ? this.manual_res: this.quantify_res
+				} else {
 					this.strategIst = '';
 					this.job = '';
-					return;
+					console.log('error.reason1:'+JSON.stringify(manualRes)+',error reason2:'+JSON.stringify(quantifyRes))
 				}
 			},
 			switchStrategist(strategist_id) {
@@ -367,6 +376,13 @@
 	flex-direction: column;
 }
 
+::-webkit-scrollbar {
+	width: 0;
+	height: 0;
+	display: none;	
+	color:transparent;
+}
+	
 .mid-font {
 	font-size: 30rpx;
 	font-family: SimHei;
@@ -497,19 +513,18 @@
 }
 
 #user-list-view {
-	display:flex;
-	flex-direction: column;
-	padding-right:10px;
-}
-
-#user-list {
-	display: flex;
-	margin-top:32px;
-	margin-left:35px;
-	flex-direction: column;
-	font-family: Microsoft YaHei;
-	font-size:16px;
-}
+		display:flex;
+		flex-direction: column;
+		padding-right:10px;
+	}
+	
+	#user-list {
+		display: flex;
+		margin-left:35px;
+		flex-direction: column;
+		font-family: Microsoft YaHei;
+		font-size:16px;
+	}
 
 .user-account-css {
 	display: flex;
@@ -522,7 +537,6 @@
 	font-weight: bolder;
 	font-family: Microsoft YaHei;
 	font-size:20px;
-	padding-bottom:30px;
 }
 
 .bold-text {

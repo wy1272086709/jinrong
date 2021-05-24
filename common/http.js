@@ -9,7 +9,6 @@ class http {
 					},
 					method:method,
 					success: (res) => {
-						console.log(res)
 						if (!params.filterData ) {
 							resolve(res.data.data);
 						} else if(params.filterData===1){

@@ -12,7 +12,7 @@ Vue.use(uView);
  
 //重写console.log方法，判断是否开启日志调试模式，否则就不输出
 console.log = (function(oriLogFunc){
-  let debug = true;
+  let debug = false;
   return function(str){
     if (debug){//判断配置文件是否开启日志调试
       let args = arguments;

@@ -117,7 +117,13 @@
 			}
 		},
 		computed: {
-			...mapState(['strategistId', 'userName'])
+			...mapState(['strategistId']),
+			userName: function() {
+				if (this.$store.state && this.$store.state.userName) {
+					return this.$store.state.userName
+				}
+				return uni.getStorageSync('wx_login_username')
+			},
 		},
 		components: {
 			incomeComponent

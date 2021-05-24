@@ -35,6 +35,11 @@ module.exports = {
     "seriesDemo1":function(val){
       return val+'元'
     },
+	"seriesTips":function(val){
+		if(val < 0){
+			return '-'+ val;
+		}
+	},
     "tooltipDemo1":function(item, category, index, opts){
       if(index==0){
       	return '随便用'+item.data+'年'
@@ -94,9 +99,9 @@ module.exports = {
       ],
       "padding": [
           15,
-          15,
-          0,
-          5
+          20,
+          20,
+          20
       ],
       "rotate": false,
       "reserve": false,
@@ -116,7 +121,7 @@ module.exports = {
           "fontColor": "#fff",
           "fontSize": 10,
           "rotateLabel": false,
-		  "labelCount": 3,
+		  "labelCount": 4,
           //"itemCount": 30,
           "boundaryGap": "center",
           "disableGrid": true,
@@ -167,7 +172,7 @@ module.exports = {
               "colorStop": 0,
               "meterBorder": 1,
               "meterFillColor": "#FFFFFF",
-              "activeBgColor": "#000000",
+              "activeBgColor": "#ff0000",
               "activeBgOpacity": 0.08,
               "meterBorde": 1
           },
@@ -253,7 +258,7 @@ module.exports = {
           "fontSize": 10,
           "rotateLabel": false,
           "labelCount": 3,
-          //"itemCount": 30,
+          "itemCount": 30,
           "boundaryGap": "center",
           "disableGrid": true,
           "gridColor": "#CCCCCC",
@@ -324,7 +329,7 @@ module.exports = {
 				   {
 					  "value": 0,
 					  "lineColor": "rgba(255,255,255,0.5)",
-					  "showLabel": true,
+					  "showLabel": false,
 					  "labelFontColor": "#ffffff",
 					  "labelBgColor": "#333333",
 					  "labelBgOpacity": 0,

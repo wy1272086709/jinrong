@@ -296,12 +296,17 @@
           flex-direction: column;
 }
 .left-view {
-  width: 55%;
+  width: 60%;
   color: rgba(195, 195, 195, 0.96);
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
-  margin-left: 20rpx;
+}
+.text-color {
+  color: rgba(255, 255, 255, 0.96);
+}
+.text1-color {
+  color: rgba(195, 195, 195, 0.96);
 }
 .right-space {
   display: -webkit-box;
@@ -316,7 +321,7 @@
           justify-content: space-between;
 }
 .right-view {
-  width: 45%;
+  width: 40%;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;

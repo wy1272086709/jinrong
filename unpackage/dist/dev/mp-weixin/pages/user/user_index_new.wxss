@@ -91,6 +91,12 @@
   -webkit-flex-direction: column;
           flex-direction: column;
 }
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+  color: transparent;
+}
 .mid-font, #root-view #bottom-view  .u-cell_title {
   font-size: 30rpx;
   font-family: SimHei;
@@ -254,7 +260,6 @@
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
-  margin-top: 32px;
   margin-left: 35px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -277,7 +282,6 @@
   font-weight: bolder;
   font-family: Microsoft YaHei;
   font-size: 20px;
-  padding-bottom: 30px;
 }
 .bold-text {
   color: #FFFFFF;

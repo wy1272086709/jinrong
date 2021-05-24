@@ -25,13 +25,17 @@
 						</view>
 						-->
 						<view class="history-content-row-2">
-							<view class="left-view offset-left">
-								<view class="label-text quality-label-color flex-1" space="nbsp">数量:   </view>
-								<view class="label-text quality-color flex-1">{{info.sum_volume}}</view>
+							<view class="left-view">
+								<view class="label-text quality-label-color" space="nbsp">价格</view>
+								<text class="quality-label-color">/数量:</text>
+								<text class="label-text price-color u-m-l-10">{{info.avg_price}}</text>
+								<text class="u-m-l-10 u-m-r-10 quality-label-color">/</text>
+								<view class="label-text price-color">{{info.sum_volume}}</view>
+								
 							</view>
 							<view class="flex-1">
-								<text class="label-text price-label-color" space="nbsp">成交价格:   </text>
-								<text class="label-text price-color">{{info.avg_price}}</text>
+								<text class="label-text quality-label-color" space="nbsp">成交金额:</text>
+								<text class="label-text price-color u-m-l-10">{{info.turnover}}</text>
 							</view>
 							
 						</view>
@@ -42,7 +46,7 @@
 							
 								<view class="left-view">
 									
-									<view class="income-color  offset-left label-text right-view-label flex-1">收益:   </view>
+									<view class="income-color   label-text right-view-label flex-1">收益:   </view>
 									<view v-if="info.benifits>0" class="blue-color flex-1 font-30">{{info.benifits}}</view>
 									<view v-if="info.benifits==0" class="font-color1 flex-1 font-30">{{info.benifits}}</view>
 									<view v-if="info.benifits<0" class="red-color flex-1 font-30">{{info.benifits}}</view>

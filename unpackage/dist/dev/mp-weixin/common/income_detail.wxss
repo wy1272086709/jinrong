@@ -190,7 +190,6 @@
   width: 686rpx;
 }
 .content-view .basic-info-list {
-  margin-top: 10px;
   color: #B8B8B8;
   display: -webkit-box;
   display: -webkit-flex;

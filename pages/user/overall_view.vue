@@ -176,20 +176,27 @@
 					</view>
 				</view>
 			</view>
-			<view id="user-list">
-				<text id="blockchain-product">区块链产品</text>
-				<view id="user-list-view">
-					<view class="user-account-css" @tap="switchStrategist('')">
-						<text>总体一览</text>
-						<icon type="success_no_circle" v-if="strategistId===''"></icon>
-					</view>
-					<view v-for="(user, index) in userList" :key="index" class="user-account-css" @tap="switchStrategist(index)">
-						<text>{{ user }}</text>
-						
-						<icon type="success_no_circle" v-if="strategistId===index"></icon>
-					</view>
+			
+				<view style="margin-bottom: 30px;margin-left:35px;margin-top: 32px;">
+					<text id="blockchain-product">区块链产品</text>
 				</view>
-			</view>
+				<scroll-view id="user-list" :scroll-y="true" :style="{height: userListHeight, width:'185px'}">
+					<view id="user-list-view">
+						<view class="user-account-css" @tap="switchStrategist('')">
+							<text>{{userName}}</text>
+							<icon type="success_no_circle" v-if="strategistId===''"></icon>
+						</view>
+						<view v-for="(user, index) in userList" :key="index" class="user-account-css" @tap="switchStrategist(index)">
+							<text>{{ user }}</text>
+							
+							<icon type="success_no_circle" v-if="strategistId===index"></icon>
+						</view>
+						<view class="user-account-css">
+							<text></text>
+						</view>
+						
+					</view>
+				</scroll-view>
 		</uni-drawer>
 		
 		<u-modal @confirm="confirmLogout" :cancel-style="{color:'#b1b7bc'}" :confirm-style="{color:'#ffffff'}"  :title-style="{color:'#FFFFFF'}" :modalStyle="{backgroundColor:'#333'}" :content-style="{ color: '#b1b7bc'}" v-model="showMsg" show-cancel-button mask-close-able content="你确定要退出吗?"></u-modal>
@@ -224,26 +231,18 @@
 			console.log('onShow ....');
 			this.pageNo = 1
 			this.getCategorySumStats();
-			// 半个小时的缓存时间
-			//let cacheRes = this.cache('ovallRes', null);
-			// 未过期
-			//if (cacheRes) {
-			/*	let res = JSON.parse(cacheRes);
-				this.overall_info = res.overall;
-				let list = res.category;
-				for(let j = 0;j<list.length;j++) {
-					list[j].isOpenEyes = 1;
-				}
-				this.category_list = list;
-			} else {*/
-			//this.getCategorySumStats();
-			//}
 		},
 		onHide() {
 			
 		},
 		computed: {
-			...mapState([ 'hasLogin', 'userName', 'strategistId']),
+			...mapState([ 'hasLogin',  'strategistId']),
+			userName: function() {
+				if (this.$store.state && this.$store.state.userName) {
+					return this.$store.state.userName
+				}
+				return uni.getStorageSync('wx_login_username')
+			},
 			iconSrc:function() {
 				return this.isOpenEyes ? '../../static/image/overall_view/open-eyes.png': '../../static/image/overall_view/closeeye.png';
 			},
@@ -282,6 +281,7 @@
 				initialCapital: 0.0,
 				userList: [],
 				strategyData: [],
+				userListHeight: '',
 				scrollHeight: '',
 				status: 'loadmore',
 				username: "",
@@ -327,11 +327,6 @@
 				    duration: 100
 				});
 			}
-			//const result = getStrategyGroupList(this.pageNo, 10);
-			//this.totalpage = result.totalpage;
-			// const name = uni.getStorageSync("wx_login_username");
-			// this.username = name + ", 欢迎使用鲲鹏资管管理系统";
-			
 			const str = uni.getStorageSync('wx_strategist_list');
 			this.userList = str ? JSON.parse(str): [];
 			const systemInfo = uni.getSystemInfoSync();
@@ -339,8 +334,8 @@
 			console.log('h'+h)
 			this.marginTop = uni.upx2px(48) + 44 + systemInfo.statusBarHeight-10 + 'px'
 			this.scrollHeight = h - uni.upx2px(48) - 44 +10- systemInfo.statusBarHeight
+			this.userListHeight = h - this.lineHeight - 30- 26 + 'px'
 			console.log('userList', this.userList);
-			//this.getCategorySumStats();
 		},
 		methods: {
 			gotoStrategyGroupDetail(strategy) {
@@ -351,7 +346,9 @@
 			},
 			setIosBackground() {
 				uni.setBackgroundColor({
-				    backgroundColorBottom: "#FFFFFF", // 底部窗口的背景色为绿
+				    backgroundColorBottom: "#333333", // 底部窗口的背景色为绿
+					backgroundColorTop:"#333333",
+					backgroundColor:"#333333"
 				})
 			},
 			showUserList() {
@@ -363,7 +360,6 @@
 						_self.showDrawer('showLeft');
 					},
 				});
-				//this.visible = true;
 			},
 			confirm(e) {
 				console.log('confirm', e);
@@ -572,31 +568,7 @@
 	view {
 		box-sizing: border-box;
 	}
-	view {
-		
-	}
-	// /* #ifndef APP-NVUE */
-	// ::-webkit-scrollbar,
-	// ::-webkit-scrollbar,
-	// ::-webkit-scrollbar {
-	// 	display: none;
-	// 	width: 0 !important;
-	// 	height: 0 !important;
-	// 	-webkit-appearance: none;
-	// 	background: transparent;
-	// }
-	// /* #endif */
 	
-	// /* #ifdef H5 */
-	// // 通过样式穿透，隐藏H5下，scroll-view下的滚动条
-	// scroll-view ::v-deep ::-webkit-scrollbar {
-	// 	display: none;
-	// 	width: 0 !important;
-	// 	height: 0 !important;
-	// 	-webkit-appearance: none;
-	// 	background: transparent;
-	// }
-	/* #endif */
 	#root-view {
 		display: flex;
 		flex-direction: column;
@@ -611,6 +583,10 @@
 		::v-deep .uni-drawer__content  {
 			background-color: $kp-bg-color;
 			color: $kp-font-color;
+		}
+		
+		::v-deep .hairline-left {
+		    border-left: 1rpx solid #b1b7bc;
 		}
 	}
 	#top-view {
@@ -1033,7 +1009,6 @@
 	
 	#user-list {
 		display: flex;
-		margin-top:32px;
 		margin-left:35px;
 		flex-direction: column;
 		font-family: Microsoft YaHei;

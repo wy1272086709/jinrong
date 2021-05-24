@@ -98,19 +98,19 @@ var components
 try {
   components = {
     uDropdown: function() {
-      return __webpack_require__.e(/*! import() | uview-ui/components/u-dropdown/u-dropdown */ "uview-ui/components/u-dropdown/u-dropdown").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-dropdown/u-dropdown.vue */ 198))
+      return __webpack_require__.e(/*! import() | uview-ui/components/u-dropdown/u-dropdown */ "uview-ui/components/u-dropdown/u-dropdown").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-dropdown/u-dropdown.vue */ 203))
     },
     uDropdownItem: function() {
-      return __webpack_require__.e(/*! import() | uview-ui/components/u-dropdown-item/u-dropdown-item */ "uview-ui/components/u-dropdown-item/u-dropdown-item").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-dropdown-item/u-dropdown-item.vue */ 205))
+      return __webpack_require__.e(/*! import() | uview-ui/components/u-dropdown-item/u-dropdown-item */ "uview-ui/components/u-dropdown-item/u-dropdown-item").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-dropdown-item/u-dropdown-item.vue */ 210))
     },
     uLineProgress: function() {
-      return __webpack_require__.e(/*! import() | uview-ui/components/u-line-progress/u-line-progress */ "uview-ui/components/u-line-progress/u-line-progress").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-line-progress/u-line-progress.vue */ 212))
+      return __webpack_require__.e(/*! import() | uview-ui/components/u-line-progress/u-line-progress */ "uview-ui/components/u-line-progress/u-line-progress").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-line-progress/u-line-progress.vue */ 217))
     },
     uCircleProgress: function() {
-      return __webpack_require__.e(/*! import() | uview-ui/components/u-circle-progress/u-circle-progress */ "uview-ui/components/u-circle-progress/u-circle-progress").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-circle-progress/u-circle-progress.vue */ 219))
+      return __webpack_require__.e(/*! import() | uview-ui/components/u-circle-progress/u-circle-progress */ "uview-ui/components/u-circle-progress/u-circle-progress").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-circle-progress/u-circle-progress.vue */ 224))
     },
     uToast: function() {
-      return __webpack_require__.e(/*! import() | uview-ui/components/u-toast/u-toast */ "uview-ui/components/u-toast/u-toast").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-toast/u-toast.vue */ 226))
+      return __webpack_require__.e(/*! import() | uview-ui/components/u-toast/u-toast */ "uview-ui/components/u-toast/u-toast").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-toast/u-toast.vue */ 231))
     }
   }
 } catch (e) {
@@ -478,8 +478,14 @@ var _user_view = __webpack_require__(/*! @/api/user_view.js */ 65);function _int
     } },
 
 
-  computed: _objectSpread({},
-  (0, _vuex.mapState)(['strategistId', 'userName'])) };exports.default = _default;
+  computed: _objectSpread(_objectSpread({},
+  (0, _vuex.mapState)(['strategistId'])), {}, {
+    userName: function userName() {
+      if (this.$store.state && this.$store.state.userName) {
+        return this.$store.state.userName;
+      }
+      return uni.getStorageSync('wx_login_username');
+    } }) };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),

@@ -49,6 +49,9 @@ view {
   background-color: #333333;
   color: #FFFFFF;
 }
+#root-view  .hairline-left {
+  border-left: 1rpx solid #b1b7bc;
+}
 #top-view {
   position: fixed;
   width: 100vw;
@@ -521,7 +524,6 @@ view {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
-  margin-top: 32px;
   margin-left: 35px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;

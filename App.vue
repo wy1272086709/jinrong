@@ -8,6 +8,7 @@
 				this.globalData.isIphoneX = true;
 			}
 			let platform = res.platform.toLowerCase();
+			const _self = this
 			//android: 安卓, ios: IOS, devtools:PC
 			if (platform == 'android' || platform == 'devtools') {
 				_self.globalData.platform = 1;	

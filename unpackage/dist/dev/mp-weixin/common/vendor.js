@@ -1927,50 +1927,6 @@ function normalizeComponent (
 
 /***/ }),
 
-/***/ 105:
-/*!*********************************************************************************!*\
-  !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/api/strategy_detail.js ***!
-  \*********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.getSingleStrategyStatData = getSingleStrategyStatData;var _http = _interopRequireDefault(__webpack_require__(/*! @/common/http.js */ 45));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-
-
-function getSingleStrategyStatData(sName) {
-  // 获取策略面板数组
-  var url = getApp().globalData.serverUrl + "/strategys/single_stats";
-  var token = uni.getStorageSync('wx_login_token');
-  var resp = _http.default.request(url, {
-    token: token,
-    sname: sName });
-
-  return resp;
-}
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-
-/***/ 106:
-/*!*************************************************************************!*\
-  !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/common/util.js ***!
-  \*************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.getDataFromKeys = getDataFromKeys;function getDataFromKeys(keys, data) {
-  var len = keys.length;
-  var newRow = {};
-  for (var m = 0; m < len; m++) {
-    newRow[keys[m]] = data[keys[m]];
-  }
-  return newRow;
-}
-
-/***/ }),
-
 /***/ 11:
 /*!*************************************************************************!*\
   !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/store/index.js ***!
@@ -2011,6 +1967,50 @@ var store = new _vuex.default.Store({
 
 
 store;exports.default = _default;
+
+/***/ }),
+
+/***/ 110:
+/*!*********************************************************************************!*\
+  !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/api/strategy_detail.js ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.getSingleStrategyStatData = getSingleStrategyStatData;var _http = _interopRequireDefault(__webpack_require__(/*! @/common/http.js */ 45));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+
+function getSingleStrategyStatData(sName) {
+  // 获取策略面板数组
+  var url = getApp().globalData.serverUrl + "/strategys/single_stats";
+  var token = uni.getStorageSync('wx_login_token');
+  var resp = _http.default.request(url, {
+    token: token,
+    sname: sName });
+
+  return resp;
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+
+/***/ 111:
+/*!*************************************************************************!*\
+  !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/common/util.js ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.getDataFromKeys = getDataFromKeys;function getDataFromKeys(keys, data) {
+  var len = keys.length;
+  var newRow = {};
+  for (var m = 0; m < len; m++) {
+    newRow[keys[m]] = data[keys[m]];
+  }
+  return newRow;
+}
 
 /***/ }),
 
@@ -3127,50 +3127,6 @@ var index = {
 
 /***/ }),
 
-/***/ 125:
-/*!*****************************************************************************!*\
-  !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/api/detail_view.js ***!
-  \*****************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.getSingleStrategyStat = getSingleStrategyStat;exports.getStrategyTransactionList = getStrategyTransactionList;var _http = _interopRequireDefault(__webpack_require__(/*! @/common/http.js */ 45));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-function getSingleStrategyStat(sName) {
-  var url = getApp().globalData.serverUrl + "/strategys/single_stats";
-  var token = uni.getStorageSync('wx_login_token');
-  var resp = _http.default.request(url, {
-    token: token,
-    sname: sName });
-
-  return resp;
-}
-
-function getStrategyTransactionList(sName, page, searchParams) {
-  var url = getApp().globalData.serverUrl + "/strategys/transaction_list";
-  var token = uni.getStorageSync('wx_login_token');
-  var params = {
-    token: token,
-    sname: sName,
-    page: page,
-    filterData: true };
-
-  if (searchParams.offset_direction !== undefined && searchParams.offset_direction) {
-    params.offset_direction = searchParams.offset_direction;
-  }
-  if (searchParams.datestart) {
-    params.datestart = searchParams.datestart;
-  }
-  if (searchParams.datestop) {
-    params.datestop = searchParams.datestop;
-  }
-  var resp = _http.default.request(url, params);
-  return resp;
-};
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-
 /***/ 13:
 /*!****************************************************************************!*\
   !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/uview-ui/index.js ***!
@@ -3315,6 +3271,50 @@ var install = function install(Vue) {
 
 {
   install: install };exports.default = _default;
+
+/***/ }),
+
+/***/ 130:
+/*!*****************************************************************************!*\
+  !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/api/detail_view.js ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.getSingleStrategyStat = getSingleStrategyStat;exports.getStrategyTransactionList = getStrategyTransactionList;var _http = _interopRequireDefault(__webpack_require__(/*! @/common/http.js */ 45));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+function getSingleStrategyStat(sName) {
+  var url = getApp().globalData.serverUrl + "/strategys/single_stats";
+  var token = uni.getStorageSync('wx_login_token');
+  var resp = _http.default.request(url, {
+    token: token,
+    sname: sName });
+
+  return resp;
+}
+
+function getStrategyTransactionList(sName, page, searchParams) {
+  var url = getApp().globalData.serverUrl + "/strategys/transaction_list";
+  var token = uni.getStorageSync('wx_login_token');
+  var params = {
+    token: token,
+    sname: sName,
+    page: page,
+    filterData: true };
+
+  if (searchParams.offset_direction !== undefined && searchParams.offset_direction) {
+    params.offset_direction = searchParams.offset_direction;
+  }
+  if (searchParams.datestart) {
+    params.datestart = searchParams.datestart;
+  }
+  if (searchParams.datestop) {
+    params.datestop = searchParams.datestop;
+  }
+  var resp = _http.default.request(url, params);
+  return resp;
+};
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 
@@ -10467,1318 +10467,7 @@ randomArray;exports.default = _default;
 
 /***/ }),
 
-/***/ 28:
-/*!********************************************************************************************!*\
-  !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/uview-ui/libs/function/addUnit.js ***!
-  \********************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = addUnit;var _test = _interopRequireDefault(__webpack_require__(/*! ./test.js */ 18));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-
-// 添加单位，如果有rpx，%，px等单位结尾或者值为auto，直接返回，否则加上rpx单位结尾
-function addUnit() {var value = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'auto';var unit = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'rpx';
-  value = String(value);
-  // 用uView内置验证规则中的number判断是否为数值
-  return _test.default.number(value) ? "".concat(value).concat(unit) : value;
-}
-
-/***/ }),
-
-/***/ 29:
-/*!*******************************************************************************************!*\
-  !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/uview-ui/libs/function/random.js ***!
-  \*******************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;function random(min, max) {
-  if (min >= 0 && max > 0 && max >= min) {
-    var gab = max - min + 1;
-    return Math.floor(Math.random() * gab + min);
-  } else {
-    return 0;
-  }
-}var _default =
-
-random;exports.default = _default;
-
-/***/ }),
-
-/***/ 3:
-/*!***********************************!*\
-  !*** (webpack)/buildin/global.js ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || new Function("return this")();
-} catch (e) {
-	// This works if the window reference is available
-	if (typeof window === "object") g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-
-/***/ 30:
-/*!*****************************************************************************************!*\
-  !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/uview-ui/libs/function/trim.js ***!
-  \*****************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;function trim(str) {var pos = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'both';
-  if (pos == 'both') {
-    return str.replace(/^\s+|\s+$/g, "");
-  } else if (pos == "left") {
-    return str.replace(/^\s*/, '');
-  } else if (pos == 'right') {
-    return str.replace(/(\s*$)/g, "");
-  } else if (pos == 'all') {
-    return str.replace(/\s+/g, "");
-  } else {
-    return str;
-  }
-}var _default =
-
-trim;exports.default = _default;
-
-/***/ }),
-
-/***/ 31:
-/*!******************************************************************************************!*\
-  !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/uview-ui/libs/function/toast.js ***!
-  \******************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;function toast(title) {var duration = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1500;
-  uni.showToast({
-    title: title,
-    icon: 'none',
-    duration: duration });
-
-}var _default =
-
-toast;exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-
-/***/ 32:
-/*!**********************************************************************************************!*\
-  !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/uview-ui/libs/function/getParent.js ***!
-  \**********************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = getParent; // 获取父组件的参数，因为支付宝小程序不支持provide/inject的写法
-// this.$parent在非H5中，可以准确获取到父组件，但是在H5中，需要多次this.$parent.$parent.xxx
-function getParent(name, keys) {
-  var parent = this.$parent;
-  // 通过while历遍，这里主要是为了H5需要多层解析的问题
-  while (parent) {
-    // 父组件
-    if (parent.$options.name !== name) {
-      // 如果组件的name不相等，继续上一级寻找
-      parent = parent.$parent;
-    } else {var _ret = function () {
-        var data = {};
-        // 判断keys是否数组，如果传过来的是一个数组，那么直接使用数组元素值当做键值去父组件寻找
-        if (Array.isArray(keys)) {
-          keys.map(function (val) {
-            data[val] = parent[val] ? parent[val] : '';
-          });
-        } else {
-          // 历遍传过来的对象参数
-          for (var i in keys) {
-            // 如果子组件有此值则用，无此值则用父组件的值
-            // 判断是否空数组，如果是，则用父组件的值，否则用子组件的值
-            if (Array.isArray(keys[i])) {
-              if (keys[i].length) {
-                data[i] = keys[i];
-              } else {
-                data[i] = parent[i];
-              }
-            } else if (keys[i].constructor === Object) {
-              // 判断是否对象，如果是对象，且有属性，那么使用子组件的值，否则使用父组件的值
-              if (Object.keys(keys[i]).length) {
-                data[i] = keys[i];
-              } else {
-                data[i] = parent[i];
-              }
-            } else {
-              // 只要子组件有传值，即使是false值，也是“传值”了，也需要覆盖父组件的同名参数
-              data[i] = keys[i] || keys[i] === false ? keys[i] : parent[i];
-            }
-          }
-        }
-        return { v: data };}();if (typeof _ret === "object") return _ret.v;
-    }
-  }
-
-  return {};
-}
-
-/***/ }),
-
-/***/ 33:
-/*!********************************************************************************************!*\
-  !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/uview-ui/libs/function/$parent.js ***!
-  \********************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = $parent; // 获取父组件的参数，因为支付宝小程序不支持provide/inject的写法
-// this.$parent在非H5中，可以准确获取到父组件，但是在H5中，需要多次this.$parent.$parent.xxx
-// 这里默认值等于undefined有它的含义，因为最顶层元素(组件)的$parent就是undefined，意味着不传name
-// 值(默认为undefined)，就是查找最顶层的$parent
-function $parent() {var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : undefined;
-  var parent = this.$parent;
-  // 通过while历遍，这里主要是为了H5需要多层解析的问题
-  while (parent) {
-    // 父组件
-    if (parent.$options && parent.$options.name !== name) {
-      // 如果组件的name不相等，继续上一级寻找
-      parent = parent.$parent;
-    } else {
-      return parent;
-    }
-  }
-  return false;
-}
-
-/***/ }),
-
-/***/ 34:
-/*!****************************************************************************************!*\
-  !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/uview-ui/libs/function/sys.js ***!
-  \****************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.os = os;exports.sys = sys;function os() {
-  return uni.getSystemInfoSync().platform;
-};
-
-function sys() {
-  return uni.getSystemInfoSync();
-}
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-
-/***/ 35:
-/*!*********************************************************************************************!*\
-  !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/uview-ui/libs/function/debounce.js ***!
-  \*********************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var timeout = null;
-
-/**
-                                                                                                                         * 防抖原理：一定时间内，只有最后一次操作，再过wait毫秒后才执行函数
-                                                                                                                         * 
-                                                                                                                         * @param {Function} func 要执行的回调函数 
-                                                                                                                         * @param {Number} wait 延时的时间
-                                                                                                                         * @param {Boolean} immediate 是否立即执行 
-                                                                                                                         * @return null
-                                                                                                                         */
-function debounce(func) {var wait = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 500;var immediate = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
-  // 清除定时器
-  if (timeout !== null) clearTimeout(timeout);
-  // 立即执行，此类情况一般用不到
-  if (immediate) {
-    var callNow = !timeout;
-    timeout = setTimeout(function () {
-      timeout = null;
-    }, wait);
-    if (callNow) typeof func === 'function' && func();
-  } else {
-    // 设置定时器，当最后一次操作后，timeout不会再被清除，所以在延时wait毫秒后执行func回调方法
-    timeout = setTimeout(function () {
-      typeof func === 'function' && func();
-    }, wait);
-  }
-}var _default =
-
-debounce;exports.default = _default;
-
-/***/ }),
-
-/***/ 36:
-/*!*********************************************************************************************!*\
-  !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/uview-ui/libs/function/throttle.js ***!
-  \*********************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var timer, flag;
-/**
-                                                                                                                      * 节流原理：在一定时间内，只能触发一次
-                                                                                                                      * 
-                                                                                                                      * @param {Function} func 要执行的回调函数 
-                                                                                                                      * @param {Number} wait 延时的时间
-                                                                                                                      * @param {Boolean} immediate 是否立即执行
-                                                                                                                      * @return null
-                                                                                                                      */
-function throttle(func) {var wait = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 500;var immediate = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
-  if (immediate) {
-    if (!flag) {
-      flag = true;
-      // 如果是立即执行，则在wait毫秒内开始时执行
-      typeof func === 'function' && func();
-      timer = setTimeout(function () {
-        flag = false;
-      }, wait);
-    }
-  } else {
-    if (!flag) {
-      flag = true;
-      // 如果是非立即执行，则在wait毫秒内的结束处执行
-      timer = setTimeout(function () {
-        flag = false;
-        typeof func === 'function' && func();
-      }, wait);
-    }
-
-  }
-};var _default =
-throttle;exports.default = _default;
-
-/***/ }),
-
-/***/ 37:
-/*!*****************************************************************************************!*\
-  !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/uview-ui/libs/config/config.js ***!
-  \*****************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; // 此版本发布于2020-09-10
-var version = '1.6.9';var _default =
-
-{
-  v: version,
-  version: version,
-  // 主题名称
-  type: [
-  'primary',
-  'success',
-  'info',
-  'error',
-  'warning'] };exports.default = _default;
-
-/***/ }),
-
-/***/ 38:
-/*!*****************************************************************************************!*\
-  !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/uview-ui/libs/config/zIndex.js ***!
-  \*****************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; // uniapp在H5中各API的z-index值如下：
-/**
- * actionsheet: 999
- * modal: 999
- * navigate: 998
- * tabbar: 998
- * toast: 999
- */var _default =
-
-{
-  toast: 10090,
-  noNetwork: 10080,
-  // popup包含popup，actionsheet，keyboard，picker的值
-  popup: 10075,
-  mask: 10070,
-  navbar: 980,
-  topTips: 975,
-  sticky: 970,
-  indexListSticky: 965 };exports.default = _default;
-
-/***/ }),
-
-/***/ 385:
-/*!*************************************************************************************************************************!*\
-  !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/uni_modules/qiun-data-charts/js_sdk/u-charts/config-ucharts.js ***!
-  \*************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/*
- * uCharts®
- * 高性能跨平台图表库，支持H5、APP、小程序（微信/支付宝/百度/头条/QQ/360）、Vue、Taro等支持canvas的框架平台
- * Copyright (c) 2021 QIUN®秋云 https://www.ucharts.cn All rights reserved.
- * Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
- * 复制使用请保留本段注释，感谢支持开源！
- * 
- * uCharts®官方网站
- * https://www.uCharts.cn
- * 
- * 开源地址:
- * https://gitee.com/uCharts/uCharts
- * 
- * uni-app插件市场地址：
- * http://ext.dcloud.net.cn/plugin?id=271
- * 
- */
-
-// 主题颜色配置：如每个图表类型需要不同主题，请在对应图表类型上更改color属性
-var color = ['#1890FF', '#91CB74', '#FAC858', '#EE6666', '#73C0DE', '#3CA272', '#FC8452', '#9A60B4', '#ea7ccc'];
-
-module.exports = {
-  //demotype为自定义图表类型
-  "type": ["pie", "ring", "rose", "word", "funnel", "map", "arcbar", "line", "column", "area", "radar", "gauge", "candle", "mix", "demotype", "line1", "column1", "line2"],
-  "range": ["饼状图", "圆环图", "玫瑰图", "词云图", "漏斗图", "地图", "圆弧进度条", "折线图", "柱状图", "区域图", "雷达图", "仪表盘", "K线图", "混合图", "自定义类型", "自定义柱状图", "自定义折线图"],
-  //增加自定义图表类型，如果需要categories，请在这里加入您的图表类型例如最后的"demotype"
-  "categories": ["line", "column", "area", "radar", "gauge", "candle", "mix", "demotype", "line1", "column1", "line2"],
-  //instance为实例变量承载属性，option为eopts承载属性，不要删除
-  "instance": {},
-  "option": {},
-  //下面是自定义format配置，因除H5端外的其他端无法通过props传递函数，只能通过此属性对应下标的方式来替换
-  "formatter": {
-    "yAxisDemo1": function yAxisDemo1(val) {return val + '%';},
-    "yAxisDemo2": function yAxisDemo2(val) {return val.toFixed(2);},
-    "seriesDemo1": function seriesDemo1(val) {
-      return val + '元';
-    },
-    "tooltipDemo1": function tooltipDemo1(item, category, index, opts) {
-      if (index == 0) {
-        return '随便用' + item.data + '年';
-      } else {
-        return '其他我没改' + item.data + '天';
-      }
-    },
-    "tooltips": function tooltips(item, category) {
-      return category + ' 累计收益率' + item.data + '%';
-    },
-    "pieDemo": function pieDemo(val, index, series) {
-      if (index !== undefined) {
-        return series[index].name + '：' + series[index].data + '元';
-      }
-    } },
-
-  //这里演示了自定义您的图表类型的option，可以随意命名，之后在组件上 type="demotype" 后，组件会调用这个花括号里的option，如果组件上还存在opts参数，会将demotype与opts中option合并后渲染图表。
-  "demotype": {
-    //我这里把曲线图当做了自定义图表类型，您可以根据需要随意指定类型或配置
-    "type": "line",
-    "color": color,
-    "padding": [15, 10, 0, 15],
-    "xAxis": {
-      "disableGrid": true },
-
-    "yAxis": {
-      "gridType": "dash",
-      "dashLength": 2 },
-
-    "legend": {},
-
-    "extra": {
-      "line": {
-        "type": "curve",
-        "width": 2 } } },
-
-
-
-  "column1": {
-    "type": "column",
-    "canvasId": "NQdtTYwbUfaQacybcWrUADxyYjK",
-    "canvas2d": true,
-    "background": "#333",
-    "animation": true,
-    "timing": "easeOut",
-    "duration": 1000,
-    "color": [
-    "#1890FF",
-    "#91CB74",
-    "#FAC858",
-    "#EE6666",
-    "#73C0DE",
-    "#3CA272",
-    "#FC8452",
-    "#9A60B4",
-    "#ea7ccc"],
-
-    "padding": [
-    15,
-    15,
-    0,
-    5],
-
-    "rotate": false,
-    "reserve": false,
-    "fontSize": 13,
-    "fontColor": "#fff",
-    "enableScroll": false,
-    "enableMarkLine": false,
-    "touchMoveLimit": 60,
-    "dataLabel": false,
-    "dataPointShape": true,
-    "dataPointShapeType": "solid",
-    "xAxis": {
-      "disabled": false,
-      "axisLine": true,
-      "axisLineColor": "#ccc",
-      "calibration": false,
-      "fontColor": "#fff",
-      "fontSize": 10,
-      "rotateLabel": false,
-      "labelCount": 3,
-      //"itemCount": 30,
-      "boundaryGap": "center",
-      "disableGrid": true,
-      "gridColor": "#CCCCCC",
-      "gridType": "solid",
-      "dashLength": 4,
-      "gridEval": 1,
-      "scrollShow": false,
-      "scrollAlign": "left",
-      "scrollColor": "#A6A6A6",
-      "scrollBackgroundColor": "#EFEBEF" },
-
-    "yAxis": {
-      "disabled": false,
-      "disableGrid": false,
-      "splitNumber": 5,
-      "gridType": "dash",
-      "dashLength": 8,
-      "gridColor": "#CCCCCC",
-      "padding": 10,
-      "showTitle": false,
-      "data": [] },
-
-    "legend": {
-      "show": true,
-      "position": "bottom",
-      "float": "center",
-      "padding": 5,
-      "margin": 5,
-      "backgroundColor": "rgba(0,0,0,0)",
-      "borderColor": "rgba(0,0,0,0)",
-      "borderWidth": 0,
-      "fontSize": 13,
-      "fontColor": "#666666",
-      "lineHeight": 11,
-      "hiddenColor": "#CECECE",
-      "itemGap": 10 },
-
-    "extra": {
-      "column": {
-        "type": "group",
-        "width": 10,
-        "seriesGap": 2,
-        "categoryGap": 3,
-        "barBorderCircle": false,
-        "linearType": "opacity",
-        "linearOpacity": 1,
-        "colorStop": 0,
-        "meterBorder": 1,
-        "meterFillColor": "#FFFFFF",
-        "activeBgColor": "#000000",
-        "activeBgOpacity": 0.08,
-        "meterBorde": 1 },
-
-      "tooltip": {
-        "showBox": true,
-        "showArrow": true,
-        "borderWidth": 0,
-        "borderRadius": 0,
-        "borderColor": "#000000",
-        "borderOpacity": 0.7,
-        "bgColor": "#000000",
-        "bgOpacity": 0.7,
-        "gridType": "solid",
-        "dashLength": 4,
-        "gridColor": "#CCCCCC",
-        "fontColor": "#FFFFFF",
-        "splitLine": true,
-        "horizentalLine": false,
-        "xAxisLabel": false,
-        "yAxisLabel": false,
-        "labelBgColor": "#FFFFFF",
-        "labelBgOpacity": 0.7,
-        "labelFontColor": "#666666" },
-
-      "markLine": {
-        "type": "dash",
-        "dashLength": 20,
-        "data": [
-          // // {
-          // //  "value": 0,
-          // //  "lineColor": "#ffffff",
-          // //  "showLabel": true,
-          // //  "labelFontColor": "#ffffff",
-          // //  "labelBgColor": "#333333",
-          // //  "labelBgOpacity": 0,
-          // //  "yAxisIndex": 0
-          // }
-        ] } } },
-
-
-
-  "line2": {
-    "type": "line",
-    "canvasId": "MCScEZfB5JkHmwLAOBSANGpfoHaViPSx",
-    "canvas2d": true,
-    "background": "#333333",
-    "animation": true,
-    "timing": "easeOut",
-    "duration": 1000,
-    "color": [
-    "#1890FF",
-    "#91CB74",
-    "#FAC858",
-    "#EE6666",
-    "#73C0DE",
-    "#3CA272",
-    "#FC8452",
-    "#9A60B4",
-    "#ea7ccc"],
-
-    "padding": [
-    15,
-    10,
-    0,
-    15],
-
-    "rotate": false,
-    "reserve": false,
-    "fontSize": 13,
-    "fontColor": "#fff",
-    "enableScroll": false,
-    "touchMoveLimit": 60,
-    "enableMarkLine": true,
-    "dataLabel": false,
-    "dataPointShape": false,
-    "dataPointShapeType": "hollow",
-    "xAxis": {
-      "disabled": false,
-      "axisLine": true,
-      "axisLineColor": "#CCCCCC",
-      "calibration": false,
-      "fontColor": "#fff",
-      "fontSize": 10,
-      "rotateLabel": false,
-      "labelCount": 3,
-      //"itemCount": 30,
-      "boundaryGap": "center",
-      "disableGrid": true,
-      "gridColor": "#CCCCCC",
-      "gridType": "solid",
-      "dashLength": 4,
-      "gridEval": 1,
-      "scrollShow": false,
-      "scrollAlign": "left",
-      "scrollColor": "#A6A6A6",
-      "scrollBackgroundColor": "#EFEBEF" },
-
-    "yAxis": {
-      "disabled": false,
-      "disableGrid": false,
-      "splitNumber": 5,
-      "gridType": "dash",
-      "dashLength": 8,
-      "gridColor": "#CCCCCC",
-      "padding": 10,
-      "showTitle": false,
-      "data": [] },
-
-    "legend": {
-      "show": true,
-      "position": "bottom",
-      "float": "center",
-      "padding": 5,
-      "margin": 5,
-      "backgroundColor": "rgba(0,0,0,0)",
-      "borderColor": "rgba(0,0,0,0)",
-      "borderWidth": 0,
-      "fontSize": 13,
-      "fontColor": "#666666",
-      "lineHeight": 11,
-      "hiddenColor": "#CECECE",
-      "itemGap": 10 },
-
-    "extra": {
-      "line": {
-        "type": "straight",
-        "width": 2 },
-
-      "tooltip": {
-        "showBox": true,
-        "showArrow": true,
-        "borderWidth": 0,
-        "borderRadius": 0,
-        "borderColor": "#000000",
-        "borderOpacity": 0.7,
-        "bgColor": "#000000",
-        "bgOpacity": 0.7,
-        "gridType": "solid",
-        "dashLength": 4,
-        "gridColor": "#CCCCCC",
-        "fontColor": "#FFFFFF",
-        "splitLine": true,
-        "horizentalLine": false,
-        "xAxisLabel": false,
-        "yAxisLabel": false,
-        "labelBgColor": "#FFFFFF",
-        "labelBgOpacity": 0.7,
-        "labelFontColor": "#666666" },
-
-      "markLine": {
-        "type": "dash",
-        "dashLength": 8,
-        "data": [
-        {
-          "value": 0,
-          "lineColor": "rgba(255,255,255,0.5)",
-          "showLabel": true,
-          "labelFontColor": "#ffffff",
-          "labelBgColor": "#333333",
-          "labelBgOpacity": 0,
-          "yAxisIndex": 0 }] } } },
-
-
-
-
-  //下面是自定义配置，请添加项目所需的通用配置
-  "line1": {
-    "type": "line",
-    "canvasId": "NQdtTY3wbUf7aQ8acybcWrU9ADxyYj3K",
-    "canvas2d": true,
-    "background": "#333",
-    "animation": true,
-    "timing": "easeOut",
-    "duration": 1000,
-    "color": [
-    "#1890FF",
-    // "#91CB74",
-    // "#FAC858",
-    "#EE6666"
-    // "#73C0DE",
-    // "#3CA272",
-    // "#FC8452",
-    // "#9A60B4",
-    // "#ea7ccc"
-    ],
-    "padding": [
-    15,
-    10,
-    0,
-    0],
-
-    "rotate": false,
-    "rotateLock": false,
-    "fontSize": 13,
-    "fontColor": "#666666",
-    "touchMoveLimit": 60,
-    "enableMarkLine": true,
-    "dataLabel": false,
-    "dataPointShape": false,
-    "dataPointShapeType": "solid",
-    "xAxis": {
-      "disabled": true,
-      "axisLine": true,
-      "axisLineColor": "#CCCCCC",
-      "calibration": false,
-      "fontColor": "#666666",
-      "fontSize": 13,
-      "rotateLabel": false,
-      "itemCount": 5,
-      "boundaryGap": "center",
-      "disableGrid": true,
-      "gridColor": "#CCCCCC",
-      "gridType": "solid",
-      "dashLength": 4,
-      "gridEval": 1,
-      "scrollShow": true,
-      "scrollAlign": "left",
-      "scrollColor": "#A6A6A6",
-      "scrollBackgroundColor": "#EFEBEF" },
-
-    "yAxis": {
-      "disabled": false,
-      "disableGrid": false,
-      "splitNumber": 5,
-      "gridType": "dash",
-      "dashLength": 2,
-      "gridColor": "#CCCCCC",
-      "padding": 10,
-      "showTitle": false,
-      "data": [] },
-
-    "legend": {
-      "show": true,
-      "position": "bottom",
-      "float": "center",
-      "padding": 5,
-      "margin": 5,
-      "backgroundColor": "rgba(0,0,0,0)",
-      "borderColor": "rgba(0,0,0,0)",
-      "borderWidth": 0,
-      "fontSize": 13,
-      "fontColor": "#666666",
-      "lineHeight": 11,
-      "hiddenColor": "#CECECE",
-      "itemGap": 10 },
-
-    "extra": {
-      "line": {
-        "type": "curve",
-        "width": 3 },
-
-      "tooltip": {
-        "showBox": true,
-        "showArrow": true,
-        "borderWidth": 0,
-        "borderRadius": 0,
-        "borderColor": "#000000",
-        "borderOpacity": 0.7,
-        "bgColor": "#000000",
-        "bgOpacity": 0.7,
-        "gridType": "solid",
-        "dashLength": 4,
-        "gridColor": "#CCCCCC",
-        "fontColor": "#FFFFFF",
-        "splitLine": true,
-        "horizentalLine": false,
-        "xAxisLabel": true,
-        "yAxisLabel": false,
-        "labelBgColor": "#333333",
-        "labelBgOpacity": 0.7,
-        "labelFontColor": "#666666" },
-
-      "markLine": {
-        "type": "solid",
-        "dashLength": 4,
-        "data": [] } } },
-
-
-
-  "pie": {
-    "type": "pie",
-    "color": color,
-    "padding": [5, 5, 5, 5],
-    "extra": {
-      "pie": {
-        "activeOpacity": 0.5,
-        "activeRadius": 10,
-        "offsetAngle": 0,
-        "labelWidth": 15,
-        "border": true,
-        "borderWidth": 3,
-        "borderColor": "#FFFFFF" } } },
-
-
-
-  "ring": {
-    "type": "ring",
-    "color": color,
-    "padding": [5, 5, 5, 5],
-    "rotate": false,
-    "dataLabel": true,
-    "legend": {
-      "show": true,
-      "position": "right",
-      "lineHeight": 25 },
-
-    "title": {
-      "name": "收益率",
-      "fontSize": 15,
-      "color": "#666666" },
-
-    "subtitle": {
-      "name": "70%",
-      "fontSize": 25,
-      "color": "#7cb5ec" },
-
-    "extra": {
-      "ring": {
-        "ringWidth": 30,
-        "activeOpacity": 0.5,
-        "activeRadius": 10,
-        "offsetAngle": 0,
-        "labelWidth": 15,
-        "border": true,
-        "borderWidth": 3,
-        "borderColor": "#FFFFFF" } } },
-
-
-
-  "rose": {
-    "type": "rose",
-    "color": color,
-    "padding": [5, 5, 5, 5],
-    "legend": {
-      "show": true,
-      "position": "left",
-      "lineHeight": 25 },
-
-    "extra": {
-      "rose": {
-        "type": "area",
-        "minRadius": 50,
-        "activeOpacity": 0.5,
-        "activeRadius": 10,
-        "offsetAngle": 0,
-        "labelWidth": 15,
-        "border": false,
-        "borderWidth": 2,
-        "borderColor": "#FFFFFF" } } },
-
-
-
-  "word": {
-    "type": "word",
-    "color": color,
-    "extra": {
-      "word": {
-        "type": "normal",
-        "autoColors": false } } },
-
-
-
-  "funnel": {
-    "type": "funnel",
-    "color": color,
-    "padding": [15, 15, 0, 15],
-    "extra": {
-      "funnel": {
-        "activeOpacity": 0.3,
-        "activeWidth": 10,
-        "border": true,
-        "borderWidth": 2,
-        "borderColor": "#FFFFFF",
-        "fillOpacity": 1,
-        "labelAlign": "right" } } },
-
-
-
-  "map": {
-    "type": "map",
-    "color": color,
-    "padding": [0, 0, 0, 0],
-    "dataLabel": true,
-    "extra": {
-      "map": {
-        "border": true,
-        "borderWidth": 1,
-        "borderColor": "#666666",
-        "fillOpacity": 0.6,
-        "activeBorderColor": "#F04864",
-        "activeFillColor": "#FACC14",
-        "activeFillOpacity": 1 } } },
-
-
-
-  "arcbar": {
-    "type": "arcbar",
-    "color": color,
-    "title": {
-      "name": "百分比",
-      "fontSize": 25,
-      "color": "#00FF00" },
-
-    "subtitle": {
-      "name": "默认标题",
-      "fontSize": 15,
-      "color": "#666666" },
-
-    "extra": {
-      "arcbar": {
-        "type": "default",
-        "width": 12,
-        "backgroundColor": "#E9E9E9",
-        "startAngle": 0.75,
-        "endAngle": 0.25,
-        "gap": 2 } } },
-
-
-
-  "line": {
-    "type": "line",
-    "color": color,
-    "padding": [15, 10, 0, 15],
-    "xAxis": {
-      "disableGrid": true },
-
-    "yAxis": {
-      "gridType": "dash",
-      "dashLength": 2 },
-
-    "legend": {},
-
-    "extra": {
-      "line": {
-        "type": "straight",
-        "width": 2 } } },
-
-
-
-  "column": {
-    "type": "column",
-    "color": color,
-    "padding": [15, 15, 0, 5],
-    "xAxis": {
-      "disableGrid": true },
-
-    "yAxis": {},
-
-    "legend": {},
-
-    "extra": {
-      "column": {
-        "type": "group",
-        "width": 30,
-        "meterBorde": 1,
-        "meterFillColor": "#FFFFFF",
-        "activeBgColor": "#000000",
-        "activeBgOpacity": 0.08 } } },
-
-
-
-  "area": {
-    "type": "area",
-    "color": color,
-    "padding": [15, 15, 0, 15],
-    "xAxis": {
-      "disableGrid": true },
-
-    "yAxis": {
-      "gridType": "dash",
-      "dashLength": 2 },
-
-    "legend": {},
-
-    "extra": {
-      "area": {
-        "type": "straight",
-        "opacity": 0.2,
-        "addLine": true,
-        "width": 2,
-        "gradient": false } } },
-
-
-
-  "radar": {
-    "type": "radar",
-    "color": color,
-    "padding": [5, 5, 5, 5],
-    "legend": {
-      "show": true,
-      "position": "right",
-      "lineHeight": 25 },
-
-    "extra": {
-      "radar": {
-        "gridType": "radar",
-        "gridColor": "#CCCCCC",
-        "gridCount": 3,
-        "opacity": 0.2,
-        "labelColor": "#666666",
-        "max": 200 } } },
-
-
-
-  "gauge": {
-    "type": "gauge",
-    "color": color,
-    "title": {
-      "name": "66Km/H",
-      "fontSize": 25,
-      "color": "#2fc25b",
-      "offsetY": 50 },
-
-    "subtitle": {
-      "name": "实时速度",
-      "fontSize": 15,
-      "color": "#1890ff",
-      "offsetY": -50 },
-
-    "extra": {
-      "gauge": {
-        "type": "default",
-        "width": 30,
-        "labelColor": "#666666",
-        "startAngle": 0.75,
-        "endAngle": 0.25,
-        "startNumber": 0,
-        "endNumber": 100,
-        "labelFormat": "",
-        "splitLine": {
-          "fixRadius": 0,
-          "splitNumber": 10,
-          "width": 30,
-          "color": "#FFFFFF",
-          "childNumber": 5,
-          "childWidth": 12 },
-
-        "pointer": {
-          "width": 24,
-          "color": "auto" } } } },
-
-
-
-
-  "candle": {
-    "type": "candle",
-    "color": color,
-    "padding": [15, 15, 0, 15],
-    "enableScroll": true,
-    "enableMarkLine": true,
-    "dataLabel": false,
-    "xAxis": {
-      "labelCount": 4,
-      "itemCount": 40,
-      "disableGrid": true,
-      "gridColor": "#CCCCCC",
-      "gridType": "solid",
-      "dashLength": 4,
-      "scrollShow": true,
-      "scrollAlign": "left",
-      "scrollColor": "#A6A6A6",
-      "scrollBackgroundColor": "#EFEBEF" },
-
-    "yAxis": {},
-
-    "legend": {},
-
-    "extra": {
-      "candle": {
-        "color": {
-          "upLine": "#f04864",
-          "upFill": "#f04864",
-          "downLine": "#2fc25b",
-          "downFill": "#2fc25b" },
-
-        "average": {
-          "show": true,
-          "name": ["MA5", "MA10", "MA30"],
-          "day": [5, 10, 20],
-          "color": ["#1890ff", "#2fc25b", "#facc14"] } },
-
-
-      "markLine": {
-        "type": "dash",
-        "dashLength": 5,
-        "data": [
-        {
-          "value": 2150,
-          "lineColor": "#f04864",
-          "showLabel": true },
-
-        {
-          "value": 2350,
-          "lineColor": "#f04864",
-          "showLabel": true }] } } },
-
-
-
-
-
-  "mix": {
-    "type": "mix",
-    "color": color,
-    "padding": [15, 15, 0, 15],
-    "xAxis": {
-      "disableGrid": true },
-
-    "yAxis": {
-      "disabled": false,
-      "disableGrid": false,
-      "splitNumber": 5,
-      "gridType": "dash",
-      "dashLength": 4,
-      "gridColor": "#CCCCCC",
-      "padding": 10,
-      "showTitle": true,
-      "data": [] },
-
-    "legend": {},
-
-    "extra": {
-      "mix": {
-        "column": {
-          "width": 20 } } } },
-
-
-
-
-  "point": {
-    "type": "point",
-    "color": color,
-    "padding": [15, 15, 0, 15] },
-
-  "bubble": {
-    "type": "bubble",
-    "color": color,
-    "padding": [15, 15, 0, 15] } };
-
-/***/ }),
-
-/***/ 393:
-/*!******************************************************************************!*\
-  !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/api/money_detail.js ***!
-  \******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.getMoneyLogList = getMoneyLogList;var _http = _interopRequireDefault(__webpack_require__(/*! @/common/http.js */ 45));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-
-function getMoneyLogList(sName) {
-  var url = getApp().globalData.serverUrl + "/strategys/single_stats";
-  var token = uni.getStorageSync('wx_login_token');
-  var resp = _http.default.request(url, {
-    token: token,
-    sname: sName });
-
-  return resp;
-}
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-
-/***/ 4:
-/*!*********************************************************************!*\
-  !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/pages.json ***!
-  \*********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-
-/***/ 45:
-/*!*************************************************************************!*\
-  !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/common/http.js ***!
-  \*************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}var http = /*#__PURE__*/function () {function http() {_classCallCheck(this, http);}_createClass(http, null, [{ key: "request", value: function request(
-    url) {var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};var method = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "POST";var contentType = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : "application/x-www-form-urlencoded";
-      return new Promise(function (resolve, reject) {
-        uni.request({
-          url: url, //仅为示例，并非真实接口地址。
-          data: params,
-          header: {
-            'Content-Type': contentType },
-
-          method: method,
-          success: function success(res) {
-            console.log(res);
-            if (!params.filterData) {
-              resolve(res.data.data);
-            } else if (params.filterData === 1) {
-              //console.log('common res:'+JSON.stringify(res))
-              resolve(res.data);
-            } else if (params.filterData) {
-              resolve(res.data);
-            }
-          } });
-
-      });
-    } }]);return http;}();var _default =
-
-
-http;exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-
-/***/ 471:
-/*!****************************************************************************************!*\
-  !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/uview-ui/libs/util/emitter.js ***!
-  \****************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; /**
-                                                                                                      * 递归使用 call 方式this指向
-                                                                                                      * @param componentName // 需要找的组件的名称
-                                                                                                      * @param eventName // 事件名称
-                                                                                                      * @param params // 需要传递的参数
-                                                                                                      */
-function _broadcast(componentName, eventName, params) {
-  // 循环子节点找到名称一样的子节点 否则 递归 当前子节点
-  this.$children.map(function (child) {
-    if (componentName === child.$options.name) {
-      child.$emit.apply(child, [eventName].concat(params));
-    } else {
-      _broadcast.apply(child, [componentName, eventName].concat(params));
-    }
-  });
-}var _default =
-{
-  methods: {
-    /**
-              * 派发 (向上查找) (一个)
-              * @param componentName // 需要找的组件的名称
-              * @param eventName // 事件名称
-              * @param params // 需要传递的参数
-              */
-    dispatch: function dispatch(componentName, eventName, params) {
-      var parent = this.$parent || this.$root; //$parent 找到最近的父节点 $root 根节点
-      var name = parent.$options.name; // 获取当前组件实例的name
-      // 如果当前有节点 && 当前没名称 且 当前名称等于需要传进来的名称的时候就去查找当前的节点
-      // 循环出当前名称的一样的组件实例
-      while (parent && (!name || name !== componentName)) {
-        parent = parent.$parent;
-        if (parent) {
-          name = parent.$options.name;
-        }
-      }
-      // 有节点表示当前找到了name一样的实例
-      if (parent) {
-        parent.$emit.apply(parent, [eventName].concat(params));
-      }
-    },
-    /**
-        * 广播 (向下查找) (广播多个)
-        * @param componentName // 需要找的组件的名称
-        * @param eventName // 事件名称
-        * @param params // 需要传递的参数
-        */
-    broadcast: function broadcast(componentName, eventName, params) {
-      _broadcast.call(this, componentName, eventName, params);
-    } } };exports.default = _default;
-
-/***/ }),
-
-/***/ 500:
+/***/ 271:
 /*!************************************************************************************!*\
   !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/uni-cloud/dist/index.js ***!
   \************************************************************************************/
@@ -11786,12 +10475,12 @@ function _broadcast(componentName, eventName, params) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(global, uni, process) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 62));var _uniI18n = __webpack_require__(/*! @dcloudio/uni-i18n */ 503);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _iterableToArray(iter) {if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) return _arrayLikeToArray(arr);}function _createForOfIteratorHelper(o, allowArrayLike) {var it;if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {if (it) o = it;var i = 0;var F = function F() {};return { s: F, n: function n() {if (i >= o.length) return { done: true };return { done: false, value: o[i++] };}, e: function e(_e22) {throw _e22;}, f: F };}throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}var normalCompletion = true,didErr = false,err;return { s: function s() {it = o[Symbol.iterator]();}, n: function n() {var step = it.next();normalCompletion = step.done;return step;}, e: function e(_e23) {didErr = true;err = _e23;}, f: function f() {try {if (!normalCompletion && it.return != null) it.return();} finally {if (didErr) throw err;}} };}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function");}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });if (superClass) _setPrototypeOf(subClass, superClass);}function _createSuper(Derived) {var hasNativeReflectConstruct = _isNativeReflectConstruct();return function _createSuperInternal() {var Super = _getPrototypeOf(Derived),result;if (hasNativeReflectConstruct) {var NewTarget = _getPrototypeOf(this).constructor;result = Reflect.construct(Super, arguments, NewTarget);} else {result = Super.apply(this, arguments);}return _possibleConstructorReturn(this, result);};}function _possibleConstructorReturn(self, call) {if (call && (typeof call === "object" || typeof call === "function")) {return call;}return _assertThisInitialized(self);}function _assertThisInitialized(self) {if (self === void 0) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return self;}function _wrapNativeSuper(Class) {var _cache = typeof Map === "function" ? new Map() : undefined;_wrapNativeSuper = function _wrapNativeSuper(Class) {if (Class === null || !_isNativeFunction(Class)) return Class;if (typeof Class !== "function") {throw new TypeError("Super expression must either be null or a function");}if (typeof _cache !== "undefined") {if (_cache.has(Class)) return _cache.get(Class);_cache.set(Class, Wrapper);}function Wrapper() {return _construct(Class, arguments, _getPrototypeOf(this).constructor);}Wrapper.prototype = Object.create(Class.prototype, { constructor: { value: Wrapper, enumerable: false, writable: true, configurable: true } });return _setPrototypeOf(Wrapper, Class);};return _wrapNativeSuper(Class);}function _construct(Parent, args, Class) {if (_isNativeReflectConstruct()) {_construct = Reflect.construct;} else {_construct = function _construct(Parent, args, Class) {var a = [null];a.push.apply(a, args);var Constructor = Function.bind.apply(Parent, a);var instance = new Constructor();if (Class) _setPrototypeOf(instance, Class.prototype);return instance;};}return _construct.apply(null, arguments);}function _isNativeReflectConstruct() {if (typeof Reflect === "undefined" || !Reflect.construct) return false;if (Reflect.construct.sham) return false;if (typeof Proxy === "function") return true;try {Date.prototype.toString.call(Reflect.construct(Date, [], function () {}));return true;} catch (e) {return false;}}function _isNativeFunction(fn) {return Function.toString.call(fn).indexOf("[native code]") !== -1;}function _setPrototypeOf(o, p) {_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {o.__proto__ = p;return o;};return _setPrototypeOf(o, p);}function _getPrototypeOf(o) {_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {return o.__proto__ || Object.getPrototypeOf(o);};return _getPrototypeOf(o);}"undefined" != typeof globalThis ? globalThis : "undefined" != typeof window ? window : "undefined" != typeof global ? global : "undefined" != typeof self && self;function t(e) {return e && e.__esModule && Object.prototype.hasOwnProperty.call(e, "default") ? e.default : e;}function s(e, t, s) {return e(s = { path: t, exports: {}, require: function require(e, t) {return function () {throw new Error("Dynamic requires are not currently supported by @rollup/plugin-commonjs");}(null == t && s.path);} }, s.exports), s.exports;}var n = s(function (e, t) {var s;e.exports = (s = s || function (e, t) {var s = Object.create || function () {function e() {}return function (t) {var s;return e.prototype = t, s = new e(), e.prototype = null, s;};}(),n = {},r = n.lib = {},o = r.Base = { extend: function extend(e) {var t = s(this);return e && t.mixIn(e), t.hasOwnProperty("init") && this.init !== t.init || (t.init = function () {t.$super.init.apply(this, arguments);}), t.init.prototype = t, t.$super = this, t;}, create: function create() {var e = this.extend();return e.init.apply(e, arguments), e;}, init: function init() {}, mixIn: function mixIn(e) {for (var t in e) {e.hasOwnProperty(t) && (this[t] = e[t]);}e.hasOwnProperty("toString") && (this.toString = e.toString);}, clone: function clone() {return this.init.prototype.extend(this);} },i = r.WordArray = o.extend({ init: function init(e, t) {e = this.words = e || [], this.sigBytes = null != t ? t : 4 * e.length;}, toString: function toString(e) {return (e || c).stringify(this);}, concat: function concat(e) {var t = this.words,s = e.words,n = this.sigBytes,r = e.sigBytes;if (this.clamp(), n % 4) for (var o = 0; o < r; o++) {var i = s[o >>> 2] >>> 24 - o % 4 * 8 & 255;t[n + o >>> 2] |= i << 24 - (n + o) % 4 * 8;} else for (o = 0; o < r; o += 4) {t[n + o >>> 2] = s[o >>> 2];}return this.sigBytes += r, this;}, clamp: function clamp() {var t = this.words,s = this.sigBytes;t[s >>> 2] &= 4294967295 << 32 - s % 4 * 8, t.length = e.ceil(s / 4);}, clone: function clone() {var e = o.clone.call(this);return e.words = this.words.slice(0), e;}, random: function random(t) {for (var s, n = [], r = function r(t) {t = t;var s = 987654321,n = 4294967295;return function () {var r = ((s = 36969 * (65535 & s) + (s >> 16) & n) << 16) + (t = 18e3 * (65535 & t) + (t >> 16) & n) & n;return r /= 4294967296, (r += .5) * (e.random() > .5 ? 1 : -1);};}, o = 0; o < t; o += 4) {var a = r(4294967296 * (s || e.random()));s = 987654071 * a(), n.push(4294967296 * a() | 0);}return new i.init(n, t);} }),a = n.enc = {},c = a.Hex = { stringify: function stringify(e) {for (var t = e.words, s = e.sigBytes, n = [], r = 0; r < s; r++) {var o = t[r >>> 2] >>> 24 - r % 4 * 8 & 255;n.push((o >>> 4).toString(16)), n.push((15 & o).toString(16));}return n.join("");}, parse: function parse(e) {for (var t = e.length, s = [], n = 0; n < t; n += 2) {s[n >>> 3] |= parseInt(e.substr(n, 2), 16) << 24 - n % 8 * 4;}return new i.init(s, t / 2);} },u = a.Latin1 = { stringify: function stringify(e) {for (var t = e.words, s = e.sigBytes, n = [], r = 0; r < s; r++) {var o = t[r >>> 2] >>> 24 - r % 4 * 8 & 255;n.push(String.fromCharCode(o));}return n.join("");}, parse: function parse(e) {for (var t = e.length, s = [], n = 0; n < t; n++) {s[n >>> 2] |= (255 & e.charCodeAt(n)) << 24 - n % 4 * 8;}return new i.init(s, t);} },h = a.Utf8 = { stringify: function stringify(e) {try {return decodeURIComponent(escape(u.stringify(e)));} catch (e) {throw new Error("Malformed UTF-8 data");}}, parse: function parse(e) {return u.parse(unescape(encodeURIComponent(e)));} },l = r.BufferedBlockAlgorithm = o.extend({ reset: function reset() {this._data = new i.init(), this._nDataBytes = 0;}, _append: function _append(e) {"string" == typeof e && (e = h.parse(e)), this._data.concat(e), this._nDataBytes += e.sigBytes;}, _process: function _process(t) {var s = this._data,n = s.words,r = s.sigBytes,o = this.blockSize,a = r / (4 * o),c = (a = t ? e.ceil(a) : e.max((0 | a) - this._minBufferSize, 0)) * o,u = e.min(4 * c, r);if (c) {for (var h = 0; h < c; h += o) {this._doProcessBlock(n, h);}var l = n.splice(0, c);s.sigBytes -= u;}return new i.init(l, u);}, clone: function clone() {var e = o.clone.call(this);return e._data = this._data.clone(), e;}, _minBufferSize: 0 }),d = (r.Hasher = l.extend({ cfg: o.extend(), init: function init(e) {this.cfg = this.cfg.extend(e), this.reset();}, reset: function reset() {l.reset.call(this), this._doReset();}, update: function update(e) {return this._append(e), this._process(), this;}, finalize: function finalize(e) {return e && this._append(e), this._doFinalize();}, blockSize: 16, _createHelper: function _createHelper(e) {return function (t, s) {return new e.init(s).finalize(t);};}, _createHmacHelper: function _createHmacHelper(e) {return function (t, s) {return new d.HMAC.init(e, s).finalize(t);};} }), n.algo = {});return n;}(Math), s);}),r = (s(function (e, t) {var s;e.exports = (s = n, function (e) {var t = s,n = t.lib,r = n.WordArray,o = n.Hasher,i = t.algo,a = [];!function () {for (var t = 0; t < 64; t++) {a[t] = 4294967296 * e.abs(e.sin(t + 1)) | 0;}}();var c = i.MD5 = o.extend({ _doReset: function _doReset() {this._hash = new r.init([1732584193, 4023233417, 2562383102, 271733878]);}, _doProcessBlock: function _doProcessBlock(e, t) {for (var s = 0; s < 16; s++) {var n = t + s,r = e[n];e[n] = 16711935 & (r << 8 | r >>> 24) | 4278255360 & (r << 24 | r >>> 8);}var o = this._hash.words,i = e[t + 0],c = e[t + 1],f = e[t + 2],p = e[t + 3],g = e[t + 4],m = e[t + 5],y = e[t + 6],_ = e[t + 7],v = e[t + 8],w = e[t + 9],S = e[t + 10],k = e[t + 11],T = e[t + 12],A = e[t + 13],I = e[t + 14],P = e[t + 15],E = o[0],O = o[1],U = o[2],b = o[3];E = u(E, O, U, b, i, 7, a[0]), b = u(b, E, O, U, c, 12, a[1]), U = u(U, b, E, O, f, 17, a[2]), O = u(O, U, b, E, p, 22, a[3]), E = u(E, O, U, b, g, 7, a[4]), b = u(b, E, O, U, m, 12, a[5]), U = u(U, b, E, O, y, 17, a[6]), O = u(O, U, b, E, _, 22, a[7]), E = u(E, O, U, b, v, 7, a[8]), b = u(b, E, O, U, w, 12, a[9]), U = u(U, b, E, O, S, 17, a[10]), O = u(O, U, b, E, k, 22, a[11]), E = u(E, O, U, b, T, 7, a[12]), b = u(b, E, O, U, A, 12, a[13]), U = u(U, b, E, O, I, 17, a[14]), E = h(E, O = u(O, U, b, E, P, 22, a[15]), U, b, c, 5, a[16]), b = h(b, E, O, U, y, 9, a[17]), U = h(U, b, E, O, k, 14, a[18]), O = h(O, U, b, E, i, 20, a[19]), E = h(E, O, U, b, m, 5, a[20]), b = h(b, E, O, U, S, 9, a[21]), U = h(U, b, E, O, P, 14, a[22]), O = h(O, U, b, E, g, 20, a[23]), E = h(E, O, U, b, w, 5, a[24]), b = h(b, E, O, U, I, 9, a[25]), U = h(U, b, E, O, p, 14, a[26]), O = h(O, U, b, E, v, 20, a[27]), E = h(E, O, U, b, A, 5, a[28]), b = h(b, E, O, U, f, 9, a[29]), U = h(U, b, E, O, _, 14, a[30]), E = l(E, O = h(O, U, b, E, T, 20, a[31]), U, b, m, 4, a[32]), b = l(b, E, O, U, v, 11, a[33]), U = l(U, b, E, O, k, 16, a[34]), O = l(O, U, b, E, I, 23, a[35]), E = l(E, O, U, b, c, 4, a[36]), b = l(b, E, O, U, g, 11, a[37]), U = l(U, b, E, O, _, 16, a[38]), O = l(O, U, b, E, S, 23, a[39]), E = l(E, O, U, b, A, 4, a[40]), b = l(b, E, O, U, i, 11, a[41]), U = l(U, b, E, O, p, 16, a[42]), O = l(O, U, b, E, y, 23, a[43]), E = l(E, O, U, b, w, 4, a[44]), b = l(b, E, O, U, T, 11, a[45]), U = l(U, b, E, O, P, 16, a[46]), E = d(E, O = l(O, U, b, E, f, 23, a[47]), U, b, i, 6, a[48]), b = d(b, E, O, U, _, 10, a[49]), U = d(U, b, E, O, I, 15, a[50]), O = d(O, U, b, E, m, 21, a[51]), E = d(E, O, U, b, T, 6, a[52]), b = d(b, E, O, U, p, 10, a[53]), U = d(U, b, E, O, S, 15, a[54]), O = d(O, U, b, E, c, 21, a[55]), E = d(E, O, U, b, v, 6, a[56]), b = d(b, E, O, U, P, 10, a[57]), U = d(U, b, E, O, y, 15, a[58]), O = d(O, U, b, E, A, 21, a[59]), E = d(E, O, U, b, g, 6, a[60]), b = d(b, E, O, U, k, 10, a[61]), U = d(U, b, E, O, f, 15, a[62]), O = d(O, U, b, E, w, 21, a[63]), o[0] = o[0] + E | 0, o[1] = o[1] + O | 0, o[2] = o[2] + U | 0, o[3] = o[3] + b | 0;}, _doFinalize: function _doFinalize() {var t = this._data,s = t.words,n = 8 * this._nDataBytes,r = 8 * t.sigBytes;s[r >>> 5] |= 128 << 24 - r % 32;var o = e.floor(n / 4294967296),i = n;s[15 + (r + 64 >>> 9 << 4)] = 16711935 & (o << 8 | o >>> 24) | 4278255360 & (o << 24 | o >>> 8), s[14 + (r + 64 >>> 9 << 4)] = 16711935 & (i << 8 | i >>> 24) | 4278255360 & (i << 24 | i >>> 8), t.sigBytes = 4 * (s.length + 1), this._process();for (var a = this._hash, c = a.words, u = 0; u < 4; u++) {var h = c[u];c[u] = 16711935 & (h << 8 | h >>> 24) | 4278255360 & (h << 24 | h >>> 8);}return a;}, clone: function clone() {var e = o.clone.call(this);return e._hash = this._hash.clone(), e;} });function u(e, t, s, n, r, o, i) {var a = e + (t & s | ~t & n) + r + i;return (a << o | a >>> 32 - o) + t;}function h(e, t, s, n, r, o, i) {var a = e + (t & n | s & ~n) + r + i;return (a << o | a >>> 32 - o) + t;}function l(e, t, s, n, r, o, i) {var a = e + (t ^ s ^ n) + r + i;return (a << o | a >>> 32 - o) + t;}function d(e, t, s, n, r, o, i) {var a = e + (s ^ (t | ~n)) + r + i;return (a << o | a >>> 32 - o) + t;}t.MD5 = o._createHelper(c), t.HmacMD5 = o._createHmacHelper(c);}(Math), s.MD5);}), s(function (e, t) {var s, r, o;e.exports = (r = (s = n).lib.Base, o = s.enc.Utf8, void (s.algo.HMAC = r.extend({ init: function init(e, t) {e = this._hasher = new e.init(), "string" == typeof t && (t = o.parse(t));var s = e.blockSize,n = 4 * s;t.sigBytes > n && (t = e.finalize(t)), t.clamp();for (var r = this._oKey = t.clone(), i = this._iKey = t.clone(), a = r.words, c = i.words, u = 0; u < s; u++) {a[u] ^= 1549556828, c[u] ^= 909522486;}r.sigBytes = i.sigBytes = n, this.reset();}, reset: function reset() {var e = this._hasher;e.reset(), e.update(this._iKey);}, update: function update(e) {return this._hasher.update(e), this;}, finalize: function finalize(e) {var t = this._hasher,s = t.finalize(e);return t.reset(), t.finalize(this._oKey.clone().concat(s));} })));}), s(function (e, t) {e.exports = n.HmacMD5;}));function o(e) {return function (t) {if (!((t = t || {}).success || t.fail || t.complete)) return e.call(this, t);e.call(this, t).then(function (e) {t.success && t.success(e), t.complete && t.complete(e);}, function (e) {t.fail && t.fail(e), t.complete && t.complete(e);});};}var i = /*#__PURE__*/function (_Error) {_inherits(i, _Error);var _super = _createSuper(i);function i(e) {var _this;_classCallCheck(this, i);_this = _super.call(this, e.message), _this.errMsg = e.message || "", Object.defineProperties(_assertThisInitialized(_this), { code: { get: function get() {return e.code;} }, requestId: { get: function get() {return e.requestId;} }, message: { get: function get() {return this.errMsg;}, set: function set(e) {this.errMsg = e;} } });return _this;}return i;}( /*#__PURE__*/_wrapNativeSuper(Error));var _e2 = (0, _uniI18n.initVueI18n)({ "zh-Hans": { "uniCloud.init.paramRequired": "缺少参数：{param}", "uniCloud.uploadFile.fileError": "filePath应为File对象" }, "zh-Hant": { "uniCloud.init.paramRequired": "缺少参数：{param}", "uniCloud.uploadFile.fileError": "filePath应为File对象" }, en: { "uniCloud.init.paramRequired": "{param} required", "uniCloud.uploadFile.fileError": "filePath should be instance of File" }, fr: { "uniCloud.init.paramRequired": "{param} required", "uniCloud.uploadFile.fileError": "filePath should be instance of File" }, es: { "uniCloud.init.paramRequired": "{param} required", "uniCloud.uploadFile.fileError": "filePath should be instance of File" } }, "zh-Hans"),a = _e2.t,c = _e2.setLocale,u = _e2.getLocale;var h, l, d;try {h = __webpack_require__(/*! uni-stat-config */ 504).default || __webpack_require__(/*! uni-stat-config */ 504);} catch (e) {h = { appid: "" };}function f() {var e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 8;var t = "";for (; t.length < e;) {t += Math.random().toString(32).substring(2);}return t.substring(0, e);}function p() {if ("n" === g()) {try {l = plus.runtime.getDCloudId();} catch (e) {l = "";}return l;}return l || (l = f(32), uni.setStorage({ key: "__DC_CLOUD_UUID", data: l })), l;}function g() {var _appPlus$h5$mpWeixi;return (_appPlus$h5$mpWeixi = { "app-plus": "n", h5: "h5", "mp-weixin": "wx" }, _defineProperty(_appPlus$h5$mpWeixi, ["y", "a", "p", "mp-ali"].reverse().join(""), "ali"), _defineProperty(_appPlus$h5$mpWeixi, "mp-baidu", "bd"), _defineProperty(_appPlus$h5$mpWeixi, "mp-toutiao", "tt"), _defineProperty(_appPlus$h5$mpWeixi, "mp-qq", "qq"), _defineProperty(_appPlus$h5$mpWeixi, "quickapp-native", "qn"), _appPlus$h5$mpWeixi)["mp-weixin"];}var m = { sign: function sign(e, t) {var s = "";return Object.keys(e).sort().forEach(function (t) {e[t] && (s = s + "&" + t + "=" + e[t]);}), s = s.slice(1), r(s, t).toString();}, wrappedRequest: function wrappedRequest(e, t) {return new Promise(function (s, n) {t(Object.assign(e, { complete: function complete(e) {e || (e = {}),  false && false;var t = e.data && e.data.header && e.data.header["x-serverless-request-id"] || e.header && e.header["request-id"];if (!e.statusCode || e.statusCode >= 400) return n(new i({ code: "SYS_ERR", message: e.errMsg || "request:fail", requestId: t }));var r = e.data;if (r.error) return n(new i({ code: r.error.code, message: r.error.message, requestId: t }));r.result = r.data, r.requestId = t, delete r.data, s(r);} }));});} };var y = { request: function request(e) {return uni.request(e);}, uploadFile: function uploadFile(e) {return uni.uploadFile(e);}, setStorageSync: function setStorageSync(e, t) {return uni.setStorageSync(e, t);}, getStorageSync: function getStorageSync(e) {return uni.getStorageSync(e);}, removeStorageSync: function removeStorageSync(e) {return uni.removeStorageSync(e);}, clearStorageSync: function clearStorageSync() {return uni.clearStorageSync();} };var _ = /*#__PURE__*/function () {function _(e) {_classCallCheck(this, _);["spaceId", "clientSecret"].forEach(function (t) {if (!Object.prototype.hasOwnProperty.call(e, t)) throw new Error(a("uniCloud.init.paramRequired", { param: t }));}), this.config = Object.assign({}, { endpoint: "https://api.bspapp.com" }, e), this.config.provider = "aliyun", this.config.requestUrl = this.config.endpoint + "/client", this.config.envType = this.config.envType || "public", this.config.accessTokenKey = "access_token_" + this.config.spaceId, this.adapter = y;}_createClass(_, [{ key: "setAccessToken", value: function setAccessToken(e) {this.accessToken = e;} }, { key: "requestWrapped", value: function requestWrapped(e) {return m.wrappedRequest(e, this.adapter.request);} }, { key: "requestAuth", value: function requestAuth(e) {return this.requestWrapped(e);} }, { key: "request", value: function request(e, t) {var _this2 = this;return Promise.resolve().then(function () {return _this2.hasAccessToken ? t ? _this2.requestWrapped(e) : _this2.requestWrapped(e).catch(function (t) {return new Promise(function (e, s) {!t || "GATEWAY_INVALID_TOKEN" !== t.code && "InvalidParameter.InvalidToken" !== t.code ? s(t) : e();}).then(function () {return _this2.getAccessToken();}).then(function () {var t = _this2.rebuildRequest(e);return _this2.request(t, !0);});}) : _this2.getAccessToken().then(function () {var t = _this2.rebuildRequest(e);return _this2.request(t, !0);});});} }, { key: "rebuildRequest", value: function rebuildRequest(e) {var t = Object.assign({}, e);return t.data.token = this.accessToken, t.header["x-basement-token"] = this.accessToken, t.header["x-serverless-sign"] = m.sign(t.data, this.config.clientSecret), t;} }, { key: "setupRequest", value: function setupRequest(e, t) {var s = Object.assign({}, e, { spaceId: this.config.spaceId, timestamp: Date.now() }),n = { "Content-Type": "application/json" };return "auth" !== t && (s.token = this.accessToken, n["x-basement-token"] = this.accessToken), n["x-serverless-sign"] = m.sign(s, this.config.clientSecret), { url: this.config.requestUrl, method: "POST", data: s, dataType: "json", header: n };} }, { key: "getAccessToken", value: function getAccessToken() {var _this3 = this;return this.requestAuth(this.setupRequest({ method: "serverless.auth.user.anonymousAuthorize", params: "{}" }, "auth")).then(function (e) {return new Promise(function (t, s) {e.result && e.result.accessToken ? (_this3.setAccessToken(e.result.accessToken), t(_this3.accessToken)) : s(new i({ code: "AUTH_FAILED", message: "获取accessToken失败" }));});});} }, { key: "authorize", value: function authorize() {this.getAccessToken();} }, { key: "callFunction", value: function callFunction(e) {var t = { method: "serverless.function.runtime.invoke", params: JSON.stringify({ functionTarget: e.name, functionArgs: e.data || {} }) };return this.request(this.setupRequest(t));} }, { key: "getOSSUploadOptionsFromPath", value: function getOSSUploadOptionsFromPath(e) {var t = { method: "serverless.file.resource.generateProximalSign", params: JSON.stringify(e) };return this.request(this.setupRequest(t));} }, { key: "uploadFileToOSS", value: function uploadFileToOSS(_ref) {var _this4 = this;var e = _ref.url,t = _ref.formData,s = _ref.name,n = _ref.filePath,r = _ref.fileType,o = _ref.onUploadProgress;return new Promise(function (a, c) {var u = _this4.adapter.uploadFile({ url: e, formData: t, name: s, filePath: n, fileType: r, header: { "X-OSS-server-side-encrpytion": "AES256" }, success: function success(e) {e && e.statusCode < 400 ? a(e) : c(new i({ code: "UPLOAD_FAILED", message: "文件上传失败" }));}, fail: function fail(e) {c(new i({ code: e.code || "UPLOAD_FAILED", message: e.message || e.errMsg || "文件上传失败" }));} });"function" == typeof o && u && "function" == typeof u.onProgressUpdate && u.onProgressUpdate(function (e) {o({ loaded: e.totalBytesSent, total: e.totalBytesExpectedToSend });});});} }, { key: "reportOSSUpload", value: function reportOSSUpload(e) {var t = { method: "serverless.file.resource.report", params: JSON.stringify(e) };return this.request(this.setupRequest(t));} }, { key: "uploadFile", value: function uploadFile(_ref2) {var _this5 = this;var e = _ref2.filePath,t = _ref2.cloudPath,_ref2$fileType = _ref2.fileType,s = _ref2$fileType === void 0 ? "image" : _ref2$fileType,n = _ref2.onUploadProgress,r = _ref2.config;if (!t) throw new i({ code: "CLOUDPATH_REQUIRED", message: "cloudPath不可为空" });var o = r && r.envType || this.config.envType;var a, c;return this.getOSSUploadOptionsFromPath({ env: o, filename: t }).then(function (t) {var r = t.result;a = r.id, c = "https://" + r.cdnDomain + "/" + r.ossPath;var o = { url: "https://" + r.host, formData: { "Cache-Control": "max-age=2592000", "Content-Disposition": "attachment", OSSAccessKeyId: r.accessKeyId, Signature: r.signature, host: r.host, id: a, key: r.ossPath, policy: r.policy, success_action_status: 200 }, fileName: "file", name: "file", filePath: e, fileType: s };return _this5.uploadFileToOSS(Object.assign({}, o, { onUploadProgress: n }));}).then(function () {return _this5.reportOSSUpload({ id: a });}).then(function (t) {return new Promise(function (s, n) {t.success ? s({ success: !0, filePath: e, fileID: c }) : n(new i({ code: "UPLOAD_FAILED", message: "文件上传失败" }));});});} }, { key: "deleteFile", value: function deleteFile(_ref3) {var e = _ref3.fileList;var t = { method: "serverless.file.resource.delete", params: JSON.stringify({ id: e[0] }) };return this.request(this.setupRequest(t));} }, { key: "getTempFileURL", value: function getTempFileURL() {var _ref4 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},e = _ref4.fileList;return new Promise(function (t, s) {Array.isArray(e) && 0 !== e.length || s(new i({ code: "INVALID_PARAM", message: "fileList的元素必须是非空的字符串" })), t({ fileList: e.map(function (e) {return { fileID: e, tempFileURL: e };}) });});} }, { key: "hasAccessToken", get: function get() {return !!this.accessToken;} }]);return _;}();var v = { init: function init(e) {var t = new _(e);["deleteFile", "getTempFileURL"].forEach(function (e) {t[e] = o(t[e]).bind(t);});var s = { signInAnonymously: function signInAnonymously() {return t.authorize();}, getLoginState: function getLoginState() {return Promise.resolve(!1);} };return t.auth = function () {return s;}, t.customAuth = t.auth, t;} },w = "undefined" != typeof location && "http:" === location.protocol ? "http:" : "https:",S = "undefined" != typeof process && "e2e" === "development" && "pre" === Object({"VUE_APP_NAME":"kunpengv2.0","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).END_POINT ? "//tcb-pre.tencentcloudapi.com/web" : "//tcb-api.tencentcloudapi.com/web";var k;!function (e) {e.local = "local", e.none = "none", e.session = "session";}(k || (k = {}));var T = function T() {};s(function (e, t) {var s;e.exports = (s = n, function (e) {var t = s,n = t.lib,r = n.WordArray,o = n.Hasher,i = t.algo,a = [],c = [];!function () {function t(t) {for (var s = e.sqrt(t), n = 2; n <= s; n++) {if (!(t % n)) return !1;}return !0;}function s(e) {return 4294967296 * (e - (0 | e)) | 0;}for (var n = 2, r = 0; r < 64;) {t(n) && (r < 8 && (a[r] = s(e.pow(n, .5))), c[r] = s(e.pow(n, 1 / 3)), r++), n++;}}();var u = [],h = i.SHA256 = o.extend({ _doReset: function _doReset() {this._hash = new r.init(a.slice(0));}, _doProcessBlock: function _doProcessBlock(e, t) {for (var s = this._hash.words, n = s[0], r = s[1], o = s[2], i = s[3], a = s[4], h = s[5], l = s[6], d = s[7], f = 0; f < 64; f++) {if (f < 16) u[f] = 0 | e[t + f];else {var p = u[f - 15],g = (p << 25 | p >>> 7) ^ (p << 14 | p >>> 18) ^ p >>> 3,m = u[f - 2],y = (m << 15 | m >>> 17) ^ (m << 13 | m >>> 19) ^ m >>> 10;u[f] = g + u[f - 7] + y + u[f - 16];}var _ = n & r ^ n & o ^ r & o,v = (n << 30 | n >>> 2) ^ (n << 19 | n >>> 13) ^ (n << 10 | n >>> 22),w = d + ((a << 26 | a >>> 6) ^ (a << 21 | a >>> 11) ^ (a << 7 | a >>> 25)) + (a & h ^ ~a & l) + c[f] + u[f];d = l, l = h, h = a, a = i + w | 0, i = o, o = r, r = n, n = w + (v + _) | 0;}s[0] = s[0] + n | 0, s[1] = s[1] + r | 0, s[2] = s[2] + o | 0, s[3] = s[3] + i | 0, s[4] = s[4] + a | 0, s[5] = s[5] + h | 0, s[6] = s[6] + l | 0, s[7] = s[7] + d | 0;}, _doFinalize: function _doFinalize() {var t = this._data,s = t.words,n = 8 * this._nDataBytes,r = 8 * t.sigBytes;return s[r >>> 5] |= 128 << 24 - r % 32, s[14 + (r + 64 >>> 9 << 4)] = e.floor(n / 4294967296), s[15 + (r + 64 >>> 9 << 4)] = n, t.sigBytes = 4 * s.length, this._process(), this._hash;}, clone: function clone() {var e = o.clone.call(this);return e._hash = this._hash.clone(), e;} });t.SHA256 = o._createHelper(h), t.HmacSHA256 = o._createHmacHelper(h);}(Math), s.SHA256);}), s(function (e, t) {e.exports = n.HmacSHA256;}), s(function (e, t) {var s, r, o;e.exports = (r = (s = o = n).lib.WordArray, s.enc.Base64 = { stringify: function stringify(e) {var t = e.words,s = e.sigBytes,n = this._map;e.clamp();for (var r = [], o = 0; o < s; o += 3) {for (var i = (t[o >>> 2] >>> 24 - o % 4 * 8 & 255) << 16 | (t[o + 1 >>> 2] >>> 24 - (o + 1) % 4 * 8 & 255) << 8 | t[o + 2 >>> 2] >>> 24 - (o + 2) % 4 * 8 & 255, a = 0; a < 4 && o + .75 * a < s; a++) {r.push(n.charAt(i >>> 6 * (3 - a) & 63));}}var c = n.charAt(64);if (c) for (; r.length % 4;) {r.push(c);}return r.join("");}, parse: function parse(e) {var t = e.length,s = this._map,n = this._reverseMap;if (!n) {n = this._reverseMap = [];for (var o = 0; o < s.length; o++) {n[s.charCodeAt(o)] = o;}}var i = s.charAt(64);if (i) {var a = e.indexOf(i);-1 !== a && (t = a);}return function (e, t, s) {for (var n = [], o = 0, i = 0; i < t; i++) {if (i % 4) {var a = s[e.charCodeAt(i - 1)] << i % 4 * 2,c = s[e.charCodeAt(i)] >>> 6 - i % 4 * 2;n[o >>> 2] |= (a | c) << 24 - o % 4 * 8, o++;}}return r.create(n, o);}(e, t, n);}, _map: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=" }, o.enc.Base64);}), s(function (e, t) {e.exports = n.enc.Utf8;});var A = function A() {var e;if (!Promise) {e = function e() {}, e.promise = {};var _t = function _t() {throw new Error('Your Node runtime does support ES6 Promises. Set "global.Promise" to your preferred implementation of promises.');};return Object.defineProperty(e.promise, "then", { get: _t }), Object.defineProperty(e.promise, "catch", { get: _t }), e;}var t = new Promise(function (t, s) {e = function e(_e3, n) {return _e3 ? s(_e3) : t(n);};});return e.promise = t, e;};function I(e) {return void 0 === e;}function P(e) {return "[object Null]" === Object.prototype.toString.call(e);}var E;function O(e) {var t = (s = e, "[object Array]" === Object.prototype.toString.call(s) ? e : [e]);var s;var _iterator = _createForOfIteratorHelper(t),_step;try {for (_iterator.s(); !(_step = _iterator.n()).done;) {var _e4 = _step.value;var _t2 = _e4.isMatch,_s = _e4.genAdapter,_n = _e4.runtime;if (_t2()) return { adapter: _s(), runtime: _n };}} catch (err) {_iterator.e(err);} finally {_iterator.f();}}!function (e) {e.WEB = "web", e.WX_MP = "wx_mp";}(E || (E = {}));var U = { adapter: null, runtime: void 0 },b = ["anonymousUuidKey"];var C = /*#__PURE__*/function (_T) {_inherits(C, _T);var _super2 = _createSuper(C);function C() {var _this6;_classCallCheck(this, C);_this6 = _super2.call(this), U.adapter.root.tcbObject || (U.adapter.root.tcbObject = {});return _this6;}_createClass(C, [{ key: "setItem", value: function setItem(e, t) {U.adapter.root.tcbObject[e] = t;} }, { key: "getItem", value: function getItem(e) {return U.adapter.root.tcbObject[e];} }, { key: "removeItem", value: function removeItem(e) {delete U.adapter.root.tcbObject[e];} }, { key: "clear", value: function clear() {delete U.adapter.root.tcbObject;} }]);return C;}(T);function D(e, t) {switch (e) {case "local":return t.localStorage || new C();case "none":return new C();default:return t.sessionStorage || new C();}}var R = /*#__PURE__*/function () {function R(e) {_classCallCheck(this, R);if (!this._storage) {this._persistence = U.adapter.primaryStorage || e.persistence, this._storage = D(this._persistence, U.adapter);var _t3 = "access_token_" + e.env,_s2 = "access_token_expire_" + e.env,_n2 = "refresh_token_" + e.env,_r = "anonymous_uuid_" + e.env,_o = "login_type_" + e.env,_i = "user_info_" + e.env;this.keys = { accessTokenKey: _t3, accessTokenExpireKey: _s2, refreshTokenKey: _n2, anonymousUuidKey: _r, loginTypeKey: _o, userInfoKey: _i };}}_createClass(R, [{ key: "updatePersistence", value: function updatePersistence(e) {if (e === this._persistence) return;var t = "local" === this._persistence;this._persistence = e;var s = D(e, U.adapter);for (var _e5 in this.keys) {var _n3 = this.keys[_e5];if (t && b.includes(_e5)) continue;var _r2 = this._storage.getItem(_n3);I(_r2) || P(_r2) || (s.setItem(_n3, _r2), this._storage.removeItem(_n3));}this._storage = s;} }, { key: "setStore", value: function setStore(e, t, s) {if (!this._storage) return;var n = { version: s || "localCachev1", content: t },r = JSON.stringify(n);try {this._storage.setItem(e, r);} catch (e) {throw e;}} }, { key: "getStore", value: function getStore(e, t) {try {if (!this._storage) return;} catch (e) {return "";}t = t || "localCachev1";var s = this._storage.getItem(e);if (!s) return "";if (s.indexOf(t) >= 0) {return JSON.parse(s).content;}return "";} }, { key: "removeStore", value: function removeStore(e) {this._storage.removeItem(e);} }]);return R;}();var x = {},q = {};function F(e) {return x[e];}var L = function L(e, t) {_classCallCheck(this, L);this.data = t || null, this.name = e;};var N = /*#__PURE__*/function (_L) {_inherits(N, _L);var _super3 = _createSuper(N);function N(e, t) {var _this7;_classCallCheck(this, N);_this7 = _super3.call(this, "error", { error: e, data: t }), _this7.error = e;return _this7;}return N;}(L);var M = new ( /*#__PURE__*/function () {function _class() {_classCallCheck(this, _class);this._listeners = {};}_createClass(_class, [{ key: "on", value: function on(e, t) {return function (e, t, s) {s[e] = s[e] || [], s[e].push(t);}(e, t, this._listeners), this;} }, { key: "off", value: function off(e, t) {return function (e, t, s) {if (s && s[e]) {var _n4 = s[e].indexOf(t);-1 !== _n4 && s[e].splice(_n4, 1);}}(e, t, this._listeners), this;} }, { key: "fire", value: function fire(e, t) {if (e instanceof N) return console.error(e.error), this;var s = "string" == typeof e ? new L(e, t || {}) : e;var n = s.name;if (this._listens(n)) {s.target = this;var _e6 = this._listeners[n] ? _toConsumableArray(this._listeners[n]) : [];var _iterator2 = _createForOfIteratorHelper(_e6),_step2;try {for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {var _t4 = _step2.value;_t4.call(this, s);}} catch (err) {_iterator2.e(err);} finally {_iterator2.f();}}return this;} }, { key: "_listens", value: function _listens(e) {return this._listeners[e] && this._listeners[e].length > 0;} }]);return _class;}())();function $(e, t) {M.on(e, t);}function K(e) {var t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};M.fire(e, t);}function B(e, t) {M.off(e, t);}var j = "loginStateChanged",H = "loginStateExpire",W = "loginTypeChanged",V = "anonymousConverted",z = "refreshAccessToken";var Y;!function (e) {e.ANONYMOUS = "ANONYMOUS", e.WECHAT = "WECHAT", e.WECHAT_PUBLIC = "WECHAT-PUBLIC", e.WECHAT_OPEN = "WECHAT-OPEN", e.CUSTOM = "CUSTOM", e.EMAIL = "EMAIL", e.USERNAME = "USERNAME", e.NULL = "NULL";}(Y || (Y = {}));var J = ["auth.getJwt", "auth.logout", "auth.signInWithTicket", "auth.signInAnonymously", "auth.signIn", "auth.fetchAccessTokenWithRefreshToken", "auth.signUpWithEmailAndPassword", "auth.activateEndUserMail", "auth.sendPasswordResetEmail", "auth.resetPasswordWithToken", "auth.isUsernameRegistered"],X = { "X-SDK-Version": "1.3.5" };function G(e, t, s) {var n = e[t];e[t] = function (t) {var r = {},o = {};s.forEach(function (s) {var _s$call = s.call(e, t),n = _s$call.data,i = _s$call.headers;Object.assign(r, n), Object.assign(o, i);});var i = t.data;return i && function () {var e;if (e = i, "[object FormData]" !== Object.prototype.toString.call(e)) t.data = _objectSpread(_objectSpread({}, i), r);else for (var _e7 in r) {i.append(_e7, r[_e7]);}}(), t.headers = _objectSpread(_objectSpread({}, t.headers || {}), o), n.call(e, t);};}function Q() {var e = Math.random().toString(16).slice(2);return { data: { seqId: e }, headers: _objectSpread(_objectSpread({}, X), {}, { "x-seqid": e }) };}var Z = /*#__PURE__*/function () {function Z() {var e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};_classCallCheck(this, Z);var t;this.config = e, this._reqClass = new U.adapter.reqClass({ timeout: this.config.timeout, timeoutMsg: "\u8BF7\u6C42\u5728".concat(this.config.timeout / 1e3, "s\u5185\u672A\u5B8C\u6210\uFF0C\u5DF2\u4E2D\u65AD"), restrictedMethods: ["post"] }), this._cache = F(this.config.env), this._localCache = (t = this.config.env, q[t]), G(this._reqClass, "post", [Q]), G(this._reqClass, "upload", [Q]), G(this._reqClass, "download", [Q]);}_createClass(Z, [{ key: "post", value: function () {var _post = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee(e) {return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:_context.next = 2;return this._reqClass.post(e);case 2:return _context.abrupt("return", _context.sent);case 3:case "end":return _context.stop();}}}, _callee, this);}));function post(_x) {return _post.apply(this, arguments);}return post;}() }, { key: "upload", value: function () {var _upload = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2(e) {return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:_context2.next = 2;return this._reqClass.upload(e);case 2:return _context2.abrupt("return", _context2.sent);case 3:case "end":return _context2.stop();}}}, _callee2, this);}));function upload(_x2) {return _upload.apply(this, arguments);}return upload;}() }, { key: "download", value: function () {var _download = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3(e) {return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:_context3.next = 2;return this._reqClass.download(e);case 2:return _context3.abrupt("return", _context3.sent);case 3:case "end":return _context3.stop();}}}, _callee3, this);}));function download(_x3) {return _download.apply(this, arguments);}return download;}() }, { key: "refreshAccessToken", value: function () {var _refreshAccessToken2 = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee4() {var e, t;return _regenerator.default.wrap(function _callee4$(_context4) {while (1) {switch (_context4.prev = _context4.next) {case 0:this._refreshAccessTokenPromise || (this._refreshAccessTokenPromise = this._refreshAccessToken());_context4.prev = 1;_context4.next = 4;return this._refreshAccessTokenPromise;case 4:e = _context4.sent;_context4.next = 10;break;case 7:_context4.prev = 7;_context4.t0 = _context4["catch"](1);t = _context4.t0;case 10:if (!(this._refreshAccessTokenPromise = null, this._shouldRefreshAccessTokenHook = null, t)) {_context4.next = 12;break;}throw t;case 12:return _context4.abrupt("return", e);case 13:case "end":return _context4.stop();}}}, _callee4, this, [[1, 7]]);}));function refreshAccessToken() {return _refreshAccessToken2.apply(this, arguments);}return refreshAccessToken;}() }, { key: "_refreshAccessToken", value: function () {var _refreshAccessToken3 = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee5() {var _this$_cache$keys, e, t, s, n, r, o, i, a, _e8, _e9, _t5, _n5;return _regenerator.default.wrap(function _callee5$(_context5) {while (1) {switch (_context5.prev = _context5.next) {case 0:_this$_cache$keys = this._cache.keys, e = _this$_cache$keys.accessTokenKey, t = _this$_cache$keys.accessTokenExpireKey, s = _this$_cache$keys.refreshTokenKey, n = _this$_cache$keys.loginTypeKey, r = _this$_cache$keys.anonymousUuidKey;this._cache.removeStore(e), this._cache.removeStore(t);o = this._cache.getStore(s);if (o) {_context5.next = 5;break;}throw new Error("未登录CloudBase");case 5:i = { refresh_token: o };_context5.next = 8;return this.request("auth.fetchAccessTokenWithRefreshToken", i);case 8:a = _context5.sent;if (!a.data.code) {_context5.next = 21;break;}_e8 = a.data.code;if (!("SIGN_PARAM_INVALID" === _e8 || "REFRESH_TOKEN_EXPIRED" === _e8 || "INVALID_REFRESH_TOKEN" === _e8)) {_context5.next = 20;break;}if (!(this._cache.getStore(n) === Y.ANONYMOUS && "INVALID_REFRESH_TOKEN" === _e8)) {_context5.next = 19;break;}_e9 = this._cache.getStore(r);_t5 = this._cache.getStore(s);_context5.next = 17;return this.send("auth.signInAnonymously", { anonymous_uuid: _e9, refresh_token: _t5 });case 17:_n5 = _context5.sent;return _context5.abrupt("return", (this.setRefreshToken(_n5.refresh_token), this._refreshAccessToken()));case 19:K(H), this._cache.removeStore(s);case 20:throw new Error("刷新access token失败：" + a.data.code);case 21:if (!a.data.access_token) {_context5.next = 23;break;}return _context5.abrupt("return", (K(z), this._cache.setStore(e, a.data.access_token), this._cache.setStore(t, a.data.access_token_expire + Date.now()), { accessToken: a.data.access_token, accessTokenExpire: a.data.access_token_expire }));case 23:a.data.refresh_token && (this._cache.removeStore(s), this._cache.setStore(s, a.data.refresh_token), this._refreshAccessToken());case 24:case "end":return _context5.stop();}}}, _callee5, this);}));function _refreshAccessToken() {return _refreshAccessToken3.apply(this, arguments);}return _refreshAccessToken;}() }, { key: "getAccessToken", value: function () {var _getAccessToken = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee6() {var _this$_cache$keys2, e, t, s, n, r, o;return _regenerator.default.wrap(function _callee6$(_context6) {while (1) {switch (_context6.prev = _context6.next) {case 0:_this$_cache$keys2 = this._cache.keys, e = _this$_cache$keys2.accessTokenKey, t = _this$_cache$keys2.accessTokenExpireKey, s = _this$_cache$keys2.refreshTokenKey;if (this._cache.getStore(s)) {_context6.next = 3;break;}throw new Error("refresh token不存在，登录状态异常");case 3:n = this._cache.getStore(e), r = this._cache.getStore(t), o = !0;_context6.t0 = this._shouldRefreshAccessTokenHook;if (!_context6.t0) {_context6.next = 9;break;}_context6.next = 8;return this._shouldRefreshAccessTokenHook(n, r);case 8:_context6.t0 = !_context6.sent;case 9:_context6.t1 = _context6.t0;if (!_context6.t1) {_context6.next = 12;break;}o = !1;case 12:return _context6.abrupt("return", (!n || !r || r < Date.now()) && o ? this.refreshAccessToken() : { accessToken: n, accessTokenExpire: r });case 13:case "end":return _context6.stop();}}}, _callee6, this);}));function getAccessToken() {return _getAccessToken.apply(this, arguments);}return getAccessToken;}() }, { key: "request", value: function () {var _request = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee7(e, t, s) {var n, r, o, _e10, i, _e11, _e12, a, c, u, h, l, d, f, p, g;return _regenerator.default.wrap(function _callee7$(_context7) {while (1) {switch (_context7.prev = _context7.next) {case 0:n = "x-tcb-trace_" + this.config.env;r = "application/x-www-form-urlencoded";o = _objectSpread({ action: e, env: this.config.env, dataVersion: "2019-08-16" }, t);if (!(-1 === J.indexOf(e))) {_context7.next = 10;break;}_e10 = this._cache.keys.refreshTokenKey;_context7.t0 = this._cache.getStore(_e10);if (!_context7.t0) {_context7.next = 10;break;}_context7.next = 9;return this.getAccessToken();case 9:o.access_token = _context7.sent.accessToken;case 10:if ("storage.uploadFile" === e) {i = new FormData();for (_e11 in i) {i.hasOwnProperty(_e11) && void 0 !== i[_e11] && i.append(_e11, o[_e11]);}r = "multipart/form-data";} else {r = "application/json;charset=UTF-8", i = {};for (_e12 in o) {void 0 !== o[_e12] && (i[_e12] = o[_e12]);}}a = { headers: { "content-type": r } };s && s.onUploadProgress && (a.onUploadProgress = s.onUploadProgress);c = this._localCache.getStore(n);c && (a.headers["X-TCB-Trace"] = c);u = t.parse, h = t.inQuery, l = t.search;d = { env: this.config.env };u && (d.parse = !0), h && (d = _objectSpread(_objectSpread({}, h), d));f = function (e, t) {var s = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};var n = /\?/.test(t);var r = "";for (var _e13 in s) {"" === r ? !n && (t += "?") : r += "&", r += "".concat(_e13, "=").concat(encodeURIComponent(s[_e13]));}return /^http(s)?\:\/\//.test(t += r) ? t : "".concat(e).concat(t);}(w, S, d);l && (f += l);_context7.next = 22;return this.post(_objectSpread({ url: f, data: i }, a));case 22:p = _context7.sent;g = p.header && p.header["x-tcb-trace"];if (!(g && this._localCache.setStore(n, g), 200 !== Number(p.status) && 200 !== Number(p.statusCode) || !p.data)) {_context7.next = 26;break;}throw new Error("network request error");case 26:return _context7.abrupt("return", p);case 27:case "end":return _context7.stop();}}}, _callee7, this);}));function request(_x4, _x5, _x6) {return _request.apply(this, arguments);}return request;}() }, { key: "send", value: function () {var _send = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee8(e) {var t,s,_s3,_args8 = arguments;return _regenerator.default.wrap(function _callee8$(_context8) {while (1) {switch (_context8.prev = _context8.next) {case 0:t = _args8.length > 1 && _args8[1] !== undefined ? _args8[1] : {};_context8.next = 3;return this.request(e, t, { onUploadProgress: t.onUploadProgress });case 3:s = _context8.sent;if (!("ACCESS_TOKEN_EXPIRED" === s.data.code && -1 === J.indexOf(e))) {_context8.next = 13;break;}_context8.next = 7;return this.refreshAccessToken();case 7:_context8.next = 9;return this.request(e, t, { onUploadProgress: t.onUploadProgress });case 9:_s3 = _context8.sent;if (!_s3.data.code) {_context8.next = 12;break;}throw new Error("[".concat(_s3.data.code, "] ").concat(_s3.data.message));case 12:return _context8.abrupt("return", _s3.data);case 13:if (!s.data.code) {_context8.next = 15;break;}throw new Error("[".concat(s.data.code, "] ").concat(s.data.message));case 15:return _context8.abrupt("return", s.data);case 16:case "end":return _context8.stop();}}}, _callee8, this);}));function send(_x7) {return _send.apply(this, arguments);}return send;}() }, { key: "setRefreshToken", value: function setRefreshToken(e) {var _this$_cache$keys3 = this._cache.keys,t = _this$_cache$keys3.accessTokenKey,s = _this$_cache$keys3.accessTokenExpireKey,n = _this$_cache$keys3.refreshTokenKey;this._cache.removeStore(t), this._cache.removeStore(s), this._cache.setStore(n, e);} }]);return Z;}();var ee = {};function te(e) {return ee[e];}var se = /*#__PURE__*/function () {function se(e) {_classCallCheck(this, se);this.config = e, this._cache = F(e.env), this._request = te(e.env);}_createClass(se, [{ key: "setRefreshToken", value: function setRefreshToken(e) {var _this$_cache$keys4 = this._cache.keys,t = _this$_cache$keys4.accessTokenKey,s = _this$_cache$keys4.accessTokenExpireKey,n = _this$_cache$keys4.refreshTokenKey;this._cache.removeStore(t), this._cache.removeStore(s), this._cache.setStore(n, e);} }, { key: "setAccessToken", value: function setAccessToken(e, t) {var _this$_cache$keys5 = this._cache.keys,s = _this$_cache$keys5.accessTokenKey,n = _this$_cache$keys5.accessTokenExpireKey;this._cache.setStore(s, e), this._cache.setStore(n, t);} }, { key: "refreshUserInfo", value: function () {var _refreshUserInfo = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee9() {var _yield$this$_request$, e;return _regenerator.default.wrap(function _callee9$(_context9) {while (1) {switch (_context9.prev = _context9.next) {case 0:_context9.next = 2;return this._request.send("auth.getUserInfo", {});case 2:_yield$this$_request$ = _context9.sent;e = _yield$this$_request$.data;return _context9.abrupt("return", (this.setLocalUserInfo(e), e));case 5:case "end":return _context9.stop();}}}, _callee9, this);}));function refreshUserInfo() {return _refreshUserInfo.apply(this, arguments);}return refreshUserInfo;}() }, { key: "setLocalUserInfo", value: function setLocalUserInfo(e) {var t = this._cache.keys.userInfoKey;this._cache.setStore(t, e);} }]);return se;}();var ne = /*#__PURE__*/function () {function ne(e) {_classCallCheck(this, ne);if (!e) throw new Error("envId is not defined");this._envId = e, this._cache = F(this._envId), this._request = te(this._envId), this.setUserInfo();}_createClass(ne, [{ key: "linkWithTicket", value: function linkWithTicket(e) {if ("string" != typeof e) throw new Error("ticket must be string");return this._request.send("auth.linkWithTicket", { ticket: e });} }, { key: "linkWithRedirect", value: function linkWithRedirect(e) {e.signInWithRedirect();} }, { key: "updatePassword", value: function updatePassword(e, t) {return this._request.send("auth.updatePassword", { oldPassword: t, newPassword: e });} }, { key: "updateEmail", value: function updateEmail(e) {return this._request.send("auth.updateEmail", { newEmail: e });} }, { key: "updateUsername", value: function updateUsername(e) {if ("string" != typeof e) throw new Error("username must be a string");return this._request.send("auth.updateUsername", { username: e });} }, { key: "getLinkedUidList", value: function () {var _getLinkedUidList = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee10() {var _yield$this$_request$2, e, t, s;return _regenerator.default.wrap(function _callee10$(_context10) {while (1) {switch (_context10.prev = _context10.next) {case 0:_context10.next = 2;return this._request.send("auth.getLinkedUidList", {});case 2:_yield$this$_request$2 = _context10.sent;e = _yield$this$_request$2.data;t = !1;s = e.users;return _context10.abrupt("return", (s.forEach(function (e) {e.wxOpenId && e.wxPublicId && (t = !0);}), { users: s, hasPrimaryUid: t }));case 7:case "end":return _context10.stop();}}}, _callee10, this);}));function getLinkedUidList() {return _getLinkedUidList.apply(this, arguments);}return getLinkedUidList;}() }, { key: "setPrimaryUid", value: function setPrimaryUid(e) {return this._request.send("auth.setPrimaryUid", { uid: e });} }, { key: "unlink", value: function unlink(e) {return this._request.send("auth.unlink", { platform: e });} }, { key: "update", value: function () {var _update = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee11(e) {var t, s, n, r, o, i, _yield$this$_request$3, a;return _regenerator.default.wrap(function _callee11$(_context11) {while (1) {switch (_context11.prev = _context11.next) {case 0:t = e.nickName;s = e.gender;n = e.avatarUrl;r = e.province;o = e.country;i = e.city;_context11.next = 8;return this._request.send("auth.updateUserInfo", { nickName: t, gender: s, avatarUrl: n, province: r, country: o, city: i });case 8:_yield$this$_request$3 = _context11.sent;a = _yield$this$_request$3.data;this.setLocalUserInfo(a);case 11:case "end":return _context11.stop();}}}, _callee11, this);}));function update(_x8) {return _update.apply(this, arguments);}return update;}() }, { key: "refresh", value: function () {var _refresh = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee12() {var _yield$this$_request$4, e;return _regenerator.default.wrap(function _callee12$(_context12) {while (1) {switch (_context12.prev = _context12.next) {case 0:_context12.next = 2;return this._request.send("auth.getUserInfo", {});case 2:_yield$this$_request$4 = _context12.sent;e = _yield$this$_request$4.data;return _context12.abrupt("return", (this.setLocalUserInfo(e), e));case 5:case "end":return _context12.stop();}}}, _callee12, this);}));function refresh() {return _refresh.apply(this, arguments);}return refresh;}() }, { key: "setUserInfo", value: function setUserInfo() {var _this8 = this;var e = this._cache.keys.userInfoKey,t = this._cache.getStore(e);["uid", "loginType", "openid", "wxOpenId", "wxPublicId", "unionId", "qqMiniOpenId", "email", "hasPassword", "customUserId", "nickName", "gender", "avatarUrl"].forEach(function (e) {_this8[e] = t[e];}), this.location = { country: t.country, province: t.province, city: t.city };} }, { key: "setLocalUserInfo", value: function setLocalUserInfo(e) {var t = this._cache.keys.userInfoKey;this._cache.setStore(t, e), this.setUserInfo();} }]);return ne;}();var re = /*#__PURE__*/function () {function re(e) {_classCallCheck(this, re);if (!e) throw new Error("envId is not defined");this._cache = F(e);var _this$_cache$keys6 = this._cache.keys,t = _this$_cache$keys6.refreshTokenKey,s = _this$_cache$keys6.accessTokenKey,n = _this$_cache$keys6.accessTokenExpireKey,r = this._cache.getStore(t),o = this._cache.getStore(s),i = this._cache.getStore(n);this.credential = { refreshToken: r, accessToken: o, accessTokenExpire: i }, this.user = new ne(e);}_createClass(re, [{ key: "isAnonymousAuth", get: function get() {return this.loginType === Y.ANONYMOUS;} }, { key: "isCustomAuth", get: function get() {return this.loginType === Y.CUSTOM;} }, { key: "isWeixinAuth", get: function get() {return this.loginType === Y.WECHAT || this.loginType === Y.WECHAT_OPEN || this.loginType === Y.WECHAT_PUBLIC;} }, { key: "loginType", get: function get() {return this._cache.getStore(this._cache.keys.loginTypeKey);} }]);return re;}();var oe = /*#__PURE__*/function (_se) {_inherits(oe, _se);var _super4 = _createSuper(oe);function oe() {_classCallCheck(this, oe);return _super4.apply(this, arguments);}_createClass(oe, [{ key: "signIn", value: function () {var _signIn = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee13() {var _this$_cache$keys7, e, t, s, n, r, _e14;return _regenerator.default.wrap(function _callee13$(_context13) {while (1) {switch (_context13.prev = _context13.next) {case 0:this._cache.updatePersistence("local");_this$_cache$keys7 = this._cache.keys;e = _this$_cache$keys7.anonymousUuidKey;t = _this$_cache$keys7.refreshTokenKey;s = this._cache.getStore(e) || void 0;n = this._cache.getStore(t) || void 0;_context13.next = 8;return this._request.send("auth.signInAnonymously", { anonymous_uuid: s, refresh_token: n });case 8:r = _context13.sent;if (!(r.uuid && r.refresh_token)) {_context13.next = 20;break;}this._setAnonymousUUID(r.uuid);this.setRefreshToken(r.refresh_token);_context13.next = 14;return this._request.refreshAccessToken();case 14:K(j);K(W, { env: this.config.env, loginType: Y.ANONYMOUS, persistence: "local" });_e14 = new re(this.config.env);_context13.next = 19;return _e14.user.refresh();case 19:return _context13.abrupt("return", _e14);case 20:throw new Error("匿名登录失败");case 21:case "end":return _context13.stop();}}}, _callee13, this);}));function signIn() {return _signIn.apply(this, arguments);}return signIn;}() }, { key: "linkAndRetrieveDataWithTicket", value: function () {var _linkAndRetrieveDataWithTicket = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee14(e) {var _this$_cache$keys8, t, s, n, r, o;return _regenerator.default.wrap(function _callee14$(_context14) {while (1) {switch (_context14.prev = _context14.next) {case 0:_this$_cache$keys8 = this._cache.keys;t = _this$_cache$keys8.anonymousUuidKey;s = _this$_cache$keys8.refreshTokenKey;n = this._cache.getStore(t);r = this._cache.getStore(s);_context14.next = 7;return this._request.send("auth.linkAndRetrieveDataWithTicket", { anonymous_uuid: n, refresh_token: r, ticket: e });case 7:o = _context14.sent;if (!o.refresh_token) {_context14.next = 16;break;}this._clearAnonymousUUID();this.setRefreshToken(o.refresh_token);_context14.next = 13;return this._request.refreshAccessToken();case 13:K(V, { env: this.config.env });K(W, { loginType: Y.CUSTOM, persistence: "local" });return _context14.abrupt("return", { credential: { refreshToken: o.refresh_token } });case 16:throw new Error("匿名转化失败");case 17:case "end":return _context14.stop();}}}, _callee14, this);}));function linkAndRetrieveDataWithTicket(_x9) {return _linkAndRetrieveDataWithTicket.apply(this, arguments);}return linkAndRetrieveDataWithTicket;}() }, { key: "_setAnonymousUUID", value: function _setAnonymousUUID(e) {var _this$_cache$keys9 = this._cache.keys,t = _this$_cache$keys9.anonymousUuidKey,s = _this$_cache$keys9.loginTypeKey;this._cache.removeStore(t), this._cache.setStore(t, e), this._cache.setStore(s, Y.ANONYMOUS);} }, { key: "_clearAnonymousUUID", value: function _clearAnonymousUUID() {this._cache.removeStore(this._cache.keys.anonymousUuidKey);} }]);return oe;}(se);var ie = /*#__PURE__*/function (_se2) {_inherits(ie, _se2);var _super5 = _createSuper(ie);function ie() {_classCallCheck(this, ie);return _super5.apply(this, arguments);}_createClass(ie, [{ key: "signIn", value: function () {var _signIn2 = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee15(e) {var t, s;return _regenerator.default.wrap(function _callee15$(_context15) {while (1) {switch (_context15.prev = _context15.next) {case 0:if (!("string" != typeof e)) {_context15.next = 2;break;}throw new Error("ticket must be a string");case 2:t = this._cache.keys.refreshTokenKey;_context15.next = 5;return this._request.send("auth.signInWithTicket", { ticket: e, refresh_token: this._cache.getStore(t) || "" });case 5:s = _context15.sent;if (!s.refresh_token) {_context15.next = 15;break;}this.setRefreshToken(s.refresh_token);_context15.next = 10;return this._request.refreshAccessToken();case 10:K(j);K(W, { env: this.config.env, loginType: Y.CUSTOM, persistence: this.config.persistence });_context15.next = 14;return this.refreshUserInfo();case 14:return _context15.abrupt("return", new re(this.config.env));case 15:throw new Error("自定义登录失败");case 16:case "end":return _context15.stop();}}}, _callee15, this);}));function signIn(_x10) {return _signIn2.apply(this, arguments);}return signIn;}() }]);return ie;}(se);var ae = /*#__PURE__*/function (_se3) {_inherits(ae, _se3);var _super6 = _createSuper(ae);function ae() {_classCallCheck(this, ae);return _super6.apply(this, arguments);}_createClass(ae, [{ key: "signIn", value: function () {var _signIn3 = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee16(e, t) {var s, n, r, o, i;return _regenerator.default.wrap(function _callee16$(_context16) {while (1) {switch (_context16.prev = _context16.next) {case 0:if (!("string" != typeof e)) {_context16.next = 2;break;}throw new Error("email must be a string");case 2:s = this._cache.keys.refreshTokenKey;_context16.next = 5;return this._request.send("auth.signIn", { loginType: "EMAIL", email: e, password: t, refresh_token: this._cache.getStore(s) || "" });case 5:n = _context16.sent;r = n.refresh_token;o = n.access_token;i = n.access_token_expire;if (!r) {_context16.next = 22;break;}this.setRefreshToken(r);if (!(o && i)) {_context16.next = 15;break;}this.setAccessToken(o, i);_context16.next = 17;break;case 15:_context16.next = 17;return this._request.refreshAccessToken();case 17:_context16.next = 19;return this.refreshUserInfo();case 19:K(j);K(W, { env: this.config.env, loginType: Y.EMAIL, persistence: this.config.persistence });return _context16.abrupt("return", new re(this.config.env));case 22:throw n.code ? new Error("\u90AE\u7BB1\u767B\u5F55\u5931\u8D25: [".concat(n.code, "] ").concat(n.message)) : new Error("邮箱登录失败");case 23:case "end":return _context16.stop();}}}, _callee16, this);}));function signIn(_x11, _x12) {return _signIn3.apply(this, arguments);}return signIn;}() }, { key: "activate", value: function () {var _activate = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee17(e) {return _regenerator.default.wrap(function _callee17$(_context17) {while (1) {switch (_context17.prev = _context17.next) {case 0:return _context17.abrupt("return", this._request.send("auth.activateEndUserMail", { token: e }));case 1:case "end":return _context17.stop();}}}, _callee17, this);}));function activate(_x13) {return _activate.apply(this, arguments);}return activate;}() }, { key: "resetPasswordWithToken", value: function () {var _resetPasswordWithToken = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee18(e, t) {return _regenerator.default.wrap(function _callee18$(_context18) {while (1) {switch (_context18.prev = _context18.next) {case 0:return _context18.abrupt("return", this._request.send("auth.resetPasswordWithToken", { token: e, newPassword: t }));case 1:case "end":return _context18.stop();}}}, _callee18, this);}));function resetPasswordWithToken(_x14, _x15) {return _resetPasswordWithToken.apply(this, arguments);}return resetPasswordWithToken;}() }]);return ae;}(se);var ce = /*#__PURE__*/function (_se4) {_inherits(ce, _se4);var _super7 = _createSuper(ce);function ce() {_classCallCheck(this, ce);return _super7.apply(this, arguments);}_createClass(ce, [{ key: "signIn", value: function () {var _signIn4 = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee19(e, t) {var s, n, r, o, i;return _regenerator.default.wrap(function _callee19$(_context19) {while (1) {switch (_context19.prev = _context19.next) {case 0:if (!("string" != typeof e)) {_context19.next = 2;break;}throw new Error("username must be a string");case 2:"string" != typeof t && (t = "", console.warn("password is empty"));s = this._cache.keys.refreshTokenKey;_context19.next = 6;return this._request.send("auth.signIn", { loginType: Y.USERNAME, username: e, password: t, refresh_token: this._cache.getStore(s) || "" });case 6:n = _context19.sent;r = n.refresh_token;o = n.access_token_expire;i = n.access_token;if (!r) {_context19.next = 23;break;}this.setRefreshToken(r);if (!(i && o)) {_context19.next = 16;break;}this.setAccessToken(i, o);_context19.next = 18;break;case 16:_context19.next = 18;return this._request.refreshAccessToken();case 18:_context19.next = 20;return this.refreshUserInfo();case 20:K(j);K(W, { env: this.config.env, loginType: Y.USERNAME, persistence: this.config.persistence });return _context19.abrupt("return", new re(this.config.env));case 23:throw n.code ? new Error("\u7528\u6237\u540D\u5BC6\u7801\u767B\u5F55\u5931\u8D25: [".concat(n.code, "] ").concat(n.message)) : new Error("用户名密码登录失败");case 24:case "end":return _context19.stop();}}}, _callee19, this);}));function signIn(_x16, _x17) {return _signIn4.apply(this, arguments);}return signIn;}() }]);return ce;}(se);var ue = /*#__PURE__*/function () {function ue(e) {_classCallCheck(this, ue);this.config = e, this._cache = F(e.env), this._request = te(e.env), this._onAnonymousConverted = this._onAnonymousConverted.bind(this), this._onLoginTypeChanged = this._onLoginTypeChanged.bind(this), $(W, this._onLoginTypeChanged);}_createClass(ue, [{ key: "anonymousAuthProvider", value: function anonymousAuthProvider() {return new oe(this.config);} }, { key: "customAuthProvider", value: function customAuthProvider() {return new ie(this.config);} }, { key: "emailAuthProvider", value: function emailAuthProvider() {return new ae(this.config);} }, { key: "usernameAuthProvider", value: function usernameAuthProvider() {return new ce(this.config);} }, { key: "signInAnonymously", value: function () {var _signInAnonymously = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee20() {return _regenerator.default.wrap(function _callee20$(_context20) {while (1) {switch (_context20.prev = _context20.next) {case 0:return _context20.abrupt("return", new oe(this.config).signIn());case 1:case "end":return _context20.stop();}}}, _callee20, this);}));function signInAnonymously() {return _signInAnonymously.apply(this, arguments);}return signInAnonymously;}() }, { key: "signInWithEmailAndPassword", value: function () {var _signInWithEmailAndPassword = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee21(e, t) {return _regenerator.default.wrap(function _callee21$(_context21) {while (1) {switch (_context21.prev = _context21.next) {case 0:return _context21.abrupt("return", new ae(this.config).signIn(e, t));case 1:case "end":return _context21.stop();}}}, _callee21, this);}));function signInWithEmailAndPassword(_x18, _x19) {return _signInWithEmailAndPassword.apply(this, arguments);}return signInWithEmailAndPassword;}() }, { key: "signInWithUsernameAndPassword", value: function signInWithUsernameAndPassword(e, t) {return new ce(this.config).signIn(e, t);} }, { key: "linkAndRetrieveDataWithTicket", value: function () {var _linkAndRetrieveDataWithTicket2 = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee22(e) {return _regenerator.default.wrap(function _callee22$(_context22) {while (1) {switch (_context22.prev = _context22.next) {case 0:this._anonymousAuthProvider || (this._anonymousAuthProvider = new oe(this.config)), $(V, this._onAnonymousConverted);_context22.next = 3;return this._anonymousAuthProvider.linkAndRetrieveDataWithTicket(e);case 3:return _context22.abrupt("return", _context22.sent);case 4:case "end":return _context22.stop();}}}, _callee22, this);}));function linkAndRetrieveDataWithTicket(_x20) {return _linkAndRetrieveDataWithTicket2.apply(this, arguments);}return linkAndRetrieveDataWithTicket;}() }, { key: "signOut", value: function () {var _signOut = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee23() {var _this$_cache$keys10, e, t, s, n, r;return _regenerator.default.wrap(function _callee23$(_context23) {while (1) {switch (_context23.prev = _context23.next) {case 0:if (!(this.loginType === Y.ANONYMOUS)) {_context23.next = 2;break;}throw new Error("匿名用户不支持登出操作");case 2:_this$_cache$keys10 = this._cache.keys, e = _this$_cache$keys10.refreshTokenKey, t = _this$_cache$keys10.accessTokenKey, s = _this$_cache$keys10.accessTokenExpireKey, n = this._cache.getStore(e);if (n) {_context23.next = 5;break;}return _context23.abrupt("return");case 5:_context23.next = 7;return this._request.send("auth.logout", { refresh_token: n });case 7:r = _context23.sent;return _context23.abrupt("return", (this._cache.removeStore(e), this._cache.removeStore(t), this._cache.removeStore(s), K(j), K(W, { env: this.config.env, loginType: Y.NULL, persistence: this.config.persistence }), r));case 9:case "end":return _context23.stop();}}}, _callee23, this);}));function signOut() {return _signOut.apply(this, arguments);}return signOut;}() }, { key: "signUpWithEmailAndPassword", value: function () {var _signUpWithEmailAndPassword = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee24(e, t) {return _regenerator.default.wrap(function _callee24$(_context24) {while (1) {switch (_context24.prev = _context24.next) {case 0:return _context24.abrupt("return", this._request.send("auth.signUpWithEmailAndPassword", { email: e, password: t }));case 1:case "end":return _context24.stop();}}}, _callee24, this);}));function signUpWithEmailAndPassword(_x21, _x22) {return _signUpWithEmailAndPassword.apply(this, arguments);}return signUpWithEmailAndPassword;}() }, { key: "sendPasswordResetEmail", value: function () {var _sendPasswordResetEmail = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee25(e) {return _regenerator.default.wrap(function _callee25$(_context25) {while (1) {switch (_context25.prev = _context25.next) {case 0:return _context25.abrupt("return", this._request.send("auth.sendPasswordResetEmail", { email: e }));case 1:case "end":return _context25.stop();}}}, _callee25, this);}));function sendPasswordResetEmail(_x23) {return _sendPasswordResetEmail.apply(this, arguments);}return sendPasswordResetEmail;}() }, { key: "onLoginStateChanged", value: function onLoginStateChanged(e) {var _this9 = this;$(j, function () {var t = _this9.hasLoginState();e.call(_this9, t);});var t = this.hasLoginState();e.call(this, t);} }, { key: "onLoginStateExpired", value: function onLoginStateExpired(e) {$(H, e.bind(this));} }, { key: "onAccessTokenRefreshed", value: function onAccessTokenRefreshed(e) {$(z, e.bind(this));} }, { key: "onAnonymousConverted", value: function onAnonymousConverted(e) {$(V, e.bind(this));} }, { key: "onLoginTypeChanged", value: function onLoginTypeChanged(e) {var _this10 = this;$(W, function () {var t = _this10.hasLoginState();e.call(_this10, t);});} }, { key: "getAccessToken", value: function () {var _getAccessToken2 = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee26() {return _regenerator.default.wrap(function _callee26$(_context26) {while (1) {switch (_context26.prev = _context26.next) {case 0:_context26.next = 2;return this._request.getAccessToken();case 2:_context26.t0 = _context26.sent.accessToken;_context26.t1 = this.config.env;return _context26.abrupt("return", { accessToken: _context26.t0, env: _context26.t1 });case 5:case "end":return _context26.stop();}}}, _callee26, this);}));function getAccessToken() {return _getAccessToken2.apply(this, arguments);}return getAccessToken;}() }, { key: "hasLoginState", value: function hasLoginState() {var e = this._cache.keys.refreshTokenKey;return this._cache.getStore(e) ? new re(this.config.env) : null;} }, { key: "isUsernameRegistered", value: function () {var _isUsernameRegistered = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee27(e) {var _yield$this$_request$5, t;return _regenerator.default.wrap(function _callee27$(_context27) {while (1) {switch (_context27.prev = _context27.next) {case 0:if (!("string" != typeof e)) {_context27.next = 2;break;}throw new Error("username must be a string");case 2:_context27.next = 4;return this._request.send("auth.isUsernameRegistered", { username: e });case 4:_yield$this$_request$5 = _context27.sent;t = _yield$this$_request$5.data;return _context27.abrupt("return", t && t.isRegistered);case 7:case "end":return _context27.stop();}}}, _callee27, this);}));function isUsernameRegistered(_x24) {return _isUsernameRegistered.apply(this, arguments);}return isUsernameRegistered;}() }, { key: "getLoginState", value: function getLoginState() {return Promise.resolve(this.hasLoginState());} }, { key: "signInWithTicket", value: function () {var _signInWithTicket = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee28(e) {return _regenerator.default.wrap(function _callee28$(_context28) {while (1) {switch (_context28.prev = _context28.next) {case 0:return _context28.abrupt("return", new ie(this.config).signIn(e));case 1:case "end":return _context28.stop();}}}, _callee28, this);}));function signInWithTicket(_x25) {return _signInWithTicket.apply(this, arguments);}return signInWithTicket;}() }, { key: "shouldRefreshAccessToken", value: function shouldRefreshAccessToken(e) {this._request._shouldRefreshAccessTokenHook = e.bind(this);} }, { key: "getUserInfo", value: function getUserInfo() {return this._request.send("auth.getUserInfo", {}).then(function (e) {return e.code ? e : _objectSpread(_objectSpread({}, e.data), {}, { requestId: e.seqId });});} }, { key: "getAuthHeader", value: function getAuthHeader() {var _this$_cache$keys11 = this._cache.keys,e = _this$_cache$keys11.refreshTokenKey,t = _this$_cache$keys11.accessTokenKey,s = this._cache.getStore(e);return { "x-cloudbase-credentials": this._cache.getStore(t) + "/@@/" + s };} }, { key: "_onAnonymousConverted", value: function _onAnonymousConverted(e) {var t = e.data.env;t === this.config.env && this._cache.updatePersistence(this.config.persistence);} }, { key: "_onLoginTypeChanged", value: function _onLoginTypeChanged(e) {var _e$data = e.data,t = _e$data.loginType,s = _e$data.persistence,n = _e$data.env;n === this.config.env && (this._cache.updatePersistence(s), this._cache.setStore(this._cache.keys.loginTypeKey, t));} }, { key: "currentUser", get: function get() {var e = this.hasLoginState();return e && e.user || null;} }, { key: "loginType", get: function get() {return this._cache.getStore(this._cache.keys.loginTypeKey);} }]);return ue;}();var he = function he(e, t) {t = t || A();var s = te(this.config.env),n = e.cloudPath,r = e.filePath,o = e.onUploadProgress,_e$fileType = e.fileType,i = _e$fileType === void 0 ? "image" : _e$fileType;return s.send("storage.getUploadMetadata", { path: n }).then(function (e) {var _e$data2 = e.data,a = _e$data2.url,c = _e$data2.authorization,u = _e$data2.token,h = _e$data2.fileId,l = _e$data2.cosFileId,d = e.requestId,f = { key: n, signature: c, "x-cos-meta-fileid": l, success_action_status: "201", "x-cos-security-token": u };s.upload({ url: a, data: f, file: r, name: n, fileType: i, onUploadProgress: o }).then(function (e) {201 === e.statusCode ? t(null, { fileID: h, requestId: d }) : t(new Error("STORAGE_REQUEST_FAIL: " + e.data));}).catch(function (e) {t(e);});}).catch(function (e) {t(e);}), t.promise;},le = function le(e, t) {t = t || A();var s = te(this.config.env),n = e.cloudPath;return s.send("storage.getUploadMetadata", { path: n }).then(function (e) {t(null, e);}).catch(function (e) {t(e);}), t.promise;},de = function de(_ref5, t) {var e = _ref5.fileList;if (t = t || A(), !e || !Array.isArray(e)) return { code: "INVALID_PARAM", message: "fileList必须是非空的数组" };var _iterator3 = _createForOfIteratorHelper(e),_step3;try {for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {var _t6 = _step3.value;if (!_t6 || "string" != typeof _t6) return { code: "INVALID_PARAM", message: "fileList的元素必须是非空的字符串" };}} catch (err) {_iterator3.e(err);} finally {_iterator3.f();}var s = { fileid_list: e };return te(this.config.env).send("storage.batchDeleteFile", s).then(function (e) {e.code ? t(null, e) : t(null, { fileList: e.data.delete_list, requestId: e.requestId });}).catch(function (e) {t(e);}), t.promise;},fe = function fe(_ref6, t) {var e = _ref6.fileList;t = t || A(), e && Array.isArray(e) || t(null, { code: "INVALID_PARAM", message: "fileList必须是非空的数组" });var s = [];var _iterator4 = _createForOfIteratorHelper(e),_step4;try {for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {var _n6 = _step4.value;"object" == typeof _n6 ? (_n6.hasOwnProperty("fileID") && _n6.hasOwnProperty("maxAge") || t(null, { code: "INVALID_PARAM", message: "fileList的元素必须是包含fileID和maxAge的对象" }), s.push({ fileid: _n6.fileID, max_age: _n6.maxAge })) : "string" == typeof _n6 ? s.push({ fileid: _n6 }) : t(null, { code: "INVALID_PARAM", message: "fileList的元素必须是字符串" });}} catch (err) {_iterator4.e(err);} finally {_iterator4.f();}var n = { file_list: s };return te(this.config.env).send("storage.batchGetDownloadUrl", n).then(function (e) {e.code ? t(null, e) : t(null, { fileList: e.data.download_list, requestId: e.requestId });}).catch(function (e) {t(e);}), t.promise;},pe = /*#__PURE__*/function () {var _ref8 = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee29(_ref7, t) {var e, s, n, r;return _regenerator.default.wrap(function _callee29$(_context29) {while (1) {switch (_context29.prev = _context29.next) {case 0:e = _ref7.fileID;_context29.next = 3;return fe.call(this, { fileList: [{ fileID: e, maxAge: 600 }] });case 3:s = _context29.sent.fileList[0];if (!("SUCCESS" !== s.code)) {_context29.next = 6;break;}return _context29.abrupt("return", t ? t(s) : new Promise(function (e) {e(s);}));case 6:n = te(this.config.env);r = s.download_url;if (!(r = encodeURI(r), !t)) {_context29.next = 10;break;}return _context29.abrupt("return", n.download({ url: r }));case 10:_context29.t0 = t;_context29.next = 13;return n.download({ url: r });case 13:_context29.t1 = _context29.sent;(0, _context29.t0)(_context29.t1);case 15:case "end":return _context29.stop();}}}, _callee29, this);}));return function pe(_x26, _x27) {return _ref8.apply(this, arguments);};}(),ge = function ge(_ref9, o) {var e = _ref9.name,t = _ref9.data,s = _ref9.query,n = _ref9.parse,r = _ref9.search;var i = o || A();var a;try {a = t ? JSON.stringify(t) : "";} catch (e) {return Promise.reject(e);}if (!e) return Promise.reject(new Error("函数名不能为空"));var c = { inQuery: s, parse: n, search: r, function_name: e, request_data: a };return te(this.config.env).send("functions.invokeFunction", c).then(function (e) {if (e.code) i(null, e);else {var _t7 = e.data.response_data;if (n) i(null, { result: _t7, requestId: e.requestId });else try {_t7 = JSON.parse(e.data.response_data), i(null, { result: _t7, requestId: e.requestId });} catch (e) {i(new Error("response data must be json"));}}return i.promise;}).catch(function (e) {i(e);}), i.promise;},me = { timeout: 15e3, persistence: "session" },ye = {};var _e = /*#__PURE__*/function () {function _e(e) {_classCallCheck(this, _e);this.config = e || this.config, this.authObj = void 0;}_createClass(_e, [{ key: "init", value: function init(e) {switch (U.adapter || (this.requestClient = new U.adapter.reqClass({ timeout: e.timeout || 5e3, timeoutMsg: "\u8BF7\u6C42\u5728".concat((e.timeout || 5e3) / 1e3, "s\u5185\u672A\u5B8C\u6210\uFF0C\u5DF2\u4E2D\u65AD") })), this.config = _objectSpread(_objectSpread({}, me), e), !0) {case this.config.timeout > 6e5:console.warn("timeout大于可配置上限[10分钟]，已重置为上限数值"), this.config.timeout = 6e5;break;case this.config.timeout < 100:console.warn("timeout小于可配置下限[100ms]，已重置为下限数值"), this.config.timeout = 100;}return new _e(this.config);} }, { key: "auth", value: function auth() {var _ref10 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},e = _ref10.persistence;if (this.authObj) return this.authObj;var t = e || U.adapter.primaryStorage || me.persistence;var s;return t !== this.config.persistence && (this.config.persistence = t), function (e) {var t = e.env;x[t] = new R(e), q[t] = new R(_objectSpread(_objectSpread({}, e), {}, { persistence: "local" }));}(this.config), s = this.config, ee[s.env] = new Z(s), this.authObj = new ue(this.config), this.authObj;} }, { key: "on", value: function on(e, t) {return $.apply(this, [e, t]);} }, { key: "off", value: function off(e, t) {return B.apply(this, [e, t]);} }, { key: "callFunction", value: function callFunction(e, t) {return ge.apply(this, [e, t]);} }, { key: "deleteFile", value: function deleteFile(e, t) {return de.apply(this, [e, t]);} }, { key: "getTempFileURL", value: function getTempFileURL(e, t) {return fe.apply(this, [e, t]);} }, { key: "downloadFile", value: function downloadFile(e, t) {return pe.apply(this, [e, t]);} }, { key: "uploadFile", value: function uploadFile(e, t) {return he.apply(this, [e, t]);} }, { key: "getUploadMetadata", value: function getUploadMetadata(e, t) {return le.apply(this, [e, t]);} }, { key: "registerExtension", value: function registerExtension(e) {ye[e.name] = e;} }, { key: "invokeExtension", value: function () {var _invokeExtension = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee30(e, t) {var s;return _regenerator.default.wrap(function _callee30$(_context30) {while (1) {switch (_context30.prev = _context30.next) {case 0:s = ye[e];if (s) {_context30.next = 3;break;}throw Error("\u6269\u5C55".concat(e, " \u5FC5\u987B\u5148\u6CE8\u518C"));case 3:_context30.next = 5;return s.invoke(t, this);case 5:return _context30.abrupt("return", _context30.sent);case 6:case "end":return _context30.stop();}}}, _callee30, this);}));function invokeExtension(_x28, _x29) {return _invokeExtension.apply(this, arguments);}return invokeExtension;}() }, { key: "useAdapters", value: function useAdapters(e) {var _ref11 = O(e) || {},t = _ref11.adapter,s = _ref11.runtime;t && (U.adapter = t), s && (U.runtime = s);} }]);return _e;}();var ve = new _e();function we(e, t, s) {void 0 === s && (s = {});var n = /\?/.test(t),r = "";for (var o in s) {"" === r ? !n && (t += "?") : r += "&", r += o + "=" + encodeURIComponent(s[o]);}return /^http(s)?:\/\//.test(t += r) ? t : "" + e + t;}var Se = /*#__PURE__*/function () {function Se() {_classCallCheck(this, Se);}_createClass(Se, [{ key: "post", value: function post(e) {var t = e.url,s = e.data,n = e.headers;return new Promise(function (e, r) {y.request({ url: we("https:", t), data: s, method: "POST", header: n, success: function success(t) {e(t);}, fail: function fail(e) {r(e);} });});} }, { key: "upload", value: function upload(e) {return new Promise(function (t, s) {var n = e.url,r = e.file,o = e.data,i = e.headers,a = e.fileType,c = y.uploadFile({ url: we("https:", n), name: "file", formData: Object.assign({}, o), filePath: r, fileType: a, header: i, success: function success(e) {var s = { statusCode: e.statusCode, data: e.data || {} };200 === e.statusCode && o.success_action_status && (s.statusCode = parseInt(o.success_action_status, 10)), t(s);}, fail: function fail(e) { false && false, s(new Error(e.errMsg || "uploadFile:fail"));} });"function" == typeof e.onUploadProgress && c && "function" == typeof c.onProgressUpdate && c.onProgressUpdate(function (t) {e.onUploadProgress({ loaded: t.totalBytesSent, total: t.totalBytesExpectedToSend });});});} }]);return Se;}();var ke = { setItem: function setItem(e, t) {y.setStorageSync(e, t);}, getItem: function getItem(e) {return y.getStorageSync(e);}, removeItem: function removeItem(e) {y.removeStorageSync(e);}, clear: function clear() {y.clearStorageSync();} };var Te = { genAdapter: function genAdapter() {return { root: {}, reqClass: Se, localStorage: ke, primaryStorage: "local" };}, isMatch: function isMatch() {return !0;}, runtime: "uni_app" };ve.useAdapters(Te);var Ae = ve,Ie = Ae.init;var Pe, Ee;function Oe(_ref12) {var e = _ref12.name,t = _ref12.data,s = _ref12.spaceId,n = _ref12.provider;Pe || (Pe = function () {var _uni$getSystemInfoSyn = uni.getSystemInfoSync(),e = _uni$getSystemInfoSyn.deviceId;return { PLATFORM: "mp-weixin", OS: d, APPID: h.appid, LOCALE: u(), DEVICEID: e, CLIENT_SDK_VERSION: "1.0.0" };}(), Ee = { ak: h.appid, p: "android" === d ? "a" : "i", ut: g(), uuid: p() });var r = JSON.parse(JSON.stringify(t || {})),o = e,i = s,a = { tencent: "t", aliyun: "a" }[n];{var _e15 = Object.assign({}, Ee, { fn: o, sid: i, pvd: a });Object.assign(r, { clientInfo: Pe, uniCloudClientInfo: encodeURIComponent(JSON.stringify(_e15)) });var _uni$getSystemInfoSyn2 = uni.getSystemInfoSync(),_t8 = _uni$getSystemInfoSyn2.deviceId;r.uniCloudDeviceId = _t8;}if (!r.uniIdToken) {var _e16 = y.getStorageSync("uni_id_token") || y.getStorageSync("uniIdToken");_e16 && (r.uniIdToken = _e16);}return r;}function Ue(_ref13) {var _this11 = this;var e = _ref13.name,t = _ref13.data;var s = this.localAddress,n = this.localPort,r = { aliyun: "aliyun", tencent: "tcb" }[this.config.provider],o = this.config.spaceId,a = "http://".concat(s, ":").concat(n, "/system/check-function"),c = "http://".concat(s, ":").concat(n, "/cloudfunctions/").concat(e);return new Promise(function (t, s) {y.request({ method: "POST", url: a, data: { name: e, platform: "mp-weixin", provider: r, spaceId: o }, timeout: 3e3, success: function success(e) {t(e);}, fail: function fail() {t({ data: { code: "NETWORK_ERROR", message: "连接本地调试服务失败，请检查客户端是否和主机在同一局域网下，自动切换为已部署的云函数。" } });} });}).then(function () {var _ref14 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},e = _ref14.data;var _ref15 = e || {},t = _ref15.code,s = _ref15.message;return { code: 0 === t ? 0 : t || "SYS_ERR", message: s || "SYS_ERR" };}).then(function (_ref16) {var s = _ref16.code,n = _ref16.message;if (0 !== s) {switch (s) {case "MODULE_ENCRYPTED":console.error("\u6B64\u4E91\u51FD\u6570\uFF08".concat(e, "\uFF09\u4F9D\u8D56\u52A0\u5BC6\u516C\u5171\u6A21\u5757\u4E0D\u53EF\u672C\u5730\u8C03\u8BD5\uFF0C\u81EA\u52A8\u5207\u6362\u4E3A\u4E91\u7AEF\u5DF2\u90E8\u7F72\u7684\u4E91\u51FD\u6570"));break;case "FUNCTION_ENCRYPTED":console.error("\u6B64\u4E91\u51FD\u6570\uFF08".concat(e, "\uFF09\u5DF2\u52A0\u5BC6\u4E0D\u53EF\u672C\u5730\u8C03\u8BD5\uFF0C\u81EA\u52A8\u5207\u6362\u4E3A\u4E91\u7AEF\u5DF2\u90E8\u7F72\u7684\u4E91\u51FD\u6570"));break;case "ACTION_ENCRYPTED":console.error(n || "需要访问加密的uni-clientDB-action，自动切换为云端环境");break;case "NETWORK_ERROR":{var _e17 = "连接本地调试服务失败，请检查客户端是否和主机在同一局域网下";throw console.error(_e17), new Error(_e17);}case "SWITCH_TO_CLOUD":break;default:{var _e18 = "\u68C0\u6D4B\u672C\u5730\u8C03\u8BD5\u670D\u52A1\u51FA\u73B0\u9519\u8BEF\uFF1A".concat(n, "\uFF0C\u8BF7\u68C0\u67E5\u7F51\u7EDC\u73AF\u5883\u6216\u91CD\u542F\u5BA2\u6237\u7AEF\u518D\u8BD5");throw console.error(_e18), new Error(_e18);}}return _this11.originCallFunction({ name: e, data: t });}return new Promise(function (s, n) {var a = Oe({ name: e, data: t, provider: _this11.config.provider, spaceId: o });y.request({ method: "POST", url: c, data: { provider: r, platform: "mp-weixin", param: a }, success: function success() {var _ref17 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},e = _ref17.statusCode,t = _ref17.data;return !e || e >= 400 ? n(new i({ code: t.code || "SYS_ERR", message: t.message || "request:fail" })) : s({ result: t });}, fail: function fail(e) {n(new i({ code: e.code || e.errCode || "SYS_ERR", message: e.message || e.errMsg || "request:fail" }));} });});});}function be(e) {var t = e.callFunction;e.callFunction = function (e) {var _this12 = this;var s;return s = this.isReady ? Promise.resolve() : this.initUniCloud, s.then(function () {e.data = Oe({ name: e.name, data: e.data, provider: _this12.config.provider, spaceId: _this12.config.spaceId });var s = { aliyun: "aliyun", tencent: "tcb" }[_this12.config.provider];return new Promise(function (n, r) {t.call(_this12, e).then(function (t) {if (_this12.config.useDebugFunction && t && t.requestId) {var _n7 = JSON.stringify({ spaceId: _this12.config.spaceId, functionName: e.name, requestId: t.requestId });console.log("[".concat(s, "-request]").concat(_n7, "[/").concat(s, "-request]"));}n(t);}).catch(function (t) {if (_this12.config.useDebugFunction && t && t.requestId) {var _n8 = JSON.stringify({ spaceId: _this12.config.spaceId, functionName: e.name, requestId: t.requestId });console.log("[".concat(s, "-request]").concat(_n8, "[/").concat(s, "-request]"));}t && t.message && (t.message = "[".concat(e.name, "]: ").concat(t.message)), r(t);});});});};var s = e.callFunction;e.originCallFunction = e.callFunction, e.callFunction = function (t) {return o(function (t) {var _this13 = this;var n;return n = e.isReady ? Promise.resolve() : e.initUniCloud, n.then(function () {return  true && e.debugInfo && !e.debugInfo.forceRemote && [] ? Ue.call(_this13, t) : s.call(_this13, t);});}).call(this, t);};}Ae.init = function (e) {e.env = e.spaceId;var t = Ie.call(this, e);t.config.provider = "tencent", t.config.spaceId = e.spaceId;var s = t.auth;t.auth = function (e) {var t = s.call(this, e);return ["linkAndRetrieveDataWithTicket", "signInAnonymously", "signOut", "getAccessToken", "getLoginState", "signInWithTicket", "getUserInfo"].forEach(function (e) {t[e] = o(t[e]).bind(t);}), t;}, t.customAuth = t.auth;return ["deleteFile", "getTempFileURL", "downloadFile"].forEach(function (e) {t[e] = o(t[e]).bind(t);}), t;};var Ce = Symbol("CLIENT_DB_INTERNAL");function De(e, t) {return e.then = "DoNotReturnProxyWithAFunctionNamedThen", e._internalType = Ce, new Proxy(e, { get: function get(e, s, n) {return function (e, t) {return Object.prototype.hasOwnProperty.call(e, t);}(e, s) || e[s] || "string" != typeof s ? e[s] : t.get(e, s, n);} });}var Re = /*#__PURE__*/function (_Error2) {_inherits(Re, _Error2);var _super8 = _createSuper(Re);function Re(e, t) {var _this14;_classCallCheck(this, Re);_this14 = _super8.call(this, e), _this14.code = t;return _this14;}return Re;}( /*#__PURE__*/_wrapNativeSuper(Error));function xe(e) {switch (t = e, Object.prototype.toString.call(t).slice(8, -1).toLowerCase()) {case "array":return e.map(function (e) {return xe(e);});case "object":return e._internalType === Ce || Object.keys(e).forEach(function (t) {e[t] = xe(e[t]);}), e;case "regexp":return { $regexp: { source: e.source, flags: e.flags } };case "date":return { $date: e.toISOString() };default:return e;}var t;}function qe() {var e = y.getStorageSync("uni_id_token") || "",t = e.split(".");if (!e || 3 !== t.length) return { uid: null, role: [], permission: [] };var s;try {s = JSON.parse((n = t[1], decodeURIComponent(atob(n).split("").map(function (e) {return "%" + ("00" + e.charCodeAt(0).toString(16)).slice(-2);}).join(""))));} catch (e) {throw new Error("获取当前用户信息出错，详细错误信息为：" + e.message);}var n;return s;}var Fe = t(s(function (e, t) {Object.defineProperty(t, "__esModule", { value: !0 });var s = "chooseAndUploadFile:fail";function n(e, t) {return e.tempFiles.forEach(function (e, s) {e.name || (e.name = e.path.substring(e.path.lastIndexOf("/") + 1)), t && (e.fileType = t), e.cloudPath = Date.now() + "_" + s + e.name.substring(e.name.lastIndexOf("."));}), e.tempFilePaths || (e.tempFilePaths = e.tempFiles.map(function (e) {return e.path;})), e;}function r(e, t, _ref18) {var s = _ref18.onChooseFile,n = _ref18.onUploadProgress;return t.then(function (e) {if (s) {var _t9 = s(e);if (void 0 !== _t9) return Promise.resolve(_t9).then(function (t) {return void 0 === t ? e : t;});}return e;}).then(function (t) {return !1 === t ? { errMsg: "chooseAndUploadFile:ok", tempFilePaths: [], tempFiles: [] } : function (e, t) {var s = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 5;var n = arguments.length > 3 ? arguments[3] : undefined;(t = Object.assign({}, t)).errMsg = "chooseAndUploadFile:ok";var r = t.tempFiles,o = r.length;var i = 0;return new Promise(function (a) {for (; i < s;) {c();}function c() {var s = i++;if (s >= o) return void (!r.find(function (e) {return !e.url && !e.errMsg;}) && a(t));var u = r[s];e.uploadFile({ filePath: u.path, cloudPath: u.cloudPath, fileType: u.fileType, onUploadProgress: function onUploadProgress(e) {e.index = s, e.tempFile = u, e.tempFilePath = u.path, n && n(e);} }).then(function (e) {u.url = e.fileID, s < o && c();}).catch(function (e) {u.errMsg = e.errMsg || e.message, s < o && c();});}});}(e, t, 5, n);});}t.initChooseAndUploadFile = function (e) {return function () {var t = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { type: "all" };return "image" === t.type ? r(e, function (e) {var t = e.count,r = e.sizeType,o = e.sourceType,i = e.extension;return new Promise(function (e, a) {uni.chooseImage({ count: t, sizeType: r, sourceType: o, extension: i, success: function success(t) {e(n(t, "image"));}, fail: function fail(e) {a({ errMsg: e.errMsg.replace("chooseImage:fail", s) });} });});}(t), t) : "video" === t.type ? r(e, function (e) {var t = e.camera,r = e.compressed,o = e.maxDuration,i = e.sourceType,a = e.extension;return new Promise(function (e, c) {uni.chooseVideo({ camera: t, compressed: r, maxDuration: o, sourceType: i, extension: a, success: function success(t) {var s = t.tempFilePath,r = t.duration,o = t.size,i = t.height,a = t.width;e(n({ errMsg: "chooseVideo:ok", tempFilePaths: [s], tempFiles: [{ name: t.tempFile && t.tempFile.name || "", path: s, size: o, type: t.tempFile && t.tempFile.type || "", width: a, height: i, duration: r, fileType: "video", cloudPath: "" }] }, "video"));}, fail: function fail(e) {c({ errMsg: e.errMsg.replace("chooseVideo:fail", s) });} });});}(t), t) : r(e, function (e) {var t = e.count,r = e.extension;return new Promise(function (e, o) {var i = uni.chooseFile;if ("undefined" != typeof wx && "function" == typeof wx.chooseMessageFile && (i = wx.chooseMessageFile), "function" != typeof i) return o({ errMsg: s + " 请指定 type 类型，该平台仅支持选择 image 或 video。" });i({ type: "all", count: t, extension: r, success: function success(t) {e(n(t));}, fail: function fail(e) {o({ errMsg: e.errMsg.replace("chooseFile:fail", s) });} });});}(t), t);};};}));function Le(_x30, _x31) {return _Le.apply(this, arguments);}function _Le() {_Le = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee32(e, t) {var s, _e24, n;return _regenerator.default.wrap(function _callee32$(_context32) {while (1) {switch (_context32.prev = _context32.next) {case 0:s = "http://".concat(e, ":").concat(t, "/system/ping");_context32.prev = 1;_context32.next = 4;return n = { url: s, timeout: 500 }, new Promise(function (e, t) {y.request(_objectSpread(_objectSpread({}, n), {}, { success: function success(t) {e(t);}, fail: function fail(e) {t(e);} }));});case 4:_e24 = _context32.sent;return _context32.abrupt("return", !(!_e24.data || 0 !== _e24.data.code));case 8:_context32.prev = 8;_context32.t0 = _context32["catch"](1);return _context32.abrupt("return", !1);case 11:case "end":return _context32.stop();}}}, _callee32, null, [[1, 8]]);}));return _Le.apply(this, arguments);}var Ne = new ( /*#__PURE__*/function () {function _class2() {_classCallCheck(this, _class2);}_createClass(_class2, [{ key: "init", value: function init(e) {var t = {};var s = !1 !== e.debugFunction && "development" === "development" && ( false || "app-plus" === "mp-weixin");switch (e.provider) {case "tencent":t = Ae.init(Object.assign(e, { useDebugFunction: s }));break;case "aliyun":t = v.init(Object.assign(e, { useDebugFunction: s }));break;default:throw new Error("未提供正确的provider参数");}var n = undefined; true && n && !n.code && (t.debugInfo = n), t.isReady = !1;var r = t.auth();return t.initUniCloud = r.getLoginState().then(function (e) {return e ? Promise.resolve() : r.signInAnonymously();}).then(function () {if ( true && t.debugInfo) {var _t$debugInfo = t.debugInfo,_e19 = _t$debugInfo.address,_s4 = _t$debugInfo.servePort;return function () {var _ref19 = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee31(e, t) {var s, _n9, _r3;return _regenerator.default.wrap(function _callee31$(_context31) {while (1) {switch (_context31.prev = _context31.next) {case 0:_n9 = 0;case 1:if (!(_n9 < e.length)) {_context31.next = 11;break;}_r3 = e[_n9];_context31.next = 5;return Le(_r3, t);case 5:if (!_context31.sent) {_context31.next = 8;break;}s = _r3;return _context31.abrupt("break", 11);case 8:_n9++;_context31.next = 1;break;case 11:return _context31.abrupt("return", { address: s, port: t });case 12:case "end":return _context31.stop();}}}, _callee31);}));return function (_x32, _x33) {return _ref19.apply(this, arguments);};}()(_e19, _s4);}return Promise.resolve();}).then(function () {var _ref20 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},e = _ref20.address,s = _ref20.port;if (e) t.localAddress = e, t.localPort = s;else if (t.debugInfo) {var _e20 =  false ? undefined : "warn",_s5 = console[_e20];"remote" === t.debugInfo.initialLaunchType ? (t.debugInfo.forceRemote = !0, _s5("当前客户端和HBuilderX不在同一局域网下（或其他网络原因无法连接HBuilderX），uniCloud本地调试服务不对当前客户端生效。\n- 如果不使用uniCloud本地调试服务，请直接忽略此信息。\n- 如需使用uniCloud本地调试服务，请将客户端与主机连接到同一局域网下并重新运行到客户端。\n- 如果在HBuilderX开启的状态下切换过网络环境，请重启HBuilderX后再试")) : _s5("无法连接uniCloud本地调试服务，请检查当前客户端是否与主机在同一局域网下。\n- 如需使用uniCloud本地调试服务，请将客户端与主机连接到同一局域网下并重新运行到客户端。\n- 如果在HBuilderX开启的状态下切换过网络环境，请重启HBuilderX后再试");}}).then(function () {return function () {if (true) return;if (uni.getStorageSync("__LAST_DCLOUD_APPID") === h.appid) return;uni.setStorageSync("__LAST_DCLOUD_APPID", h.appid), uni.removeStorageSync("uni_id_token") && (console.warn("检测到当前项目与上次运行到此端口的项目不一致，自动清理uni-id保存的token信息（仅开发调试时生效）"), uni.removeStorageSync("uni_id_token"), uni.removeStorageSync("uni_id_token_expired"));}(), new Promise(function (e) { false ? (undefined) : setTimeout(function () {d = uni.getSystemInfoSync().platform, l = uni.getStorageSync("__DC_CLOUD_UUID") || f(32), e();}, 0);});}).then(function () {t.isReady = !0;}), be(t), function (e) {var t = e.uploadFile;e.uploadFile = function (e) {var _this15 = this;var s;return s = this.isReady ? Promise.resolve() : this.initUniCloud, s.then(function () {return t.call(_this15, e);});};var s = e.uploadFile;e.uploadFile = function (e) {return o(s).call(this, e);};}(t), function (e) {e.database = function () {if (this._database) return this._database;var t = {},s = {};var n = /*#__PURE__*/function () {function n(e, t, s) {_classCallCheck(this, n);this.content = e, this.prevStage = t, this.actionName = s;}_createClass(n, [{ key: "toJSON", value: function toJSON() {var e = this;var t = [e.content];for (; e.prevStage;) {e = e.prevStage, t.push(e.content);}return { $db: t.reverse().map(function (e) {return { $method: e.$method, $param: e.$param };}) };} }, { key: "get", value: function get() {return this._send("get", Array.from(arguments));} }, { key: "add", value: function add() {return this._send("add", Array.from(arguments));} }, { key: "remove", value: function remove() {return this._send("remove", Array.from(arguments));} }, { key: "update", value: function update() {return this._send("update", Array.from(arguments));} }, { key: "end", value: function end() {return this._send("end", Array.from(arguments));} }, { key: "set", value: function set() {throw new Error("clientDB禁止使用set方法");} }, { key: "_send", value: function _send(n, r) {var o = this.toJSON();return o.$db.push({ $method: n, $param: r }), e.callFunction({ name: "DCloud-clientDB", data: { action: this.actionName, command: o } }).then(function (e) {var _e$result = e.result,n = _e$result.code,r = _e$result.message,o = _e$result.token,i = _e$result.tokenExpired;return n ? Promise.reject(new Re(r, n)) : (o && i && t.refreshToken && t.refreshToken.forEach(function (e) {e({ token: o, tokenExpired: i });}), o && i && s.refreshToken && s.refreshToken.forEach(function (e) {e({ token: o, tokenExpired: i });}), Promise.resolve(e));}).catch(function (e) {var t = new Re(e.message, e.code || "SYSTEM_ERROR");return s.error && s.error.forEach(function (e) {e(t);}), /fc_function_not_found|FUNCTION_NOT_FOUND/g.test(e.message) && console.warn("clientDB未初始化，请在web控制台保存一次schema以开启clientDB"), Promise.reject(e);});} }, { key: "useAggregate", get: function get() {var e = this,t = !1;for (; e.prevStage;) {e = e.prevStage;var _s6 = e.content.$method;if ("aggregate" === _s6 || "pipeline" === _s6) {t = !0;break;}}return t;} }, { key: "count", get: function get() {if (!this.useAggregate) return function () {return this._send("count", Array.from(arguments));};var e = this;return function () {return i({ $method: "count", $param: xe(Array.from(arguments)) }, e, e.actionName);};} }]);return n;}();var r = ["db.Geo", "db.command", "command.aggregate"];function o(e, t) {return r.indexOf("".concat(e, ".").concat(t)) > -1;}function i(e, t, s) {return De(new n(e, t, s), { get: function get(e, t) {var n = "db";return e && e.content && (n = e.content.$method), o(n, t) ? i({ $method: t }, e, s) : function () {return i({ $method: t, $param: xe(Array.from(arguments)) }, e, s);};} });}function a(_ref21) {var e = _ref21.path,t = _ref21.method;return /*#__PURE__*/function () {function _class3() {_classCallCheck(this, _class3);this.param = Array.from(arguments);}_createClass(_class3, [{ key: "toJSON", value: function toJSON() {return { $newDb: [].concat(_toConsumableArray(e.map(function (e) {return { $method: e };})), [{ $method: t, $param: this.param }]) };} }]);return _class3;}();}var c = { auth: { on: function on(e, s) {t[e] = t[e] || [], t[e].indexOf(s) > -1 || t[e].push(s);}, off: function off(e, s) {t[e] = t[e] || [];var n = t[e].indexOf(s);-1 !== n && t[e].splice(n, 1);} }, on: function on(e, t) {s[e] = s[e] || [], s[e].indexOf(t) > -1 || s[e].push(t);}, off: function off(e, t) {s[e] = s[e] || [];var n = s[e].indexOf(t);-1 !== n && s[e].splice(n, 1);}, env: De({}, { get: function get(e, t) {return { $env: t };} }), action: function action(e) {return De({}, { get: function get(t, s) {return o("db", s) ? i({ $method: s }, null, e) : function () {return i({ $method: s, $param: xe(Array.from(arguments)) }, null, e);};} });}, Geo: De({}, { get: function get(e, t) {return a({ path: ["Geo"], method: t });} }), getCloudEnv: function getCloudEnv(e) {if ("string" != typeof e || !e.trim()) throw new Error("getCloudEnv参数错误");return { $env: e.replace("$cloudEnv_", "") };}, get serverDate() {return a({ path: [], method: "serverDate" });}, get RegExp() {return a({ path: [], method: "RegExp" });} },u = De(c, { get: function get(e, t) {return o("db", t) ? i({ $method: t }) : function () {return i({ $method: t, $param: xe(Array.from(arguments)) });};} });return this._database = u, u;};}(t), function (e) {e.getCurrentUserInfo = qe, e.chooseAndUploadFile = o(Fe.initChooseAndUploadFile(e));}(t), t.init = this.init, t;} }]);return _class2;}())();(function () {{var e = {};if (1 === [].length) e = [][0], Ne = Ne.init(e);else {var _e21 = ["auth", "callFunction", "uploadFile", "deleteFile", "getTempFileURL", "downloadFile", "database", "getCurrentUSerInfo"],t = [].length > 0 ? "应用有多个服务空间，请通过uniCloud.init方法指定要使用的服务空间" : "应用未关联服务空间，请在cloudfunctions目录右键关联服务空间";_e21.forEach(function (e) {Ne[e] = function () {return console.error(t), Promise.reject(new i({ code: "SYS_ERR", message: t }));};});}Object.assign(Ne, { get mixinDatacom() {return e = Ne, { props: { localdata: { type: Array, default: function _default() {return [];} }, options: { type: [Object, Array], default: function _default() {return {};} }, collection: { type: String, default: "" }, action: { type: String, default: "" }, field: { type: String, default: "" }, orderby: { type: String, default: "" }, where: { type: [String, Object], default: "" }, pageData: { type: String, default: "add" }, pageCurrent: { type: Number, default: 1 }, pageSize: { type: Number, default: 20 }, getcount: { type: [Boolean, String], default: !1 }, gettree: { type: [Boolean, String], default: !1 }, gettreepath: { type: [Boolean, String], default: !1 }, startwith: { type: String, default: "" }, limitlevel: { type: Number, default: 10 }, groupby: { type: String, default: "" }, groupField: { type: String, default: "" }, distinct: { type: [Boolean, String], default: !1 }, manual: { type: Boolean, default: !1 } }, data: function data() {return { mixinDatacomLoading: !1, mixinDatacomHasMore: !1, mixinDatacomResData: [], mixinDatacomErrorMessage: "", mixinDatacomPage: {} };}, created: function created() {var _this16 = this;this.mixinDatacomPage = { current: this.pageCurrent, size: this.pageSize, count: 0 }, this.$watch(function () {var e = [];return ["pageCurrent", "pageSize", "localdata", "collection", "action", "field", "orderby", "where", "getont", "getcount", "gettree", "groupby", "groupField", "distinct"].forEach(function (t) {e.push(_this16[t]);}), e;}, function (e, t) {var s = !1;var n = [];for (var _r4 = 2; _r4 < e.length; _r4++) {e[_r4] !== t[_r4] && (n.push(e[_r4]), s = !0);}e[0] !== t[0] && (_this16.mixinDatacomPage.current = _this16.pageCurrent), _this16.mixinDatacomPage.size = _this16.pageSize, _this16.onMixinDatacomPropsChange(s, n);});}, methods: { onMixinDatacomPropsChange: function onMixinDatacomPropsChange(e, t) {}, mixinDatacomEasyGet: function mixinDatacomEasyGet() {var _this17 = this;var _ref22 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},_ref22$getone = _ref22.getone,e = _ref22$getone === void 0 ? !1 : _ref22$getone,t = _ref22.success,s = _ref22.fail;this.mixinDatacomLoading || (this.mixinDatacomLoading = !0, this.mixinDatacomErrorMessage = "", this.mixinDatacomGet().then(function (s) {_this17.mixinDatacomLoading = !1;var _s$result = s.result,n = _s$result.data,r = _s$result.count;_this17.getcount && (_this17.mixinDatacomPage.count = r), _this17.mixinDatacomHasMore = n.length < _this17.pageSize;var o = e ? n.length ? n[0] : void 0 : n;_this17.mixinDatacomResData = o, t && t(o);}).catch(function (e) {_this17.mixinDatacomLoading = !1, _this17.mixinDatacomErrorMessage = e, s && s(e);}));}, mixinDatacomGet: function mixinDatacomGet() {var t = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};var s = e.database();var n = t.action || this.action;n && (s = s.action(n));var r = t.collection || this.collection;s = s.collection(r);var o = t.where || this.where;o && Object.keys(o).length && (s = s.where(o));var i = t.field || this.field;i && (s = s.field(i));var a = t.groupby || this.groupby;a && (s = s.groupBy(a));var c = t.groupField || this.groupField;c && (s = s.groupField(c)), !0 === (void 0 !== t.distinct ? t.distinct : this.distinct) && (s = s.distinct());var u = t.orderby || this.orderby;u && (s = s.orderBy(u));var h = void 0 !== t.pageCurrent ? t.pageCurrent : this.mixinDatacomPage.current,l = void 0 !== t.pageSize ? t.pageSize : this.mixinDatacomPage.size,d = void 0 !== t.getcount ? t.getcount : this.getcount,f = void 0 !== t.gettree ? t.gettree : this.gettree,p = void 0 !== t.gettreepath ? t.gettreepath : this.gettreepath,g = { getCount: d },m = { limitLevel: void 0 !== t.limitlevel ? t.limitlevel : this.limitlevel, startWith: void 0 !== t.startwith ? t.startwith : this.startwith };return f && (g.getTree = m), p && (g.getTreePath = m), s = s.skip(l * (h - 1)).limit(l).get(g), s;} } };var e;} });}})();var Me = Ne;var _default2 = Me;exports.default = _default2;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../webpack/buildin/global.js */ 3), __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"], __webpack_require__(/*! ./../../../../../node-libs-browser/mock/process.js */ 501)))
+/* WEBPACK VAR INJECTION */(function(global, uni, process) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 62));var _uniI18n = __webpack_require__(/*! @dcloudio/uni-i18n */ 274);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _iterableToArray(iter) {if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) return _arrayLikeToArray(arr);}function _createForOfIteratorHelper(o, allowArrayLike) {var it;if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {if (it) o = it;var i = 0;var F = function F() {};return { s: F, n: function n() {if (i >= o.length) return { done: true };return { done: false, value: o[i++] };}, e: function e(_e22) {throw _e22;}, f: F };}throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}var normalCompletion = true,didErr = false,err;return { s: function s() {it = o[Symbol.iterator]();}, n: function n() {var step = it.next();normalCompletion = step.done;return step;}, e: function e(_e23) {didErr = true;err = _e23;}, f: function f() {try {if (!normalCompletion && it.return != null) it.return();} finally {if (didErr) throw err;}} };}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function");}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });if (superClass) _setPrototypeOf(subClass, superClass);}function _createSuper(Derived) {var hasNativeReflectConstruct = _isNativeReflectConstruct();return function _createSuperInternal() {var Super = _getPrototypeOf(Derived),result;if (hasNativeReflectConstruct) {var NewTarget = _getPrototypeOf(this).constructor;result = Reflect.construct(Super, arguments, NewTarget);} else {result = Super.apply(this, arguments);}return _possibleConstructorReturn(this, result);};}function _possibleConstructorReturn(self, call) {if (call && (typeof call === "object" || typeof call === "function")) {return call;}return _assertThisInitialized(self);}function _assertThisInitialized(self) {if (self === void 0) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return self;}function _wrapNativeSuper(Class) {var _cache = typeof Map === "function" ? new Map() : undefined;_wrapNativeSuper = function _wrapNativeSuper(Class) {if (Class === null || !_isNativeFunction(Class)) return Class;if (typeof Class !== "function") {throw new TypeError("Super expression must either be null or a function");}if (typeof _cache !== "undefined") {if (_cache.has(Class)) return _cache.get(Class);_cache.set(Class, Wrapper);}function Wrapper() {return _construct(Class, arguments, _getPrototypeOf(this).constructor);}Wrapper.prototype = Object.create(Class.prototype, { constructor: { value: Wrapper, enumerable: false, writable: true, configurable: true } });return _setPrototypeOf(Wrapper, Class);};return _wrapNativeSuper(Class);}function _construct(Parent, args, Class) {if (_isNativeReflectConstruct()) {_construct = Reflect.construct;} else {_construct = function _construct(Parent, args, Class) {var a = [null];a.push.apply(a, args);var Constructor = Function.bind.apply(Parent, a);var instance = new Constructor();if (Class) _setPrototypeOf(instance, Class.prototype);return instance;};}return _construct.apply(null, arguments);}function _isNativeReflectConstruct() {if (typeof Reflect === "undefined" || !Reflect.construct) return false;if (Reflect.construct.sham) return false;if (typeof Proxy === "function") return true;try {Date.prototype.toString.call(Reflect.construct(Date, [], function () {}));return true;} catch (e) {return false;}}function _isNativeFunction(fn) {return Function.toString.call(fn).indexOf("[native code]") !== -1;}function _setPrototypeOf(o, p) {_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {o.__proto__ = p;return o;};return _setPrototypeOf(o, p);}function _getPrototypeOf(o) {_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {return o.__proto__ || Object.getPrototypeOf(o);};return _getPrototypeOf(o);}"undefined" != typeof globalThis ? globalThis : "undefined" != typeof window ? window : "undefined" != typeof global ? global : "undefined" != typeof self && self;function t(e) {return e && e.__esModule && Object.prototype.hasOwnProperty.call(e, "default") ? e.default : e;}function s(e, t, s) {return e(s = { path: t, exports: {}, require: function require(e, t) {return function () {throw new Error("Dynamic requires are not currently supported by @rollup/plugin-commonjs");}(null == t && s.path);} }, s.exports), s.exports;}var n = s(function (e, t) {var s;e.exports = (s = s || function (e, t) {var s = Object.create || function () {function e() {}return function (t) {var s;return e.prototype = t, s = new e(), e.prototype = null, s;};}(),n = {},r = n.lib = {},o = r.Base = { extend: function extend(e) {var t = s(this);return e && t.mixIn(e), t.hasOwnProperty("init") && this.init !== t.init || (t.init = function () {t.$super.init.apply(this, arguments);}), t.init.prototype = t, t.$super = this, t;}, create: function create() {var e = this.extend();return e.init.apply(e, arguments), e;}, init: function init() {}, mixIn: function mixIn(e) {for (var t in e) {e.hasOwnProperty(t) && (this[t] = e[t]);}e.hasOwnProperty("toString") && (this.toString = e.toString);}, clone: function clone() {return this.init.prototype.extend(this);} },i = r.WordArray = o.extend({ init: function init(e, t) {e = this.words = e || [], this.sigBytes = null != t ? t : 4 * e.length;}, toString: function toString(e) {return (e || c).stringify(this);}, concat: function concat(e) {var t = this.words,s = e.words,n = this.sigBytes,r = e.sigBytes;if (this.clamp(), n % 4) for (var o = 0; o < r; o++) {var i = s[o >>> 2] >>> 24 - o % 4 * 8 & 255;t[n + o >>> 2] |= i << 24 - (n + o) % 4 * 8;} else for (o = 0; o < r; o += 4) {t[n + o >>> 2] = s[o >>> 2];}return this.sigBytes += r, this;}, clamp: function clamp() {var t = this.words,s = this.sigBytes;t[s >>> 2] &= 4294967295 << 32 - s % 4 * 8, t.length = e.ceil(s / 4);}, clone: function clone() {var e = o.clone.call(this);return e.words = this.words.slice(0), e;}, random: function random(t) {for (var s, n = [], r = function r(t) {t = t;var s = 987654321,n = 4294967295;return function () {var r = ((s = 36969 * (65535 & s) + (s >> 16) & n) << 16) + (t = 18e3 * (65535 & t) + (t >> 16) & n) & n;return r /= 4294967296, (r += .5) * (e.random() > .5 ? 1 : -1);};}, o = 0; o < t; o += 4) {var a = r(4294967296 * (s || e.random()));s = 987654071 * a(), n.push(4294967296 * a() | 0);}return new i.init(n, t);} }),a = n.enc = {},c = a.Hex = { stringify: function stringify(e) {for (var t = e.words, s = e.sigBytes, n = [], r = 0; r < s; r++) {var o = t[r >>> 2] >>> 24 - r % 4 * 8 & 255;n.push((o >>> 4).toString(16)), n.push((15 & o).toString(16));}return n.join("");}, parse: function parse(e) {for (var t = e.length, s = [], n = 0; n < t; n += 2) {s[n >>> 3] |= parseInt(e.substr(n, 2), 16) << 24 - n % 8 * 4;}return new i.init(s, t / 2);} },u = a.Latin1 = { stringify: function stringify(e) {for (var t = e.words, s = e.sigBytes, n = [], r = 0; r < s; r++) {var o = t[r >>> 2] >>> 24 - r % 4 * 8 & 255;n.push(String.fromCharCode(o));}return n.join("");}, parse: function parse(e) {for (var t = e.length, s = [], n = 0; n < t; n++) {s[n >>> 2] |= (255 & e.charCodeAt(n)) << 24 - n % 4 * 8;}return new i.init(s, t);} },h = a.Utf8 = { stringify: function stringify(e) {try {return decodeURIComponent(escape(u.stringify(e)));} catch (e) {throw new Error("Malformed UTF-8 data");}}, parse: function parse(e) {return u.parse(unescape(encodeURIComponent(e)));} },l = r.BufferedBlockAlgorithm = o.extend({ reset: function reset() {this._data = new i.init(), this._nDataBytes = 0;}, _append: function _append(e) {"string" == typeof e && (e = h.parse(e)), this._data.concat(e), this._nDataBytes += e.sigBytes;}, _process: function _process(t) {var s = this._data,n = s.words,r = s.sigBytes,o = this.blockSize,a = r / (4 * o),c = (a = t ? e.ceil(a) : e.max((0 | a) - this._minBufferSize, 0)) * o,u = e.min(4 * c, r);if (c) {for (var h = 0; h < c; h += o) {this._doProcessBlock(n, h);}var l = n.splice(0, c);s.sigBytes -= u;}return new i.init(l, u);}, clone: function clone() {var e = o.clone.call(this);return e._data = this._data.clone(), e;}, _minBufferSize: 0 }),d = (r.Hasher = l.extend({ cfg: o.extend(), init: function init(e) {this.cfg = this.cfg.extend(e), this.reset();}, reset: function reset() {l.reset.call(this), this._doReset();}, update: function update(e) {return this._append(e), this._process(), this;}, finalize: function finalize(e) {return e && this._append(e), this._doFinalize();}, blockSize: 16, _createHelper: function _createHelper(e) {return function (t, s) {return new e.init(s).finalize(t);};}, _createHmacHelper: function _createHmacHelper(e) {return function (t, s) {return new d.HMAC.init(e, s).finalize(t);};} }), n.algo = {});return n;}(Math), s);}),r = (s(function (e, t) {var s;e.exports = (s = n, function (e) {var t = s,n = t.lib,r = n.WordArray,o = n.Hasher,i = t.algo,a = [];!function () {for (var t = 0; t < 64; t++) {a[t] = 4294967296 * e.abs(e.sin(t + 1)) | 0;}}();var c = i.MD5 = o.extend({ _doReset: function _doReset() {this._hash = new r.init([1732584193, 4023233417, 2562383102, 271733878]);}, _doProcessBlock: function _doProcessBlock(e, t) {for (var s = 0; s < 16; s++) {var n = t + s,r = e[n];e[n] = 16711935 & (r << 8 | r >>> 24) | 4278255360 & (r << 24 | r >>> 8);}var o = this._hash.words,i = e[t + 0],c = e[t + 1],f = e[t + 2],p = e[t + 3],g = e[t + 4],m = e[t + 5],y = e[t + 6],_ = e[t + 7],v = e[t + 8],w = e[t + 9],S = e[t + 10],k = e[t + 11],T = e[t + 12],A = e[t + 13],I = e[t + 14],P = e[t + 15],E = o[0],O = o[1],U = o[2],b = o[3];E = u(E, O, U, b, i, 7, a[0]), b = u(b, E, O, U, c, 12, a[1]), U = u(U, b, E, O, f, 17, a[2]), O = u(O, U, b, E, p, 22, a[3]), E = u(E, O, U, b, g, 7, a[4]), b = u(b, E, O, U, m, 12, a[5]), U = u(U, b, E, O, y, 17, a[6]), O = u(O, U, b, E, _, 22, a[7]), E = u(E, O, U, b, v, 7, a[8]), b = u(b, E, O, U, w, 12, a[9]), U = u(U, b, E, O, S, 17, a[10]), O = u(O, U, b, E, k, 22, a[11]), E = u(E, O, U, b, T, 7, a[12]), b = u(b, E, O, U, A, 12, a[13]), U = u(U, b, E, O, I, 17, a[14]), E = h(E, O = u(O, U, b, E, P, 22, a[15]), U, b, c, 5, a[16]), b = h(b, E, O, U, y, 9, a[17]), U = h(U, b, E, O, k, 14, a[18]), O = h(O, U, b, E, i, 20, a[19]), E = h(E, O, U, b, m, 5, a[20]), b = h(b, E, O, U, S, 9, a[21]), U = h(U, b, E, O, P, 14, a[22]), O = h(O, U, b, E, g, 20, a[23]), E = h(E, O, U, b, w, 5, a[24]), b = h(b, E, O, U, I, 9, a[25]), U = h(U, b, E, O, p, 14, a[26]), O = h(O, U, b, E, v, 20, a[27]), E = h(E, O, U, b, A, 5, a[28]), b = h(b, E, O, U, f, 9, a[29]), U = h(U, b, E, O, _, 14, a[30]), E = l(E, O = h(O, U, b, E, T, 20, a[31]), U, b, m, 4, a[32]), b = l(b, E, O, U, v, 11, a[33]), U = l(U, b, E, O, k, 16, a[34]), O = l(O, U, b, E, I, 23, a[35]), E = l(E, O, U, b, c, 4, a[36]), b = l(b, E, O, U, g, 11, a[37]), U = l(U, b, E, O, _, 16, a[38]), O = l(O, U, b, E, S, 23, a[39]), E = l(E, O, U, b, A, 4, a[40]), b = l(b, E, O, U, i, 11, a[41]), U = l(U, b, E, O, p, 16, a[42]), O = l(O, U, b, E, y, 23, a[43]), E = l(E, O, U, b, w, 4, a[44]), b = l(b, E, O, U, T, 11, a[45]), U = l(U, b, E, O, P, 16, a[46]), E = d(E, O = l(O, U, b, E, f, 23, a[47]), U, b, i, 6, a[48]), b = d(b, E, O, U, _, 10, a[49]), U = d(U, b, E, O, I, 15, a[50]), O = d(O, U, b, E, m, 21, a[51]), E = d(E, O, U, b, T, 6, a[52]), b = d(b, E, O, U, p, 10, a[53]), U = d(U, b, E, O, S, 15, a[54]), O = d(O, U, b, E, c, 21, a[55]), E = d(E, O, U, b, v, 6, a[56]), b = d(b, E, O, U, P, 10, a[57]), U = d(U, b, E, O, y, 15, a[58]), O = d(O, U, b, E, A, 21, a[59]), E = d(E, O, U, b, g, 6, a[60]), b = d(b, E, O, U, k, 10, a[61]), U = d(U, b, E, O, f, 15, a[62]), O = d(O, U, b, E, w, 21, a[63]), o[0] = o[0] + E | 0, o[1] = o[1] + O | 0, o[2] = o[2] + U | 0, o[3] = o[3] + b | 0;}, _doFinalize: function _doFinalize() {var t = this._data,s = t.words,n = 8 * this._nDataBytes,r = 8 * t.sigBytes;s[r >>> 5] |= 128 << 24 - r % 32;var o = e.floor(n / 4294967296),i = n;s[15 + (r + 64 >>> 9 << 4)] = 16711935 & (o << 8 | o >>> 24) | 4278255360 & (o << 24 | o >>> 8), s[14 + (r + 64 >>> 9 << 4)] = 16711935 & (i << 8 | i >>> 24) | 4278255360 & (i << 24 | i >>> 8), t.sigBytes = 4 * (s.length + 1), this._process();for (var a = this._hash, c = a.words, u = 0; u < 4; u++) {var h = c[u];c[u] = 16711935 & (h << 8 | h >>> 24) | 4278255360 & (h << 24 | h >>> 8);}return a;}, clone: function clone() {var e = o.clone.call(this);return e._hash = this._hash.clone(), e;} });function u(e, t, s, n, r, o, i) {var a = e + (t & s | ~t & n) + r + i;return (a << o | a >>> 32 - o) + t;}function h(e, t, s, n, r, o, i) {var a = e + (t & n | s & ~n) + r + i;return (a << o | a >>> 32 - o) + t;}function l(e, t, s, n, r, o, i) {var a = e + (t ^ s ^ n) + r + i;return (a << o | a >>> 32 - o) + t;}function d(e, t, s, n, r, o, i) {var a = e + (s ^ (t | ~n)) + r + i;return (a << o | a >>> 32 - o) + t;}t.MD5 = o._createHelper(c), t.HmacMD5 = o._createHmacHelper(c);}(Math), s.MD5);}), s(function (e, t) {var s, r, o;e.exports = (r = (s = n).lib.Base, o = s.enc.Utf8, void (s.algo.HMAC = r.extend({ init: function init(e, t) {e = this._hasher = new e.init(), "string" == typeof t && (t = o.parse(t));var s = e.blockSize,n = 4 * s;t.sigBytes > n && (t = e.finalize(t)), t.clamp();for (var r = this._oKey = t.clone(), i = this._iKey = t.clone(), a = r.words, c = i.words, u = 0; u < s; u++) {a[u] ^= 1549556828, c[u] ^= 909522486;}r.sigBytes = i.sigBytes = n, this.reset();}, reset: function reset() {var e = this._hasher;e.reset(), e.update(this._iKey);}, update: function update(e) {return this._hasher.update(e), this;}, finalize: function finalize(e) {var t = this._hasher,s = t.finalize(e);return t.reset(), t.finalize(this._oKey.clone().concat(s));} })));}), s(function (e, t) {e.exports = n.HmacMD5;}));function o(e) {return function (t) {if (!((t = t || {}).success || t.fail || t.complete)) return e.call(this, t);e.call(this, t).then(function (e) {t.success && t.success(e), t.complete && t.complete(e);}, function (e) {t.fail && t.fail(e), t.complete && t.complete(e);});};}var i = /*#__PURE__*/function (_Error) {_inherits(i, _Error);var _super = _createSuper(i);function i(e) {var _this;_classCallCheck(this, i);_this = _super.call(this, e.message), _this.errMsg = e.message || "", Object.defineProperties(_assertThisInitialized(_this), { code: { get: function get() {return e.code;} }, requestId: { get: function get() {return e.requestId;} }, message: { get: function get() {return this.errMsg;}, set: function set(e) {this.errMsg = e;} } });return _this;}return i;}( /*#__PURE__*/_wrapNativeSuper(Error));var _e2 = (0, _uniI18n.initVueI18n)({ "zh-Hans": { "uniCloud.init.paramRequired": "缺少参数：{param}", "uniCloud.uploadFile.fileError": "filePath应为File对象" }, "zh-Hant": { "uniCloud.init.paramRequired": "缺少参数：{param}", "uniCloud.uploadFile.fileError": "filePath应为File对象" }, en: { "uniCloud.init.paramRequired": "{param} required", "uniCloud.uploadFile.fileError": "filePath should be instance of File" }, fr: { "uniCloud.init.paramRequired": "{param} required", "uniCloud.uploadFile.fileError": "filePath should be instance of File" }, es: { "uniCloud.init.paramRequired": "{param} required", "uniCloud.uploadFile.fileError": "filePath should be instance of File" } }, "zh-Hans"),a = _e2.t,c = _e2.setLocale,u = _e2.getLocale;var h, l, d;try {h = __webpack_require__(/*! uni-stat-config */ 275).default || __webpack_require__(/*! uni-stat-config */ 275);} catch (e) {h = { appid: "" };}function f() {var e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 8;var t = "";for (; t.length < e;) {t += Math.random().toString(32).substring(2);}return t.substring(0, e);}function p() {if ("n" === g()) {try {l = plus.runtime.getDCloudId();} catch (e) {l = "";}return l;}return l || (l = f(32), uni.setStorage({ key: "__DC_CLOUD_UUID", data: l })), l;}function g() {var _appPlus$h5$mpWeixi;return (_appPlus$h5$mpWeixi = { "app-plus": "n", h5: "h5", "mp-weixin": "wx" }, _defineProperty(_appPlus$h5$mpWeixi, ["y", "a", "p", "mp-ali"].reverse().join(""), "ali"), _defineProperty(_appPlus$h5$mpWeixi, "mp-baidu", "bd"), _defineProperty(_appPlus$h5$mpWeixi, "mp-toutiao", "tt"), _defineProperty(_appPlus$h5$mpWeixi, "mp-qq", "qq"), _defineProperty(_appPlus$h5$mpWeixi, "quickapp-native", "qn"), _appPlus$h5$mpWeixi)["mp-weixin"];}var m = { sign: function sign(e, t) {var s = "";return Object.keys(e).sort().forEach(function (t) {e[t] && (s = s + "&" + t + "=" + e[t]);}), s = s.slice(1), r(s, t).toString();}, wrappedRequest: function wrappedRequest(e, t) {return new Promise(function (s, n) {t(Object.assign(e, { complete: function complete(e) {e || (e = {}),  false && false;var t = e.data && e.data.header && e.data.header["x-serverless-request-id"] || e.header && e.header["request-id"];if (!e.statusCode || e.statusCode >= 400) return n(new i({ code: "SYS_ERR", message: e.errMsg || "request:fail", requestId: t }));var r = e.data;if (r.error) return n(new i({ code: r.error.code, message: r.error.message, requestId: t }));r.result = r.data, r.requestId = t, delete r.data, s(r);} }));});} };var y = { request: function request(e) {return uni.request(e);}, uploadFile: function uploadFile(e) {return uni.uploadFile(e);}, setStorageSync: function setStorageSync(e, t) {return uni.setStorageSync(e, t);}, getStorageSync: function getStorageSync(e) {return uni.getStorageSync(e);}, removeStorageSync: function removeStorageSync(e) {return uni.removeStorageSync(e);}, clearStorageSync: function clearStorageSync() {return uni.clearStorageSync();} };var _ = /*#__PURE__*/function () {function _(e) {_classCallCheck(this, _);["spaceId", "clientSecret"].forEach(function (t) {if (!Object.prototype.hasOwnProperty.call(e, t)) throw new Error(a("uniCloud.init.paramRequired", { param: t }));}), this.config = Object.assign({}, { endpoint: "https://api.bspapp.com" }, e), this.config.provider = "aliyun", this.config.requestUrl = this.config.endpoint + "/client", this.config.envType = this.config.envType || "public", this.config.accessTokenKey = "access_token_" + this.config.spaceId, this.adapter = y;}_createClass(_, [{ key: "setAccessToken", value: function setAccessToken(e) {this.accessToken = e;} }, { key: "requestWrapped", value: function requestWrapped(e) {return m.wrappedRequest(e, this.adapter.request);} }, { key: "requestAuth", value: function requestAuth(e) {return this.requestWrapped(e);} }, { key: "request", value: function request(e, t) {var _this2 = this;return Promise.resolve().then(function () {return _this2.hasAccessToken ? t ? _this2.requestWrapped(e) : _this2.requestWrapped(e).catch(function (t) {return new Promise(function (e, s) {!t || "GATEWAY_INVALID_TOKEN" !== t.code && "InvalidParameter.InvalidToken" !== t.code ? s(t) : e();}).then(function () {return _this2.getAccessToken();}).then(function () {var t = _this2.rebuildRequest(e);return _this2.request(t, !0);});}) : _this2.getAccessToken().then(function () {var t = _this2.rebuildRequest(e);return _this2.request(t, !0);});});} }, { key: "rebuildRequest", value: function rebuildRequest(e) {var t = Object.assign({}, e);return t.data.token = this.accessToken, t.header["x-basement-token"] = this.accessToken, t.header["x-serverless-sign"] = m.sign(t.data, this.config.clientSecret), t;} }, { key: "setupRequest", value: function setupRequest(e, t) {var s = Object.assign({}, e, { spaceId: this.config.spaceId, timestamp: Date.now() }),n = { "Content-Type": "application/json" };return "auth" !== t && (s.token = this.accessToken, n["x-basement-token"] = this.accessToken), n["x-serverless-sign"] = m.sign(s, this.config.clientSecret), { url: this.config.requestUrl, method: "POST", data: s, dataType: "json", header: n };} }, { key: "getAccessToken", value: function getAccessToken() {var _this3 = this;return this.requestAuth(this.setupRequest({ method: "serverless.auth.user.anonymousAuthorize", params: "{}" }, "auth")).then(function (e) {return new Promise(function (t, s) {e.result && e.result.accessToken ? (_this3.setAccessToken(e.result.accessToken), t(_this3.accessToken)) : s(new i({ code: "AUTH_FAILED", message: "获取accessToken失败" }));});});} }, { key: "authorize", value: function authorize() {this.getAccessToken();} }, { key: "callFunction", value: function callFunction(e) {var t = { method: "serverless.function.runtime.invoke", params: JSON.stringify({ functionTarget: e.name, functionArgs: e.data || {} }) };return this.request(this.setupRequest(t));} }, { key: "getOSSUploadOptionsFromPath", value: function getOSSUploadOptionsFromPath(e) {var t = { method: "serverless.file.resource.generateProximalSign", params: JSON.stringify(e) };return this.request(this.setupRequest(t));} }, { key: "uploadFileToOSS", value: function uploadFileToOSS(_ref) {var _this4 = this;var e = _ref.url,t = _ref.formData,s = _ref.name,n = _ref.filePath,r = _ref.fileType,o = _ref.onUploadProgress;return new Promise(function (a, c) {var u = _this4.adapter.uploadFile({ url: e, formData: t, name: s, filePath: n, fileType: r, header: { "X-OSS-server-side-encrpytion": "AES256" }, success: function success(e) {e && e.statusCode < 400 ? a(e) : c(new i({ code: "UPLOAD_FAILED", message: "文件上传失败" }));}, fail: function fail(e) {c(new i({ code: e.code || "UPLOAD_FAILED", message: e.message || e.errMsg || "文件上传失败" }));} });"function" == typeof o && u && "function" == typeof u.onProgressUpdate && u.onProgressUpdate(function (e) {o({ loaded: e.totalBytesSent, total: e.totalBytesExpectedToSend });});});} }, { key: "reportOSSUpload", value: function reportOSSUpload(e) {var t = { method: "serverless.file.resource.report", params: JSON.stringify(e) };return this.request(this.setupRequest(t));} }, { key: "uploadFile", value: function uploadFile(_ref2) {var _this5 = this;var e = _ref2.filePath,t = _ref2.cloudPath,_ref2$fileType = _ref2.fileType,s = _ref2$fileType === void 0 ? "image" : _ref2$fileType,n = _ref2.onUploadProgress,r = _ref2.config;if (!t) throw new i({ code: "CLOUDPATH_REQUIRED", message: "cloudPath不可为空" });var o = r && r.envType || this.config.envType;var a, c;return this.getOSSUploadOptionsFromPath({ env: o, filename: t }).then(function (t) {var r = t.result;a = r.id, c = "https://" + r.cdnDomain + "/" + r.ossPath;var o = { url: "https://" + r.host, formData: { "Cache-Control": "max-age=2592000", "Content-Disposition": "attachment", OSSAccessKeyId: r.accessKeyId, Signature: r.signature, host: r.host, id: a, key: r.ossPath, policy: r.policy, success_action_status: 200 }, fileName: "file", name: "file", filePath: e, fileType: s };return _this5.uploadFileToOSS(Object.assign({}, o, { onUploadProgress: n }));}).then(function () {return _this5.reportOSSUpload({ id: a });}).then(function (t) {return new Promise(function (s, n) {t.success ? s({ success: !0, filePath: e, fileID: c }) : n(new i({ code: "UPLOAD_FAILED", message: "文件上传失败" }));});});} }, { key: "deleteFile", value: function deleteFile(_ref3) {var e = _ref3.fileList;var t = { method: "serverless.file.resource.delete", params: JSON.stringify({ id: e[0] }) };return this.request(this.setupRequest(t));} }, { key: "getTempFileURL", value: function getTempFileURL() {var _ref4 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},e = _ref4.fileList;return new Promise(function (t, s) {Array.isArray(e) && 0 !== e.length || s(new i({ code: "INVALID_PARAM", message: "fileList的元素必须是非空的字符串" })), t({ fileList: e.map(function (e) {return { fileID: e, tempFileURL: e };}) });});} }, { key: "hasAccessToken", get: function get() {return !!this.accessToken;} }]);return _;}();var v = { init: function init(e) {var t = new _(e);["deleteFile", "getTempFileURL"].forEach(function (e) {t[e] = o(t[e]).bind(t);});var s = { signInAnonymously: function signInAnonymously() {return t.authorize();}, getLoginState: function getLoginState() {return Promise.resolve(!1);} };return t.auth = function () {return s;}, t.customAuth = t.auth, t;} },w = "undefined" != typeof location && "http:" === location.protocol ? "http:" : "https:",S = "undefined" != typeof process && "e2e" === "development" && "pre" === Object({"VUE_APP_NAME":"kunpengv2.0","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).END_POINT ? "//tcb-pre.tencentcloudapi.com/web" : "//tcb-api.tencentcloudapi.com/web";var k;!function (e) {e.local = "local", e.none = "none", e.session = "session";}(k || (k = {}));var T = function T() {};s(function (e, t) {var s;e.exports = (s = n, function (e) {var t = s,n = t.lib,r = n.WordArray,o = n.Hasher,i = t.algo,a = [],c = [];!function () {function t(t) {for (var s = e.sqrt(t), n = 2; n <= s; n++) {if (!(t % n)) return !1;}return !0;}function s(e) {return 4294967296 * (e - (0 | e)) | 0;}for (var n = 2, r = 0; r < 64;) {t(n) && (r < 8 && (a[r] = s(e.pow(n, .5))), c[r] = s(e.pow(n, 1 / 3)), r++), n++;}}();var u = [],h = i.SHA256 = o.extend({ _doReset: function _doReset() {this._hash = new r.init(a.slice(0));}, _doProcessBlock: function _doProcessBlock(e, t) {for (var s = this._hash.words, n = s[0], r = s[1], o = s[2], i = s[3], a = s[4], h = s[5], l = s[6], d = s[7], f = 0; f < 64; f++) {if (f < 16) u[f] = 0 | e[t + f];else {var p = u[f - 15],g = (p << 25 | p >>> 7) ^ (p << 14 | p >>> 18) ^ p >>> 3,m = u[f - 2],y = (m << 15 | m >>> 17) ^ (m << 13 | m >>> 19) ^ m >>> 10;u[f] = g + u[f - 7] + y + u[f - 16];}var _ = n & r ^ n & o ^ r & o,v = (n << 30 | n >>> 2) ^ (n << 19 | n >>> 13) ^ (n << 10 | n >>> 22),w = d + ((a << 26 | a >>> 6) ^ (a << 21 | a >>> 11) ^ (a << 7 | a >>> 25)) + (a & h ^ ~a & l) + c[f] + u[f];d = l, l = h, h = a, a = i + w | 0, i = o, o = r, r = n, n = w + (v + _) | 0;}s[0] = s[0] + n | 0, s[1] = s[1] + r | 0, s[2] = s[2] + o | 0, s[3] = s[3] + i | 0, s[4] = s[4] + a | 0, s[5] = s[5] + h | 0, s[6] = s[6] + l | 0, s[7] = s[7] + d | 0;}, _doFinalize: function _doFinalize() {var t = this._data,s = t.words,n = 8 * this._nDataBytes,r = 8 * t.sigBytes;return s[r >>> 5] |= 128 << 24 - r % 32, s[14 + (r + 64 >>> 9 << 4)] = e.floor(n / 4294967296), s[15 + (r + 64 >>> 9 << 4)] = n, t.sigBytes = 4 * s.length, this._process(), this._hash;}, clone: function clone() {var e = o.clone.call(this);return e._hash = this._hash.clone(), e;} });t.SHA256 = o._createHelper(h), t.HmacSHA256 = o._createHmacHelper(h);}(Math), s.SHA256);}), s(function (e, t) {e.exports = n.HmacSHA256;}), s(function (e, t) {var s, r, o;e.exports = (r = (s = o = n).lib.WordArray, s.enc.Base64 = { stringify: function stringify(e) {var t = e.words,s = e.sigBytes,n = this._map;e.clamp();for (var r = [], o = 0; o < s; o += 3) {for (var i = (t[o >>> 2] >>> 24 - o % 4 * 8 & 255) << 16 | (t[o + 1 >>> 2] >>> 24 - (o + 1) % 4 * 8 & 255) << 8 | t[o + 2 >>> 2] >>> 24 - (o + 2) % 4 * 8 & 255, a = 0; a < 4 && o + .75 * a < s; a++) {r.push(n.charAt(i >>> 6 * (3 - a) & 63));}}var c = n.charAt(64);if (c) for (; r.length % 4;) {r.push(c);}return r.join("");}, parse: function parse(e) {var t = e.length,s = this._map,n = this._reverseMap;if (!n) {n = this._reverseMap = [];for (var o = 0; o < s.length; o++) {n[s.charCodeAt(o)] = o;}}var i = s.charAt(64);if (i) {var a = e.indexOf(i);-1 !== a && (t = a);}return function (e, t, s) {for (var n = [], o = 0, i = 0; i < t; i++) {if (i % 4) {var a = s[e.charCodeAt(i - 1)] << i % 4 * 2,c = s[e.charCodeAt(i)] >>> 6 - i % 4 * 2;n[o >>> 2] |= (a | c) << 24 - o % 4 * 8, o++;}}return r.create(n, o);}(e, t, n);}, _map: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=" }, o.enc.Base64);}), s(function (e, t) {e.exports = n.enc.Utf8;});var A = function A() {var e;if (!Promise) {e = function e() {}, e.promise = {};var _t = function _t() {throw new Error('Your Node runtime does support ES6 Promises. Set "global.Promise" to your preferred implementation of promises.');};return Object.defineProperty(e.promise, "then", { get: _t }), Object.defineProperty(e.promise, "catch", { get: _t }), e;}var t = new Promise(function (t, s) {e = function e(_e3, n) {return _e3 ? s(_e3) : t(n);};});return e.promise = t, e;};function I(e) {return void 0 === e;}function P(e) {return "[object Null]" === Object.prototype.toString.call(e);}var E;function O(e) {var t = (s = e, "[object Array]" === Object.prototype.toString.call(s) ? e : [e]);var s;var _iterator = _createForOfIteratorHelper(t),_step;try {for (_iterator.s(); !(_step = _iterator.n()).done;) {var _e4 = _step.value;var _t2 = _e4.isMatch,_s = _e4.genAdapter,_n = _e4.runtime;if (_t2()) return { adapter: _s(), runtime: _n };}} catch (err) {_iterator.e(err);} finally {_iterator.f();}}!function (e) {e.WEB = "web", e.WX_MP = "wx_mp";}(E || (E = {}));var U = { adapter: null, runtime: void 0 },b = ["anonymousUuidKey"];var C = /*#__PURE__*/function (_T) {_inherits(C, _T);var _super2 = _createSuper(C);function C() {var _this6;_classCallCheck(this, C);_this6 = _super2.call(this), U.adapter.root.tcbObject || (U.adapter.root.tcbObject = {});return _this6;}_createClass(C, [{ key: "setItem", value: function setItem(e, t) {U.adapter.root.tcbObject[e] = t;} }, { key: "getItem", value: function getItem(e) {return U.adapter.root.tcbObject[e];} }, { key: "removeItem", value: function removeItem(e) {delete U.adapter.root.tcbObject[e];} }, { key: "clear", value: function clear() {delete U.adapter.root.tcbObject;} }]);return C;}(T);function D(e, t) {switch (e) {case "local":return t.localStorage || new C();case "none":return new C();default:return t.sessionStorage || new C();}}var R = /*#__PURE__*/function () {function R(e) {_classCallCheck(this, R);if (!this._storage) {this._persistence = U.adapter.primaryStorage || e.persistence, this._storage = D(this._persistence, U.adapter);var _t3 = "access_token_" + e.env,_s2 = "access_token_expire_" + e.env,_n2 = "refresh_token_" + e.env,_r = "anonymous_uuid_" + e.env,_o = "login_type_" + e.env,_i = "user_info_" + e.env;this.keys = { accessTokenKey: _t3, accessTokenExpireKey: _s2, refreshTokenKey: _n2, anonymousUuidKey: _r, loginTypeKey: _o, userInfoKey: _i };}}_createClass(R, [{ key: "updatePersistence", value: function updatePersistence(e) {if (e === this._persistence) return;var t = "local" === this._persistence;this._persistence = e;var s = D(e, U.adapter);for (var _e5 in this.keys) {var _n3 = this.keys[_e5];if (t && b.includes(_e5)) continue;var _r2 = this._storage.getItem(_n3);I(_r2) || P(_r2) || (s.setItem(_n3, _r2), this._storage.removeItem(_n3));}this._storage = s;} }, { key: "setStore", value: function setStore(e, t, s) {if (!this._storage) return;var n = { version: s || "localCachev1", content: t },r = JSON.stringify(n);try {this._storage.setItem(e, r);} catch (e) {throw e;}} }, { key: "getStore", value: function getStore(e, t) {try {if (!this._storage) return;} catch (e) {return "";}t = t || "localCachev1";var s = this._storage.getItem(e);if (!s) return "";if (s.indexOf(t) >= 0) {return JSON.parse(s).content;}return "";} }, { key: "removeStore", value: function removeStore(e) {this._storage.removeItem(e);} }]);return R;}();var x = {},q = {};function F(e) {return x[e];}var L = function L(e, t) {_classCallCheck(this, L);this.data = t || null, this.name = e;};var N = /*#__PURE__*/function (_L) {_inherits(N, _L);var _super3 = _createSuper(N);function N(e, t) {var _this7;_classCallCheck(this, N);_this7 = _super3.call(this, "error", { error: e, data: t }), _this7.error = e;return _this7;}return N;}(L);var M = new ( /*#__PURE__*/function () {function _class() {_classCallCheck(this, _class);this._listeners = {};}_createClass(_class, [{ key: "on", value: function on(e, t) {return function (e, t, s) {s[e] = s[e] || [], s[e].push(t);}(e, t, this._listeners), this;} }, { key: "off", value: function off(e, t) {return function (e, t, s) {if (s && s[e]) {var _n4 = s[e].indexOf(t);-1 !== _n4 && s[e].splice(_n4, 1);}}(e, t, this._listeners), this;} }, { key: "fire", value: function fire(e, t) {if (e instanceof N) return console.error(e.error), this;var s = "string" == typeof e ? new L(e, t || {}) : e;var n = s.name;if (this._listens(n)) {s.target = this;var _e6 = this._listeners[n] ? _toConsumableArray(this._listeners[n]) : [];var _iterator2 = _createForOfIteratorHelper(_e6),_step2;try {for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {var _t4 = _step2.value;_t4.call(this, s);}} catch (err) {_iterator2.e(err);} finally {_iterator2.f();}}return this;} }, { key: "_listens", value: function _listens(e) {return this._listeners[e] && this._listeners[e].length > 0;} }]);return _class;}())();function $(e, t) {M.on(e, t);}function K(e) {var t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};M.fire(e, t);}function B(e, t) {M.off(e, t);}var j = "loginStateChanged",H = "loginStateExpire",W = "loginTypeChanged",V = "anonymousConverted",z = "refreshAccessToken";var Y;!function (e) {e.ANONYMOUS = "ANONYMOUS", e.WECHAT = "WECHAT", e.WECHAT_PUBLIC = "WECHAT-PUBLIC", e.WECHAT_OPEN = "WECHAT-OPEN", e.CUSTOM = "CUSTOM", e.EMAIL = "EMAIL", e.USERNAME = "USERNAME", e.NULL = "NULL";}(Y || (Y = {}));var J = ["auth.getJwt", "auth.logout", "auth.signInWithTicket", "auth.signInAnonymously", "auth.signIn", "auth.fetchAccessTokenWithRefreshToken", "auth.signUpWithEmailAndPassword", "auth.activateEndUserMail", "auth.sendPasswordResetEmail", "auth.resetPasswordWithToken", "auth.isUsernameRegistered"],X = { "X-SDK-Version": "1.3.5" };function G(e, t, s) {var n = e[t];e[t] = function (t) {var r = {},o = {};s.forEach(function (s) {var _s$call = s.call(e, t),n = _s$call.data,i = _s$call.headers;Object.assign(r, n), Object.assign(o, i);});var i = t.data;return i && function () {var e;if (e = i, "[object FormData]" !== Object.prototype.toString.call(e)) t.data = _objectSpread(_objectSpread({}, i), r);else for (var _e7 in r) {i.append(_e7, r[_e7]);}}(), t.headers = _objectSpread(_objectSpread({}, t.headers || {}), o), n.call(e, t);};}function Q() {var e = Math.random().toString(16).slice(2);return { data: { seqId: e }, headers: _objectSpread(_objectSpread({}, X), {}, { "x-seqid": e }) };}var Z = /*#__PURE__*/function () {function Z() {var e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};_classCallCheck(this, Z);var t;this.config = e, this._reqClass = new U.adapter.reqClass({ timeout: this.config.timeout, timeoutMsg: "\u8BF7\u6C42\u5728".concat(this.config.timeout / 1e3, "s\u5185\u672A\u5B8C\u6210\uFF0C\u5DF2\u4E2D\u65AD"), restrictedMethods: ["post"] }), this._cache = F(this.config.env), this._localCache = (t = this.config.env, q[t]), G(this._reqClass, "post", [Q]), G(this._reqClass, "upload", [Q]), G(this._reqClass, "download", [Q]);}_createClass(Z, [{ key: "post", value: function () {var _post = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee(e) {return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:_context.next = 2;return this._reqClass.post(e);case 2:return _context.abrupt("return", _context.sent);case 3:case "end":return _context.stop();}}}, _callee, this);}));function post(_x) {return _post.apply(this, arguments);}return post;}() }, { key: "upload", value: function () {var _upload = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2(e) {return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:_context2.next = 2;return this._reqClass.upload(e);case 2:return _context2.abrupt("return", _context2.sent);case 3:case "end":return _context2.stop();}}}, _callee2, this);}));function upload(_x2) {return _upload.apply(this, arguments);}return upload;}() }, { key: "download", value: function () {var _download = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3(e) {return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:_context3.next = 2;return this._reqClass.download(e);case 2:return _context3.abrupt("return", _context3.sent);case 3:case "end":return _context3.stop();}}}, _callee3, this);}));function download(_x3) {return _download.apply(this, arguments);}return download;}() }, { key: "refreshAccessToken", value: function () {var _refreshAccessToken2 = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee4() {var e, t;return _regenerator.default.wrap(function _callee4$(_context4) {while (1) {switch (_context4.prev = _context4.next) {case 0:this._refreshAccessTokenPromise || (this._refreshAccessTokenPromise = this._refreshAccessToken());_context4.prev = 1;_context4.next = 4;return this._refreshAccessTokenPromise;case 4:e = _context4.sent;_context4.next = 10;break;case 7:_context4.prev = 7;_context4.t0 = _context4["catch"](1);t = _context4.t0;case 10:if (!(this._refreshAccessTokenPromise = null, this._shouldRefreshAccessTokenHook = null, t)) {_context4.next = 12;break;}throw t;case 12:return _context4.abrupt("return", e);case 13:case "end":return _context4.stop();}}}, _callee4, this, [[1, 7]]);}));function refreshAccessToken() {return _refreshAccessToken2.apply(this, arguments);}return refreshAccessToken;}() }, { key: "_refreshAccessToken", value: function () {var _refreshAccessToken3 = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee5() {var _this$_cache$keys, e, t, s, n, r, o, i, a, _e8, _e9, _t5, _n5;return _regenerator.default.wrap(function _callee5$(_context5) {while (1) {switch (_context5.prev = _context5.next) {case 0:_this$_cache$keys = this._cache.keys, e = _this$_cache$keys.accessTokenKey, t = _this$_cache$keys.accessTokenExpireKey, s = _this$_cache$keys.refreshTokenKey, n = _this$_cache$keys.loginTypeKey, r = _this$_cache$keys.anonymousUuidKey;this._cache.removeStore(e), this._cache.removeStore(t);o = this._cache.getStore(s);if (o) {_context5.next = 5;break;}throw new Error("未登录CloudBase");case 5:i = { refresh_token: o };_context5.next = 8;return this.request("auth.fetchAccessTokenWithRefreshToken", i);case 8:a = _context5.sent;if (!a.data.code) {_context5.next = 21;break;}_e8 = a.data.code;if (!("SIGN_PARAM_INVALID" === _e8 || "REFRESH_TOKEN_EXPIRED" === _e8 || "INVALID_REFRESH_TOKEN" === _e8)) {_context5.next = 20;break;}if (!(this._cache.getStore(n) === Y.ANONYMOUS && "INVALID_REFRESH_TOKEN" === _e8)) {_context5.next = 19;break;}_e9 = this._cache.getStore(r);_t5 = this._cache.getStore(s);_context5.next = 17;return this.send("auth.signInAnonymously", { anonymous_uuid: _e9, refresh_token: _t5 });case 17:_n5 = _context5.sent;return _context5.abrupt("return", (this.setRefreshToken(_n5.refresh_token), this._refreshAccessToken()));case 19:K(H), this._cache.removeStore(s);case 20:throw new Error("刷新access token失败：" + a.data.code);case 21:if (!a.data.access_token) {_context5.next = 23;break;}return _context5.abrupt("return", (K(z), this._cache.setStore(e, a.data.access_token), this._cache.setStore(t, a.data.access_token_expire + Date.now()), { accessToken: a.data.access_token, accessTokenExpire: a.data.access_token_expire }));case 23:a.data.refresh_token && (this._cache.removeStore(s), this._cache.setStore(s, a.data.refresh_token), this._refreshAccessToken());case 24:case "end":return _context5.stop();}}}, _callee5, this);}));function _refreshAccessToken() {return _refreshAccessToken3.apply(this, arguments);}return _refreshAccessToken;}() }, { key: "getAccessToken", value: function () {var _getAccessToken = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee6() {var _this$_cache$keys2, e, t, s, n, r, o;return _regenerator.default.wrap(function _callee6$(_context6) {while (1) {switch (_context6.prev = _context6.next) {case 0:_this$_cache$keys2 = this._cache.keys, e = _this$_cache$keys2.accessTokenKey, t = _this$_cache$keys2.accessTokenExpireKey, s = _this$_cache$keys2.refreshTokenKey;if (this._cache.getStore(s)) {_context6.next = 3;break;}throw new Error("refresh token不存在，登录状态异常");case 3:n = this._cache.getStore(e), r = this._cache.getStore(t), o = !0;_context6.t0 = this._shouldRefreshAccessTokenHook;if (!_context6.t0) {_context6.next = 9;break;}_context6.next = 8;return this._shouldRefreshAccessTokenHook(n, r);case 8:_context6.t0 = !_context6.sent;case 9:_context6.t1 = _context6.t0;if (!_context6.t1) {_context6.next = 12;break;}o = !1;case 12:return _context6.abrupt("return", (!n || !r || r < Date.now()) && o ? this.refreshAccessToken() : { accessToken: n, accessTokenExpire: r });case 13:case "end":return _context6.stop();}}}, _callee6, this);}));function getAccessToken() {return _getAccessToken.apply(this, arguments);}return getAccessToken;}() }, { key: "request", value: function () {var _request = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee7(e, t, s) {var n, r, o, _e10, i, _e11, _e12, a, c, u, h, l, d, f, p, g;return _regenerator.default.wrap(function _callee7$(_context7) {while (1) {switch (_context7.prev = _context7.next) {case 0:n = "x-tcb-trace_" + this.config.env;r = "application/x-www-form-urlencoded";o = _objectSpread({ action: e, env: this.config.env, dataVersion: "2019-08-16" }, t);if (!(-1 === J.indexOf(e))) {_context7.next = 10;break;}_e10 = this._cache.keys.refreshTokenKey;_context7.t0 = this._cache.getStore(_e10);if (!_context7.t0) {_context7.next = 10;break;}_context7.next = 9;return this.getAccessToken();case 9:o.access_token = _context7.sent.accessToken;case 10:if ("storage.uploadFile" === e) {i = new FormData();for (_e11 in i) {i.hasOwnProperty(_e11) && void 0 !== i[_e11] && i.append(_e11, o[_e11]);}r = "multipart/form-data";} else {r = "application/json;charset=UTF-8", i = {};for (_e12 in o) {void 0 !== o[_e12] && (i[_e12] = o[_e12]);}}a = { headers: { "content-type": r } };s && s.onUploadProgress && (a.onUploadProgress = s.onUploadProgress);c = this._localCache.getStore(n);c && (a.headers["X-TCB-Trace"] = c);u = t.parse, h = t.inQuery, l = t.search;d = { env: this.config.env };u && (d.parse = !0), h && (d = _objectSpread(_objectSpread({}, h), d));f = function (e, t) {var s = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};var n = /\?/.test(t);var r = "";for (var _e13 in s) {"" === r ? !n && (t += "?") : r += "&", r += "".concat(_e13, "=").concat(encodeURIComponent(s[_e13]));}return /^http(s)?\:\/\//.test(t += r) ? t : "".concat(e).concat(t);}(w, S, d);l && (f += l);_context7.next = 22;return this.post(_objectSpread({ url: f, data: i }, a));case 22:p = _context7.sent;g = p.header && p.header["x-tcb-trace"];if (!(g && this._localCache.setStore(n, g), 200 !== Number(p.status) && 200 !== Number(p.statusCode) || !p.data)) {_context7.next = 26;break;}throw new Error("network request error");case 26:return _context7.abrupt("return", p);case 27:case "end":return _context7.stop();}}}, _callee7, this);}));function request(_x4, _x5, _x6) {return _request.apply(this, arguments);}return request;}() }, { key: "send", value: function () {var _send = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee8(e) {var t,s,_s3,_args8 = arguments;return _regenerator.default.wrap(function _callee8$(_context8) {while (1) {switch (_context8.prev = _context8.next) {case 0:t = _args8.length > 1 && _args8[1] !== undefined ? _args8[1] : {};_context8.next = 3;return this.request(e, t, { onUploadProgress: t.onUploadProgress });case 3:s = _context8.sent;if (!("ACCESS_TOKEN_EXPIRED" === s.data.code && -1 === J.indexOf(e))) {_context8.next = 13;break;}_context8.next = 7;return this.refreshAccessToken();case 7:_context8.next = 9;return this.request(e, t, { onUploadProgress: t.onUploadProgress });case 9:_s3 = _context8.sent;if (!_s3.data.code) {_context8.next = 12;break;}throw new Error("[".concat(_s3.data.code, "] ").concat(_s3.data.message));case 12:return _context8.abrupt("return", _s3.data);case 13:if (!s.data.code) {_context8.next = 15;break;}throw new Error("[".concat(s.data.code, "] ").concat(s.data.message));case 15:return _context8.abrupt("return", s.data);case 16:case "end":return _context8.stop();}}}, _callee8, this);}));function send(_x7) {return _send.apply(this, arguments);}return send;}() }, { key: "setRefreshToken", value: function setRefreshToken(e) {var _this$_cache$keys3 = this._cache.keys,t = _this$_cache$keys3.accessTokenKey,s = _this$_cache$keys3.accessTokenExpireKey,n = _this$_cache$keys3.refreshTokenKey;this._cache.removeStore(t), this._cache.removeStore(s), this._cache.setStore(n, e);} }]);return Z;}();var ee = {};function te(e) {return ee[e];}var se = /*#__PURE__*/function () {function se(e) {_classCallCheck(this, se);this.config = e, this._cache = F(e.env), this._request = te(e.env);}_createClass(se, [{ key: "setRefreshToken", value: function setRefreshToken(e) {var _this$_cache$keys4 = this._cache.keys,t = _this$_cache$keys4.accessTokenKey,s = _this$_cache$keys4.accessTokenExpireKey,n = _this$_cache$keys4.refreshTokenKey;this._cache.removeStore(t), this._cache.removeStore(s), this._cache.setStore(n, e);} }, { key: "setAccessToken", value: function setAccessToken(e, t) {var _this$_cache$keys5 = this._cache.keys,s = _this$_cache$keys5.accessTokenKey,n = _this$_cache$keys5.accessTokenExpireKey;this._cache.setStore(s, e), this._cache.setStore(n, t);} }, { key: "refreshUserInfo", value: function () {var _refreshUserInfo = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee9() {var _yield$this$_request$, e;return _regenerator.default.wrap(function _callee9$(_context9) {while (1) {switch (_context9.prev = _context9.next) {case 0:_context9.next = 2;return this._request.send("auth.getUserInfo", {});case 2:_yield$this$_request$ = _context9.sent;e = _yield$this$_request$.data;return _context9.abrupt("return", (this.setLocalUserInfo(e), e));case 5:case "end":return _context9.stop();}}}, _callee9, this);}));function refreshUserInfo() {return _refreshUserInfo.apply(this, arguments);}return refreshUserInfo;}() }, { key: "setLocalUserInfo", value: function setLocalUserInfo(e) {var t = this._cache.keys.userInfoKey;this._cache.setStore(t, e);} }]);return se;}();var ne = /*#__PURE__*/function () {function ne(e) {_classCallCheck(this, ne);if (!e) throw new Error("envId is not defined");this._envId = e, this._cache = F(this._envId), this._request = te(this._envId), this.setUserInfo();}_createClass(ne, [{ key: "linkWithTicket", value: function linkWithTicket(e) {if ("string" != typeof e) throw new Error("ticket must be string");return this._request.send("auth.linkWithTicket", { ticket: e });} }, { key: "linkWithRedirect", value: function linkWithRedirect(e) {e.signInWithRedirect();} }, { key: "updatePassword", value: function updatePassword(e, t) {return this._request.send("auth.updatePassword", { oldPassword: t, newPassword: e });} }, { key: "updateEmail", value: function updateEmail(e) {return this._request.send("auth.updateEmail", { newEmail: e });} }, { key: "updateUsername", value: function updateUsername(e) {if ("string" != typeof e) throw new Error("username must be a string");return this._request.send("auth.updateUsername", { username: e });} }, { key: "getLinkedUidList", value: function () {var _getLinkedUidList = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee10() {var _yield$this$_request$2, e, t, s;return _regenerator.default.wrap(function _callee10$(_context10) {while (1) {switch (_context10.prev = _context10.next) {case 0:_context10.next = 2;return this._request.send("auth.getLinkedUidList", {});case 2:_yield$this$_request$2 = _context10.sent;e = _yield$this$_request$2.data;t = !1;s = e.users;return _context10.abrupt("return", (s.forEach(function (e) {e.wxOpenId && e.wxPublicId && (t = !0);}), { users: s, hasPrimaryUid: t }));case 7:case "end":return _context10.stop();}}}, _callee10, this);}));function getLinkedUidList() {return _getLinkedUidList.apply(this, arguments);}return getLinkedUidList;}() }, { key: "setPrimaryUid", value: function setPrimaryUid(e) {return this._request.send("auth.setPrimaryUid", { uid: e });} }, { key: "unlink", value: function unlink(e) {return this._request.send("auth.unlink", { platform: e });} }, { key: "update", value: function () {var _update = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee11(e) {var t, s, n, r, o, i, _yield$this$_request$3, a;return _regenerator.default.wrap(function _callee11$(_context11) {while (1) {switch (_context11.prev = _context11.next) {case 0:t = e.nickName;s = e.gender;n = e.avatarUrl;r = e.province;o = e.country;i = e.city;_context11.next = 8;return this._request.send("auth.updateUserInfo", { nickName: t, gender: s, avatarUrl: n, province: r, country: o, city: i });case 8:_yield$this$_request$3 = _context11.sent;a = _yield$this$_request$3.data;this.setLocalUserInfo(a);case 11:case "end":return _context11.stop();}}}, _callee11, this);}));function update(_x8) {return _update.apply(this, arguments);}return update;}() }, { key: "refresh", value: function () {var _refresh = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee12() {var _yield$this$_request$4, e;return _regenerator.default.wrap(function _callee12$(_context12) {while (1) {switch (_context12.prev = _context12.next) {case 0:_context12.next = 2;return this._request.send("auth.getUserInfo", {});case 2:_yield$this$_request$4 = _context12.sent;e = _yield$this$_request$4.data;return _context12.abrupt("return", (this.setLocalUserInfo(e), e));case 5:case "end":return _context12.stop();}}}, _callee12, this);}));function refresh() {return _refresh.apply(this, arguments);}return refresh;}() }, { key: "setUserInfo", value: function setUserInfo() {var _this8 = this;var e = this._cache.keys.userInfoKey,t = this._cache.getStore(e);["uid", "loginType", "openid", "wxOpenId", "wxPublicId", "unionId", "qqMiniOpenId", "email", "hasPassword", "customUserId", "nickName", "gender", "avatarUrl"].forEach(function (e) {_this8[e] = t[e];}), this.location = { country: t.country, province: t.province, city: t.city };} }, { key: "setLocalUserInfo", value: function setLocalUserInfo(e) {var t = this._cache.keys.userInfoKey;this._cache.setStore(t, e), this.setUserInfo();} }]);return ne;}();var re = /*#__PURE__*/function () {function re(e) {_classCallCheck(this, re);if (!e) throw new Error("envId is not defined");this._cache = F(e);var _this$_cache$keys6 = this._cache.keys,t = _this$_cache$keys6.refreshTokenKey,s = _this$_cache$keys6.accessTokenKey,n = _this$_cache$keys6.accessTokenExpireKey,r = this._cache.getStore(t),o = this._cache.getStore(s),i = this._cache.getStore(n);this.credential = { refreshToken: r, accessToken: o, accessTokenExpire: i }, this.user = new ne(e);}_createClass(re, [{ key: "isAnonymousAuth", get: function get() {return this.loginType === Y.ANONYMOUS;} }, { key: "isCustomAuth", get: function get() {return this.loginType === Y.CUSTOM;} }, { key: "isWeixinAuth", get: function get() {return this.loginType === Y.WECHAT || this.loginType === Y.WECHAT_OPEN || this.loginType === Y.WECHAT_PUBLIC;} }, { key: "loginType", get: function get() {return this._cache.getStore(this._cache.keys.loginTypeKey);} }]);return re;}();var oe = /*#__PURE__*/function (_se) {_inherits(oe, _se);var _super4 = _createSuper(oe);function oe() {_classCallCheck(this, oe);return _super4.apply(this, arguments);}_createClass(oe, [{ key: "signIn", value: function () {var _signIn = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee13() {var _this$_cache$keys7, e, t, s, n, r, _e14;return _regenerator.default.wrap(function _callee13$(_context13) {while (1) {switch (_context13.prev = _context13.next) {case 0:this._cache.updatePersistence("local");_this$_cache$keys7 = this._cache.keys;e = _this$_cache$keys7.anonymousUuidKey;t = _this$_cache$keys7.refreshTokenKey;s = this._cache.getStore(e) || void 0;n = this._cache.getStore(t) || void 0;_context13.next = 8;return this._request.send("auth.signInAnonymously", { anonymous_uuid: s, refresh_token: n });case 8:r = _context13.sent;if (!(r.uuid && r.refresh_token)) {_context13.next = 20;break;}this._setAnonymousUUID(r.uuid);this.setRefreshToken(r.refresh_token);_context13.next = 14;return this._request.refreshAccessToken();case 14:K(j);K(W, { env: this.config.env, loginType: Y.ANONYMOUS, persistence: "local" });_e14 = new re(this.config.env);_context13.next = 19;return _e14.user.refresh();case 19:return _context13.abrupt("return", _e14);case 20:throw new Error("匿名登录失败");case 21:case "end":return _context13.stop();}}}, _callee13, this);}));function signIn() {return _signIn.apply(this, arguments);}return signIn;}() }, { key: "linkAndRetrieveDataWithTicket", value: function () {var _linkAndRetrieveDataWithTicket = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee14(e) {var _this$_cache$keys8, t, s, n, r, o;return _regenerator.default.wrap(function _callee14$(_context14) {while (1) {switch (_context14.prev = _context14.next) {case 0:_this$_cache$keys8 = this._cache.keys;t = _this$_cache$keys8.anonymousUuidKey;s = _this$_cache$keys8.refreshTokenKey;n = this._cache.getStore(t);r = this._cache.getStore(s);_context14.next = 7;return this._request.send("auth.linkAndRetrieveDataWithTicket", { anonymous_uuid: n, refresh_token: r, ticket: e });case 7:o = _context14.sent;if (!o.refresh_token) {_context14.next = 16;break;}this._clearAnonymousUUID();this.setRefreshToken(o.refresh_token);_context14.next = 13;return this._request.refreshAccessToken();case 13:K(V, { env: this.config.env });K(W, { loginType: Y.CUSTOM, persistence: "local" });return _context14.abrupt("return", { credential: { refreshToken: o.refresh_token } });case 16:throw new Error("匿名转化失败");case 17:case "end":return _context14.stop();}}}, _callee14, this);}));function linkAndRetrieveDataWithTicket(_x9) {return _linkAndRetrieveDataWithTicket.apply(this, arguments);}return linkAndRetrieveDataWithTicket;}() }, { key: "_setAnonymousUUID", value: function _setAnonymousUUID(e) {var _this$_cache$keys9 = this._cache.keys,t = _this$_cache$keys9.anonymousUuidKey,s = _this$_cache$keys9.loginTypeKey;this._cache.removeStore(t), this._cache.setStore(t, e), this._cache.setStore(s, Y.ANONYMOUS);} }, { key: "_clearAnonymousUUID", value: function _clearAnonymousUUID() {this._cache.removeStore(this._cache.keys.anonymousUuidKey);} }]);return oe;}(se);var ie = /*#__PURE__*/function (_se2) {_inherits(ie, _se2);var _super5 = _createSuper(ie);function ie() {_classCallCheck(this, ie);return _super5.apply(this, arguments);}_createClass(ie, [{ key: "signIn", value: function () {var _signIn2 = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee15(e) {var t, s;return _regenerator.default.wrap(function _callee15$(_context15) {while (1) {switch (_context15.prev = _context15.next) {case 0:if (!("string" != typeof e)) {_context15.next = 2;break;}throw new Error("ticket must be a string");case 2:t = this._cache.keys.refreshTokenKey;_context15.next = 5;return this._request.send("auth.signInWithTicket", { ticket: e, refresh_token: this._cache.getStore(t) || "" });case 5:s = _context15.sent;if (!s.refresh_token) {_context15.next = 15;break;}this.setRefreshToken(s.refresh_token);_context15.next = 10;return this._request.refreshAccessToken();case 10:K(j);K(W, { env: this.config.env, loginType: Y.CUSTOM, persistence: this.config.persistence });_context15.next = 14;return this.refreshUserInfo();case 14:return _context15.abrupt("return", new re(this.config.env));case 15:throw new Error("自定义登录失败");case 16:case "end":return _context15.stop();}}}, _callee15, this);}));function signIn(_x10) {return _signIn2.apply(this, arguments);}return signIn;}() }]);return ie;}(se);var ae = /*#__PURE__*/function (_se3) {_inherits(ae, _se3);var _super6 = _createSuper(ae);function ae() {_classCallCheck(this, ae);return _super6.apply(this, arguments);}_createClass(ae, [{ key: "signIn", value: function () {var _signIn3 = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee16(e, t) {var s, n, r, o, i;return _regenerator.default.wrap(function _callee16$(_context16) {while (1) {switch (_context16.prev = _context16.next) {case 0:if (!("string" != typeof e)) {_context16.next = 2;break;}throw new Error("email must be a string");case 2:s = this._cache.keys.refreshTokenKey;_context16.next = 5;return this._request.send("auth.signIn", { loginType: "EMAIL", email: e, password: t, refresh_token: this._cache.getStore(s) || "" });case 5:n = _context16.sent;r = n.refresh_token;o = n.access_token;i = n.access_token_expire;if (!r) {_context16.next = 22;break;}this.setRefreshToken(r);if (!(o && i)) {_context16.next = 15;break;}this.setAccessToken(o, i);_context16.next = 17;break;case 15:_context16.next = 17;return this._request.refreshAccessToken();case 17:_context16.next = 19;return this.refreshUserInfo();case 19:K(j);K(W, { env: this.config.env, loginType: Y.EMAIL, persistence: this.config.persistence });return _context16.abrupt("return", new re(this.config.env));case 22:throw n.code ? new Error("\u90AE\u7BB1\u767B\u5F55\u5931\u8D25: [".concat(n.code, "] ").concat(n.message)) : new Error("邮箱登录失败");case 23:case "end":return _context16.stop();}}}, _callee16, this);}));function signIn(_x11, _x12) {return _signIn3.apply(this, arguments);}return signIn;}() }, { key: "activate", value: function () {var _activate = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee17(e) {return _regenerator.default.wrap(function _callee17$(_context17) {while (1) {switch (_context17.prev = _context17.next) {case 0:return _context17.abrupt("return", this._request.send("auth.activateEndUserMail", { token: e }));case 1:case "end":return _context17.stop();}}}, _callee17, this);}));function activate(_x13) {return _activate.apply(this, arguments);}return activate;}() }, { key: "resetPasswordWithToken", value: function () {var _resetPasswordWithToken = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee18(e, t) {return _regenerator.default.wrap(function _callee18$(_context18) {while (1) {switch (_context18.prev = _context18.next) {case 0:return _context18.abrupt("return", this._request.send("auth.resetPasswordWithToken", { token: e, newPassword: t }));case 1:case "end":return _context18.stop();}}}, _callee18, this);}));function resetPasswordWithToken(_x14, _x15) {return _resetPasswordWithToken.apply(this, arguments);}return resetPasswordWithToken;}() }]);return ae;}(se);var ce = /*#__PURE__*/function (_se4) {_inherits(ce, _se4);var _super7 = _createSuper(ce);function ce() {_classCallCheck(this, ce);return _super7.apply(this, arguments);}_createClass(ce, [{ key: "signIn", value: function () {var _signIn4 = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee19(e, t) {var s, n, r, o, i;return _regenerator.default.wrap(function _callee19$(_context19) {while (1) {switch (_context19.prev = _context19.next) {case 0:if (!("string" != typeof e)) {_context19.next = 2;break;}throw new Error("username must be a string");case 2:"string" != typeof t && (t = "", console.warn("password is empty"));s = this._cache.keys.refreshTokenKey;_context19.next = 6;return this._request.send("auth.signIn", { loginType: Y.USERNAME, username: e, password: t, refresh_token: this._cache.getStore(s) || "" });case 6:n = _context19.sent;r = n.refresh_token;o = n.access_token_expire;i = n.access_token;if (!r) {_context19.next = 23;break;}this.setRefreshToken(r);if (!(i && o)) {_context19.next = 16;break;}this.setAccessToken(i, o);_context19.next = 18;break;case 16:_context19.next = 18;return this._request.refreshAccessToken();case 18:_context19.next = 20;return this.refreshUserInfo();case 20:K(j);K(W, { env: this.config.env, loginType: Y.USERNAME, persistence: this.config.persistence });return _context19.abrupt("return", new re(this.config.env));case 23:throw n.code ? new Error("\u7528\u6237\u540D\u5BC6\u7801\u767B\u5F55\u5931\u8D25: [".concat(n.code, "] ").concat(n.message)) : new Error("用户名密码登录失败");case 24:case "end":return _context19.stop();}}}, _callee19, this);}));function signIn(_x16, _x17) {return _signIn4.apply(this, arguments);}return signIn;}() }]);return ce;}(se);var ue = /*#__PURE__*/function () {function ue(e) {_classCallCheck(this, ue);this.config = e, this._cache = F(e.env), this._request = te(e.env), this._onAnonymousConverted = this._onAnonymousConverted.bind(this), this._onLoginTypeChanged = this._onLoginTypeChanged.bind(this), $(W, this._onLoginTypeChanged);}_createClass(ue, [{ key: "anonymousAuthProvider", value: function anonymousAuthProvider() {return new oe(this.config);} }, { key: "customAuthProvider", value: function customAuthProvider() {return new ie(this.config);} }, { key: "emailAuthProvider", value: function emailAuthProvider() {return new ae(this.config);} }, { key: "usernameAuthProvider", value: function usernameAuthProvider() {return new ce(this.config);} }, { key: "signInAnonymously", value: function () {var _signInAnonymously = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee20() {return _regenerator.default.wrap(function _callee20$(_context20) {while (1) {switch (_context20.prev = _context20.next) {case 0:return _context20.abrupt("return", new oe(this.config).signIn());case 1:case "end":return _context20.stop();}}}, _callee20, this);}));function signInAnonymously() {return _signInAnonymously.apply(this, arguments);}return signInAnonymously;}() }, { key: "signInWithEmailAndPassword", value: function () {var _signInWithEmailAndPassword = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee21(e, t) {return _regenerator.default.wrap(function _callee21$(_context21) {while (1) {switch (_context21.prev = _context21.next) {case 0:return _context21.abrupt("return", new ae(this.config).signIn(e, t));case 1:case "end":return _context21.stop();}}}, _callee21, this);}));function signInWithEmailAndPassword(_x18, _x19) {return _signInWithEmailAndPassword.apply(this, arguments);}return signInWithEmailAndPassword;}() }, { key: "signInWithUsernameAndPassword", value: function signInWithUsernameAndPassword(e, t) {return new ce(this.config).signIn(e, t);} }, { key: "linkAndRetrieveDataWithTicket", value: function () {var _linkAndRetrieveDataWithTicket2 = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee22(e) {return _regenerator.default.wrap(function _callee22$(_context22) {while (1) {switch (_context22.prev = _context22.next) {case 0:this._anonymousAuthProvider || (this._anonymousAuthProvider = new oe(this.config)), $(V, this._onAnonymousConverted);_context22.next = 3;return this._anonymousAuthProvider.linkAndRetrieveDataWithTicket(e);case 3:return _context22.abrupt("return", _context22.sent);case 4:case "end":return _context22.stop();}}}, _callee22, this);}));function linkAndRetrieveDataWithTicket(_x20) {return _linkAndRetrieveDataWithTicket2.apply(this, arguments);}return linkAndRetrieveDataWithTicket;}() }, { key: "signOut", value: function () {var _signOut = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee23() {var _this$_cache$keys10, e, t, s, n, r;return _regenerator.default.wrap(function _callee23$(_context23) {while (1) {switch (_context23.prev = _context23.next) {case 0:if (!(this.loginType === Y.ANONYMOUS)) {_context23.next = 2;break;}throw new Error("匿名用户不支持登出操作");case 2:_this$_cache$keys10 = this._cache.keys, e = _this$_cache$keys10.refreshTokenKey, t = _this$_cache$keys10.accessTokenKey, s = _this$_cache$keys10.accessTokenExpireKey, n = this._cache.getStore(e);if (n) {_context23.next = 5;break;}return _context23.abrupt("return");case 5:_context23.next = 7;return this._request.send("auth.logout", { refresh_token: n });case 7:r = _context23.sent;return _context23.abrupt("return", (this._cache.removeStore(e), this._cache.removeStore(t), this._cache.removeStore(s), K(j), K(W, { env: this.config.env, loginType: Y.NULL, persistence: this.config.persistence }), r));case 9:case "end":return _context23.stop();}}}, _callee23, this);}));function signOut() {return _signOut.apply(this, arguments);}return signOut;}() }, { key: "signUpWithEmailAndPassword", value: function () {var _signUpWithEmailAndPassword = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee24(e, t) {return _regenerator.default.wrap(function _callee24$(_context24) {while (1) {switch (_context24.prev = _context24.next) {case 0:return _context24.abrupt("return", this._request.send("auth.signUpWithEmailAndPassword", { email: e, password: t }));case 1:case "end":return _context24.stop();}}}, _callee24, this);}));function signUpWithEmailAndPassword(_x21, _x22) {return _signUpWithEmailAndPassword.apply(this, arguments);}return signUpWithEmailAndPassword;}() }, { key: "sendPasswordResetEmail", value: function () {var _sendPasswordResetEmail = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee25(e) {return _regenerator.default.wrap(function _callee25$(_context25) {while (1) {switch (_context25.prev = _context25.next) {case 0:return _context25.abrupt("return", this._request.send("auth.sendPasswordResetEmail", { email: e }));case 1:case "end":return _context25.stop();}}}, _callee25, this);}));function sendPasswordResetEmail(_x23) {return _sendPasswordResetEmail.apply(this, arguments);}return sendPasswordResetEmail;}() }, { key: "onLoginStateChanged", value: function onLoginStateChanged(e) {var _this9 = this;$(j, function () {var t = _this9.hasLoginState();e.call(_this9, t);});var t = this.hasLoginState();e.call(this, t);} }, { key: "onLoginStateExpired", value: function onLoginStateExpired(e) {$(H, e.bind(this));} }, { key: "onAccessTokenRefreshed", value: function onAccessTokenRefreshed(e) {$(z, e.bind(this));} }, { key: "onAnonymousConverted", value: function onAnonymousConverted(e) {$(V, e.bind(this));} }, { key: "onLoginTypeChanged", value: function onLoginTypeChanged(e) {var _this10 = this;$(W, function () {var t = _this10.hasLoginState();e.call(_this10, t);});} }, { key: "getAccessToken", value: function () {var _getAccessToken2 = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee26() {return _regenerator.default.wrap(function _callee26$(_context26) {while (1) {switch (_context26.prev = _context26.next) {case 0:_context26.next = 2;return this._request.getAccessToken();case 2:_context26.t0 = _context26.sent.accessToken;_context26.t1 = this.config.env;return _context26.abrupt("return", { accessToken: _context26.t0, env: _context26.t1 });case 5:case "end":return _context26.stop();}}}, _callee26, this);}));function getAccessToken() {return _getAccessToken2.apply(this, arguments);}return getAccessToken;}() }, { key: "hasLoginState", value: function hasLoginState() {var e = this._cache.keys.refreshTokenKey;return this._cache.getStore(e) ? new re(this.config.env) : null;} }, { key: "isUsernameRegistered", value: function () {var _isUsernameRegistered = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee27(e) {var _yield$this$_request$5, t;return _regenerator.default.wrap(function _callee27$(_context27) {while (1) {switch (_context27.prev = _context27.next) {case 0:if (!("string" != typeof e)) {_context27.next = 2;break;}throw new Error("username must be a string");case 2:_context27.next = 4;return this._request.send("auth.isUsernameRegistered", { username: e });case 4:_yield$this$_request$5 = _context27.sent;t = _yield$this$_request$5.data;return _context27.abrupt("return", t && t.isRegistered);case 7:case "end":return _context27.stop();}}}, _callee27, this);}));function isUsernameRegistered(_x24) {return _isUsernameRegistered.apply(this, arguments);}return isUsernameRegistered;}() }, { key: "getLoginState", value: function getLoginState() {return Promise.resolve(this.hasLoginState());} }, { key: "signInWithTicket", value: function () {var _signInWithTicket = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee28(e) {return _regenerator.default.wrap(function _callee28$(_context28) {while (1) {switch (_context28.prev = _context28.next) {case 0:return _context28.abrupt("return", new ie(this.config).signIn(e));case 1:case "end":return _context28.stop();}}}, _callee28, this);}));function signInWithTicket(_x25) {return _signInWithTicket.apply(this, arguments);}return signInWithTicket;}() }, { key: "shouldRefreshAccessToken", value: function shouldRefreshAccessToken(e) {this._request._shouldRefreshAccessTokenHook = e.bind(this);} }, { key: "getUserInfo", value: function getUserInfo() {return this._request.send("auth.getUserInfo", {}).then(function (e) {return e.code ? e : _objectSpread(_objectSpread({}, e.data), {}, { requestId: e.seqId });});} }, { key: "getAuthHeader", value: function getAuthHeader() {var _this$_cache$keys11 = this._cache.keys,e = _this$_cache$keys11.refreshTokenKey,t = _this$_cache$keys11.accessTokenKey,s = this._cache.getStore(e);return { "x-cloudbase-credentials": this._cache.getStore(t) + "/@@/" + s };} }, { key: "_onAnonymousConverted", value: function _onAnonymousConverted(e) {var t = e.data.env;t === this.config.env && this._cache.updatePersistence(this.config.persistence);} }, { key: "_onLoginTypeChanged", value: function _onLoginTypeChanged(e) {var _e$data = e.data,t = _e$data.loginType,s = _e$data.persistence,n = _e$data.env;n === this.config.env && (this._cache.updatePersistence(s), this._cache.setStore(this._cache.keys.loginTypeKey, t));} }, { key: "currentUser", get: function get() {var e = this.hasLoginState();return e && e.user || null;} }, { key: "loginType", get: function get() {return this._cache.getStore(this._cache.keys.loginTypeKey);} }]);return ue;}();var he = function he(e, t) {t = t || A();var s = te(this.config.env),n = e.cloudPath,r = e.filePath,o = e.onUploadProgress,_e$fileType = e.fileType,i = _e$fileType === void 0 ? "image" : _e$fileType;return s.send("storage.getUploadMetadata", { path: n }).then(function (e) {var _e$data2 = e.data,a = _e$data2.url,c = _e$data2.authorization,u = _e$data2.token,h = _e$data2.fileId,l = _e$data2.cosFileId,d = e.requestId,f = { key: n, signature: c, "x-cos-meta-fileid": l, success_action_status: "201", "x-cos-security-token": u };s.upload({ url: a, data: f, file: r, name: n, fileType: i, onUploadProgress: o }).then(function (e) {201 === e.statusCode ? t(null, { fileID: h, requestId: d }) : t(new Error("STORAGE_REQUEST_FAIL: " + e.data));}).catch(function (e) {t(e);});}).catch(function (e) {t(e);}), t.promise;},le = function le(e, t) {t = t || A();var s = te(this.config.env),n = e.cloudPath;return s.send("storage.getUploadMetadata", { path: n }).then(function (e) {t(null, e);}).catch(function (e) {t(e);}), t.promise;},de = function de(_ref5, t) {var e = _ref5.fileList;if (t = t || A(), !e || !Array.isArray(e)) return { code: "INVALID_PARAM", message: "fileList必须是非空的数组" };var _iterator3 = _createForOfIteratorHelper(e),_step3;try {for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {var _t6 = _step3.value;if (!_t6 || "string" != typeof _t6) return { code: "INVALID_PARAM", message: "fileList的元素必须是非空的字符串" };}} catch (err) {_iterator3.e(err);} finally {_iterator3.f();}var s = { fileid_list: e };return te(this.config.env).send("storage.batchDeleteFile", s).then(function (e) {e.code ? t(null, e) : t(null, { fileList: e.data.delete_list, requestId: e.requestId });}).catch(function (e) {t(e);}), t.promise;},fe = function fe(_ref6, t) {var e = _ref6.fileList;t = t || A(), e && Array.isArray(e) || t(null, { code: "INVALID_PARAM", message: "fileList必须是非空的数组" });var s = [];var _iterator4 = _createForOfIteratorHelper(e),_step4;try {for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {var _n6 = _step4.value;"object" == typeof _n6 ? (_n6.hasOwnProperty("fileID") && _n6.hasOwnProperty("maxAge") || t(null, { code: "INVALID_PARAM", message: "fileList的元素必须是包含fileID和maxAge的对象" }), s.push({ fileid: _n6.fileID, max_age: _n6.maxAge })) : "string" == typeof _n6 ? s.push({ fileid: _n6 }) : t(null, { code: "INVALID_PARAM", message: "fileList的元素必须是字符串" });}} catch (err) {_iterator4.e(err);} finally {_iterator4.f();}var n = { file_list: s };return te(this.config.env).send("storage.batchGetDownloadUrl", n).then(function (e) {e.code ? t(null, e) : t(null, { fileList: e.data.download_list, requestId: e.requestId });}).catch(function (e) {t(e);}), t.promise;},pe = /*#__PURE__*/function () {var _ref8 = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee29(_ref7, t) {var e, s, n, r;return _regenerator.default.wrap(function _callee29$(_context29) {while (1) {switch (_context29.prev = _context29.next) {case 0:e = _ref7.fileID;_context29.next = 3;return fe.call(this, { fileList: [{ fileID: e, maxAge: 600 }] });case 3:s = _context29.sent.fileList[0];if (!("SUCCESS" !== s.code)) {_context29.next = 6;break;}return _context29.abrupt("return", t ? t(s) : new Promise(function (e) {e(s);}));case 6:n = te(this.config.env);r = s.download_url;if (!(r = encodeURI(r), !t)) {_context29.next = 10;break;}return _context29.abrupt("return", n.download({ url: r }));case 10:_context29.t0 = t;_context29.next = 13;return n.download({ url: r });case 13:_context29.t1 = _context29.sent;(0, _context29.t0)(_context29.t1);case 15:case "end":return _context29.stop();}}}, _callee29, this);}));return function pe(_x26, _x27) {return _ref8.apply(this, arguments);};}(),ge = function ge(_ref9, o) {var e = _ref9.name,t = _ref9.data,s = _ref9.query,n = _ref9.parse,r = _ref9.search;var i = o || A();var a;try {a = t ? JSON.stringify(t) : "";} catch (e) {return Promise.reject(e);}if (!e) return Promise.reject(new Error("函数名不能为空"));var c = { inQuery: s, parse: n, search: r, function_name: e, request_data: a };return te(this.config.env).send("functions.invokeFunction", c).then(function (e) {if (e.code) i(null, e);else {var _t7 = e.data.response_data;if (n) i(null, { result: _t7, requestId: e.requestId });else try {_t7 = JSON.parse(e.data.response_data), i(null, { result: _t7, requestId: e.requestId });} catch (e) {i(new Error("response data must be json"));}}return i.promise;}).catch(function (e) {i(e);}), i.promise;},me = { timeout: 15e3, persistence: "session" },ye = {};var _e = /*#__PURE__*/function () {function _e(e) {_classCallCheck(this, _e);this.config = e || this.config, this.authObj = void 0;}_createClass(_e, [{ key: "init", value: function init(e) {switch (U.adapter || (this.requestClient = new U.adapter.reqClass({ timeout: e.timeout || 5e3, timeoutMsg: "\u8BF7\u6C42\u5728".concat((e.timeout || 5e3) / 1e3, "s\u5185\u672A\u5B8C\u6210\uFF0C\u5DF2\u4E2D\u65AD") })), this.config = _objectSpread(_objectSpread({}, me), e), !0) {case this.config.timeout > 6e5:console.warn("timeout大于可配置上限[10分钟]，已重置为上限数值"), this.config.timeout = 6e5;break;case this.config.timeout < 100:console.warn("timeout小于可配置下限[100ms]，已重置为下限数值"), this.config.timeout = 100;}return new _e(this.config);} }, { key: "auth", value: function auth() {var _ref10 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},e = _ref10.persistence;if (this.authObj) return this.authObj;var t = e || U.adapter.primaryStorage || me.persistence;var s;return t !== this.config.persistence && (this.config.persistence = t), function (e) {var t = e.env;x[t] = new R(e), q[t] = new R(_objectSpread(_objectSpread({}, e), {}, { persistence: "local" }));}(this.config), s = this.config, ee[s.env] = new Z(s), this.authObj = new ue(this.config), this.authObj;} }, { key: "on", value: function on(e, t) {return $.apply(this, [e, t]);} }, { key: "off", value: function off(e, t) {return B.apply(this, [e, t]);} }, { key: "callFunction", value: function callFunction(e, t) {return ge.apply(this, [e, t]);} }, { key: "deleteFile", value: function deleteFile(e, t) {return de.apply(this, [e, t]);} }, { key: "getTempFileURL", value: function getTempFileURL(e, t) {return fe.apply(this, [e, t]);} }, { key: "downloadFile", value: function downloadFile(e, t) {return pe.apply(this, [e, t]);} }, { key: "uploadFile", value: function uploadFile(e, t) {return he.apply(this, [e, t]);} }, { key: "getUploadMetadata", value: function getUploadMetadata(e, t) {return le.apply(this, [e, t]);} }, { key: "registerExtension", value: function registerExtension(e) {ye[e.name] = e;} }, { key: "invokeExtension", value: function () {var _invokeExtension = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee30(e, t) {var s;return _regenerator.default.wrap(function _callee30$(_context30) {while (1) {switch (_context30.prev = _context30.next) {case 0:s = ye[e];if (s) {_context30.next = 3;break;}throw Error("\u6269\u5C55".concat(e, " \u5FC5\u987B\u5148\u6CE8\u518C"));case 3:_context30.next = 5;return s.invoke(t, this);case 5:return _context30.abrupt("return", _context30.sent);case 6:case "end":return _context30.stop();}}}, _callee30, this);}));function invokeExtension(_x28, _x29) {return _invokeExtension.apply(this, arguments);}return invokeExtension;}() }, { key: "useAdapters", value: function useAdapters(e) {var _ref11 = O(e) || {},t = _ref11.adapter,s = _ref11.runtime;t && (U.adapter = t), s && (U.runtime = s);} }]);return _e;}();var ve = new _e();function we(e, t, s) {void 0 === s && (s = {});var n = /\?/.test(t),r = "";for (var o in s) {"" === r ? !n && (t += "?") : r += "&", r += o + "=" + encodeURIComponent(s[o]);}return /^http(s)?:\/\//.test(t += r) ? t : "" + e + t;}var Se = /*#__PURE__*/function () {function Se() {_classCallCheck(this, Se);}_createClass(Se, [{ key: "post", value: function post(e) {var t = e.url,s = e.data,n = e.headers;return new Promise(function (e, r) {y.request({ url: we("https:", t), data: s, method: "POST", header: n, success: function success(t) {e(t);}, fail: function fail(e) {r(e);} });});} }, { key: "upload", value: function upload(e) {return new Promise(function (t, s) {var n = e.url,r = e.file,o = e.data,i = e.headers,a = e.fileType,c = y.uploadFile({ url: we("https:", n), name: "file", formData: Object.assign({}, o), filePath: r, fileType: a, header: i, success: function success(e) {var s = { statusCode: e.statusCode, data: e.data || {} };200 === e.statusCode && o.success_action_status && (s.statusCode = parseInt(o.success_action_status, 10)), t(s);}, fail: function fail(e) { false && false, s(new Error(e.errMsg || "uploadFile:fail"));} });"function" == typeof e.onUploadProgress && c && "function" == typeof c.onProgressUpdate && c.onProgressUpdate(function (t) {e.onUploadProgress({ loaded: t.totalBytesSent, total: t.totalBytesExpectedToSend });});});} }]);return Se;}();var ke = { setItem: function setItem(e, t) {y.setStorageSync(e, t);}, getItem: function getItem(e) {return y.getStorageSync(e);}, removeItem: function removeItem(e) {y.removeStorageSync(e);}, clear: function clear() {y.clearStorageSync();} };var Te = { genAdapter: function genAdapter() {return { root: {}, reqClass: Se, localStorage: ke, primaryStorage: "local" };}, isMatch: function isMatch() {return !0;}, runtime: "uni_app" };ve.useAdapters(Te);var Ae = ve,Ie = Ae.init;var Pe, Ee;function Oe(_ref12) {var e = _ref12.name,t = _ref12.data,s = _ref12.spaceId,n = _ref12.provider;Pe || (Pe = function () {var _uni$getSystemInfoSyn = uni.getSystemInfoSync(),e = _uni$getSystemInfoSyn.deviceId;return { PLATFORM: "mp-weixin", OS: d, APPID: h.appid, LOCALE: u(), DEVICEID: e, CLIENT_SDK_VERSION: "1.0.0" };}(), Ee = { ak: h.appid, p: "android" === d ? "a" : "i", ut: g(), uuid: p() });var r = JSON.parse(JSON.stringify(t || {})),o = e,i = s,a = { tencent: "t", aliyun: "a" }[n];{var _e15 = Object.assign({}, Ee, { fn: o, sid: i, pvd: a });Object.assign(r, { clientInfo: Pe, uniCloudClientInfo: encodeURIComponent(JSON.stringify(_e15)) });var _uni$getSystemInfoSyn2 = uni.getSystemInfoSync(),_t8 = _uni$getSystemInfoSyn2.deviceId;r.uniCloudDeviceId = _t8;}if (!r.uniIdToken) {var _e16 = y.getStorageSync("uni_id_token") || y.getStorageSync("uniIdToken");_e16 && (r.uniIdToken = _e16);}return r;}function Ue(_ref13) {var _this11 = this;var e = _ref13.name,t = _ref13.data;var s = this.localAddress,n = this.localPort,r = { aliyun: "aliyun", tencent: "tcb" }[this.config.provider],o = this.config.spaceId,a = "http://".concat(s, ":").concat(n, "/system/check-function"),c = "http://".concat(s, ":").concat(n, "/cloudfunctions/").concat(e);return new Promise(function (t, s) {y.request({ method: "POST", url: a, data: { name: e, platform: "mp-weixin", provider: r, spaceId: o }, timeout: 3e3, success: function success(e) {t(e);}, fail: function fail() {t({ data: { code: "NETWORK_ERROR", message: "连接本地调试服务失败，请检查客户端是否和主机在同一局域网下，自动切换为已部署的云函数。" } });} });}).then(function () {var _ref14 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},e = _ref14.data;var _ref15 = e || {},t = _ref15.code,s = _ref15.message;return { code: 0 === t ? 0 : t || "SYS_ERR", message: s || "SYS_ERR" };}).then(function (_ref16) {var s = _ref16.code,n = _ref16.message;if (0 !== s) {switch (s) {case "MODULE_ENCRYPTED":console.error("\u6B64\u4E91\u51FD\u6570\uFF08".concat(e, "\uFF09\u4F9D\u8D56\u52A0\u5BC6\u516C\u5171\u6A21\u5757\u4E0D\u53EF\u672C\u5730\u8C03\u8BD5\uFF0C\u81EA\u52A8\u5207\u6362\u4E3A\u4E91\u7AEF\u5DF2\u90E8\u7F72\u7684\u4E91\u51FD\u6570"));break;case "FUNCTION_ENCRYPTED":console.error("\u6B64\u4E91\u51FD\u6570\uFF08".concat(e, "\uFF09\u5DF2\u52A0\u5BC6\u4E0D\u53EF\u672C\u5730\u8C03\u8BD5\uFF0C\u81EA\u52A8\u5207\u6362\u4E3A\u4E91\u7AEF\u5DF2\u90E8\u7F72\u7684\u4E91\u51FD\u6570"));break;case "ACTION_ENCRYPTED":console.error(n || "需要访问加密的uni-clientDB-action，自动切换为云端环境");break;case "NETWORK_ERROR":{var _e17 = "连接本地调试服务失败，请检查客户端是否和主机在同一局域网下";throw console.error(_e17), new Error(_e17);}case "SWITCH_TO_CLOUD":break;default:{var _e18 = "\u68C0\u6D4B\u672C\u5730\u8C03\u8BD5\u670D\u52A1\u51FA\u73B0\u9519\u8BEF\uFF1A".concat(n, "\uFF0C\u8BF7\u68C0\u67E5\u7F51\u7EDC\u73AF\u5883\u6216\u91CD\u542F\u5BA2\u6237\u7AEF\u518D\u8BD5");throw console.error(_e18), new Error(_e18);}}return _this11.originCallFunction({ name: e, data: t });}return new Promise(function (s, n) {var a = Oe({ name: e, data: t, provider: _this11.config.provider, spaceId: o });y.request({ method: "POST", url: c, data: { provider: r, platform: "mp-weixin", param: a }, success: function success() {var _ref17 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},e = _ref17.statusCode,t = _ref17.data;return !e || e >= 400 ? n(new i({ code: t.code || "SYS_ERR", message: t.message || "request:fail" })) : s({ result: t });}, fail: function fail(e) {n(new i({ code: e.code || e.errCode || "SYS_ERR", message: e.message || e.errMsg || "request:fail" }));} });});});}function be(e) {var t = e.callFunction;e.callFunction = function (e) {var _this12 = this;var s;return s = this.isReady ? Promise.resolve() : this.initUniCloud, s.then(function () {e.data = Oe({ name: e.name, data: e.data, provider: _this12.config.provider, spaceId: _this12.config.spaceId });var s = { aliyun: "aliyun", tencent: "tcb" }[_this12.config.provider];return new Promise(function (n, r) {t.call(_this12, e).then(function (t) {if (_this12.config.useDebugFunction && t && t.requestId) {var _n7 = JSON.stringify({ spaceId: _this12.config.spaceId, functionName: e.name, requestId: t.requestId });console.log("[".concat(s, "-request]").concat(_n7, "[/").concat(s, "-request]"));}n(t);}).catch(function (t) {if (_this12.config.useDebugFunction && t && t.requestId) {var _n8 = JSON.stringify({ spaceId: _this12.config.spaceId, functionName: e.name, requestId: t.requestId });console.log("[".concat(s, "-request]").concat(_n8, "[/").concat(s, "-request]"));}t && t.message && (t.message = "[".concat(e.name, "]: ").concat(t.message)), r(t);});});});};var s = e.callFunction;e.originCallFunction = e.callFunction, e.callFunction = function (t) {return o(function (t) {var _this13 = this;var n;return n = e.isReady ? Promise.resolve() : e.initUniCloud, n.then(function () {return  true && e.debugInfo && !e.debugInfo.forceRemote && [] ? Ue.call(_this13, t) : s.call(_this13, t);});}).call(this, t);};}Ae.init = function (e) {e.env = e.spaceId;var t = Ie.call(this, e);t.config.provider = "tencent", t.config.spaceId = e.spaceId;var s = t.auth;t.auth = function (e) {var t = s.call(this, e);return ["linkAndRetrieveDataWithTicket", "signInAnonymously", "signOut", "getAccessToken", "getLoginState", "signInWithTicket", "getUserInfo"].forEach(function (e) {t[e] = o(t[e]).bind(t);}), t;}, t.customAuth = t.auth;return ["deleteFile", "getTempFileURL", "downloadFile"].forEach(function (e) {t[e] = o(t[e]).bind(t);}), t;};var Ce = Symbol("CLIENT_DB_INTERNAL");function De(e, t) {return e.then = "DoNotReturnProxyWithAFunctionNamedThen", e._internalType = Ce, new Proxy(e, { get: function get(e, s, n) {return function (e, t) {return Object.prototype.hasOwnProperty.call(e, t);}(e, s) || e[s] || "string" != typeof s ? e[s] : t.get(e, s, n);} });}var Re = /*#__PURE__*/function (_Error2) {_inherits(Re, _Error2);var _super8 = _createSuper(Re);function Re(e, t) {var _this14;_classCallCheck(this, Re);_this14 = _super8.call(this, e), _this14.code = t;return _this14;}return Re;}( /*#__PURE__*/_wrapNativeSuper(Error));function xe(e) {switch (t = e, Object.prototype.toString.call(t).slice(8, -1).toLowerCase()) {case "array":return e.map(function (e) {return xe(e);});case "object":return e._internalType === Ce || Object.keys(e).forEach(function (t) {e[t] = xe(e[t]);}), e;case "regexp":return { $regexp: { source: e.source, flags: e.flags } };case "date":return { $date: e.toISOString() };default:return e;}var t;}function qe() {var e = y.getStorageSync("uni_id_token") || "",t = e.split(".");if (!e || 3 !== t.length) return { uid: null, role: [], permission: [] };var s;try {s = JSON.parse((n = t[1], decodeURIComponent(atob(n).split("").map(function (e) {return "%" + ("00" + e.charCodeAt(0).toString(16)).slice(-2);}).join(""))));} catch (e) {throw new Error("获取当前用户信息出错，详细错误信息为：" + e.message);}var n;return s;}var Fe = t(s(function (e, t) {Object.defineProperty(t, "__esModule", { value: !0 });var s = "chooseAndUploadFile:fail";function n(e, t) {return e.tempFiles.forEach(function (e, s) {e.name || (e.name = e.path.substring(e.path.lastIndexOf("/") + 1)), t && (e.fileType = t), e.cloudPath = Date.now() + "_" + s + e.name.substring(e.name.lastIndexOf("."));}), e.tempFilePaths || (e.tempFilePaths = e.tempFiles.map(function (e) {return e.path;})), e;}function r(e, t, _ref18) {var s = _ref18.onChooseFile,n = _ref18.onUploadProgress;return t.then(function (e) {if (s) {var _t9 = s(e);if (void 0 !== _t9) return Promise.resolve(_t9).then(function (t) {return void 0 === t ? e : t;});}return e;}).then(function (t) {return !1 === t ? { errMsg: "chooseAndUploadFile:ok", tempFilePaths: [], tempFiles: [] } : function (e, t) {var s = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 5;var n = arguments.length > 3 ? arguments[3] : undefined;(t = Object.assign({}, t)).errMsg = "chooseAndUploadFile:ok";var r = t.tempFiles,o = r.length;var i = 0;return new Promise(function (a) {for (; i < s;) {c();}function c() {var s = i++;if (s >= o) return void (!r.find(function (e) {return !e.url && !e.errMsg;}) && a(t));var u = r[s];e.uploadFile({ filePath: u.path, cloudPath: u.cloudPath, fileType: u.fileType, onUploadProgress: function onUploadProgress(e) {e.index = s, e.tempFile = u, e.tempFilePath = u.path, n && n(e);} }).then(function (e) {u.url = e.fileID, s < o && c();}).catch(function (e) {u.errMsg = e.errMsg || e.message, s < o && c();});}});}(e, t, 5, n);});}t.initChooseAndUploadFile = function (e) {return function () {var t = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { type: "all" };return "image" === t.type ? r(e, function (e) {var t = e.count,r = e.sizeType,o = e.sourceType,i = e.extension;return new Promise(function (e, a) {uni.chooseImage({ count: t, sizeType: r, sourceType: o, extension: i, success: function success(t) {e(n(t, "image"));}, fail: function fail(e) {a({ errMsg: e.errMsg.replace("chooseImage:fail", s) });} });});}(t), t) : "video" === t.type ? r(e, function (e) {var t = e.camera,r = e.compressed,o = e.maxDuration,i = e.sourceType,a = e.extension;return new Promise(function (e, c) {uni.chooseVideo({ camera: t, compressed: r, maxDuration: o, sourceType: i, extension: a, success: function success(t) {var s = t.tempFilePath,r = t.duration,o = t.size,i = t.height,a = t.width;e(n({ errMsg: "chooseVideo:ok", tempFilePaths: [s], tempFiles: [{ name: t.tempFile && t.tempFile.name || "", path: s, size: o, type: t.tempFile && t.tempFile.type || "", width: a, height: i, duration: r, fileType: "video", cloudPath: "" }] }, "video"));}, fail: function fail(e) {c({ errMsg: e.errMsg.replace("chooseVideo:fail", s) });} });});}(t), t) : r(e, function (e) {var t = e.count,r = e.extension;return new Promise(function (e, o) {var i = uni.chooseFile;if ("undefined" != typeof wx && "function" == typeof wx.chooseMessageFile && (i = wx.chooseMessageFile), "function" != typeof i) return o({ errMsg: s + " 请指定 type 类型，该平台仅支持选择 image 或 video。" });i({ type: "all", count: t, extension: r, success: function success(t) {e(n(t));}, fail: function fail(e) {o({ errMsg: e.errMsg.replace("chooseFile:fail", s) });} });});}(t), t);};};}));function Le(_x30, _x31) {return _Le.apply(this, arguments);}function _Le() {_Le = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee32(e, t) {var s, _e24, n;return _regenerator.default.wrap(function _callee32$(_context32) {while (1) {switch (_context32.prev = _context32.next) {case 0:s = "http://".concat(e, ":").concat(t, "/system/ping");_context32.prev = 1;_context32.next = 4;return n = { url: s, timeout: 500 }, new Promise(function (e, t) {y.request(_objectSpread(_objectSpread({}, n), {}, { success: function success(t) {e(t);}, fail: function fail(e) {t(e);} }));});case 4:_e24 = _context32.sent;return _context32.abrupt("return", !(!_e24.data || 0 !== _e24.data.code));case 8:_context32.prev = 8;_context32.t0 = _context32["catch"](1);return _context32.abrupt("return", !1);case 11:case "end":return _context32.stop();}}}, _callee32, null, [[1, 8]]);}));return _Le.apply(this, arguments);}var Ne = new ( /*#__PURE__*/function () {function _class2() {_classCallCheck(this, _class2);}_createClass(_class2, [{ key: "init", value: function init(e) {var t = {};var s = !1 !== e.debugFunction && "development" === "development" && ( false || "app-plus" === "mp-weixin");switch (e.provider) {case "tencent":t = Ae.init(Object.assign(e, { useDebugFunction: s }));break;case "aliyun":t = v.init(Object.assign(e, { useDebugFunction: s }));break;default:throw new Error("未提供正确的provider参数");}var n = undefined; true && n && !n.code && (t.debugInfo = n), t.isReady = !1;var r = t.auth();return t.initUniCloud = r.getLoginState().then(function (e) {return e ? Promise.resolve() : r.signInAnonymously();}).then(function () {if ( true && t.debugInfo) {var _t$debugInfo = t.debugInfo,_e19 = _t$debugInfo.address,_s4 = _t$debugInfo.servePort;return function () {var _ref19 = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee31(e, t) {var s, _n9, _r3;return _regenerator.default.wrap(function _callee31$(_context31) {while (1) {switch (_context31.prev = _context31.next) {case 0:_n9 = 0;case 1:if (!(_n9 < e.length)) {_context31.next = 11;break;}_r3 = e[_n9];_context31.next = 5;return Le(_r3, t);case 5:if (!_context31.sent) {_context31.next = 8;break;}s = _r3;return _context31.abrupt("break", 11);case 8:_n9++;_context31.next = 1;break;case 11:return _context31.abrupt("return", { address: s, port: t });case 12:case "end":return _context31.stop();}}}, _callee31);}));return function (_x32, _x33) {return _ref19.apply(this, arguments);};}()(_e19, _s4);}return Promise.resolve();}).then(function () {var _ref20 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},e = _ref20.address,s = _ref20.port;if (e) t.localAddress = e, t.localPort = s;else if (t.debugInfo) {var _e20 =  false ? undefined : "warn",_s5 = console[_e20];"remote" === t.debugInfo.initialLaunchType ? (t.debugInfo.forceRemote = !0, _s5("当前客户端和HBuilderX不在同一局域网下（或其他网络原因无法连接HBuilderX），uniCloud本地调试服务不对当前客户端生效。\n- 如果不使用uniCloud本地调试服务，请直接忽略此信息。\n- 如需使用uniCloud本地调试服务，请将客户端与主机连接到同一局域网下并重新运行到客户端。\n- 如果在HBuilderX开启的状态下切换过网络环境，请重启HBuilderX后再试")) : _s5("无法连接uniCloud本地调试服务，请检查当前客户端是否与主机在同一局域网下。\n- 如需使用uniCloud本地调试服务，请将客户端与主机连接到同一局域网下并重新运行到客户端。\n- 如果在HBuilderX开启的状态下切换过网络环境，请重启HBuilderX后再试");}}).then(function () {return function () {if (true) return;if (uni.getStorageSync("__LAST_DCLOUD_APPID") === h.appid) return;uni.setStorageSync("__LAST_DCLOUD_APPID", h.appid), uni.removeStorageSync("uni_id_token") && (console.warn("检测到当前项目与上次运行到此端口的项目不一致，自动清理uni-id保存的token信息（仅开发调试时生效）"), uni.removeStorageSync("uni_id_token"), uni.removeStorageSync("uni_id_token_expired"));}(), new Promise(function (e) { false ? (undefined) : setTimeout(function () {d = uni.getSystemInfoSync().platform, l = uni.getStorageSync("__DC_CLOUD_UUID") || f(32), e();}, 0);});}).then(function () {t.isReady = !0;}), be(t), function (e) {var t = e.uploadFile;e.uploadFile = function (e) {var _this15 = this;var s;return s = this.isReady ? Promise.resolve() : this.initUniCloud, s.then(function () {return t.call(_this15, e);});};var s = e.uploadFile;e.uploadFile = function (e) {return o(s).call(this, e);};}(t), function (e) {e.database = function () {if (this._database) return this._database;var t = {},s = {};var n = /*#__PURE__*/function () {function n(e, t, s) {_classCallCheck(this, n);this.content = e, this.prevStage = t, this.actionName = s;}_createClass(n, [{ key: "toJSON", value: function toJSON() {var e = this;var t = [e.content];for (; e.prevStage;) {e = e.prevStage, t.push(e.content);}return { $db: t.reverse().map(function (e) {return { $method: e.$method, $param: e.$param };}) };} }, { key: "get", value: function get() {return this._send("get", Array.from(arguments));} }, { key: "add", value: function add() {return this._send("add", Array.from(arguments));} }, { key: "remove", value: function remove() {return this._send("remove", Array.from(arguments));} }, { key: "update", value: function update() {return this._send("update", Array.from(arguments));} }, { key: "end", value: function end() {return this._send("end", Array.from(arguments));} }, { key: "set", value: function set() {throw new Error("clientDB禁止使用set方法");} }, { key: "_send", value: function _send(n, r) {var o = this.toJSON();return o.$db.push({ $method: n, $param: r }), e.callFunction({ name: "DCloud-clientDB", data: { action: this.actionName, command: o } }).then(function (e) {var _e$result = e.result,n = _e$result.code,r = _e$result.message,o = _e$result.token,i = _e$result.tokenExpired;return n ? Promise.reject(new Re(r, n)) : (o && i && t.refreshToken && t.refreshToken.forEach(function (e) {e({ token: o, tokenExpired: i });}), o && i && s.refreshToken && s.refreshToken.forEach(function (e) {e({ token: o, tokenExpired: i });}), Promise.resolve(e));}).catch(function (e) {var t = new Re(e.message, e.code || "SYSTEM_ERROR");return s.error && s.error.forEach(function (e) {e(t);}), /fc_function_not_found|FUNCTION_NOT_FOUND/g.test(e.message) && console.warn("clientDB未初始化，请在web控制台保存一次schema以开启clientDB"), Promise.reject(e);});} }, { key: "useAggregate", get: function get() {var e = this,t = !1;for (; e.prevStage;) {e = e.prevStage;var _s6 = e.content.$method;if ("aggregate" === _s6 || "pipeline" === _s6) {t = !0;break;}}return t;} }, { key: "count", get: function get() {if (!this.useAggregate) return function () {return this._send("count", Array.from(arguments));};var e = this;return function () {return i({ $method: "count", $param: xe(Array.from(arguments)) }, e, e.actionName);};} }]);return n;}();var r = ["db.Geo", "db.command", "command.aggregate"];function o(e, t) {return r.indexOf("".concat(e, ".").concat(t)) > -1;}function i(e, t, s) {return De(new n(e, t, s), { get: function get(e, t) {var n = "db";return e && e.content && (n = e.content.$method), o(n, t) ? i({ $method: t }, e, s) : function () {return i({ $method: t, $param: xe(Array.from(arguments)) }, e, s);};} });}function a(_ref21) {var e = _ref21.path,t = _ref21.method;return /*#__PURE__*/function () {function _class3() {_classCallCheck(this, _class3);this.param = Array.from(arguments);}_createClass(_class3, [{ key: "toJSON", value: function toJSON() {return { $newDb: [].concat(_toConsumableArray(e.map(function (e) {return { $method: e };})), [{ $method: t, $param: this.param }]) };} }]);return _class3;}();}var c = { auth: { on: function on(e, s) {t[e] = t[e] || [], t[e].indexOf(s) > -1 || t[e].push(s);}, off: function off(e, s) {t[e] = t[e] || [];var n = t[e].indexOf(s);-1 !== n && t[e].splice(n, 1);} }, on: function on(e, t) {s[e] = s[e] || [], s[e].indexOf(t) > -1 || s[e].push(t);}, off: function off(e, t) {s[e] = s[e] || [];var n = s[e].indexOf(t);-1 !== n && s[e].splice(n, 1);}, env: De({}, { get: function get(e, t) {return { $env: t };} }), action: function action(e) {return De({}, { get: function get(t, s) {return o("db", s) ? i({ $method: s }, null, e) : function () {return i({ $method: s, $param: xe(Array.from(arguments)) }, null, e);};} });}, Geo: De({}, { get: function get(e, t) {return a({ path: ["Geo"], method: t });} }), getCloudEnv: function getCloudEnv(e) {if ("string" != typeof e || !e.trim()) throw new Error("getCloudEnv参数错误");return { $env: e.replace("$cloudEnv_", "") };}, get serverDate() {return a({ path: [], method: "serverDate" });}, get RegExp() {return a({ path: [], method: "RegExp" });} },u = De(c, { get: function get(e, t) {return o("db", t) ? i({ $method: t }) : function () {return i({ $method: t, $param: xe(Array.from(arguments)) });};} });return this._database = u, u;};}(t), function (e) {e.getCurrentUserInfo = qe, e.chooseAndUploadFile = o(Fe.initChooseAndUploadFile(e));}(t), t.init = this.init, t;} }]);return _class2;}())();(function () {{var e = {};if (1 === [].length) e = [][0], Ne = Ne.init(e);else {var _e21 = ["auth", "callFunction", "uploadFile", "deleteFile", "getTempFileURL", "downloadFile", "database", "getCurrentUSerInfo"],t = [].length > 0 ? "应用有多个服务空间，请通过uniCloud.init方法指定要使用的服务空间" : "应用未关联服务空间，请在cloudfunctions目录右键关联服务空间";_e21.forEach(function (e) {Ne[e] = function () {return console.error(t), Promise.reject(new i({ code: "SYS_ERR", message: t }));};});}Object.assign(Ne, { get mixinDatacom() {return e = Ne, { props: { localdata: { type: Array, default: function _default() {return [];} }, options: { type: [Object, Array], default: function _default() {return {};} }, collection: { type: String, default: "" }, action: { type: String, default: "" }, field: { type: String, default: "" }, orderby: { type: String, default: "" }, where: { type: [String, Object], default: "" }, pageData: { type: String, default: "add" }, pageCurrent: { type: Number, default: 1 }, pageSize: { type: Number, default: 20 }, getcount: { type: [Boolean, String], default: !1 }, gettree: { type: [Boolean, String], default: !1 }, gettreepath: { type: [Boolean, String], default: !1 }, startwith: { type: String, default: "" }, limitlevel: { type: Number, default: 10 }, groupby: { type: String, default: "" }, groupField: { type: String, default: "" }, distinct: { type: [Boolean, String], default: !1 }, manual: { type: Boolean, default: !1 } }, data: function data() {return { mixinDatacomLoading: !1, mixinDatacomHasMore: !1, mixinDatacomResData: [], mixinDatacomErrorMessage: "", mixinDatacomPage: {} };}, created: function created() {var _this16 = this;this.mixinDatacomPage = { current: this.pageCurrent, size: this.pageSize, count: 0 }, this.$watch(function () {var e = [];return ["pageCurrent", "pageSize", "localdata", "collection", "action", "field", "orderby", "where", "getont", "getcount", "gettree", "groupby", "groupField", "distinct"].forEach(function (t) {e.push(_this16[t]);}), e;}, function (e, t) {var s = !1;var n = [];for (var _r4 = 2; _r4 < e.length; _r4++) {e[_r4] !== t[_r4] && (n.push(e[_r4]), s = !0);}e[0] !== t[0] && (_this16.mixinDatacomPage.current = _this16.pageCurrent), _this16.mixinDatacomPage.size = _this16.pageSize, _this16.onMixinDatacomPropsChange(s, n);});}, methods: { onMixinDatacomPropsChange: function onMixinDatacomPropsChange(e, t) {}, mixinDatacomEasyGet: function mixinDatacomEasyGet() {var _this17 = this;var _ref22 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},_ref22$getone = _ref22.getone,e = _ref22$getone === void 0 ? !1 : _ref22$getone,t = _ref22.success,s = _ref22.fail;this.mixinDatacomLoading || (this.mixinDatacomLoading = !0, this.mixinDatacomErrorMessage = "", this.mixinDatacomGet().then(function (s) {_this17.mixinDatacomLoading = !1;var _s$result = s.result,n = _s$result.data,r = _s$result.count;_this17.getcount && (_this17.mixinDatacomPage.count = r), _this17.mixinDatacomHasMore = n.length < _this17.pageSize;var o = e ? n.length ? n[0] : void 0 : n;_this17.mixinDatacomResData = o, t && t(o);}).catch(function (e) {_this17.mixinDatacomLoading = !1, _this17.mixinDatacomErrorMessage = e, s && s(e);}));}, mixinDatacomGet: function mixinDatacomGet() {var t = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};var s = e.database();var n = t.action || this.action;n && (s = s.action(n));var r = t.collection || this.collection;s = s.collection(r);var o = t.where || this.where;o && Object.keys(o).length && (s = s.where(o));var i = t.field || this.field;i && (s = s.field(i));var a = t.groupby || this.groupby;a && (s = s.groupBy(a));var c = t.groupField || this.groupField;c && (s = s.groupField(c)), !0 === (void 0 !== t.distinct ? t.distinct : this.distinct) && (s = s.distinct());var u = t.orderby || this.orderby;u && (s = s.orderBy(u));var h = void 0 !== t.pageCurrent ? t.pageCurrent : this.mixinDatacomPage.current,l = void 0 !== t.pageSize ? t.pageSize : this.mixinDatacomPage.size,d = void 0 !== t.getcount ? t.getcount : this.getcount,f = void 0 !== t.gettree ? t.gettree : this.gettree,p = void 0 !== t.gettreepath ? t.gettreepath : this.gettreepath,g = { getCount: d },m = { limitLevel: void 0 !== t.limitlevel ? t.limitlevel : this.limitlevel, startWith: void 0 !== t.startwith ? t.startwith : this.startwith };return f && (g.getTree = m), p && (g.getTreePath = m), s = s.skip(l * (h - 1)).limit(l).get(g), s;} } };var e;} });}})();var Me = Ne;var _default2 = Me;exports.default = _default2;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../webpack/buildin/global.js */ 3), __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"], __webpack_require__(/*! ./../../../../../node-libs-browser/mock/process.js */ 272)))
 
 /***/ }),
 
-/***/ 501:
+/***/ 272:
 /*!********************************************************!*\
   !*** ./node_modules/node-libs-browser/mock/process.js ***!
   \********************************************************/
@@ -11822,7 +10511,7 @@ exports.binding = function (name) {
     var path;
     exports.cwd = function () { return cwd };
     exports.chdir = function (dir) {
-        if (!path) path = __webpack_require__(/*! path */ 502);
+        if (!path) path = __webpack_require__(/*! path */ 273);
         cwd = path.resolve(dir, cwd);
     };
 })();
@@ -11836,7 +10525,7 @@ exports.features = {};
 
 /***/ }),
 
-/***/ 502:
+/***/ 273:
 /*!***********************************************!*\
   !*** ./node_modules/path-browserify/index.js ***!
   \***********************************************/
@@ -12146,11 +10835,11 @@ var substr = 'ab'.substr(-1) === 'b'
     }
 ;
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node-libs-browser/mock/process.js */ 501)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node-libs-browser/mock/process.js */ 272)))
 
 /***/ }),
 
-/***/ 503:
+/***/ 274:
 /*!**************************************************************!*\
   !*** ./node_modules/@dcloudio/uni-i18n/dist/uni-i18n.esm.js ***!
   \**************************************************************/
@@ -12440,7 +11129,7 @@ function initVueI18n(messages, fallbackLocale = 'en', locale) {
 
 /***/ }),
 
-/***/ 504:
+/***/ 275:
 /*!*************************************************************************************!*\
   !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/pages.json?{"type":"stat"} ***!
   \*************************************************************************************/
@@ -12452,7 +11141,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 
-/***/ 505:
+/***/ 276:
 /*!**************************************************************************************************************************!*\
   !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/uni_modules/qiun-data-charts/js_sdk/u-charts/u-charts-v2.0.0.js ***!
   \**************************************************************************************************************************/
@@ -18391,6 +17080,499 @@ if ( true && typeof module.exports === "object") {
 
 /***/ }),
 
+/***/ 28:
+/*!********************************************************************************************!*\
+  !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/uview-ui/libs/function/addUnit.js ***!
+  \********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = addUnit;var _test = _interopRequireDefault(__webpack_require__(/*! ./test.js */ 18));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+// 添加单位，如果有rpx，%，px等单位结尾或者值为auto，直接返回，否则加上rpx单位结尾
+function addUnit() {var value = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'auto';var unit = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'rpx';
+  value = String(value);
+  // 用uView内置验证规则中的number判断是否为数值
+  return _test.default.number(value) ? "".concat(value).concat(unit) : value;
+}
+
+/***/ }),
+
+/***/ 29:
+/*!*******************************************************************************************!*\
+  !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/uview-ui/libs/function/random.js ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;function random(min, max) {
+  if (min >= 0 && max > 0 && max >= min) {
+    var gab = max - min + 1;
+    return Math.floor(Math.random() * gab + min);
+  } else {
+    return 0;
+  }
+}var _default =
+
+random;exports.default = _default;
+
+/***/ }),
+
+/***/ 3:
+/*!***********************************!*\
+  !*** (webpack)/buildin/global.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || new Function("return this")();
+} catch (e) {
+	// This works if the window reference is available
+	if (typeof window === "object") g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+
+/***/ 30:
+/*!*****************************************************************************************!*\
+  !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/uview-ui/libs/function/trim.js ***!
+  \*****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;function trim(str) {var pos = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'both';
+  if (pos == 'both') {
+    return str.replace(/^\s+|\s+$/g, "");
+  } else if (pos == "left") {
+    return str.replace(/^\s*/, '');
+  } else if (pos == 'right') {
+    return str.replace(/(\s*$)/g, "");
+  } else if (pos == 'all') {
+    return str.replace(/\s+/g, "");
+  } else {
+    return str;
+  }
+}var _default =
+
+trim;exports.default = _default;
+
+/***/ }),
+
+/***/ 31:
+/*!******************************************************************************************!*\
+  !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/uview-ui/libs/function/toast.js ***!
+  \******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;function toast(title) {var duration = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1500;
+  uni.showToast({
+    title: title,
+    icon: 'none',
+    duration: duration });
+
+}var _default =
+
+toast;exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+
+/***/ 32:
+/*!**********************************************************************************************!*\
+  !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/uview-ui/libs/function/getParent.js ***!
+  \**********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = getParent; // 获取父组件的参数，因为支付宝小程序不支持provide/inject的写法
+// this.$parent在非H5中，可以准确获取到父组件，但是在H5中，需要多次this.$parent.$parent.xxx
+function getParent(name, keys) {
+  var parent = this.$parent;
+  // 通过while历遍，这里主要是为了H5需要多层解析的问题
+  while (parent) {
+    // 父组件
+    if (parent.$options.name !== name) {
+      // 如果组件的name不相等，继续上一级寻找
+      parent = parent.$parent;
+    } else {var _ret = function () {
+        var data = {};
+        // 判断keys是否数组，如果传过来的是一个数组，那么直接使用数组元素值当做键值去父组件寻找
+        if (Array.isArray(keys)) {
+          keys.map(function (val) {
+            data[val] = parent[val] ? parent[val] : '';
+          });
+        } else {
+          // 历遍传过来的对象参数
+          for (var i in keys) {
+            // 如果子组件有此值则用，无此值则用父组件的值
+            // 判断是否空数组，如果是，则用父组件的值，否则用子组件的值
+            if (Array.isArray(keys[i])) {
+              if (keys[i].length) {
+                data[i] = keys[i];
+              } else {
+                data[i] = parent[i];
+              }
+            } else if (keys[i].constructor === Object) {
+              // 判断是否对象，如果是对象，且有属性，那么使用子组件的值，否则使用父组件的值
+              if (Object.keys(keys[i]).length) {
+                data[i] = keys[i];
+              } else {
+                data[i] = parent[i];
+              }
+            } else {
+              // 只要子组件有传值，即使是false值，也是“传值”了，也需要覆盖父组件的同名参数
+              data[i] = keys[i] || keys[i] === false ? keys[i] : parent[i];
+            }
+          }
+        }
+        return { v: data };}();if (typeof _ret === "object") return _ret.v;
+    }
+  }
+
+  return {};
+}
+
+/***/ }),
+
+/***/ 33:
+/*!********************************************************************************************!*\
+  !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/uview-ui/libs/function/$parent.js ***!
+  \********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = $parent; // 获取父组件的参数，因为支付宝小程序不支持provide/inject的写法
+// this.$parent在非H5中，可以准确获取到父组件，但是在H5中，需要多次this.$parent.$parent.xxx
+// 这里默认值等于undefined有它的含义，因为最顶层元素(组件)的$parent就是undefined，意味着不传name
+// 值(默认为undefined)，就是查找最顶层的$parent
+function $parent() {var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : undefined;
+  var parent = this.$parent;
+  // 通过while历遍，这里主要是为了H5需要多层解析的问题
+  while (parent) {
+    // 父组件
+    if (parent.$options && parent.$options.name !== name) {
+      // 如果组件的name不相等，继续上一级寻找
+      parent = parent.$parent;
+    } else {
+      return parent;
+    }
+  }
+  return false;
+}
+
+/***/ }),
+
+/***/ 34:
+/*!****************************************************************************************!*\
+  !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/uview-ui/libs/function/sys.js ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.os = os;exports.sys = sys;function os() {
+  return uni.getSystemInfoSync().platform;
+};
+
+function sys() {
+  return uni.getSystemInfoSync();
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+
+/***/ 35:
+/*!*********************************************************************************************!*\
+  !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/uview-ui/libs/function/debounce.js ***!
+  \*********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var timeout = null;
+
+/**
+                                                                                                                         * 防抖原理：一定时间内，只有最后一次操作，再过wait毫秒后才执行函数
+                                                                                                                         * 
+                                                                                                                         * @param {Function} func 要执行的回调函数 
+                                                                                                                         * @param {Number} wait 延时的时间
+                                                                                                                         * @param {Boolean} immediate 是否立即执行 
+                                                                                                                         * @return null
+                                                                                                                         */
+function debounce(func) {var wait = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 500;var immediate = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+  // 清除定时器
+  if (timeout !== null) clearTimeout(timeout);
+  // 立即执行，此类情况一般用不到
+  if (immediate) {
+    var callNow = !timeout;
+    timeout = setTimeout(function () {
+      timeout = null;
+    }, wait);
+    if (callNow) typeof func === 'function' && func();
+  } else {
+    // 设置定时器，当最后一次操作后，timeout不会再被清除，所以在延时wait毫秒后执行func回调方法
+    timeout = setTimeout(function () {
+      typeof func === 'function' && func();
+    }, wait);
+  }
+}var _default =
+
+debounce;exports.default = _default;
+
+/***/ }),
+
+/***/ 36:
+/*!*********************************************************************************************!*\
+  !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/uview-ui/libs/function/throttle.js ***!
+  \*********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var timer, flag;
+/**
+                                                                                                                      * 节流原理：在一定时间内，只能触发一次
+                                                                                                                      * 
+                                                                                                                      * @param {Function} func 要执行的回调函数 
+                                                                                                                      * @param {Number} wait 延时的时间
+                                                                                                                      * @param {Boolean} immediate 是否立即执行
+                                                                                                                      * @return null
+                                                                                                                      */
+function throttle(func) {var wait = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 500;var immediate = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
+  if (immediate) {
+    if (!flag) {
+      flag = true;
+      // 如果是立即执行，则在wait毫秒内开始时执行
+      typeof func === 'function' && func();
+      timer = setTimeout(function () {
+        flag = false;
+      }, wait);
+    }
+  } else {
+    if (!flag) {
+      flag = true;
+      // 如果是非立即执行，则在wait毫秒内的结束处执行
+      timer = setTimeout(function () {
+        flag = false;
+        typeof func === 'function' && func();
+      }, wait);
+    }
+
+  }
+};var _default =
+throttle;exports.default = _default;
+
+/***/ }),
+
+/***/ 37:
+/*!*****************************************************************************************!*\
+  !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/uview-ui/libs/config/config.js ***!
+  \*****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; // 此版本发布于2020-09-10
+var version = '1.6.9';var _default =
+
+{
+  v: version,
+  version: version,
+  // 主题名称
+  type: [
+  'primary',
+  'success',
+  'info',
+  'error',
+  'warning'] };exports.default = _default;
+
+/***/ }),
+
+/***/ 38:
+/*!*****************************************************************************************!*\
+  !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/uview-ui/libs/config/zIndex.js ***!
+  \*****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; // uniapp在H5中各API的z-index值如下：
+/**
+ * actionsheet: 999
+ * modal: 999
+ * navigate: 998
+ * tabbar: 998
+ * toast: 999
+ */var _default =
+
+{
+  toast: 10090,
+  noNetwork: 10080,
+  // popup包含popup，actionsheet，keyboard，picker的值
+  popup: 10075,
+  mask: 10070,
+  navbar: 980,
+  topTips: 975,
+  sticky: 970,
+  indexListSticky: 965 };exports.default = _default;
+
+/***/ }),
+
+/***/ 4:
+/*!*********************************************************************!*\
+  !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/pages.json ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ 410:
+/*!******************************************************************************!*\
+  !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/api/money_detail.js ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.getMoneyLogList = getMoneyLogList;var _http = _interopRequireDefault(__webpack_require__(/*! @/common/http.js */ 45));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+function getMoneyLogList(sName) {
+  var url = getApp().globalData.serverUrl + "/strategys/single_stats";
+  var token = uni.getStorageSync('wx_login_token');
+  var resp = _http.default.request(url, {
+    token: token,
+    sname: sName });
+
+  return resp;
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+
+/***/ 45:
+/*!*************************************************************************!*\
+  !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/common/http.js ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}var http = /*#__PURE__*/function () {function http() {_classCallCheck(this, http);}_createClass(http, null, [{ key: "request", value: function request(
+    url) {var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};var method = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "POST";var contentType = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : "application/x-www-form-urlencoded";
+      return new Promise(function (resolve, reject) {
+        uni.request({
+          url: url, //仅为示例，并非真实接口地址。
+          data: params,
+          header: {
+            'Content-Type': contentType },
+
+          method: method,
+          success: function success(res) {
+            if (!params.filterData) {
+              resolve(res.data.data);
+            } else if (params.filterData === 1) {
+              //console.log('common res:'+JSON.stringify(res))
+              resolve(res.data);
+            } else if (params.filterData) {
+              resolve(res.data);
+            }
+          } });
+
+      });
+    } }]);return http;}();var _default =
+
+
+http;exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+
+/***/ 500:
+/*!****************************************************************************************!*\
+  !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/uview-ui/libs/util/emitter.js ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; /**
+                                                                                                      * 递归使用 call 方式this指向
+                                                                                                      * @param componentName // 需要找的组件的名称
+                                                                                                      * @param eventName // 事件名称
+                                                                                                      * @param params // 需要传递的参数
+                                                                                                      */
+function _broadcast(componentName, eventName, params) {
+  // 循环子节点找到名称一样的子节点 否则 递归 当前子节点
+  this.$children.map(function (child) {
+    if (componentName === child.$options.name) {
+      child.$emit.apply(child, [eventName].concat(params));
+    } else {
+      _broadcast.apply(child, [componentName, eventName].concat(params));
+    }
+  });
+}var _default =
+{
+  methods: {
+    /**
+              * 派发 (向上查找) (一个)
+              * @param componentName // 需要找的组件的名称
+              * @param eventName // 事件名称
+              * @param params // 需要传递的参数
+              */
+    dispatch: function dispatch(componentName, eventName, params) {
+      var parent = this.$parent || this.$root; //$parent 找到最近的父节点 $root 根节点
+      var name = parent.$options.name; // 获取当前组件实例的name
+      // 如果当前有节点 && 当前没名称 且 当前名称等于需要传进来的名称的时候就去查找当前的节点
+      // 循环出当前名称的一样的组件实例
+      while (parent && (!name || name !== componentName)) {
+        parent = parent.$parent;
+        if (parent) {
+          name = parent.$options.name;
+        }
+      }
+      // 有节点表示当前找到了name一样的实例
+      if (parent) {
+        parent.$emit.apply(parent, [eventName].concat(params));
+      }
+    },
+    /**
+        * 广播 (向下查找) (广播多个)
+        * @param componentName // 需要找的组件的名称
+        * @param eventName // 事件名称
+        * @param params // 需要传递的参数
+        */
+    broadcast: function broadcast(componentName, eventName, params) {
+      _broadcast.call(this, componentName, eventName, params);
+    } } };exports.default = _default;
+
+/***/ }),
+
 /***/ 62:
 /*!**********************************************************!*\
   !*** ./node_modules/@babel/runtime/regenerator/index.js ***!
@@ -19647,7 +18829,5925 @@ function statusControl(status, sid) {
 
 /***/ }),
 
-/***/ 94:
+/***/ 88:
+/*!******************************************************************************************!*\
+  !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/components/u-charts/u-charts.js ***!
+  \******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {/*
+ * uCharts v1.8.5.20190815
+ * uni-app平台高性能跨全端图表，支持H5、APP、小程序（微信/支付宝/百度/头条/QQ/360）
+ * Copyright (c) 2019 QIUN秋云 https://www.ucharts.cn All rights reserved.
+ * Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
+ *
+ * uCharts官方网站
+ * https://www.uCharts.cn
+ *
+ * 开源地址:
+ * https://gitee.com/uCharts/uCharts
+ *
+ * uni-app插件市场地址：
+ * http://ext.dcloud.net.cn/plugin?id=271
+ *
+ */
+
+
+
+var config = {
+  yAxisWidth: 15,
+  yAxisSplit: 5,
+  xAxisHeight: 15,
+  xAxisLineHeight: 15,
+  legendHeight: 15,
+  yAxisTitleWidth: 15,
+  padding: [10, 10, 10, 10],
+  pixelRatio: 1,
+  rotate: false,
+  columePadding: 3,
+  fontSize: 13,
+  //dataPointShape: ['diamond', 'circle', 'triangle', 'rect'],
+  dataPointShape: ['circle', 'circle', 'circle', 'circle'],
+  colors: ['#1890ff', '#2fc25b', '#facc14', '#f04864', '#8543e0', '#90ed7d'],
+  pieChartLinePadding: 15,
+  pieChartTextPadding: 5,
+  xAxisTextPadding: 3,
+  titleColor: '#333333',
+  titleFontSize: 20,
+  subtitleColor: '#999999',
+  subtitleFontSize: 15,
+  toolTipPadding: 3,
+  toolTipBackground: '#000000',
+  toolTipOpacity: 0.7,
+  toolTipLineHeight: 20,
+  radarGridCount: 3,
+  radarLabelTextMargin: 15,
+  gaugeLabelTextMargin: 15 };
+
+
+var assign;
+if (Object.assign) {
+  assign = Object.assign;
+} else {
+  // 使用polyfill
+  assign = function assign(target, varArgs) {
+    if (target == null) {
+      throw new TypeError('Cannot convert undefined or null to object');
+    }
+    var to = Object(target);
+    for (var index = 1; index < arguments.length; index++) {
+      var nextSource = arguments[index];
+      if (nextSource != null) {
+        for (var nextKey in nextSource) {
+          if (Object.prototype.hasOwnProperty.call(nextSource, nextKey)) {
+            to[nextKey] = nextSource[nextKey];
+          }
+        }
+      }
+    }
+    return to;
+  };
+}
+
+var util = {
+  toFixed: function toFixed(num, limit) {
+    limit = limit || 2;
+    if (this.isFloat(num)) {
+      num = num.toFixed(limit);
+    }
+    return num;
+  },
+  isFloat: function isFloat(num) {
+    return num % 1 !== 0;
+  },
+  approximatelyEqual: function approximatelyEqual(num1, num2) {
+    return Math.abs(num1 - num2) < 1e-10;
+  },
+  isSameSign: function isSameSign(num1, num2) {
+    return Math.abs(num1) === num1 && Math.abs(num2) === num2 || Math.abs(num1) !== num1 && Math.abs(num2) !== num2;
+  },
+  isSameXCoordinateArea: function isSameXCoordinateArea(p1, p2) {
+    return this.isSameSign(p1.x, p2.x);
+  },
+  isCollision: function isCollision(obj1, obj2) {
+    obj1.end = {};
+    obj1.end.x = obj1.start.x + obj1.width;
+    obj1.end.y = obj1.start.y - obj1.height;
+    obj2.end = {};
+    obj2.end.x = obj2.start.x + obj2.width;
+    obj2.end.y = obj2.start.y - obj2.height;
+    var flag = obj2.start.x > obj1.end.x || obj2.end.x < obj1.start.x || obj2.end.y > obj1.start.y || obj2.start.y < obj1.end.y;
+    return !flag;
+  } };
+
+
+//兼容H5点击事件
+function getH5Offset(e) {
+  e.mp = {
+    changedTouches: [] };
+
+  e.mp.changedTouches.push({
+    x: e.offsetX,
+    y: e.offsetY });
+
+  return e;
+}
+
+// hex 转 rgba
+function hexToRgb(hexValue, opc) {
+  var rgx = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+  var hex = hexValue.replace(rgx, function (m, r, g, b) {
+    return r + r + g + g + b + b;
+  });
+  var rgb = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  var r = parseInt(rgb[1], 16);
+  var g = parseInt(rgb[2], 16);
+  var b = parseInt(rgb[3], 16);
+  return 'rgba(' + r + ',' + g + ',' + b + ',' + opc + ')';
+}
+
+function findRange(num, type, limit) {
+  if (isNaN(num)) {
+    throw new Error('[uCharts] unvalid series data!');
+  }
+  limit = limit || 10;
+  type = type ? type : 'upper';
+  var multiple = 1;
+  while (limit < 1) {
+    limit *= 10;
+    multiple *= 10;
+  }
+  if (type === 'upper') {
+    num = Math.ceil(num * multiple);
+  } else {
+    num = Math.floor(num * multiple);
+  }
+  while (num % limit !== 0) {
+    if (type === 'upper') {
+      num++;
+    } else {
+      num--;
+    }
+  }
+  return num / multiple;
+}
+
+function calCandleMA(dayArr, nameArr, colorArr, kdata) {
+  var seriesTemp = [];
+  for (var k = 0; k < dayArr.length; k++) {
+    var seriesItem = {
+      data: [],
+      name: nameArr[k],
+      color: colorArr[k] };
+
+    for (var i = 0, len = kdata.length; i < len; i++) {
+      if (i < dayArr[k]) {
+        seriesItem.data.push(null);
+        continue;
+      }
+      var sum = 0;
+      for (var j = 0; j < dayArr[k]; j++) {
+        sum += kdata[i - j][1];
+      }
+      seriesItem.data.push(+(sum / dayArr[k]).toFixed(3));
+    }
+    seriesTemp.push(seriesItem);
+  }
+  return seriesTemp;
+}
+
+function calValidDistance(distance, chartData, config, opts) {
+  var dataChartAreaWidth = opts.width - opts.area[1] - opts.area[3];
+  var dataChartWidth = chartData.eachSpacing * (opts.chartData.xAxisData.xAxisPoints.length - 1);
+  var validDistance = distance;
+  if (distance >= 0) {
+    validDistance = 0;
+  } else if (Math.abs(distance) >= dataChartWidth - dataChartAreaWidth) {
+    validDistance = dataChartAreaWidth - dataChartWidth;
+  }
+  return validDistance;
+}
+
+function isInAngleRange(angle, startAngle, endAngle) {
+  function adjust(angle) {
+    while (angle < 0) {
+      angle += 2 * Math.PI;
+    }
+    while (angle > 2 * Math.PI) {
+      angle -= 2 * Math.PI;
+    }
+    return angle;
+  }
+  angle = adjust(angle);
+  startAngle = adjust(startAngle);
+  endAngle = adjust(endAngle);
+  if (startAngle > endAngle) {
+    endAngle += 2 * Math.PI;
+    if (angle < startAngle) {
+      angle += 2 * Math.PI;
+    }
+  }
+  return angle >= startAngle && angle <= endAngle;
+}
+
+function calRotateTranslate(x, y, h) {
+  var xv = x;
+  var yv = h - y;
+  var transX = xv + (h - yv - xv) / Math.sqrt(2);
+  transX *= -1;
+  var transY = (h - yv) * (Math.sqrt(2) - 1) - (h - yv - xv) / Math.sqrt(2);
+  return {
+    transX: transX,
+    transY: transY };
+
+}
+
+function createCurveControlPoints(points, i) {
+
+  function isNotMiddlePoint(points, i) {
+    if (points[i - 1] && points[i + 1]) {
+      return points[i].y >= Math.max(points[i - 1].y, points[i + 1].y) || points[i].y <= Math.min(points[i - 1].y,
+      points[
+      i + 1].y);
+    } else {
+      return false;
+    }
+  }
+  var a = 0.2;
+  var b = 0.2;
+  var pAx = null;
+  var pAy = null;
+  var pBx = null;
+  var pBy = null;
+  if (i < 1) {
+    pAx = points[0].x + (points[1].x - points[0].x) * a;
+    pAy = points[0].y + (points[1].y - points[0].y) * a;
+  } else {
+    pAx = points[i].x + (points[i + 1].x - points[i - 1].x) * a;
+    pAy = points[i].y + (points[i + 1].y - points[i - 1].y) * a;
+  }
+
+  if (i > points.length - 3) {
+    var last = points.length - 1;
+    pBx = points[last].x - (points[last].x - points[last - 1].x) * b;
+    pBy = points[last].y - (points[last].y - points[last - 1].y) * b;
+  } else {
+    pBx = points[i + 1].x - (points[i + 2].x - points[i].x) * b;
+    pBy = points[i + 1].y - (points[i + 2].y - points[i].y) * b;
+  }
+  if (isNotMiddlePoint(points, i + 1)) {
+    pBy = points[i + 1].y;
+  }
+  if (isNotMiddlePoint(points, i)) {
+    pAy = points[i].y;
+  }
+  return {
+    ctrA: {
+      x: pAx,
+      y: pAy },
+
+    ctrB: {
+      x: pBx,
+      y: pBy } };
+
+
+}
+
+function convertCoordinateOrigin(x, y, center) {
+  return {
+    x: center.x + x,
+    y: center.y - y };
+
+}
+
+function avoidCollision(obj, target) {
+  if (target) {
+    // is collision test
+    while (util.isCollision(obj, target)) {
+      if (obj.start.x > 0) {
+        obj.start.y--;
+      } else if (obj.start.x < 0) {
+        obj.start.y++;
+      } else {
+        if (obj.start.y > 0) {
+          obj.start.y++;
+        } else {
+          obj.start.y--;
+        }
+      }
+    }
+  }
+  return obj;
+}
+
+function fillSeries(series, opts, config) {
+  var index = 0;
+  return series.map(function (item) {
+    if (!item.color) {
+      item.color = config.colors[index];
+      index = (index + 1) % config.colors.length;
+    }
+    if (!item.type) {
+      item.type = opts.type;
+    }
+    if (typeof item.show == "undefined") {
+      item.show = true;
+    }
+    if (!item.type) {
+      item.type = opts.type;
+    }
+    if (!item.pointShape) {
+      item.pointShape = "circle";
+    }
+    if (!item.legendShape) {
+      switch (item.type) {
+        case 'line':
+          item.legendShape = "line";
+          break;
+        case 'column':
+          item.legendShape = "rect";
+          break;
+        case 'area':
+          item.legendShape = "triangle";
+          break;
+        default:
+          item.legendShape = "circle";}
+
+    }
+    return item;
+  });
+}
+
+function getDataRange(minData, maxData) {
+  var limit = 0;
+  var range = maxData - minData;
+  if (range >= 10000) {
+    limit = 1000;
+  } else if (range >= 1000) {
+    limit = 100;
+  } else if (range >= 100) {
+    limit = 10;
+  } else if (range >= 10) {
+    limit = 5;
+  } else if (range >= 1) {
+    limit = 1;
+  } else if (range >= 0.1) {
+    limit = 0.1;
+  } else if (range >= 0.01) {
+    limit = 0.01;
+  } else if (range >= 0.001) {
+    limit = 0.001;
+  } else if (range >= 0.0001) {
+    limit = 0.0001;
+  } else if (range >= 0.00001) {
+    limit = 0.00001;
+  } else {
+    limit = 0.000001;
+  }
+  return {
+    minRange: findRange(minData, 'lower', limit),
+    maxRange: findRange(maxData, 'upper', limit) };
+
+}
+
+function measureText(text) {
+  var fontSize = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : config.fontSize;
+  text = String(text);
+  var text = text.split('');
+  var width = 0;
+  for (var i = 0; i < text.length; i++) {
+    var item = text[i];
+    if (/[a-zA-Z]/.test(item)) {
+      width += 7;
+    } else if (/[0-9]/.test(item)) {
+      width += 5.5;
+    } else if (/\./.test(item)) {
+      width += 2.7;
+    } else if (/-/.test(item)) {
+      width += 3.25;
+    } else if (/[\u4e00-\u9fa5]/.test(item)) {
+      width += 10;
+    } else if (/\(|\)/.test(item)) {
+      width += 3.73;
+    } else if (/\s/.test(item)) {
+      width += 2.5;
+    } else if (/%/.test(item)) {
+      width += 8;
+    } else {
+      width += 10;
+    }
+  }
+  return width * fontSize / 10;
+}
+
+function dataCombine(series) {
+  return series.reduce(function (a, b) {
+    return (a.data ? a.data : a).concat(b.data);
+  }, []);
+}
+
+function dataCombineStack(series, len) {
+  var sum = new Array(len);
+  for (var j = 0; j < sum.length; j++) {
+    sum[j] = 0;
+  }
+  for (var i = 0; i < series.length; i++) {
+    for (var j = 0; j < sum.length; j++) {
+      sum[j] += series[i].data[j];
+    }
+  }
+  return series.reduce(function (a, b) {
+    return (a.data ? a.data : a).concat(b.data).concat(sum);
+  }, []);
+}
+
+function getTouches(touches, opts, e) {
+  var x, y;
+  if (touches.clientX) {
+    if (opts.rotate) {
+      y = opts.height - touches.clientX * opts.pixelRatio;
+      x = (touches.pageY - e.currentTarget.offsetTop - opts.height / opts.pixelRatio / 2 * (opts.pixelRatio - 1)) *
+      opts.pixelRatio;
+    } else {
+      x = touches.clientX * opts.pixelRatio;
+      y = (touches.pageY - e.currentTarget.offsetTop - opts.height / opts.pixelRatio / 2 * (opts.pixelRatio - 1)) *
+      opts.pixelRatio;
+    }
+  } else {
+    if (opts.rotate) {
+      y = opts.height - touches.x * opts.pixelRatio;
+      x = touches.y * opts.pixelRatio;
+    } else {
+      x = touches.x * opts.pixelRatio;
+      y = touches.y * opts.pixelRatio;
+    }
+  }
+  return {
+    x: x,
+    y: y };
+
+}
+
+function getSeriesDataItem(series, index) {
+  var data = [];
+  for (var i = 0; i < series.length; i++) {
+    var item = series[i];
+    if (item.data[index] !== null && typeof item.data[index] !== 'undefined' && item.show) {
+      var seriesItem = {};
+      seriesItem.color = item.color;
+      seriesItem.type = item.type;
+      seriesItem.style = item.style;
+      seriesItem.pointShape = item.pointShape;
+      seriesItem.disableLegend = item.disableLegend;
+      seriesItem.name = item.name;
+      seriesItem.show = item.show;
+      seriesItem.data = item.format ? item.format(item.data[index]) : item.data[index];
+      data.push(seriesItem);
+    }
+  }
+  return data;
+}
+
+function getMaxTextListLength(list) {
+  var lengthList = list.map(function (item) {
+    return measureText(item);
+  });
+  return Math.max.apply(null, lengthList);
+}
+
+function getRadarCoordinateSeries(length) {
+  var eachAngle = 2 * Math.PI / length;
+  var CoordinateSeries = [];
+  for (var i = 0; i < length; i++) {
+    CoordinateSeries.push(eachAngle * i);
+  }
+
+  return CoordinateSeries.map(function (item) {
+    return -1 * item + Math.PI / 2;
+  });
+}
+
+function getToolTipData(seriesData, calPoints, index, categories) {
+  var option = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : {};
+
+  var textList = seriesData.map(function (item) {
+    return {
+      text: option.format ? option.format(item, categories[index]) : item.name + ': ' + item.data,
+      color: item.color };
+
+  });
+  var validCalPoints = [];
+  var offset = {
+    x: 0,
+    y: 0 };
+
+  for (var i = 0; i < calPoints.length; i++) {
+    var points = calPoints[i];
+    if (typeof points[index] !== 'undefined' && points[index] !== null) {
+      validCalPoints.push(points[index]);
+    }
+  }
+  for (var _i = 0; _i < validCalPoints.length; _i++) {
+    var item = validCalPoints[_i];
+    offset.x = Math.round(item.x);
+    offset.y += item.y;
+  }
+  offset.y /= validCalPoints.length;
+  return {
+    textList: textList,
+    offset: offset };
+
+}
+
+function getMixToolTipData(seriesData, calPoints, index, categories) {
+  var option = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : {};
+  var textList = seriesData.map(function (item) {
+    return {
+      text: option.format ? option.format(item, categories[index]) : item.name + ': ' + item.data,
+      color: item.color,
+      disableLegend: item.disableLegend ? true : false };
+
+  });
+  textList = textList.filter(function (item) {
+    if (item.disableLegend !== true) {
+      return item;
+    }
+  });
+  var validCalPoints = [];
+  var offset = {
+    x: 0,
+    y: 0 };
+
+  for (var i = 0; i < calPoints.length; i++) {
+    var points = calPoints[i];
+    if (typeof points[index] !== 'undefined' && points[index] !== null) {
+      validCalPoints.push(points[index]);
+    }
+  }
+  for (var _i2 = 0; _i2 < validCalPoints.length; _i2++) {
+    var item = validCalPoints[_i2];
+    offset.x = Math.round(item.x);
+    offset.y += item.y;
+  }
+  offset.y /= validCalPoints.length;
+  return {
+    textList: textList,
+    offset: offset };
+
+}
+
+function getCandleToolTipData(series, seriesData, calPoints, index, categories, extra) {
+  var option = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : {};
+  var upColor = extra.color.upFill;
+  var downColor = extra.color.downFill;
+  //颜色顺序为开盘，收盘，最低，最高
+  var color = [upColor, upColor, downColor, upColor];
+  var textList = [];
+  var text0 = {
+    text: categories[index],
+    color: null };
+
+  textList.push(text0);
+  seriesData.map(function (item) {
+    if (index == 0 && item.data[1] - item.data[0] < 0) {
+      color[1] = downColor;
+    } else {
+      if (item.data[0] < series[index - 1][1]) {
+        color[0] = downColor;
+      }
+      if (item.data[1] < item.data[0]) {
+        color[1] = downColor;
+      }
+      if (item.data[2] > series[index - 1][1]) {
+        color[2] = upColor;
+      }
+      if (item.data[3] < series[index - 1][1]) {
+        color[3] = downColor;
+      }
+    }
+    var text1 = {
+      text: '开盘：' + item.data[0],
+      color: color[0] };
+
+    var text2 = {
+      text: '收盘：' + item.data[1],
+      color: color[1] };
+
+    var text3 = {
+      text: '最低：' + item.data[2],
+      color: color[2] };
+
+    var text4 = {
+      text: '最高：' + item.data[3],
+      color: color[3] };
+
+    textList.push(text1, text2, text3, text4);
+  });
+  var validCalPoints = [];
+  var offset = {
+    x: 0,
+    y: 0 };
+
+  for (var i = 0; i < calPoints.length; i++) {
+    var points = calPoints[i];
+    if (typeof points[index] !== 'undefined' && points[index] !== null) {
+      validCalPoints.push(points[index]);
+    }
+  }
+  offset.x = Math.round(validCalPoints[0][0].x);
+  return {
+    textList: textList,
+    offset: offset };
+
+}
+
+function filterSeries(series) {
+  var tempSeries = [];
+  for (var i = 0; i < series.length; i++) {
+    if (series[i].show == true) {
+      tempSeries.push(series[i]);
+    }
+  }
+  return tempSeries;
+}
+
+function findCurrentIndex(currentPoints, xAxisPoints, opts, config) {
+  var offset = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 0;
+  var currentIndex = -1;
+  var spacing = 0;
+  if ((opts.type == 'line' || opts.type == 'area') && opts.xAxis.boundaryGap == 'justify') {
+    spacing = opts.chartData.eachSpacing / 2;
+  }
+  if (isInExactChartArea(currentPoints, opts, config)) {
+    xAxisPoints.forEach(function (item, index) {
+      if (currentPoints.x + offset + spacing > item) {
+        currentIndex = index;
+      }
+    });
+  }
+  return currentIndex;
+}
+
+function findLegendIndex(currentPoints, legendData, opts) {
+  var currentIndex = -1;
+  if (isInExactLegendArea(currentPoints, legendData.area)) {
+    var points = legendData.points;
+    var index = -1;
+    for (var i = 0, len = points.length; i < len; i++) {
+      var item = points[i];
+      for (var j = 0; j < item.length; j++) {
+        index += 1;
+        var area = item[j]['area'];
+        if (currentPoints.x > area[0] && currentPoints.x < area[2] && currentPoints.y > area[1] && currentPoints.y < area[3]) {
+          currentIndex = index;
+          break;
+        }
+      }
+    }
+    return currentIndex;
+  }
+  return currentIndex;
+}
+
+function isInExactLegendArea(currentPoints, area) {
+  return currentPoints.x > area.start.x && currentPoints.x < area.end.x && currentPoints.y > area.start.y &&
+  currentPoints.y < area.end.y;
+}
+
+function isInExactChartArea(currentPoints, opts, config) {
+  return currentPoints.x < opts.width - opts.area[1] + 10 && currentPoints.x > opts.area[3] - 10 && currentPoints.y > opts.area[0] && currentPoints.y < opts.height - opts.area[2];
+}
+
+function findRadarChartCurrentIndex(currentPoints, radarData, count) {
+  var eachAngleArea = 2 * Math.PI / count;
+  var currentIndex = -1;
+  if (isInExactPieChartArea(currentPoints, radarData.center, radarData.radius)) {
+    var fixAngle = function fixAngle(angle) {
+      if (angle < 0) {
+        angle += 2 * Math.PI;
+      }
+      if (angle > 2 * Math.PI) {
+        angle -= 2 * Math.PI;
+      }
+      return angle;
+    };
+
+    var angle = Math.atan2(radarData.center.y - currentPoints.y, currentPoints.x - radarData.center.x);
+    angle = -1 * angle;
+    if (angle < 0) {
+      angle += 2 * Math.PI;
+    }
+
+    var angleList = radarData.angleList.map(function (item) {
+      item = fixAngle(-1 * item);
+
+      return item;
+    });
+
+    angleList.forEach(function (item, index) {
+      var rangeStart = fixAngle(item - eachAngleArea / 2);
+      var rangeEnd = fixAngle(item + eachAngleArea / 2);
+      if (rangeEnd < rangeStart) {
+        rangeEnd += 2 * Math.PI;
+      }
+      if (angle >= rangeStart && angle <= rangeEnd || angle + 2 * Math.PI >= rangeStart && angle + 2 * Math.PI <=
+      rangeEnd) {
+        currentIndex = index;
+      }
+    });
+  }
+
+  return currentIndex;
+}
+
+function findFunnelChartCurrentIndex(currentPoints, funnelData) {
+  var currentIndex = -1;
+  for (var i = 0, len = funnelData.series.length; i < len; i++) {
+    var item = funnelData.series[i];
+    if (currentPoints.x > item.funnelArea[0] && currentPoints.x < item.funnelArea[2] && currentPoints.y > item.funnelArea[1] && currentPoints.y < item.funnelArea[3]) {
+      currentIndex = i;
+      break;
+    }
+  }
+  return currentIndex;
+}
+
+function findWordChartCurrentIndex(currentPoints, wordData) {
+  var currentIndex = -1;
+  for (var i = 0, len = wordData.length; i < len; i++) {
+    var item = wordData[i];
+    if (currentPoints.x > item.area[0] && currentPoints.x < item.area[2] && currentPoints.y > item.area[1] && currentPoints.y < item.area[3]) {
+      currentIndex = i;
+      break;
+    }
+  }
+  return currentIndex;
+}
+
+function findMapChartCurrentIndex(currentPoints, opts) {
+  var currentIndex = -1;
+  var cData = opts.chartData.mapData;
+  var data = opts.series;
+  var tmp = pointToCoordinate(currentPoints.y, currentPoints.x, cData.bounds, cData.scale, cData.xoffset, cData.yoffset);
+  var poi = [tmp.x, tmp.y];
+  for (var i = 0, len = data.length; i < len; i++) {
+    var item = data[i].geometry.coordinates;
+    if (isPoiWithinPoly(poi, item)) {
+      currentIndex = i;
+      break;
+    }
+  }
+  return currentIndex;
+}
+
+function findPieChartCurrentIndex(currentPoints, pieData) {
+  var currentIndex = -1;
+  if (isInExactPieChartArea(currentPoints, pieData.center, pieData.radius)) {
+    var angle = Math.atan2(pieData.center.y - currentPoints.y, currentPoints.x - pieData.center.x);
+    angle = -angle;
+    for (var i = 0, len = pieData.series.length; i < len; i++) {
+      var item = pieData.series[i];
+      if (isInAngleRange(angle, item._start_, item._start_ + item._proportion_ * 2 * Math.PI)) {
+        currentIndex = i;
+        break;
+      }
+    }
+  }
+
+  return currentIndex;
+}
+
+function isInExactPieChartArea(currentPoints, center, radius) {
+  return Math.pow(currentPoints.x - center.x, 2) + Math.pow(currentPoints.y - center.y, 2) <= Math.pow(radius, 2);
+}
+
+function splitPoints(points) {
+  var newPoints = [];
+  var items = [];
+  points.forEach(function (item, index) {
+    if (item !== null) {
+      items.push(item);
+    } else {
+      if (items.length) {
+        newPoints.push(items);
+      }
+      items = [];
+    }
+  });
+  if (items.length) {
+    newPoints.push(items);
+  }
+
+  return newPoints;
+}
+
+function calLegendData(series, opts, config, chartData) {
+  var legendData = {
+    area: {
+      start: {
+        x: 0,
+        y: 0 },
+
+      end: {
+        x: 0,
+        y: 0 },
+
+      width: 0,
+      height: 0,
+      wholeWidth: 0,
+      wholeHeight: 0 },
+
+    points: [],
+    widthArr: [],
+    heightArr: [] };
+
+  if (opts.legend.show === false) {
+    chartData.legendData = legendData;
+    return legendData;
+  }
+
+  var padding = opts.legend.padding;
+  var margin = opts.legend.margin;
+  var fontSize = opts.legend.fontSize;
+  var shapeWidth = 15 * opts.pixelRatio;
+  var shapeRight = 5 * opts.pixelRatio;
+  var lineHeight = Math.max(opts.legend.lineHeight * opts.pixelRatio, fontSize);
+  if (opts.legend.position == 'top' || opts.legend.position == 'bottom') {
+    var legendList = [];
+    var widthCount = 0;
+    var widthCountArr = [];
+    var currentRow = [];
+    for (var i = 0; i < series.length; i++) {
+      var item = series[i];
+      var itemWidth = shapeWidth + shapeRight + measureText(item.name || 'undefined', fontSize) + opts.legend.itemGap;
+      if (widthCount + itemWidth > opts.width - opts.padding[1] - opts.padding[3]) {
+        legendList.push(currentRow);
+        widthCountArr.push(widthCount - opts.legend.itemGap);
+        widthCount = itemWidth;
+        currentRow = [item];
+      } else {
+        widthCount += itemWidth;
+        currentRow.push(item);
+      }
+    }
+    if (currentRow.length) {
+      legendList.push(currentRow);
+      widthCountArr.push(widthCount - opts.legend.itemGap);
+      legendData.widthArr = widthCountArr;
+      var legendWidth = Math.max.apply(null, widthCountArr);
+      switch (opts.legend.float) {
+        case 'left':
+          legendData.area.start.x = opts.padding[3];
+          legendData.area.end.x = opts.padding[3] + 2 * padding;
+          break;
+        case 'right':
+          legendData.area.start.x = opts.width - opts.padding[1] - legendWidth - 2 * padding;
+          legendData.area.end.x = opts.width - opts.padding[1];
+          break;
+        default:
+          legendData.area.start.x = (opts.width - legendWidth) / 2 - padding;
+          legendData.area.end.x = (opts.width + legendWidth) / 2 + padding;}
+
+      legendData.area.width = legendWidth + 2 * padding;
+      legendData.area.wholeWidth = legendWidth + 2 * padding;
+      legendData.area.height = legendList.length * lineHeight + 2 * padding;
+      legendData.area.wholeHeight = legendList.length * lineHeight + 2 * padding + 2 * margin;
+      legendData.points = legendList;
+    }
+  } else {
+    var len = series.length;
+    var maxHeight = opts.height - opts.padding[0] - opts.padding[2] - 2 * margin - 2 * padding;
+    var maxLength = Math.min(Math.floor(maxHeight / lineHeight), len);
+    legendData.area.height = maxLength * lineHeight + padding * 2;
+    legendData.area.wholeHeight = maxLength * lineHeight + padding * 2;
+    switch (opts.legend.float) {
+      case 'top':
+        legendData.area.start.y = opts.padding[0] + margin;
+        legendData.area.end.y = opts.padding[0] + margin + legendData.area.height;
+        break;
+      case 'bottom':
+        legendData.area.start.y = opts.height - opts.padding[2] - margin - legendData.area.height;
+        legendData.area.end.y = opts.height - opts.padding[2] - margin;
+        break;
+      default:
+        legendData.area.start.y = (opts.height - legendData.area.height) / 2;
+        legendData.area.end.y = (opts.height + legendData.area.height) / 2;}
+
+    var lineNum = len % maxLength === 0 ? len / maxLength : Math.floor(len / maxLength + 1);
+    var _currentRow = [];
+    for (var _i3 = 0; _i3 < lineNum; _i3++) {
+      var temp = series.slice(_i3 * maxLength, _i3 * maxLength + maxLength);
+      _currentRow.push(temp);
+    }
+
+    legendData.points = _currentRow;
+
+    if (_currentRow.length) {
+      for (var _i4 = 0; _i4 < _currentRow.length; _i4++) {
+        var _item = _currentRow[_i4];
+        var maxWidth = 0;
+        for (var j = 0; j < _item.length; j++) {
+          var _itemWidth = shapeWidth + shapeRight + measureText(_item[j].name || 'undefined', fontSize) + opts.legend.itemGap;
+          if (_itemWidth > maxWidth) {
+            maxWidth = _itemWidth;
+          }
+        }
+        legendData.widthArr.push(maxWidth);
+        legendData.heightArr.push(_item.length * lineHeight + padding * 2);
+      }
+      var _legendWidth = 0;
+      for (var _i5 = 0; _i5 < legendData.widthArr.length; _i5++) {
+        _legendWidth += legendData.widthArr[_i5];
+      }
+      legendData.area.width = _legendWidth - opts.legend.itemGap + 2 * padding;
+      legendData.area.wholeWidth = legendData.area.width + padding;
+    }
+  }
+
+  switch (opts.legend.position) {
+    case 'top':
+      legendData.area.start.y = opts.padding[0] + margin;
+      legendData.area.end.y = opts.padding[0] + margin + legendData.area.height;
+      break;
+    case 'bottom':
+      legendData.area.start.y = opts.height - opts.padding[2] - legendData.area.height - margin;
+      legendData.area.end.y = opts.height - opts.padding[2] - margin;
+      break;
+    case 'left':
+      legendData.area.start.x = opts.padding[3];
+      legendData.area.end.x = opts.padding[3] + legendData.area.width;
+      break;
+    case 'right':
+      legendData.area.start.x = opts.width - opts.padding[1] - legendData.area.width;
+      legendData.area.end.x = opts.width - opts.padding[1];
+      break;}
+
+  chartData.legendData = legendData;
+  return legendData;
+}
+
+function calCategoriesData(categories, opts, config, eachSpacing) {
+  var result = {
+    angle: 0,
+    xAxisHeight: config.xAxisHeight };
+
+  var categoriesTextLenth = categories.map(function (item) {
+    return measureText(item);
+  });
+  var maxTextLength = Math.max.apply(this, categoriesTextLenth);
+
+  if (opts.xAxis.rotateLabel == true && maxTextLength + 2 * config.xAxisTextPadding > eachSpacing) {
+    result.angle = 45 * Math.PI / 180;
+    result.xAxisHeight = 2 * config.xAxisTextPadding + maxTextLength * Math.sin(result.angle);
+  }
+  return result;
+}
+
+function getRadarDataPoints(angleList, center, radius, series, opts) {
+  var process = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : 1;
+
+  var radarOption = opts.extra.radar || {};
+  radarOption.max = radarOption.max || 0;
+  var maxData = Math.max(radarOption.max, Math.max.apply(null, dataCombine(series)));
+
+  var data = [];var _loop2 = function _loop2(
+  i) {
+    var each = series[i];
+    var listItem = {};
+    listItem.color = each.color;
+    listItem.data = [];
+    each.data.forEach(function (item, index) {
+      var tmp = {};
+      tmp.angle = angleList[index];
+
+      tmp.proportion = item / maxData;
+      tmp.position = convertCoordinateOrigin(radius * tmp.proportion * process * Math.cos(tmp.angle), radius * tmp.proportion *
+      process * Math.sin(tmp.angle), center);
+      listItem.data.push(tmp);
+    });
+
+    data.push(listItem);};for (var i = 0; i < series.length; i++) {_loop2(i);
+  }
+
+  return data;
+}
+
+function getPieDataPoints(series, radius) {
+  var process = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
+
+  var count = 0;
+  var _start_ = 0;
+  for (var i = 0; i < series.length; i++) {
+    var item = series[i];
+    item.data = item.data === null ? 0 : item.data;
+    count += item.data;
+  }
+  for (var _i6 = 0; _i6 < series.length; _i6++) {
+    var _item2 = series[_i6];
+    _item2.data = _item2.data === null ? 0 : _item2.data;
+    if (count === 0) {
+      _item2._proportion_ = 1 / series.length * process;
+    } else {
+      _item2._proportion_ = _item2.data / count * process;
+    }
+    _item2._radius_ = radius;
+  }
+  for (var _i7 = 0; _i7 < series.length; _i7++) {
+    var _item3 = series[_i7];
+    _item3._start_ = _start_;
+    _start_ += 2 * _item3._proportion_ * Math.PI;
+  }
+
+  return series;
+}
+
+function getFunnelDataPoints(series, radius) {
+  var process = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
+  series = series.sort(function (a, b) {return parseInt(b.data) - parseInt(a.data);});
+  for (var i = 0; i < series.length; i++) {
+    series[i].radius = series[i].data / series[0].data * radius * process;
+    series[i]._proportion_ = series[i].data / series[0].data;
+  }
+  return series.reverse();
+}
+
+function getRoseDataPoints(series, type, minRadius, radius) {
+  var process = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
+  var count = 0;
+  var _start_ = 0;
+
+  var dataArr = [];
+  for (var i = 0; i < series.length; i++) {
+    var item = series[i];
+    item.data = item.data === null ? 0 : item.data;
+    count += item.data;
+    dataArr.push(item.data);
+  }
+
+  var minData = Math.min.apply(null, dataArr);
+  var maxData = Math.max.apply(null, dataArr);
+  var radiusLength = radius - minRadius;
+
+  for (var _i8 = 0; _i8 < series.length; _i8++) {
+    var _item4 = series[_i8];
+    _item4.data = _item4.data === null ? 0 : _item4.data;
+    if (count === 0 || type == 'area') {
+      _item4._proportion_ = _item4.data / count * process;
+      _item4._rose_proportion_ = 1 / series.length * process;
+    } else {
+      _item4._proportion_ = _item4.data / count * process;
+      _item4._rose_proportion_ = _item4.data / count * process;
+    }
+    _item4._radius_ = minRadius + radiusLength * ((_item4.data - minData) / (maxData - minData));
+  }
+  for (var _i9 = 0; _i9 < series.length; _i9++) {
+    var _item5 = series[_i9];
+    _item5._start_ = _start_;
+    _start_ += 2 * _item5._rose_proportion_ * Math.PI;
+  }
+
+  return series;
+}
+
+function getArcbarDataPoints(series, arcbarOption) {
+  var process = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
+  if (process == 1) {
+    process = 0.999999;
+  }
+  for (var i = 0; i < series.length; i++) {
+    var item = series[i];
+    item.data = item.data === null ? 0 : item.data;
+    var totalAngle = void 0;
+    if (arcbarOption.type == 'default') {
+      if (arcbarOption.endAngle < arcbarOption.startAngle) {
+        totalAngle = 2 + arcbarOption.endAngle - arcbarOption.startAngle;
+      } else {
+        totalAngle = arcbarOption.startAngle - arcbarOption.endAngle;
+      }
+    } else {
+      totalAngle = 2;
+    }
+    item._proportion_ = totalAngle * item.data * process + arcbarOption.startAngle;
+    if (item._proportion_ >= 2) {
+      item._proportion_ = item._proportion_ % 2;
+    }
+  }
+  return series;
+}
+
+function getGaugeAxisPoints(categories, startAngle, endAngle) {
+  var totalAngle = startAngle - endAngle + 1;
+  var tempStartAngle = startAngle;
+  for (var i = 0; i < categories.length; i++) {
+    categories[i].value = categories[i].value === null ? 0 : categories[i].value;
+    categories[i]._startAngle_ = tempStartAngle;
+    categories[i]._endAngle_ = totalAngle * categories[i].value + startAngle;
+    if (categories[i]._endAngle_ >= 2) {
+      categories[i]._endAngle_ = categories[i]._endAngle_ % 2;
+    }
+    tempStartAngle = categories[i]._endAngle_;
+  }
+  return categories;
+}
+
+function getGaugeDataPoints(series, categories, gaugeOption) {
+  var process = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 1;
+  for (var i = 0; i < series.length; i++) {
+    var item = series[i];
+    item.data = item.data === null ? 0 : item.data;
+    if (gaugeOption.pointer.color == 'auto') {
+      for (var _i10 = 0; _i10 < categories.length; _i10++) {
+        if (item.data <= categories[_i10].value) {
+          item.color = categories[_i10].color;
+          break;
+        }
+      }
+    } else {
+      item.color = gaugeOption.pointer.color;
+    }
+    var totalAngle = gaugeOption.startAngle - gaugeOption.endAngle + 1;
+    item._endAngle_ = totalAngle * item.data + gaugeOption.startAngle;
+    item._oldAngle_ = gaugeOption.oldAngle;
+    if (gaugeOption.oldAngle < gaugeOption.endAngle) {
+      item._oldAngle_ += 2;
+    }
+    if (item.data >= gaugeOption.oldData) {
+      item._proportion_ = (item._endAngle_ - item._oldAngle_) * process + gaugeOption.oldAngle;
+    } else {
+      item._proportion_ = item._oldAngle_ - (item._oldAngle_ - item._endAngle_) * process;
+    }
+    if (item._proportion_ >= 2) {
+      item._proportion_ = item._proportion_ % 2;
+    }
+  }
+  return series;
+}
+
+function getPieTextMaxLength(series) {
+  series = getPieDataPoints(series);
+  var maxLength = 0;
+  for (var i = 0; i < series.length; i++) {
+    var item = series[i];
+    var text = item.format ? item.format(+item._proportion_.toFixed(2)) : util.toFixed(item._proportion_ * 100) + '%';
+    maxLength = Math.max(maxLength, measureText(text));
+  }
+
+  return maxLength;
+}
+
+function fixColumeData(points, eachSpacing, columnLen, index, config, opts) {
+  return points.map(function (item) {
+    if (item === null) {
+      return null;
+    }
+    item.width = Math.ceil((eachSpacing - 2 * config.columePadding) / columnLen);
+
+    if (opts.extra.column && opts.extra.column.width && +opts.extra.column.width > 0) {
+      item.width = Math.min(item.width, +opts.extra.column.width);
+    }
+    if (item.width <= 0) {
+      item.width = 1;
+    }
+    item.x += (index + 0.5 - columnLen / 2) * item.width;
+    return item;
+  });
+}
+
+function fixColumeMeterData(points, eachSpacing, columnLen, index, config, opts, border) {
+  return points.map(function (item) {
+    if (item === null) {
+      return null;
+    }
+    item.width = Math.ceil((eachSpacing - 2 * config.columePadding) / 2);
+
+    if (opts.extra.column && opts.extra.column.width && +opts.extra.column.width > 0) {
+      item.width = Math.min(item.width, +opts.extra.column.width);
+    }
+
+    if (index > 0) {
+      item.width -= 2 * border;
+    }
+    return item;
+  });
+}
+
+function fixColumeStackData(points, eachSpacing, columnLen, index, config, opts, series) {
+
+  return points.map(function (item, indexn) {
+
+    if (item === null) {
+      return null;
+    }
+    item.width = Math.ceil((eachSpacing - 2 * config.columePadding) / 2);
+
+    if (opts.extra.column && opts.extra.column.width && +opts.extra.column.width > 0) {
+      item.width = Math.min(item.width, +opts.extra.column.width);
+    }
+    return item;
+  });
+}
+
+function getXAxisPoints(categories, opts, config) {
+  var yAxisTotalWidth = config.yAxisWidth + config.yAxisTitleWidth;
+  var spacingValid = opts.width - opts.area[1] - opts.area[3];
+  var dataCount = opts.enableScroll ? Math.min(opts.xAxis.itemCount, categories.length) : categories.length;
+  if ((opts.type == 'line' || opts.type == 'area') && dataCount > 1 && opts.xAxis.boundaryGap == 'justify') {
+    dataCount -= 1;
+  }
+  var eachSpacing = spacingValid / dataCount;
+
+  var xAxisPoints = [];
+  var startX = opts.area[3];
+  var endX = opts.width - opts.area[1];
+  categories.forEach(function (item, index) {
+    xAxisPoints.push(startX + index * eachSpacing);
+  });
+  if (opts.xAxis.boundaryGap !== 'justify') {
+    if (opts.enableScroll === true) {
+      xAxisPoints.push(startX + categories.length * eachSpacing);
+    } else {
+      xAxisPoints.push(endX);
+    }
+  }
+  return {
+    xAxisPoints: xAxisPoints,
+    startX: startX,
+    endX: endX,
+    eachSpacing: eachSpacing };
+
+}
+
+function getCandleDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config) {
+  var process = arguments.length > 7 && arguments[7] !== undefined ? arguments[7] : 1;
+  var points = [];
+  var validHeight = opts.height - opts.area[0] - opts.area[2];
+  data.forEach(function (item, index) {
+    if (item === null) {
+      points.push(null);
+    } else {
+      var cPoints = [];
+      item.forEach(function (items, indexs) {
+        var point = {};
+        point.x = xAxisPoints[index] + Math.round(eachSpacing / 2);
+        var value = items.value || items;
+        var height = validHeight * (value - minRange) / (maxRange - minRange);
+        height *= process;
+        point.y = opts.height - Math.round(height) - opts.area[2];
+        cPoints.push(point);
+      });
+      points.push(cPoints);
+    }
+  });
+
+  return points;
+}
+
+function getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config) {
+  var process = arguments.length > 7 && arguments[7] !== undefined ? arguments[7] : 1;
+  var boundaryGap = 'center';
+  if (opts.type == 'line' || opts.type == 'area') {
+    boundaryGap = opts.xAxis.boundaryGap;
+  }
+  var points = [];
+  var validHeight = opts.height - opts.area[0] - opts.area[2];
+  data.forEach(function (item, index) {
+    if (item === null) {
+      points.push(null);
+    } else {
+      var point = {};
+      point.color = item.color;
+      point.x = xAxisPoints[index];
+      if (boundaryGap == 'center') {
+        point.x += Math.round(eachSpacing / 2);
+      }
+      var value = item;
+      if (typeof item === 'object' && item !== null) {
+        value = item.value;
+      }
+      var height = validHeight * (value - minRange) / (maxRange - minRange);
+      height *= process;
+      point.y = opts.height - Math.round(height) - opts.area[2];
+      points.push(point);
+    }
+  });
+
+  return points;
+}
+
+function getStackDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, seriesIndex, stackSeries) {
+  var process = arguments.length > 9 && arguments[9] !== undefined ? arguments[9] : 1;
+  var points = [];
+  var validHeight = opts.height - opts.area[0] - opts.area[2];
+
+  data.forEach(function (item, index) {
+    if (item === null) {
+      points.push(null);
+    } else {
+      var point = {};
+      point.color = item.color;
+      point.x = xAxisPoints[index] + Math.round(eachSpacing / 2);
+
+      if (seriesIndex > 0) {
+        var value = 0;
+        for (var i = 0; i <= seriesIndex; i++) {
+          value += stackSeries[i].data[index];
+        }
+        var value0 = value - item;
+        var height = validHeight * (value - minRange) / (maxRange - minRange);
+        var height0 = validHeight * (value0 - minRange) / (maxRange - minRange);
+      } else {
+        var value = item;
+        var height = validHeight * (value - minRange) / (maxRange - minRange);
+        var height0 = 0;
+      }
+      var heightc = height0;
+      height *= process;
+      heightc *= process;
+      point.y = opts.height - Math.round(height) - opts.area[2];
+      point.y0 = opts.height - Math.round(heightc) - opts.area[2];
+      points.push(point);
+    }
+  });
+
+  return points;
+}
+
+function getYAxisTextList(series, opts, config, stack) {
+  var data;
+  if (stack == 'stack') {
+    data = dataCombineStack(series, opts.categories.length);
+  } else {
+    data = dataCombine(series);
+  }
+  var sorted = [];
+  // remove null from data
+  data = data.filter(function (item) {
+    //return item !== null;
+    if (typeof item === 'object' && item !== null) {
+      if (Array.isArray(item)) {
+        return item !== null;
+      } else {
+        return item.value !== null;
+      }
+    } else {
+      return item !== null;
+    }
+  });
+  data.map(function (item) {
+    if (typeof item === 'object') {
+      if (Array.isArray(item)) {
+        item.map(function (subitem) {
+          sorted.push(subitem);
+        });
+      } else {
+        sorted.push(item.value);
+      }
+    } else {
+      sorted.push(item);
+    }
+  });
+  var minData = 0;
+  var maxData = 0;
+  if (sorted.length > 0) {
+    minData = Math.min.apply(this, sorted);
+    maxData = Math.max.apply(this, sorted);
+  }
+  if (typeof opts.yAxis.min === 'number') {
+    minData = Math.min(opts.yAxis.min, minData);
+  }
+  if (typeof opts.yAxis.max === 'number') {
+    maxData = Math.max(opts.yAxis.max, maxData);
+  }
+
+  if (minData === maxData) {
+    var rangeSpan = maxData || 10;
+    maxData += rangeSpan;
+  }
+
+  var dataRange = getDataRange(minData, maxData);
+  var minRange = dataRange.minRange;
+  var maxRange = dataRange.maxRange;
+
+  var range = [];
+  var eachRange = (maxRange - minRange) / config.yAxisSplit;
+
+  for (var i = 0; i <= config.yAxisSplit; i++) {
+    range.push(minRange + eachRange * i);
+  }
+  return range.reverse();
+}
+
+function calYAxisData(series, opts, config) {
+  //堆叠图重算Y轴
+  var columnstyle = assign({}, {
+    type: "" },
+  opts.extra.column);
+  var ranges = getYAxisTextList(series, opts, config, columnstyle.type);
+  var yAxisWidth = config.yAxisWidth;
+  var yAxisFontSize = opts.yAxis.fontSize || config.fontSize;
+  var rangesFormat = ranges.map(function (item) {
+    item = util.toFixed(item, 6);
+    item = opts.yAxis.format ? opts.yAxis.format(Number(item)) : item;
+    yAxisWidth = Math.max(yAxisWidth, measureText(item, yAxisFontSize) + 5);
+    return item;
+  });
+  if (opts.yAxis.disabled === true) {
+    yAxisWidth = 0;
+  }
+
+  return {
+    rangesFormat: rangesFormat,
+    ranges: ranges,
+    yAxisWidth: yAxisWidth };
+
+}
+
+function calTooltipYAxisData(point, series, opts, config, eachSpacing) {
+  var ranges = getYAxisTextList(series, opts, config);
+  var spacingValid = opts.height - opts.area[0] - opts.area[2];
+  var maxVal = ranges[0];
+  var minVal = ranges[ranges.length - 1];
+  var minAxis = opts.padding[3];
+  var maxAxis = opts.padding[1] + spacingValid;
+  var item = maxVal - (maxVal - minVal) * (point - minAxis) / (maxAxis - minAxis);
+  item = opts.yAxis.format ? opts.yAxis.format(Number(item)) : item;
+  return item;
+}
+
+function calMarkLineData(minRange, maxRange, points, opts) {
+  var spacingValid = opts.height - opts.area[0] - opts.area[2];
+  for (var i = 0; i < points.length; i++) {
+    var height = spacingValid * (points[i].value - minRange) / (maxRange - minRange);
+    points[i].y = opts.height - Math.round(height) - opts.area[2];
+  }
+  return points;
+}
+
+function contextRotate(context, opts) {
+  if (opts.rotateLock !== true) {
+    context.translate(opts.height, 0);
+    context.rotate(90 * Math.PI / 180);
+  } else if (opts._rotate_ !== true) {
+    context.translate(opts.height, 0);
+    context.rotate(90 * Math.PI / 180);
+    opts._rotate_ = true;
+  }
+}
+
+function drawPointShape(points, color, shape, context, opts) {
+  context.beginPath();
+  context.setStrokeStyle("#ffffff");
+  context.setLineWidth(1 * opts.pixelRatio);
+  context.setFillStyle(color);
+  if (shape === 'diamond') {
+    points.forEach(function (item, index) {
+      if (item !== null) {
+        context.moveTo(item.x, item.y - 4.5);
+        context.lineTo(item.x - 4.5, item.y);
+        context.lineTo(item.x, item.y + 4.5);
+        context.lineTo(item.x + 4.5, item.y);
+        context.lineTo(item.x, item.y - 4.5);
+      }
+    });
+  } else if (shape === 'circle') {
+    points.forEach(function (item, index) {
+      if (item !== null) {
+        context.moveTo(item.x + 3.5 * opts.pixelRatio, item.y);
+        context.arc(item.x, item.y, 4 * opts.pixelRatio, 0, 2 * Math.PI, false);
+      }
+    });
+  } else if (shape === 'rect') {
+    points.forEach(function (item, index) {
+      if (item !== null) {
+        context.moveTo(item.x - 3.5, item.y - 3.5);
+        context.rect(item.x - 3.5, item.y - 3.5, 7, 7);
+      }
+    });
+  } else if (shape === 'triangle') {
+    points.forEach(function (item, index) {
+      if (item !== null) {
+        context.moveTo(item.x, item.y - 4.5);
+        context.lineTo(item.x - 4.5, item.y + 4.5);
+        context.lineTo(item.x + 4.5, item.y + 4.5);
+        context.lineTo(item.x, item.y - 4.5);
+      }
+    });
+  }
+  context.closePath();
+  context.fill();
+  context.stroke();
+}
+
+function drawRingTitle(opts, config, context, center) {
+  var titlefontSize = opts.title.fontSize || config.titleFontSize;
+  var subtitlefontSize = opts.subtitle.fontSize || config.subtitleFontSize;
+  var title = opts.title.name || '';
+  var subtitle = opts.subtitle.name || '';
+  var titleFontColor = opts.title.color || config.titleColor;
+  var subtitleFontColor = opts.subtitle.color || config.subtitleColor;
+  var titleHeight = title ? titlefontSize : 0;
+  var subtitleHeight = subtitle ? subtitlefontSize : 0;
+  var margin = 5;
+
+  if (subtitle) {
+    var textWidth = measureText(subtitle, subtitlefontSize);
+    var startX = center.x - textWidth / 2 + (opts.subtitle.offsetX || 0);
+    var startY = center.y + subtitlefontSize / 2 + (opts.subtitle.offsetY || 0);
+    if (title) {
+      startY += (titleHeight + margin) / 2;
+    }
+    context.beginPath();
+    context.setFontSize(subtitlefontSize);
+    context.setFillStyle(subtitleFontColor);
+    context.fillText(subtitle, startX, startY);
+    context.closePath();
+    context.stroke();
+  }
+  if (title) {
+    var _textWidth = measureText(title, titlefontSize);
+    var _startX = center.x - _textWidth / 2 + (opts.title.offsetX || 0);
+    var _startY = center.y + titlefontSize / 2 + (opts.title.offsetY || 0);
+    if (subtitle) {
+      _startY -= (subtitleHeight + margin) / 2;
+    }
+    context.beginPath();
+    context.setFontSize(titlefontSize);
+    context.setFillStyle(titleFontColor);
+    context.fillText(title, _startX, _startY);
+    context.closePath();
+    context.stroke();
+  }
+}
+
+function drawPointText(points, series, config, context) {
+  // 绘制数据文案
+  var data = series.data;
+  points.forEach(function (item, index) {
+    if (item !== null) {
+      //var formatVal = series.format ? series.format(data[index]) : data[index];
+      context.beginPath();
+      context.setFontSize(series.textSize || config.fontSize);
+      context.setFillStyle(series.textColor || '#666666');
+      var value = data[index];
+      if (typeof data[index] === 'object' && data[index] !== null) {
+        value = data[index].value;
+      }
+      var formatVal = series.format ? series.format(value) : value;
+      context.fillText(String(formatVal), item.x - measureText(formatVal, series.textSize || config.fontSize) / 2, item.y -
+      2);
+      context.closePath();
+      context.stroke();
+    }
+  });
+
+}
+
+function drawGaugeLabel(gaugeOption, radius, centerPosition, opts, config, context) {
+  radius -= gaugeOption.width / 2 + config.gaugeLabelTextMargin;
+
+  var totalAngle = gaugeOption.startAngle - gaugeOption.endAngle + 1;
+  var splitAngle = totalAngle / gaugeOption.splitLine.splitNumber;
+  var totalNumber = gaugeOption.endNumber - gaugeOption.startNumber;
+  var splitNumber = totalNumber / gaugeOption.splitLine.splitNumber;
+  var nowAngle = gaugeOption.startAngle;
+  var nowNumber = gaugeOption.startNumber;
+  for (var i = 0; i < gaugeOption.splitLine.splitNumber + 1; i++) {
+    var pos = {
+      x: radius * Math.cos(nowAngle * Math.PI),
+      y: radius * Math.sin(nowAngle * Math.PI) };
+
+    var labelText = gaugeOption.labelFormat ? gaugeOption.labelFormat(nowNumber) : nowNumber;
+    pos.x += centerPosition.x - measureText(labelText) / 2;
+    pos.y += centerPosition.y;
+    var startX = pos.x;
+    var startY = pos.y;
+    context.beginPath();
+    context.setFontSize(config.fontSize);
+    context.setFillStyle(gaugeOption.labelColor || '#666666');
+    context.fillText(labelText, startX, startY + config.fontSize / 2);
+    context.closePath();
+    context.stroke();
+
+    nowAngle += splitAngle;
+    if (nowAngle >= 2) {
+      nowAngle = nowAngle % 2;
+    }
+    nowNumber += splitNumber;
+  }
+
+}
+
+function drawRadarLabel(angleList, radius, centerPosition, opts, config, context) {
+  var radarOption = opts.extra.radar || {};
+  radius += config.radarLabelTextMargin;
+
+  angleList.forEach(function (angle, index) {
+    var pos = {
+      x: radius * Math.cos(angle),
+      y: radius * Math.sin(angle) };
+
+    var posRelativeCanvas = convertCoordinateOrigin(pos.x, pos.y, centerPosition);
+    var startX = posRelativeCanvas.x;
+    var startY = posRelativeCanvas.y;
+    if (util.approximatelyEqual(pos.x, 0)) {
+      startX -= measureText(opts.categories[index] || '') / 2;
+    } else if (pos.x < 0) {
+      startX -= measureText(opts.categories[index] || '');
+    }
+    context.beginPath();
+    context.setFontSize(config.fontSize);
+    context.setFillStyle(radarOption.labelColor || '#666666');
+    context.fillText(opts.categories[index] || '', startX, startY + config.fontSize / 2);
+    context.closePath();
+    context.stroke();
+  });
+
+}
+
+function drawPieText(series, opts, config, context, radius, center) {
+  var lineRadius = config.pieChartLinePadding;
+  var textObjectCollection = [];
+  var lastTextObject = null;
+
+  var seriesConvert = series.map(function (item) {
+    var text = item.format ? item.format(+item._proportion_.toFixed(2)) : util.toFixed(item._proportion_.toFixed(4) * 100) + '%';
+    if (item._rose_proportion_) item._proportion_ = item._rose_proportion_;
+    var arc = 2 * Math.PI - (item._start_ + 2 * Math.PI * item._proportion_ / 2);
+    var color = item.color;
+    var radius = item._radius_;
+    return {
+      arc: arc,
+      text: text,
+      color: color,
+      radius: radius,
+      textColor: item.textColor,
+      textSize: item.textSize };
+
+  });
+  for (var i = 0; i < seriesConvert.length; i++) {
+    var item = seriesConvert[i];
+    // line end
+    var orginX1 = Math.cos(item.arc) * (item.radius + lineRadius);
+    var orginY1 = Math.sin(item.arc) * (item.radius + lineRadius);
+
+    // line start
+    var orginX2 = Math.cos(item.arc) * item.radius;
+    var orginY2 = Math.sin(item.arc) * item.radius;
+
+    // text start
+    var orginX3 = orginX1 >= 0 ? orginX1 + config.pieChartTextPadding : orginX1 - config.pieChartTextPadding;
+    var orginY3 = orginY1;
+    var textWidth = measureText(item.text);
+    var startY = orginY3;
+
+    if (lastTextObject && util.isSameXCoordinateArea(lastTextObject.start, {
+      x: orginX3 }))
+    {
+      if (orginX3 > 0) {
+        startY = Math.min(orginY3, lastTextObject.start.y);
+      } else if (orginX1 < 0) {
+        startY = Math.max(orginY3, lastTextObject.start.y);
+      } else {
+        if (orginY3 > 0) {
+          startY = Math.max(orginY3, lastTextObject.start.y);
+        } else {
+          startY = Math.min(orginY3, lastTextObject.start.y);
+        }
+      }
+    }
+    if (orginX3 < 0) {
+      orginX3 -= textWidth;
+    }
+
+    var textObject = {
+      lineStart: {
+        x: orginX2,
+        y: orginY2 },
+
+      lineEnd: {
+        x: orginX1,
+        y: orginY1 },
+
+      start: {
+        x: orginX3,
+        y: startY },
+
+      width: textWidth,
+      height: config.fontSize,
+      text: item.text,
+      color: item.color,
+      textColor: item.textColor,
+      textSize: item.textSize };
+
+    lastTextObject = avoidCollision(textObject, lastTextObject);
+    textObjectCollection.push(lastTextObject);
+  }
+
+  for (var _i11 = 0; _i11 < textObjectCollection.length; _i11++) {
+    var _item6 = textObjectCollection[_i11];
+    var lineStartPoistion = convertCoordinateOrigin(_item6.lineStart.x, _item6.lineStart.y, center);
+    var lineEndPoistion = convertCoordinateOrigin(_item6.lineEnd.x, _item6.lineEnd.y, center);
+    var textPosition = convertCoordinateOrigin(_item6.start.x, _item6.start.y, center);
+    context.setLineWidth(1 * opts.pixelRatio);
+    context.setFontSize(config.fontSize);
+    context.beginPath();
+    context.setStrokeStyle(_item6.color);
+    context.setFillStyle(_item6.color);
+    context.moveTo(lineStartPoistion.x, lineStartPoistion.y);
+    var curveStartX = _item6.start.x < 0 ? textPosition.x + _item6.width : textPosition.x;
+    var textStartX = _item6.start.x < 0 ? textPosition.x - 5 : textPosition.x + 5;
+    context.quadraticCurveTo(lineEndPoistion.x, lineEndPoistion.y, curveStartX, textPosition.y);
+    context.moveTo(lineStartPoistion.x, lineStartPoistion.y);
+    context.stroke();
+    context.closePath();
+    context.beginPath();
+    context.moveTo(textPosition.x + _item6.width, textPosition.y);
+    context.arc(curveStartX, textPosition.y, 2, 0, 2 * Math.PI);
+    context.closePath();
+    context.fill();
+    context.beginPath();
+    context.setFontSize(_item6.textSize || config.fontSize);
+    context.setFillStyle(_item6.textColor || '#666666');
+    context.fillText(_item6.text, textStartX, textPosition.y + 3);
+    context.closePath();
+    context.stroke();
+    context.closePath();
+  }
+}
+
+function drawToolTipSplitLine(offsetX, opts, config, context) {
+  var toolTipOption = opts.extra.tooltip || {};
+  toolTipOption.gridType = toolTipOption.gridType == undefined ? 'solid' : toolTipOption.gridType;
+  toolTipOption.dashLength = toolTipOption.dashLength == undefined ? 4 : toolTipOption.dashLength;
+  var startY = opts.area[0];
+  var endY = opts.height - opts.area[2];
+
+  if (toolTipOption.gridType == 'dash') {
+    context.setLineDash([toolTipOption.dashLength, toolTipOption.dashLength]);
+  }
+  context.setStrokeStyle(toolTipOption.gridColor || '#cccccc');
+  context.setLineWidth(1 * opts.pixelRatio);
+  context.beginPath();
+  context.moveTo(offsetX, startY);
+  context.lineTo(offsetX, endY);
+  context.stroke();
+  context.setLineDash([]);
+
+  if (toolTipOption.xAxisLabel) {
+    var labelText = opts.categories[opts.tooltip.index];
+    context.setFontSize(config.fontSize);
+    var textWidth = measureText(labelText, config.fontSize);
+
+    var textX = offsetX - 0.5 * textWidth;
+    var textY = endY;
+    context.beginPath();
+    context.setFillStyle(hexToRgb(toolTipOption.labelBgColor || config.toolTipBackground, toolTipOption.labelBgOpacity || config.toolTipOpacity));
+    context.setStrokeStyle(toolTipOption.labelBgColor || config.toolTipBackground);
+    context.setLineWidth(1 * opts.pixelRatio);
+    context.rect(textX - config.toolTipPadding, textY, textWidth + 2 * config.toolTipPadding, config.fontSize + 2 * config.toolTipPadding);
+    context.closePath();
+    context.stroke();
+    context.fill();
+
+    context.beginPath();
+    context.setFontSize(config.fontSize);
+    context.setFillStyle(toolTipOption.labelFontColor || config.fontColor);
+    context.fillText(String(labelText), textX, textY + config.toolTipPadding + config.fontSize);
+    context.closePath();
+    context.stroke();
+  }
+}
+
+function drawMarkLine(minRange, maxRange, opts, config, context) {
+  var markLineOption = assign({}, {
+    type: 'solid',
+    dashLength: 4,
+    data: [] },
+  opts.extra.markLine);
+  var startX = opts.area[3];
+  var endX = opts.width - opts.padding[1];
+  var points = calMarkLineData(minRange, maxRange, markLineOption.data, opts);
+
+  for (var i = 0; i < points.length; i++) {
+    var item = assign({}, {
+      lineColor: '#DE4A42',
+      showLabel: false,
+      labelFontColor: '#666666',
+      labelBgColor: '#DFE8FF',
+      labelBgOpacity: 0.8,
+      yAxisIndex: 0 },
+    points[i]);
+
+    if (markLineOption.type == 'dash') {
+      context.setLineDash([markLineOption.dashLength, markLineOption.dashLength]);
+    }
+    context.setStrokeStyle(item.lineColor);
+    context.setLineWidth(1 * opts.pixelRatio);
+    context.beginPath();
+    context.moveTo(startX, item.y);
+    context.lineTo(endX, item.y);
+    context.stroke();
+    context.setLineDash([]);
+    if (item.showLabel) {
+      var labelText = opts.yAxis.format ? opts.yAxis.format(Number(item.value)) : item.value;
+      context.setFontSize(config.fontSize);
+      var textWidth = measureText(labelText, config.fontSize);
+      var bgStartX = opts.padding[3] + config.yAxisTitleWidth - config.toolTipPadding;
+      var bgEndX = Math.max(opts.area[3], textWidth + config.toolTipPadding * 2);
+      var bgWidth = bgEndX - bgStartX;
+
+      var textX = bgStartX + (bgWidth - textWidth) / 2;
+      var textY = item.y;
+      context.setFillStyle(hexToRgb(item.labelBgColor, item.labelBgOpacity));
+      context.setStrokeStyle(item.labelBgColor);
+      context.setLineWidth(1 * opts.pixelRatio);
+      context.beginPath();
+      context.rect(bgStartX, textY - 0.5 * config.fontSize - config.toolTipPadding, bgWidth, config.fontSize + 2 * config.toolTipPadding);
+      context.closePath();
+      context.stroke();
+      context.fill();
+
+      context.beginPath();
+      context.setFontSize(config.fontSize);
+      context.setFillStyle(item.labelFontColor);
+      context.fillText(String(labelText), textX, textY + 0.5 * config.fontSize);
+      context.stroke();
+    }
+  }
+}
+
+function drawToolTipHorizentalLine(opts, config, context, eachSpacing, xAxisPoints) {
+  var toolTipOption = assign({}, {
+    gridType: 'solid',
+    dashLength: 4 },
+  opts.extra.tooltip);
+
+  var startX = opts.area[3];
+  var endX = opts.width - opts.padding[1];
+
+  if (toolTipOption.gridType == 'dash') {
+    context.setLineDash([toolTipOption.dashLength, toolTipOption.dashLength]);
+  }
+  context.setStrokeStyle(toolTipOption.gridColor || '#cccccc');
+  context.setLineWidth(1 * opts.pixelRatio);
+  context.beginPath();
+  context.moveTo(startX, opts.tooltip.offset.y);
+  context.lineTo(endX, opts.tooltip.offset.y);
+  context.stroke();
+  context.setLineDash([]);
+
+  if (toolTipOption.yAxisLabel) {
+    var labelText = calTooltipYAxisData(opts.tooltip.offset.y, opts.series, opts, config, eachSpacing);
+    context.setFontSize(config.fontSize);
+    var textWidth = measureText(labelText, config.fontSize);
+    var bgStartX = opts.padding[3] + config.yAxisTitleWidth - config.toolTipPadding;
+    var bgEndX = Math.max(opts.area[3], textWidth + config.toolTipPadding * 2);
+    var bgWidth = bgEndX - bgStartX;
+
+    var textX = bgStartX + (bgWidth - textWidth) / 2;
+    var textY = opts.tooltip.offset.y;
+    context.beginPath();
+    context.setFillStyle(hexToRgb(toolTipOption.labelBgColor || config.toolTipBackground, toolTipOption.labelBgOpacity || config.toolTipOpacity));
+    context.setStrokeStyle(toolTipOption.labelBgColor || config.toolTipBackground);
+    context.setLineWidth(1 * opts.pixelRatio);
+    context.rect(bgStartX, textY - 0.5 * config.fontSize - config.toolTipPadding, bgWidth, config.fontSize + 2 * config.toolTipPadding);
+    context.closePath();
+    context.stroke();
+    context.fill();
+
+    context.beginPath();
+    context.setFontSize(config.fontSize);
+    context.setFillStyle(toolTipOption.labelFontColor || config.fontColor);
+    context.fillText(labelText, textX, textY + 0.5 * config.fontSize);
+    context.closePath();
+    context.stroke();
+  }
+}
+
+function drawToolTipSplitArea(offsetX, opts, config, context, eachSpacing) {
+  var toolTipOption = assign({}, {
+    activeBgColor: '#000000',
+    activeBgOpacity: 0.08 },
+  opts.extra.tooltip);
+  var startY = opts.area[0];
+  var endY = opts.height - opts.area[2];
+  context.beginPath();
+  context.setFillStyle(hexToRgb(toolTipOption.activeBgColor, toolTipOption.activeBgOpacity));
+  context.rect(offsetX - eachSpacing / 2, startY, eachSpacing, endY - startY);
+  context.closePath();
+  context.fill();
+}
+
+function drawToolTip(textList, offset, opts, config, context, eachSpacing, xAxisPoints) {
+  var toolTipOption = assign({}, {
+    bgColor: '#000000',
+    bgOpacity: 0.7,
+    fontColor: '#FFFFFF' },
+  opts.extra.tooltip);
+  var legendWidth = 4 * opts.pixelRatio;
+  var legendMarginRight = 5 * opts.pixelRatio;
+  var arrowWidth = 8 * opts.pixelRatio;
+  var isOverRightBorder = false;
+  if (opts.type == 'line' || opts.type == 'area' || opts.type == 'candle' || opts.type == 'mix') {
+    drawToolTipSplitLine(opts.tooltip.offset.x, opts, config, context);
+  }
+
+  offset = assign({
+    x: 0,
+    y: 0 },
+  offset);
+  offset.y -= 8 * opts.pixelRatio;
+  var textWidth = textList.map(function (item) {
+    return measureText(item.text, config.fontSize);
+  });
+  var toolTipWidth = legendWidth + legendMarginRight + 4 * config.toolTipPadding + Math.max.apply(null, textWidth);
+  var toolTipHeight = 2 * config.toolTipPadding + textList.length * config.toolTipLineHeight;
+
+  // if beyond the right border
+  if (offset.x - Math.abs(opts._scrollDistance_) + arrowWidth + toolTipWidth > opts.width) {
+    isOverRightBorder = true;
+  }
+  if (toolTipHeight + offset.y > opts.height) {
+    offset.y = opts.height - toolTipHeight;
+  }
+  // draw background rect
+  context.beginPath();
+  context.setFillStyle(hexToRgb(toolTipOption.bgColor || config.toolTipBackground, toolTipOption.bgOpacity || config.toolTipOpacity));
+  if (isOverRightBorder) {
+    context.moveTo(offset.x, offset.y + 10 * opts.pixelRatio);
+    context.lineTo(offset.x - arrowWidth, offset.y + 10 * opts.pixelRatio - 5 * opts.pixelRatio);
+    context.lineTo(offset.x - arrowWidth, offset.y);
+    context.lineTo(offset.x - arrowWidth - Math.round(toolTipWidth), offset.y);
+    context.lineTo(offset.x - arrowWidth - Math.round(toolTipWidth), offset.y + toolTipHeight);
+    context.lineTo(offset.x - arrowWidth, offset.y + toolTipHeight);
+    context.lineTo(offset.x - arrowWidth, offset.y + 10 * opts.pixelRatio + 5 * opts.pixelRatio);
+    context.lineTo(offset.x, offset.y + 10 * opts.pixelRatio);
+  } else {
+    context.moveTo(offset.x, offset.y + 10 * opts.pixelRatio);
+    context.lineTo(offset.x + arrowWidth, offset.y + 10 * opts.pixelRatio - 5 * opts.pixelRatio);
+    context.lineTo(offset.x + arrowWidth, offset.y);
+    context.lineTo(offset.x + arrowWidth + Math.round(toolTipWidth), offset.y);
+    context.lineTo(offset.x + arrowWidth + Math.round(toolTipWidth), offset.y + toolTipHeight);
+    context.lineTo(offset.x + arrowWidth, offset.y + toolTipHeight);
+    context.lineTo(offset.x + arrowWidth, offset.y + 10 * opts.pixelRatio + 5 * opts.pixelRatio);
+    context.lineTo(offset.x, offset.y + 10 * opts.pixelRatio);
+  }
+
+  context.closePath();
+  context.fill();
+
+  // draw legend
+  textList.forEach(function (item, index) {
+    if (item.color !== null) {
+      context.beginPath();
+      context.setFillStyle(item.color);
+      var startX = offset.x + arrowWidth + 2 * config.toolTipPadding;
+      var startY = offset.y + (config.toolTipLineHeight - config.fontSize) / 2 + config.toolTipLineHeight * index +
+      config.toolTipPadding + 1;
+      if (isOverRightBorder) {
+        startX = offset.x - toolTipWidth - arrowWidth + 2 * config.toolTipPadding;
+      }
+      context.fillRect(startX, startY, legendWidth, config.fontSize);
+      context.closePath();
+    }
+  });
+
+  // draw text list
+
+  textList.forEach(function (item, index) {
+    var startX = offset.x + arrowWidth + 2 * config.toolTipPadding + legendWidth + legendMarginRight;
+    if (isOverRightBorder) {
+      startX = offset.x - toolTipWidth - arrowWidth + 2 * config.toolTipPadding + +legendWidth + legendMarginRight;
+    }
+    var startY = offset.y + (config.toolTipLineHeight - config.fontSize) / 2 + config.toolTipLineHeight * index +
+    config.toolTipPadding;
+    context.beginPath();
+    context.setFontSize(config.fontSize);
+    context.setFillStyle(toolTipOption.fontColor);
+    context.fillText(item.text, startX, startY + config.fontSize);
+    context.closePath();
+    context.stroke();
+  });
+}
+
+function drawYAxisTitle(title, opts, config, context) {
+  var startX = config.xAxisHeight + (opts.height - config.xAxisHeight - measureText(title)) / 2;
+  context.save();
+  context.beginPath();
+  context.setFontSize(config.fontSize);
+  context.setFillStyle(opts.yAxis.titleFontColor || '#333333');
+  context.translate(0, opts.height);
+  context.rotate(-90 * Math.PI / 180);
+  context.fillText(title, startX, opts.padding[3] + 0.5 * config.fontSize);
+  context.closePath();
+  context.stroke();
+  context.restore();
+}
+
+function drawColumnDataPoints(series, opts, config, context) {
+  var process = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
+  var ranges = [].concat(opts.chartData.yAxisData.ranges);
+  var xAxisData = opts.chartData.xAxisData,
+  xAxisPoints = xAxisData.xAxisPoints,
+  eachSpacing = xAxisData.eachSpacing;
+  var columnOption = assign({}, {
+    type: 'group',
+    width: eachSpacing / 2,
+    meter: {
+      border: 4,
+      fillColor: '#FFFFFF' } },
+
+  opts.extra.column);
+  var minRange = ranges.pop();
+  var maxRange = ranges.shift();
+  var calPoints = [];
+
+  context.save();
+  if (opts._scrollDistance_ && opts._scrollDistance_ !== 0 && opts.enableScroll === true) {
+    context.translate(opts._scrollDistance_, 0);
+  }
+  if (opts.tooltip && opts.tooltip.textList && opts.tooltip.textList.length && process === 1) {
+    drawToolTipSplitArea(opts.tooltip.offset.x, opts, config, context, eachSpacing);
+  }
+
+  series.forEach(function (eachSeries, seriesIndex) {
+    var data = eachSeries.data;
+    switch (columnOption.type) {
+      case 'group':
+        var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
+        var tooltipPoints = getStackDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, seriesIndex, series, process);
+        calPoints.push(tooltipPoints);
+        points = fixColumeData(points, eachSpacing, series.length, seriesIndex, config, opts);
+        points.forEach(function (item, index) {
+          if (item !== null) {
+            context.beginPath();
+            context.setStrokeStyle(item.color || eachSeries.color);
+            context.setLineWidth(1);
+            context.setFillStyle(item.color || eachSeries.color);
+            var startX = item.x - item.width / 2;
+            var height = opts.height - item.y - opts.area[2];
+            context.moveTo(startX - 1, item.y);
+            context.lineTo(startX + item.width - 2, item.y);
+            context.lineTo(startX + item.width - 2, opts.height - opts.area[2]);
+            context.lineTo(startX, opts.height - opts.area[2]);
+            context.lineTo(startX, item.y);
+            //context.rect(startX, item.y, item.width, height);
+            context.closePath();
+            context.stroke();
+            context.fill();
+          }
+        });
+        break;
+      case 'stack':
+        // 绘制堆叠数据图
+        var points = getStackDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config,
+        seriesIndex,
+        series, process);
+        calPoints.push(points);
+        points = fixColumeStackData(points, eachSpacing, series.length, seriesIndex, config, opts, series);
+
+        points.forEach(function (item, index) {
+          if (item !== null) {
+            context.beginPath();
+            context.setFillStyle(item.color || eachSeries.color);
+            var startX = item.x - item.width / 2 + 1;
+            var height = opts.height - item.y - opts.area[2];
+            var height0 = opts.height - item.y0 - opts.area[2];
+            if (seriesIndex > 0) {
+              height -= height0;
+            }
+            context.moveTo(startX, item.y);
+            context.fillRect(startX, item.y, item.width - 2, height);
+            context.closePath();
+            context.fill();
+          }
+        });
+        break;
+      case 'meter':
+        // 绘制温度计数据图
+        var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
+        calPoints.push(points);
+        points = fixColumeMeterData(points, eachSpacing, series.length, seriesIndex, config, opts, columnOption.meter.
+        border);
+        if (seriesIndex == 0) {
+          points.forEach(function (item, index) {
+            if (item !== null) {
+              //画背景颜色
+              context.beginPath();
+              context.setFillStyle(columnOption.meter.fillColor);
+              var startX = item.x - item.width / 2;
+              var height = opts.height - item.y - opts.area[2];
+              context.moveTo(startX, item.y);
+              context.fillRect(startX, item.y, item.width, height);
+              context.closePath();
+              context.fill();
+              //画边框线
+              if (columnOption.meter.border > 0) {
+                context.beginPath();
+                context.setStrokeStyle(eachSeries.color);
+                context.setLineWidth(columnOption.meter.border * opts.pixelRatio);
+                context.moveTo(startX + columnOption.meter.border * 0.5, item.y + height);
+                context.lineTo(startX + columnOption.meter.border * 0.5, item.y + columnOption.meter.border * 0.5);
+                context.lineTo(startX + item.width - columnOption.meter.border * 0.5, item.y + columnOption.meter.border * 0.5);
+                context.lineTo(startX + item.width - columnOption.meter.border * 0.5, item.y + height);
+                context.stroke();
+              }
+            }
+          });
+        } else {
+          points.forEach(function (item, index) {
+            if (item !== null) {
+              context.beginPath();
+              context.setFillStyle(item.color || eachSeries.color);
+              var startX = item.x - item.width / 2;
+              var height = opts.height - item.y - opts.area[2];
+              context.moveTo(startX, item.y);
+              context.fillRect(startX, item.y, item.width, height);
+              context.closePath();
+              context.fill();
+            }
+          });
+        }
+        break;}
+
+  });
+
+  if (opts.dataLabel !== false && process === 1) {
+    series.forEach(function (eachSeries, seriesIndex) {
+      var data = eachSeries.data;
+      switch (columnOption.type) {
+        case 'group':
+          var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
+          points = fixColumeData(points, eachSpacing, series.length, seriesIndex, config, opts);
+
+          drawPointText(points, eachSeries, config, context);
+          break;
+        case 'stack':
+          var points = getStackDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config,
+          seriesIndex,
+          series, process);
+          drawPointText(points, eachSeries, config, context);
+          break;
+        case 'meter':
+          var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
+          drawPointText(points, eachSeries, config, context);
+          break;}
+
+    });
+  }
+
+  context.restore();
+
+  return {
+    xAxisPoints: xAxisPoints,
+    calPoints: calPoints,
+    eachSpacing: eachSpacing,
+    minRange: minRange,
+    maxRange: maxRange };
+
+}
+
+function drawCandleDataPoints(series, seriesMA, opts, config, context) {
+  var process = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : 1;
+  var candleOption = assign({}, {
+    color: {},
+    average: {} },
+  opts.extra.candle);
+  candleOption.color = assign({}, {
+    upLine: '#f04864',
+    upFill: '#f04864',
+    downLine: '#2fc25b',
+    downFill: '#2fc25b' },
+  candleOption.color);
+  candleOption.average = assign({}, {
+    show: false,
+    name: [],
+    day: [],
+    color: config.colors },
+  candleOption.average);
+  opts.extra.candle = candleOption;
+
+  var ranges = [].concat(opts.chartData.yAxisData.ranges);
+  var xAxisData = opts.chartData.xAxisData,
+  xAxisPoints = xAxisData.xAxisPoints,
+  eachSpacing = xAxisData.eachSpacing;
+
+  var minRange = ranges.pop();
+  var maxRange = ranges.shift();
+  var calPoints = [];
+
+  context.save();
+  if (opts._scrollDistance_ && opts._scrollDistance_ !== 0 && opts.enableScroll === true) {
+    context.translate(opts._scrollDistance_, 0);
+  }
+  //画均线
+  if (candleOption.average.show) {
+    seriesMA.forEach(function (eachSeries, seriesIndex) {
+      var data = eachSeries.data;
+      var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
+      //calPoints.push(points);
+      var splitPointList = splitPoints(points);
+
+      splitPointList.forEach(function (points, index) {
+        context.beginPath();
+        context.setStrokeStyle(eachSeries.color);
+        context.setLineWidth(1);
+        if (points.length === 1) {
+          context.moveTo(points[0].x, points[0].y);
+          context.arc(points[0].x, points[0].y, 1, 0, 2 * Math.PI);
+        } else {
+          context.moveTo(points[0].x, points[0].y);
+          points.forEach(function (item, index) {
+            if (index > 0) {
+              var ctrlPoint = createCurveControlPoints(points, index - 1);
+              context.bezierCurveTo(ctrlPoint.ctrA.x, ctrlPoint.ctrA.y, ctrlPoint.ctrB.x, ctrlPoint.ctrB.y,
+              item.x, item.
+              y);
+            }
+          });
+          context.moveTo(points[0].x, points[0].y);
+        }
+        context.closePath();
+        context.stroke();
+      });
+    });
+  }
+  //画K线
+  series.forEach(function (eachSeries, seriesIndex) {
+    var data = eachSeries.data;
+    var points = getCandleDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
+    calPoints.push(points);
+    var splitPointList = splitPoints(points);
+    splitPointList = splitPointList[0];
+
+    splitPointList.forEach(function (points, index) {
+      context.beginPath();
+      //如果上涨
+      if (data[index][1] - data[index][0] > 0) {
+        context.setStrokeStyle(candleOption.color.upLine);
+        context.setFillStyle(candleOption.color.upFill);
+        context.setLineWidth(1 * opts.pixelRatio);
+        context.moveTo(points[3].x, points[3].y); //顶点
+        context.lineTo(points[1].x, points[1].y); //收盘中间点
+        context.lineTo(points[1].x - eachSpacing / 4, points[1].y); //收盘左侧点
+        context.lineTo(points[0].x - eachSpacing / 4, points[0].y); //开盘左侧点
+        context.lineTo(points[0].x, points[0].y); //开盘中间点
+        context.lineTo(points[2].x, points[2].y); //底点
+        context.lineTo(points[0].x, points[0].y); //开盘中间点
+        context.lineTo(points[0].x + eachSpacing / 4, points[0].y); //开盘右侧点
+        context.lineTo(points[1].x + eachSpacing / 4, points[1].y); //收盘右侧点
+        context.lineTo(points[1].x, points[1].y); //收盘中间点
+        context.moveTo(points[3].x, points[3].y); //顶点
+      } else {
+        context.setStrokeStyle(candleOption.color.downLine);
+        context.setFillStyle(candleOption.color.downFill);
+        context.setLineWidth(1 * opts.pixelRatio);
+        context.moveTo(points[3].x, points[3].y); //顶点
+        context.lineTo(points[0].x, points[0].y); //开盘中间点
+        context.lineTo(points[0].x - eachSpacing / 4, points[0].y); //开盘左侧点
+        context.lineTo(points[1].x - eachSpacing / 4, points[1].y); //收盘左侧点
+        context.lineTo(points[1].x, points[1].y); //收盘中间点
+        context.lineTo(points[2].x, points[2].y); //底点
+        context.lineTo(points[1].x, points[1].y); //收盘中间点
+        context.lineTo(points[1].x + eachSpacing / 4, points[1].y); //收盘右侧点
+        context.lineTo(points[0].x + eachSpacing / 4, points[0].y); //开盘右侧点
+        context.lineTo(points[0].x, points[0].y); //开盘中间点
+        context.moveTo(points[3].x, points[3].y); //顶点
+      }
+      context.closePath();
+      context.fill();
+      context.stroke();
+    });
+  });
+
+  context.restore();
+
+  return {
+    xAxisPoints: xAxisPoints,
+    calPoints: calPoints,
+    eachSpacing: eachSpacing,
+    minRange: minRange,
+    maxRange: maxRange };
+
+}
+
+function drawAreaDataPoints(series, opts, config, context) {
+  var process = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
+  var areaOption = assign({}, {
+    type: 'straight',
+    opacity: 0.2,
+    addLine: false,
+    width: 2 },
+  opts.extra.area);
+
+  var ranges = [].concat(opts.chartData.yAxisData.ranges);
+  var xAxisData = opts.chartData.xAxisData,
+  xAxisPoints = xAxisData.xAxisPoints,
+  eachSpacing = xAxisData.eachSpacing;
+
+  var minRange = ranges.pop();
+  var maxRange = ranges.shift();
+  var endY = opts.height - opts.area[2];
+  var calPoints = [];
+
+  context.save();
+  if (opts._scrollDistance_ && opts._scrollDistance_ !== 0 && opts.enableScroll === true) {
+    context.translate(opts._scrollDistance_, 0);
+  }
+
+  series.forEach(function (eachSeries, seriesIndex) {
+    var data = eachSeries.data;
+    var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
+    calPoints.push(points);
+
+    var splitPointList = splitPoints(points);var _loop3 = function _loop3(
+
+    i) {
+      var points = splitPointList[i];
+      // 绘制区域数
+      context.beginPath();
+      context.setStrokeStyle(hexToRgb(eachSeries.color, areaOption.opacity));
+      context.setFillStyle(hexToRgb(eachSeries.color, areaOption.opacity));
+      context.setLineWidth(areaOption.width * opts.pixelRatio);
+      if (points.length > 1) {
+        var firstPoint = points[0];
+        var lastPoint = points[points.length - 1];
+
+        context.moveTo(firstPoint.x, firstPoint.y);
+        if (areaOption.type === 'curve') {
+          points.forEach(function (item, index) {
+            if (index > 0) {
+              var ctrlPoint = createCurveControlPoints(points, index - 1);
+              context.bezierCurveTo(ctrlPoint.ctrA.x, ctrlPoint.ctrA.y, ctrlPoint.ctrB.x, ctrlPoint.ctrB.y, item.x, item.y);
+            }
+          });
+        } else {
+          points.forEach(function (item, index) {
+            if (index > 0) {
+              context.lineTo(item.x, item.y);
+            }
+          });
+        }
+
+        context.lineTo(lastPoint.x, endY);
+        context.lineTo(firstPoint.x, endY);
+        context.lineTo(firstPoint.x, firstPoint.y);
+      } else {
+        var item = points[0];
+        context.moveTo(item.x - eachSpacing / 2, item.y);
+        context.lineTo(item.x + eachSpacing / 2, item.y);
+        context.lineTo(item.x + eachSpacing / 2, endY);
+        context.lineTo(item.x - eachSpacing / 2, endY);
+        context.moveTo(item.x - eachSpacing / 2, item.y);
+      }
+      context.closePath();
+      context.fill();
+
+      //画连线
+      if (areaOption.addLine) {
+        context.beginPath();
+        context.setStrokeStyle(eachSeries.color);
+        context.setLineWidth(areaOption.width * opts.pixelRatio);
+        if (points.length === 1) {
+          context.moveTo(points[0].x, points[0].y);
+          context.arc(points[0].x, points[0].y, 1, 0, 2 * Math.PI);
+        } else {
+          context.moveTo(points[0].x, points[0].y);
+          if (areaOption.type === 'curve') {
+            points.forEach(function (item, index) {
+              if (index > 0) {
+                var ctrlPoint = createCurveControlPoints(points, index - 1);
+                context.bezierCurveTo(ctrlPoint.ctrA.x, ctrlPoint.ctrA.y, ctrlPoint.ctrB.x, ctrlPoint.ctrB.y, item.x, item.y);
+              }
+            });
+          } else {
+            points.forEach(function (item, index) {
+              if (index > 0) {
+                context.lineTo(item.x, item.y);
+              }
+            });
+          }
+          context.moveTo(points[0].x, points[0].y);
+        }
+        context.closePath();
+        context.stroke();
+      }};for (var i = 0; i < splitPointList.length; i++) {_loop3(i);
+    }
+
+    //画点
+    if (opts.dataPointShape !== false) {
+      var shape = config.dataPointShape[seriesIndex % config.dataPointShape.length];
+      drawPointShape(points, eachSeries.color, shape, context, opts);
+    }
+
+  });
+
+  if (opts.dataLabel !== false && process === 1) {
+    series.forEach(function (eachSeries, seriesIndex) {
+      var data = eachSeries.data;
+      var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
+      drawPointText(points, eachSeries, config, context);
+    });
+  }
+
+  context.restore();
+
+  return {
+    xAxisPoints: xAxisPoints,
+    calPoints: calPoints,
+    eachSpacing: eachSpacing,
+    minRange: minRange,
+    maxRange: maxRange };
+
+}
+
+function drawLineDataPoints(series, opts, config, context) {
+  var process = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
+  var lineOption = opts.extra.line || {
+    type: 'straight',
+    width: 2 };
+
+  lineOption.type = lineOption.type ? lineOption.type : 'straight';
+  lineOption.width = lineOption.width ? lineOption.width : 2;
+
+  var ranges = [].concat(opts.chartData.yAxisData.ranges);
+  var xAxisData = opts.chartData.xAxisData,
+  xAxisPoints = xAxisData.xAxisPoints,
+  eachSpacing = xAxisData.eachSpacing;
+
+  var minRange = ranges.pop();
+  var maxRange = ranges.shift();
+  var calPoints = [];
+
+  context.save();
+  if (opts._scrollDistance_ && opts._scrollDistance_ !== 0 && opts.enableScroll === true) {
+    context.translate(opts._scrollDistance_, 0);
+  }
+
+  series.forEach(function (eachSeries, seriesIndex) {
+    var data = eachSeries.data;
+    var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
+    calPoints.push(points);
+    var splitPointList = splitPoints(points);
+
+    splitPointList.forEach(function (points, index) {
+      context.beginPath();
+      context.setStrokeStyle(eachSeries.color);
+      context.setLineWidth(lineOption.width * opts.pixelRatio);
+      if (points.length === 1) {
+        context.moveTo(points[0].x, points[0].y);
+        context.arc(points[0].x, points[0].y, 1, 0, 2 * Math.PI);
+      } else {
+        context.moveTo(points[0].x, points[0].y);
+        if (lineOption.type === 'curve') {
+          points.forEach(function (item, index) {
+            if (index > 0) {
+              var ctrlPoint = createCurveControlPoints(points, index - 1);
+              context.bezierCurveTo(ctrlPoint.ctrA.x, ctrlPoint.ctrA.y, ctrlPoint.ctrB.x, ctrlPoint.ctrB.y,
+              item.x, item.
+              y);
+            }
+          });
+        } else {
+          points.forEach(function (item, index) {
+            if (index > 0) {
+              context.lineTo(item.x, item.y);
+            }
+          });
+        }
+        context.moveTo(points[0].x, points[0].y);
+      }
+      context.closePath();
+      context.stroke();
+    });
+
+    if (opts.dataPointShape !== false) {
+      var shape = config.dataPointShape[seriesIndex % config.dataPointShape.length];
+      drawPointShape(points, eachSeries.color, shape, context, opts);
+    }
+  });
+
+  if (opts.dataLabel !== false && process === 1) {
+    series.forEach(function (eachSeries, seriesIndex) {
+      var data = eachSeries.data;
+      var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
+      drawPointText(points, eachSeries, config, context);
+    });
+  }
+
+  context.restore();
+
+  return {
+    xAxisPoints: xAxisPoints,
+    calPoints: calPoints,
+    eachSpacing: eachSpacing,
+    minRange: minRange,
+    maxRange: maxRange };
+
+}
+
+function drawMixDataPoints(series, opts, config, context) {
+  var process = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
+  var ranges = [].concat(opts.chartData.yAxisData.ranges);
+  var xAxisData = opts.chartData.xAxisData,
+  xAxisPoints = xAxisData.xAxisPoints,
+  eachSpacing = xAxisData.eachSpacing;
+
+  var minRange = ranges.pop();
+  var maxRange = ranges.shift();
+  var endY = opts.height - opts.area[2];
+  var calPoints = [];
+
+  var columnIndex = 0;
+  var columnLength = 0;
+  series.forEach(function (eachSeries, seriesIndex) {
+    if (eachSeries.type == 'column') {
+      columnLength += 1;
+    }
+  });
+  context.save();
+  if (opts._scrollDistance_ && opts._scrollDistance_ !== 0 && opts.enableScroll === true) {
+    context.translate(opts._scrollDistance_, 0);
+  }
+
+  series.forEach(function (eachSeries, seriesIndex) {
+    var data = eachSeries.data;
+    var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
+    calPoints.push(points);
+
+    // 绘制柱状数据图
+    if (eachSeries.type == 'column') {
+      points = fixColumeData(points, eachSpacing, columnLength, columnIndex, config, opts);
+      points.forEach(function (item, index) {
+        if (item !== null) {
+          context.beginPath();
+          context.setStrokeStyle(item.color || eachSeries.color);
+          context.setLineWidth(1);
+          context.setFillStyle(item.color || eachSeries.color);
+          var startX = item.x - item.width / 2;
+          var height = opts.height - item.y - opts.area[2];
+          context.moveTo(startX, item.y);
+          context.moveTo(startX - 1, item.y);
+          context.lineTo(startX + item.width - 2, item.y);
+          context.lineTo(startX + item.width - 2, opts.height - opts.area[2]);
+          context.lineTo(startX, opts.height - opts.area[2]);
+          context.lineTo(startX, item.y);
+          //context.rect(startX, item.y, item.width, height);
+          context.closePath();
+          context.stroke();
+          context.fill();
+          context.closePath();
+          context.fill();
+        }
+      });
+      columnIndex += 1;
+    }
+
+    //绘制区域图数据
+
+    if (eachSeries.type == 'area') {
+      var _splitPointList = splitPoints(points);var _loop4 = function _loop4(
+      i) {
+        var points = _splitPointList[i];
+        // 绘制区域数据
+        context.beginPath();
+        context.setStrokeStyle(eachSeries.color);
+        context.setFillStyle(hexToRgb(eachSeries.color, 0.2));
+        context.setLineWidth(2 * opts.pixelRatio);
+        if (points.length > 1) {
+          firstPoint = points[0];
+          var lastPoint = points[points.length - 1];
+          context.moveTo(firstPoint.x, firstPoint.y);
+          if (eachSeries.style === 'curve') {
+            points.forEach(function (item, index) {
+              if (index > 0) {
+                var ctrlPoint = createCurveControlPoints(points, index - 1);
+                context.bezierCurveTo(ctrlPoint.ctrA.x, ctrlPoint.ctrA.y, ctrlPoint.ctrB.x, ctrlPoint.ctrB.y, item.x, item.y);
+              }
+            });
+          } else {
+            points.forEach(function (item, index) {
+              if (index > 0) {
+                context.lineTo(item.x, item.y);
+              }
+            });
+          }
+          context.lineTo(lastPoint.x, endY);
+          context.lineTo(firstPoint.x, endY);
+          context.lineTo(firstPoint.x, firstPoint.y);
+        } else {
+          var item = points[0];
+          context.moveTo(item.x - eachSpacing / 2, item.y);
+          context.lineTo(item.x + eachSpacing / 2, item.y);
+          context.lineTo(item.x + eachSpacing / 2, endY);
+          context.lineTo(item.x - eachSpacing / 2, endY);
+          context.moveTo(item.x - eachSpacing / 2, item.y);
+        }
+        context.closePath();
+        context.fill();};for (var i = 0; i < _splitPointList.length; i++) {var firstPoint;_loop4(i);
+      }
+    }
+
+    // 绘制折线数据图
+    if (eachSeries.type == 'line') {
+      var splitPointList = splitPoints(points);
+      splitPointList.forEach(function (points, index) {
+        context.beginPath();
+        context.setStrokeStyle(eachSeries.color);
+        context.setLineWidth(2 * opts.pixelRatio);
+        if (points.length === 1) {
+          context.moveTo(points[0].x, points[0].y);
+          context.arc(points[0].x, points[0].y, 1, 0, 2 * Math.PI);
+        } else {
+          context.moveTo(points[0].x, points[0].y);
+          if (eachSeries.style == 'curve') {
+            points.forEach(function (item, index) {
+              if (index > 0) {
+                var ctrlPoint = createCurveControlPoints(points, index - 1);
+                context.bezierCurveTo(ctrlPoint.ctrA.x, ctrlPoint.ctrA.y, ctrlPoint.ctrB.x, ctrlPoint.ctrB.y,
+                item.x,
+                item.y);
+              }
+            });
+          } else {
+            points.forEach(function (item, index) {
+              if (index > 0) {
+                context.lineTo(item.x, item.y);
+              }
+            });
+          }
+          context.moveTo(points[0].x, points[0].y);
+        }
+        context.closePath();
+        context.stroke();
+      });
+    }
+
+    // 绘制点数据图
+    if (eachSeries.type == 'point') {
+      points.forEach(function (pointsa, index) {
+        if (pointsa) {
+          context.beginPath();
+          context.setFillStyle(eachSeries.color);
+          context.setStrokeStyle('#FFFFFF');
+          context.setLineWidth(1 * opts.pixelRatio);
+          context.moveTo(pointsa.x + 3.5 * opts.pixelRatio, pointsa.y);
+          context.arc(pointsa.x, pointsa.y, 4 * opts.pixelRatio, 0, 2 * Math.PI);
+          context.closePath();
+          context.fill();
+          context.stroke();
+        }
+      });
+    }
+
+    if (eachSeries.addPoint == true && eachSeries.type !== 'column') {
+      var shape = config.dataPointShape[seriesIndex % config.dataPointShape.length];
+      drawPointShape(points, eachSeries.color, shape, context, opts);
+    }
+  });
+  if (opts.dataLabel !== false && process === 1) {
+    var columnIndex = 0;
+    series.forEach(function (eachSeries, seriesIndex) {
+      var data = eachSeries.data;
+      var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
+      if (eachSeries.type !== 'column') {
+        drawPointText(points, eachSeries, config, context);
+      } else {
+        points = fixColumeData(points, eachSpacing, columnLength, columnIndex, config, opts);
+        drawPointText(points, eachSeries, config, context);
+        columnIndex += 1;
+      }
+
+    });
+  }
+
+  context.restore();
+
+  return {
+    xAxisPoints: xAxisPoints,
+    calPoints: calPoints,
+    eachSpacing: eachSpacing,
+    minRange: minRange,
+    maxRange: maxRange };
+
+}
+
+function drawToolTipBridge(opts, config, context, process, eachSpacing, xAxisPoints) {
+  var toolTipOption = opts.extra.tooltip || {};
+  if (toolTipOption.horizentalLine && opts.tooltip && process === 1 && (opts.type == 'line' || opts.type == 'area' || opts.type == 'column' || opts.type == 'candle' || opts.type == 'mix')) {
+    drawToolTipHorizentalLine(opts, config, context, eachSpacing, xAxisPoints);
+  }
+  context.save();
+  if (opts._scrollDistance_ && opts._scrollDistance_ !== 0 && opts.enableScroll === true) {
+    context.translate(opts._scrollDistance_, 0);
+  }
+  if (opts.tooltip && opts.tooltip.textList && opts.tooltip.textList.length && process === 1) {
+    drawToolTip(opts.tooltip.textList, opts.tooltip.offset, opts, config, context, eachSpacing, xAxisPoints);
+  }
+  context.restore();
+
+}
+
+function drawXAxis(categories, opts, config, context) {
+
+  var xAxisData = opts.chartData.xAxisData,
+  xAxisPoints = xAxisData.xAxisPoints,
+  startX = xAxisData.startX,
+  endX = xAxisData.endX,
+  eachSpacing = xAxisData.eachSpacing;
+  var boundaryGap = 'center';
+  if (opts.type == 'line' || opts.type == 'area') {
+    boundaryGap = opts.xAxis.boundaryGap;
+  }
+  var startY = opts.height - opts.area[2];
+  var endY = opts.area[0];
+
+  //绘制滚动条
+  if (opts.enableScroll && opts.xAxis.scrollShow) {
+    var scrollY = opts.height - opts.area[2] + config.xAxisHeight;
+    var scrollScreenWidth = endX - startX;
+    var scrollTotalWidth = eachSpacing * (xAxisPoints.length - 1);
+    var scrollWidth = scrollScreenWidth * scrollScreenWidth / scrollTotalWidth;
+    var scrollLeft = 0;
+    if (opts._scrollDistance_) {
+      scrollLeft = -opts._scrollDistance_ * scrollScreenWidth / scrollTotalWidth;
+    }
+    context.beginPath();
+    context.setLineCap('round');
+    context.setLineWidth(6 * opts.pixelRatio);
+    context.setStrokeStyle(opts.xAxis.scrollBackgroundColor || "#EFEBEF");
+    context.moveTo(startX, scrollY);
+    context.lineTo(endX, scrollY);
+    context.stroke();
+    context.closePath();
+    context.beginPath();
+    context.setLineCap('round');
+    context.setLineWidth(6 * opts.pixelRatio);
+    context.setStrokeStyle(opts.xAxis.scrollColor || "#A6A6A6");
+    context.moveTo(startX + scrollLeft, scrollY);
+    context.lineTo(startX + scrollLeft + scrollWidth, scrollY);
+    context.stroke();
+    context.closePath();
+    context.setLineCap('butt');
+  }
+
+  context.save();
+
+  if (opts._scrollDistance_ && opts._scrollDistance_ !== 0) {
+    context.translate(opts._scrollDistance_, 0);
+  }
+
+
+  if (opts.xAxis.disableGrid !== true) {
+    context.setStrokeStyle(opts.xAxis.gridColor || "#cccccc");
+    context.setLineCap('butt');
+    context.setLineWidth(1 * opts.pixelRatio);
+    if (opts.xAxis.gridType == 'dash') {
+      context.setLineDash([opts.xAxis.dashLength, opts.xAxis.dashLength]);
+    }
+    if (opts.xAxis.type === 'calibration') {
+      xAxisPoints.forEach(function (item, index) {
+        if (index > 0) {
+          context.beginPath();
+          context.moveTo(item - eachSpacing / 2, startY);
+          context.lineTo(item - eachSpacing / 2, startY + 4 * opts.pixelRatio);
+          context.closePath();
+          context.stroke();
+        }
+      });
+    } else {
+      opts.xAxis.gridEval = opts.xAxis.gridEval || 1;
+      xAxisPoints.forEach(function (item, index) {
+        if (index % opts.xAxis.gridEval == 0) {
+          context.beginPath();
+          context.moveTo(item, startY);
+          context.lineTo(item, endY);
+          context.stroke();
+        }
+      });
+    }
+    context.setLineDash([]);
+  }
+
+
+  //不绘制X轴
+  if (opts.xAxis.disabled !== true) {
+    // 对X轴列表做抽稀处理
+    var validWidth = opts.width - opts.padding[1] - opts.padding[3] - config.yAxisWidth - config.yAxisTitleWidth;
+    //默认全部显示X轴标签
+    var maxXAxisListLength = categories.length;
+    //如果设置了X轴单屏数量
+    if (opts.xAxis.labelCount) {
+      //如果设置X轴密度
+      if (opts.xAxis.itemCount) {
+        maxXAxisListLength = Math.ceil(categories.length / opts.xAxis.itemCount * opts.xAxis.labelCount);
+      } else {
+        maxXAxisListLength = opts.xAxis.labelCount;
+      }
+      maxXAxisListLength -= 1;
+    }
+
+    var ratio = Math.ceil(categories.length / maxXAxisListLength);
+
+    var newCategories = [];
+    var cgLength = categories.length;
+    for (var i = 0; i < cgLength; i++) {
+      if (i % ratio !== 0) {
+        newCategories.push("");
+      } else {
+        newCategories.push(categories[i]);
+      }
+    }
+    newCategories[cgLength - 1] = categories[cgLength - 1];
+
+    var xAxisFontSize = opts.xAxis.fontSize || config.fontSize;
+    if (config._xAxisTextAngle_ === 0) {
+      newCategories.forEach(function (item, index) {
+        var offset = -measureText(item, xAxisFontSize) / 2;
+        if (boundaryGap == 'center') {
+          offset += eachSpacing / 2;
+        }
+        context.beginPath();
+        context.setFontSize(xAxisFontSize);
+        context.setFillStyle(opts.xAxis.fontColor || '#666666');
+        context.fillText(item, xAxisPoints[index] + offset, startY + xAxisFontSize + (config.xAxisHeight - xAxisFontSize) / 2);
+        context.closePath();
+        context.stroke();
+      });
+
+    } else {
+      newCategories.forEach(function (item, index) {
+        context.save();
+        context.beginPath();
+        context.setFontSize(xAxisFontSize);
+        context.setFillStyle(opts.xAxis.fontColor || '#666666');
+        var textWidth = measureText(item);
+        var offset = -textWidth;
+        if (boundaryGap == 'center') {
+          offset += eachSpacing / 2;
+        }
+        var _calRotateTranslate = calRotateTranslate(xAxisPoints[index] + eachSpacing / 2, startY + xAxisFontSize / 2 + 5, opts.height),
+        transX = _calRotateTranslate.transX,
+        transY = _calRotateTranslate.transY;
+
+        context.rotate(-1 * config._xAxisTextAngle_);
+        context.translate(transX, transY);
+        context.fillText(item, xAxisPoints[index] + offset, startY + xAxisFontSize + 5);
+        context.closePath();
+        context.stroke();
+        context.restore();
+      });
+    }
+  }
+  context.restore();
+
+}
+
+function drawYAxisGrid(categories, opts, config, context) {
+  if (opts.yAxis.disableGrid === true) {
+    return;
+  }
+  var spacingValid = opts.height - opts.area[0] - opts.area[2];
+  var eachSpacing = spacingValid / config.yAxisSplit;
+  var startX = opts.area[3];
+  var xAxisPoints = opts.chartData.xAxisData.xAxisPoints,
+  xAxiseachSpacing = opts.chartData.xAxisData.eachSpacing;
+  var TotalWidth = xAxiseachSpacing * (xAxisPoints.length - 1);
+  var endX = startX + TotalWidth;
+
+  var points = [];
+  for (var i = 0; i < config.yAxisSplit + 1; i++) {
+    points.push(opts.height - opts.area[2] - eachSpacing * i);
+  }
+
+  context.save();
+  if (opts._scrollDistance_ && opts._scrollDistance_ !== 0) {
+    context.translate(opts._scrollDistance_, 0);
+  }
+
+  if (opts.yAxis.gridType == 'dash') {
+    context.setLineDash([opts.yAxis.dashLength, opts.yAxis.dashLength]);
+  }
+  context.setStrokeStyle(opts.yAxis.gridColor || "#cccccc");
+  context.setLineWidth(1 * opts.pixelRatio);
+  points.forEach(function (item, index) {
+    context.beginPath();
+    context.moveTo(startX, item);
+    context.lineTo(endX, item);
+    context.stroke();
+  });
+  context.setLineDash([]);
+
+  context.restore();
+}
+
+function drawYAxis(series, opts, config, context) {
+  if (opts.yAxis.disabled === true) {
+    return;
+  }
+  var rangesFormat = opts.chartData.yAxisData.rangesFormat;
+  var spacingValid = opts.height - opts.area[0] - opts.area[2];
+  var eachSpacing = Math.floor(spacingValid / config.yAxisSplit);
+  var startX = opts.area[3];
+  var endX = opts.width - opts.area[1];
+  var endY = opts.height - opts.area[2];
+  var fillEndY = endY + config.xAxisHeight;
+  if (opts.xAxis.scrollShow) {
+    fillEndY -= 3 * opts.pixelRatio;
+  }
+  // set YAxis background
+  context.beginPath();
+  context.setFillStyle(opts.background || '#ffffff');
+  if (opts._scrollDistance_ < 0) {
+    context.fillRect(0, 0, startX, fillEndY);
+  }
+  if (opts.enableScroll == true) {
+    context.fillRect(endX, 0, opts.width, fillEndY);
+  }
+  context.closePath();
+  context.stroke();
+
+  var points = [];
+  for (var i = 0; i <= config.yAxisSplit; i++) {
+    points.push(opts.area[0] + eachSpacing * i);
+  }
+
+  var yAxisFontSize = opts.yAxis.fontSize || config.fontSize;
+  rangesFormat.forEach(function (item, index) {
+    var pos = points[index] ? points[index] : endY;
+    context.beginPath();
+    context.setFontSize(yAxisFontSize);
+    context.setFillStyle(opts.yAxis.fontColor || '#666666');
+    context.fillText(String(item), opts.area[3] - config.yAxisWidth, pos + yAxisFontSize / 2);
+    context.closePath();
+    context.stroke();
+  });
+
+  if (opts.yAxis.title) {
+    drawYAxisTitle(opts.yAxis.title, opts, config, context);
+  }
+}
+
+function drawLegend(series, opts, config, context, chartData) {
+  if (opts.legend.show === false) {
+    return;
+  }
+  var legendData = chartData.legendData;
+  var legendList = legendData.points;
+  var legendArea = legendData.area;
+  var padding = opts.legend.padding;
+  var fontSize = opts.legend.fontSize;
+  var shapeWidth = 15 * opts.pixelRatio;
+  var shapeRight = 5 * opts.pixelRatio;
+  var itemGap = opts.legend.itemGap;
+  var lineHeight = Math.max(opts.legend.lineHeight * opts.pixelRatio, fontSize);
+
+  //画背景及边框
+  context.beginPath();
+  context.setLineWidth(opts.legend.borderWidth);
+  context.setStrokeStyle(opts.legend.borderColor);
+  context.setFillStyle(opts.legend.backgroundColor);
+  context.moveTo(legendArea.start.x, legendArea.start.y);
+  context.rect(legendArea.start.x, legendArea.start.y, legendArea.width, legendArea.height);
+  context.closePath();
+  context.fill();
+  context.stroke();
+
+  legendList.forEach(function (itemList, listIndex) {
+    var width = 0;
+    var height = 0;
+    width = legendData.widthArr[listIndex];
+    height = legendData.heightArr[listIndex];
+    var startX = 0;
+    var startY = 0;
+    if (opts.legend.position == 'top' || opts.legend.position == 'bottom') {
+      startX = legendArea.start.x + (legendArea.width - width) / 2;
+      startY = legendArea.start.y + padding + listIndex * lineHeight;
+    } else {
+      if (listIndex == 0) {
+        width = 0;
+      } else {
+        width = legendData.widthArr[listIndex - 1];
+      }
+      startX = legendArea.start.x + padding + width;
+      startY = legendArea.start.y + padding + (legendArea.height - height) / 2;
+    }
+
+    context.setFontSize(config.fontSize);
+    for (var i = 0; i < itemList.length; i++) {
+      var item = itemList[i];
+      item.area = [0, 0, 0, 0];
+      item.area[0] = startX;
+      item.area[1] = startY;
+      item.area[3] = startY + lineHeight;
+      context.beginPath();
+      context.setLineWidth(1 * opts.pixelRatio);
+      context.setStrokeStyle(item.show ? item.color : opts.legend.hiddenColor);
+      context.setFillStyle(item.show ? item.color : opts.legend.hiddenColor);
+      switch (item.legendShape) {
+        case 'line':
+          context.moveTo(startX, startY + 0.5 * lineHeight - 2 * opts.pixelRatio);
+          context.fillRect(startX, startY + 0.5 * lineHeight - 2 * opts.pixelRatio, 15 * opts.pixelRatio, 4 * opts.pixelRatio);
+          break;
+        case 'triangle':
+          context.moveTo(startX + 7.5 * opts.pixelRatio, startY + 0.5 * lineHeight - 5 * opts.pixelRatio);
+          context.lineTo(startX + 2.5 * opts.pixelRatio, startY + 0.5 * lineHeight + 5 * opts.pixelRatio);
+          context.lineTo(startX + 12.5 * opts.pixelRatio, startY + 0.5 * lineHeight + 5 * opts.pixelRatio);
+          context.lineTo(startX + 7.5 * opts.pixelRatio, startY + 0.5 * lineHeight - 5 * opts.pixelRatio);
+          break;
+        case 'diamond':
+          context.moveTo(startX + 7.5 * opts.pixelRatio, startY + 0.5 * lineHeight - 5 * opts.pixelRatio);
+          context.lineTo(startX + 2.5 * opts.pixelRatio, startY + 0.5 * lineHeight);
+          context.lineTo(startX + 7.5 * opts.pixelRatio, startY + 0.5 * lineHeight + 5 * opts.pixelRatio);
+          context.lineTo(startX + 12.5 * opts.pixelRatio, startY + 0.5 * lineHeight);
+          context.lineTo(startX + 7.5 * opts.pixelRatio, startY + 0.5 * lineHeight - 5 * opts.pixelRatio);
+          break;
+        case 'circle':
+          context.moveTo(startX + 7.5 * opts.pixelRatio, startY + 0.5 * lineHeight);
+          context.arc(startX + 7.5 * opts.pixelRatio, startY + 0.5 * lineHeight, 5 * opts.pixelRatio, 0, 2 * Math.PI);
+          break;
+        case 'rect':
+          context.moveTo(startX, startY + 0.5 * lineHeight - 5 * opts.pixelRatio);
+          context.fillRect(startX, startY + 0.5 * lineHeight - 5 * opts.pixelRatio, 15 * opts.pixelRatio, 10 * opts.pixelRatio);
+          break;
+        default:
+          context.moveTo(startX, startY + 0.5 * lineHeight - 5 * opts.pixelRatio);
+          context.fillRect(startX, startY + 0.5 * lineHeight - 5 * opts.pixelRatio, 15 * opts.pixelRatio, 10 * opts.pixelRatio);}
+
+      context.closePath();
+      context.fill();
+      context.stroke();
+
+      startX += shapeWidth + shapeRight;
+      var fontTrans = 0.5 * lineHeight + 0.5 * fontSize - 2;
+      context.beginPath();
+      context.setFontSize(fontSize);
+      context.setFillStyle(item.show ? opts.legend.fontColor : opts.legend.hiddenColor);
+      context.fillText(item.name, startX, startY + fontTrans);
+      context.closePath();
+      context.stroke();
+      if (opts.legend.position == 'top' || opts.legend.position == 'bottom') {
+        startX += measureText(item.name, fontSize) + itemGap;
+        item.area[2] = startX;
+      } else {
+        item.area[2] = startX + measureText(item.name, fontSize) + itemGap;;
+        startX -= shapeWidth + shapeRight;
+        startY += lineHeight;
+      }
+    }
+  });
+}
+
+function drawPieDataPoints(series, opts, config, context) {
+  var process = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
+  var pieOption = assign({}, {
+    activeOpacity: 0.5,
+    activeRadius: 10 * opts.pixelRatio,
+    offsetAngle: 0,
+    labelWidth: 15 * opts.pixelRatio,
+    ringWidth: 0,
+    border: false,
+    borderWidth: 2,
+    borderColor: '#FFFFFF' },
+  opts.extra.pie);
+  var centerPosition = {
+    x: opts.area[3] + (opts.width - opts.area[1] - opts.area[3]) / 2,
+    y: opts.area[0] + (opts.height - opts.area[0] - opts.area[2]) / 2 };
+
+  if (config.pieChartLinePadding == 0) {
+    config.pieChartLinePadding = pieOption.activeRadius;
+  }
+
+  var radius = Math.min((opts.width - opts.area[1] - opts.area[3]) / 2 - config.pieChartLinePadding - config.pieChartTextPadding - config._pieTextMaxLength_, (opts.height - opts.area[0] - opts.area[2]) / 2 - config.pieChartLinePadding - config.pieChartTextPadding);
+
+  series = getPieDataPoints(series, radius, process);
+
+  var activeRadius = pieOption.activeRadius;
+
+  series = series.map(function (eachSeries) {
+    eachSeries._start_ += pieOption.offsetAngle * Math.PI / 180;
+    return eachSeries;
+  });
+  series.forEach(function (eachSeries, seriesIndex) {
+    if (opts.tooltip) {
+      if (opts.tooltip.index == seriesIndex) {
+        context.beginPath();
+        context.setFillStyle(hexToRgb(eachSeries.color, opts.extra.pie.activeOpacity || 0.5));
+        context.moveTo(centerPosition.x, centerPosition.y);
+        context.arc(centerPosition.x, centerPosition.y, eachSeries._radius_ + activeRadius, eachSeries._start_,
+        eachSeries._start_ + 2 *
+        eachSeries._proportion_ * Math.PI);
+        context.closePath();
+        context.fill();
+      }
+    }
+    context.beginPath();
+    context.setLineWidth(pieOption.borderWidth * opts.pixelRatio);
+    context.lineJoin = "round";
+    context.setStrokeStyle(pieOption.borderColor);
+    context.setFillStyle(eachSeries.color);
+    context.moveTo(centerPosition.x, centerPosition.y);
+    context.arc(centerPosition.x, centerPosition.y, eachSeries._radius_, eachSeries._start_, eachSeries._start_ + 2 * eachSeries._proportion_ * Math.PI);
+    context.closePath();
+    context.fill();
+    if (pieOption.border == true) {
+      context.stroke();
+    }
+  });
+
+  if (opts.type === 'ring') {
+    var innerPieWidth = radius * 0.6;
+    if (typeof opts.extra.pie.ringWidth === 'number' && opts.extra.pie.ringWidth > 0) {
+      innerPieWidth = Math.max(0, radius - opts.extra.pie.ringWidth);
+    }
+    context.beginPath();
+    context.setFillStyle(opts.background || '#ffffff');
+    context.moveTo(centerPosition.x, centerPosition.y);
+    context.arc(centerPosition.x, centerPosition.y, innerPieWidth, 0, 2 * Math.PI);
+    context.closePath();
+    context.fill();
+  }
+
+  if (opts.dataLabel !== false && process === 1) {
+    var valid = false;
+    for (var i = 0, len = series.length; i < len; i++) {
+      if (series[i].data > 0) {
+        valid = true;
+        break;
+      }
+    }
+
+    if (valid) {
+      drawPieText(series, opts, config, context, radius, centerPosition);
+    }
+  }
+
+  if (process === 1 && opts.type === 'ring') {
+    drawRingTitle(opts, config, context, centerPosition);
+  }
+
+  return {
+    center: centerPosition,
+    radius: radius,
+    series: series };
+
+}
+
+function drawRoseDataPoints(series, opts, config, context) {
+  var process = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
+  var roseOption = assign({}, {
+    type: 'area',
+    activeOpacity: 0.5,
+    activeRadius: 10 * opts.pixelRatio,
+    offsetAngle: 0,
+    labelWidth: 15 * opts.pixelRatio,
+    border: false,
+    borderWidth: 2,
+    borderColor: '#FFFFFF' },
+  opts.extra.rose);
+  if (config.pieChartLinePadding == 0) {
+    config.pieChartLinePadding = roseOption.activeRadius;
+  }
+  var centerPosition = {
+    x: opts.area[3] + (opts.width - opts.area[1] - opts.area[3]) / 2,
+    y: opts.area[0] + (opts.height - opts.area[0] - opts.area[2]) / 2 };
+
+  var radius = Math.min((opts.width - opts.area[1] - opts.area[3]) / 2 - config.pieChartLinePadding - config.pieChartTextPadding - config._pieTextMaxLength_, (opts.height - opts.area[0] - opts.area[2]) / 2 - config.pieChartLinePadding - config.pieChartTextPadding);
+  var minRadius = roseOption.minRadius || radius * 0.5;
+
+  series = getRoseDataPoints(series, roseOption.type, minRadius, radius, process);
+
+  var activeRadius = roseOption.activeRadius;
+
+  series = series.map(function (eachSeries) {
+    eachSeries._start_ += (roseOption.offsetAngle || 0) * Math.PI / 180;
+    return eachSeries;
+  });
+
+  series.forEach(function (eachSeries, seriesIndex) {
+    if (opts.tooltip) {
+      if (opts.tooltip.index == seriesIndex) {
+        context.beginPath();
+        context.setFillStyle(hexToRgb(eachSeries.color, roseOption.activeOpacity || 0.5));
+        context.moveTo(centerPosition.x, centerPosition.y);
+        context.arc(centerPosition.x, centerPosition.y, activeRadius + eachSeries._radius_, eachSeries._start_,
+        eachSeries._start_ + 2 * eachSeries._rose_proportion_ * Math.PI);
+        context.closePath();
+        context.fill();
+      }
+    }
+    context.beginPath();
+    context.setLineWidth(roseOption.borderWidth * opts.pixelRatio);
+    context.lineJoin = "round";
+    context.setStrokeStyle(roseOption.borderColor);
+    context.setFillStyle(eachSeries.color);
+    context.moveTo(centerPosition.x, centerPosition.y);
+    context.arc(centerPosition.x, centerPosition.y, eachSeries._radius_, eachSeries._start_, eachSeries._start_ + 2 *
+    eachSeries._rose_proportion_ * Math.PI);
+    context.closePath();
+    context.fill();
+    if (roseOption.border == true) {
+      context.stroke();
+    }
+  });
+
+  if (opts.dataLabel !== false && process === 1) {
+    var valid = false;
+    for (var i = 0, len = series.length; i < len; i++) {
+      if (series[i].data > 0) {
+        valid = true;
+        break;
+      }
+    }
+
+    if (valid) {
+      drawPieText(series, opts, config, context, radius, centerPosition);
+    }
+  }
+
+  return {
+    center: centerPosition,
+    radius: radius,
+    series: series };
+
+}
+
+function drawArcbarDataPoints(series, opts, config, context) {
+  var process = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
+  var arcbarOption = assign({}, {
+    startAngle: 0.75,
+    endAngle: 0.25,
+    type: 'default',
+    width: 12 * opts.pixelRatio },
+  opts.extra.arcbar);
+
+  series = getArcbarDataPoints(series, arcbarOption, process);
+  var centerPosition = {
+    x: opts.width / 2,
+    y: opts.height / 2 };
+
+  var radius = Math.min(centerPosition.x, centerPosition.y);
+  radius -= 5 * opts.pixelRatio;
+  radius -= arcbarOption.width / 2;
+
+  //背景颜色
+  context.setLineWidth(arcbarOption.width);
+  context.setStrokeStyle(arcbarOption.backgroundColor || '#E9E9E9');
+  context.setLineCap('round');
+  context.beginPath();
+  if (arcbarOption.type == 'default') {
+    context.arc(centerPosition.x, centerPosition.y, radius, arcbarOption.startAngle * Math.PI, arcbarOption.endAngle *
+    Math.PI, false);
+  } else {
+    context.arc(centerPosition.x, centerPosition.y, radius, 0, 2 * Math.PI, false);
+  }
+  context.stroke();
+
+  for (var i = 0; i < series.length; i++) {
+    var eachSeries = series[i];
+    context.setLineWidth(arcbarOption.width);
+    context.setStrokeStyle(eachSeries.color);
+    context.setLineCap('round');
+    context.beginPath();
+    context.arc(centerPosition.x, centerPosition.y, radius, arcbarOption.startAngle * Math.PI, eachSeries._proportion_ *
+    Math.PI, false);
+    context.stroke();
+  }
+
+  drawRingTitle(opts, config, context, centerPosition);
+
+  return {
+    center: centerPosition,
+    radius: radius,
+    series: series };
+
+}
+
+function drawGaugeDataPoints(categories, series, opts, config, context) {
+  var process = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : 1;
+  var gaugeOption = assign({}, {
+    startAngle: 0.75,
+    endAngle: 0.25,
+    width: 15,
+    splitLine: {
+      fixRadius: 0,
+      splitNumber: 10,
+      width: 15,
+      color: '#FFFFFF',
+      childNumber: 5,
+      childWidth: 5 },
+
+    pointer: {
+      width: 15,
+      color: 'auto' } },
+
+  opts.extra.gauge);
+
+  if (gaugeOption.oldAngle == undefined) {
+    gaugeOption.oldAngle = gaugeOption.startAngle;
+  }
+  if (gaugeOption.oldData == undefined) {
+    gaugeOption.oldData = 0;
+  }
+  categories = getGaugeAxisPoints(categories, gaugeOption.startAngle, gaugeOption.endAngle);
+
+  var centerPosition = {
+    x: opts.width / 2,
+    y: opts.height / 2 };
+
+  var radius = Math.min(centerPosition.x, centerPosition.y);
+  radius -= 5 * opts.pixelRatio;
+  radius -= gaugeOption.width / 2;
+  var innerRadius = radius - gaugeOption.width;
+
+  //画背景
+  context.setLineWidth(gaugeOption.width);
+  context.setLineCap('butt');
+  for (var i = 0; i < categories.length; i++) {
+    var eachCategories = categories[i];
+    context.beginPath();
+    context.setStrokeStyle(eachCategories.color);
+    context.arc(centerPosition.x, centerPosition.y, radius, eachCategories._startAngle_ * Math.PI, eachCategories._endAngle_ *
+    Math.PI, false);
+    context.stroke();
+  }
+  context.save();
+
+  //画刻度线
+  var totalAngle = gaugeOption.startAngle - gaugeOption.endAngle + 1;
+  var splitAngle = totalAngle / gaugeOption.splitLine.splitNumber;
+  var childAngle = totalAngle / gaugeOption.splitLine.splitNumber / gaugeOption.splitLine.childNumber;
+  var startX = -radius - gaugeOption.width * 0.5 - gaugeOption.splitLine.fixRadius;
+  var endX = -radius - gaugeOption.width * 0.5 - gaugeOption.splitLine.fixRadius + gaugeOption.splitLine.width;
+  var childendX = -radius - gaugeOption.width * 0.5 - gaugeOption.splitLine.fixRadius + gaugeOption.splitLine.childWidth;
+
+  context.translate(centerPosition.x, centerPosition.y);
+  context.rotate((gaugeOption.startAngle - 1) * Math.PI);
+
+  for (var _i12 = 0; _i12 < gaugeOption.splitLine.splitNumber + 1; _i12++) {
+    context.beginPath();
+    context.setStrokeStyle(gaugeOption.splitLine.color);
+    context.setLineWidth(2 * opts.pixelRatio);
+    context.moveTo(startX, 0);
+    context.lineTo(endX, 0);
+    context.stroke();
+    context.rotate(splitAngle * Math.PI);
+  }
+  context.restore();
+
+  context.save();
+  context.translate(centerPosition.x, centerPosition.y);
+  context.rotate((gaugeOption.startAngle - 1) * Math.PI);
+
+  for (var _i13 = 0; _i13 < gaugeOption.splitLine.splitNumber * gaugeOption.splitLine.childNumber + 1; _i13++) {
+    context.beginPath();
+    context.setStrokeStyle(gaugeOption.splitLine.color);
+    context.setLineWidth(1 * opts.pixelRatio);
+    context.moveTo(startX, 0);
+    context.lineTo(childendX, 0);
+    context.stroke();
+    context.rotate(childAngle * Math.PI);
+  }
+  context.restore();
+
+  //画指针
+  series = getGaugeDataPoints(series, categories, gaugeOption, process);
+
+  for (var _i14 = 0; _i14 < series.length; _i14++) {
+    var eachSeries = series[_i14];
+    context.save();
+    context.translate(centerPosition.x, centerPosition.y);
+    context.rotate((eachSeries._proportion_ - 1) * Math.PI);
+    context.beginPath();
+    context.setFillStyle(eachSeries.color);
+    context.moveTo(gaugeOption.pointer.width, 0);
+    context.lineTo(0, -gaugeOption.pointer.width / 2);
+    context.lineTo(-innerRadius, 0);
+    context.lineTo(0, gaugeOption.pointer.width / 2);
+    context.lineTo(gaugeOption.pointer.width, 0);
+    context.closePath();
+    context.fill();
+    context.beginPath();
+    context.setFillStyle('#FFFFFF');
+    context.arc(0, 0, gaugeOption.pointer.width / 6, 0, 2 * Math.PI, false);
+    context.fill();
+    context.restore();
+  }
+
+  if (opts.dataLabel !== false) {
+    drawGaugeLabel(gaugeOption, radius, centerPosition, opts, config, context);
+  }
+
+  drawRingTitle(opts, config, context, centerPosition);
+
+  if (process === 1 && opts.type === 'gauge') {
+    opts.extra.gauge.oldAngle = series[0]._proportion_;
+    opts.extra.gauge.oldData = series[0].data;
+  }
+  return {
+    center: centerPosition,
+    radius: radius,
+    innerRadius: innerRadius,
+    categories: categories,
+    totalAngle: totalAngle };
+
+}
+
+function drawRadarDataPoints(series, opts, config, context) {
+  var process = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
+  var radarOption = assign({}, {
+    gridColor: '#cccccc',
+    labelColor: '#666666',
+    opacity: 0.2 },
+  opts.extra.radar);
+
+  var coordinateAngle = getRadarCoordinateSeries(opts.categories.length);
+
+  var centerPosition = {
+    x: opts.area[3] + (opts.width - opts.area[1] - opts.area[3]) / 2,
+    y: opts.area[0] + (opts.height - opts.area[0] - opts.area[2]) / 2 };
+
+
+  var radius = Math.min(centerPosition.x - (getMaxTextListLength(opts.categories) + config.radarLabelTextMargin),
+  centerPosition.y - config.radarLabelTextMargin);
+  //TODO逻辑不对
+  radius -= opts.padding[1];
+
+  // draw grid
+  context.beginPath();
+  context.setLineWidth(1 * opts.pixelRatio);
+  context.setStrokeStyle(radarOption.gridColor);
+  coordinateAngle.forEach(function (angle) {
+    var pos = convertCoordinateOrigin(radius * Math.cos(angle), radius * Math.sin(angle), centerPosition);
+    context.moveTo(centerPosition.x, centerPosition.y);
+    context.lineTo(pos.x, pos.y);
+  });
+  context.stroke();
+  context.closePath();
+  // draw split line grid
+
+  var _loop = function _loop(i) {
+    var startPos = {};
+    context.beginPath();
+    context.setLineWidth(1 * opts.pixelRatio);
+    context.setStrokeStyle(radarOption.gridColor);
+    coordinateAngle.forEach(function (angle, index) {
+      var pos = convertCoordinateOrigin(radius / config.radarGridCount * i * Math.cos(angle), radius / config.radarGridCount *
+      i * Math.sin(angle), centerPosition);
+      if (index === 0) {
+        startPos = pos;
+        context.moveTo(pos.x, pos.y);
+      } else {
+        context.lineTo(pos.x, pos.y);
+      }
+    });
+    context.lineTo(startPos.x, startPos.y);
+    context.stroke();
+    context.closePath();
+  };
+
+  for (var i = 1; i <= config.radarGridCount; i++) {
+    _loop(i);
+  }
+
+  var radarDataPoints = getRadarDataPoints(coordinateAngle, centerPosition, radius, series, opts, process);
+
+  radarDataPoints.forEach(function (eachSeries, seriesIndex) {
+    // 绘制区域数据
+    context.beginPath();
+    context.setFillStyle(hexToRgb(eachSeries.color, radarOption.opacity));
+    eachSeries.data.forEach(function (item, index) {
+      if (index === 0) {
+        context.moveTo(item.position.x, item.position.y);
+      } else {
+        context.lineTo(item.position.x, item.position.y);
+      }
+    });
+    context.closePath();
+    context.fill();
+
+    if (opts.dataPointShape !== false) {
+      var shape = config.dataPointShape[seriesIndex % config.dataPointShape.length];
+      var points = eachSeries.data.map(function (item) {
+        return item.position;
+      });
+      drawPointShape(points, eachSeries.color, shape, context, opts);
+    }
+  });
+  // draw label text
+  drawRadarLabel(coordinateAngle, radius, centerPosition, opts, config, context);
+
+  return {
+    center: centerPosition,
+    radius: radius,
+    angleList: coordinateAngle };
+
+}
+
+function normalInt(min, max, iter) {
+  iter = iter == 0 ? 1 : iter;
+  var arr = [];
+  for (var i = 0; i < iter; i++) {
+    arr[i] = Math.random();
+  };
+  return Math.floor(arr.reduce(function (i, j) {return i + j;}) / iter * (max - min)) + min;
+};
+
+function collisionNew(area, points, width, height) {
+  var isIn = false;
+  for (var i = 0; i < points.length; i++) {
+    if (points[i].area) {
+      if (area[3] < points[i].area[1] || area[0] > points[i].area[2] || area[1] > points[i].area[3] || area[2] < points[i].area[0]) {
+        if (area[0] < 0 || area[1] < 0 || area[2] > width || area[3] > height) {
+          isIn = true;
+          break;
+        } else {
+          isIn = false;
+        }
+      } else {
+        isIn = true;
+        break;
+      }
+    }
+  }
+  return isIn;
+};
+
+function getBoundingBox(data) {
+  var bounds = {},coords;
+  bounds.xMin = 180;
+  bounds.xMax = 0;
+  bounds.yMin = 90;
+  bounds.yMax = 0;
+  for (var i = 0; i < data.length; i++) {
+    var coorda = data[i].geometry.coordinates;
+    for (var k = 0; k < coorda.length; k++) {
+      coords = coorda[k];
+      if (coords.length == 1) {
+        coords = coords[0];
+      }
+      for (var j = 0; j < coords.length; j++) {
+        var longitude = coords[j][0];
+        var latitude = coords[j][1];
+        var point = {
+          x: longitude,
+          y: latitude };
+
+        bounds.xMin = bounds.xMin < point.x ? bounds.xMin : point.x;
+        bounds.xMax = bounds.xMax > point.x ? bounds.xMax : point.x;
+        bounds.yMin = bounds.yMin < point.y ? bounds.yMin : point.y;
+        bounds.yMax = bounds.yMax > point.y ? bounds.yMax : point.y;
+      }
+    }
+  }
+  return bounds;
+}
+
+function coordinateToPoint(latitude, longitude, bounds, scale, xoffset, yoffset) {
+  return {
+    x: (longitude - bounds.xMin) * scale + xoffset,
+    y: (bounds.yMax - latitude) * scale + yoffset };
+
+}
+
+function pointToCoordinate(pointY, pointX, bounds, scale, xoffset, yoffset) {
+  return {
+    x: (pointX - xoffset) / scale + bounds.xMin,
+    y: bounds.yMax - (pointY - yoffset) / scale };
+
+}
+
+function isRayIntersectsSegment(poi, s_poi, e_poi) {
+  if (s_poi[1] == e_poi[1]) {return false;}
+  if (s_poi[1] > poi[1] && e_poi[1] > poi[1]) {return false;}
+  if (s_poi[1] < poi[1] && e_poi[1] < poi[1]) {return false;}
+  if (s_poi[1] == poi[1] && e_poi[1] > poi[1]) {return false;}
+  if (e_poi[1] == poi[1] && s_poi[1] > poi[1]) {return false;}
+  if (s_poi[0] < poi[0] && e_poi[1] < poi[1]) {return false;}
+  var xseg = e_poi[0] - (e_poi[0] - s_poi[0]) * (e_poi[1] - poi[1]) / (e_poi[1] - s_poi[1]);
+  if (xseg < poi[0]) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+function isPoiWithinPoly(poi, poly) {
+  var sinsc = 0;
+  for (var i = 0; i < poly.length; i++) {
+    var epoly = poly[i][0];
+    if (poly.length == 1) {
+      epoly = poly[i][0];
+    }
+    for (var j = 0; j < epoly.length - 1; j++) {
+      var s_poi = epoly[j];
+      var e_poi = epoly[j + 1];
+      if (isRayIntersectsSegment(poi, s_poi, e_poi)) {
+        sinsc += 1;
+      }
+    }
+  }
+
+  if (sinsc % 2 == 1) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+
+function drawMapDataPoints(series, opts, config, context) {
+  var mapOption = assign({}, {
+    border: true,
+    borderWidth: 1,
+    borderColor: '#666666',
+    fillOpacity: 0.6,
+    activeBorderColor: '#f04864',
+    activeFillColor: '#facc14',
+    activeFillOpacity: 1 },
+  opts.extra.map);
+  var coords, point;
+  var data = series;
+  var bounds = getBoundingBox(data);
+  var xScale = opts.width / Math.abs(bounds.xMax - bounds.xMin);
+  var yScale = opts.height / Math.abs(bounds.yMax - bounds.yMin);
+  var scale = xScale < yScale ? xScale : yScale;
+  var xoffset = opts.width / 2 - Math.abs(bounds.xMax - bounds.xMin) / 2 * scale;
+  var yoffset = opts.height / 2 - Math.abs(bounds.yMax - bounds.yMin) / 2 * scale;
+  context.beginPath();
+  context.clearRect(0, 0, opts.width, opts.height);
+  context.setFillStyle(opts.background || '#FFFFFF');
+  context.rect(0, 0, opts.width, opts.height);
+  context.fill();
+  for (var i = 0; i < data.length; i++) {
+    context.beginPath();
+    context.setLineWidth(mapOption.borderWidth * opts.pixelRatio);
+    context.setStrokeStyle(mapOption.borderColor);
+    context.setFillStyle(hexToRgb(series[i].color, mapOption.fillOpacity));
+    if (opts.tooltip) {
+      if (opts.tooltip.index == i) {
+        context.setStrokeStyle(mapOption.activeBorderColor);
+        context.setFillStyle(hexToRgb(mapOption.activeFillColor, mapOption.activeFillOpacity));
+      }
+    }
+    var coorda = data[i].geometry.coordinates;
+    for (var k = 0; k < coorda.length; k++) {
+      coords = coorda[k];
+      if (coords.length == 1) {
+        coords = coords[0];
+      }
+      for (var j = 0; j < coords.length; j++) {
+        point = coordinateToPoint(coords[j][1], coords[j][0], bounds, scale, xoffset, yoffset);
+        if (j === 0) {
+          context.beginPath();
+          context.moveTo(point.x, point.y);
+        } else {
+          context.lineTo(point.x, point.y);
+        }
+      }
+      context.fill();
+      if (mapOption.border == true) {
+        context.stroke();
+      }
+    }
+    if (opts.dataLabel == true) {
+      var centerPoint = data[i].properties.centroid;
+      if (centerPoint) {
+        point = coordinateToPoint(centerPoint[1], centerPoint[0], bounds, scale, xoffset, yoffset);
+        var fontSize = data[i].textSize || config.fontSize;
+        var text = data[i].properties.name;
+        context.beginPath();
+        context.setFontSize(fontSize);
+        context.setFillStyle(data[i].textColor || '#666666');
+        context.fillText(text, point.x - measureText(text, fontSize) / 2, point.y + fontSize / 2);
+        context.closePath();
+        context.stroke();
+      }
+    }
+  }
+  opts.chartData.mapData = {
+    bounds: bounds,
+    scale: scale,
+    xoffset: xoffset,
+    yoffset: yoffset };
+
+  drawToolTipBridge(opts, config, context, 1);
+  context.draw();
+}
+
+function getWordCloudPoint(opts, type) {
+  var points = opts.series.sort(function (a, b) {return parseInt(b.textSize) - parseInt(a.textSize);});
+  switch (type) {
+    case 'normal':
+      for (var i = 0; i < points.length; i++) {
+        var text = points[i].name;
+        var tHeight = points[i].textSize;
+        var tWidth = measureText(text, tHeight);
+        var x = void 0,y = void 0;
+        var area = void 0;
+        var breaknum = 0;
+        while (true) {
+          breaknum++;
+          x = normalInt(-opts.width / 2, opts.width / 2, 5) - tWidth / 2;
+          y = normalInt(-opts.height / 2, opts.height / 2, 5) + tHeight / 2;
+          area = [x - 5 + opts.width / 2, y - 5 - tHeight + opts.height / 2, x + tWidth + 5 + opts.width / 2, y + 5 + opts.height / 2];
+          var isCollision = collisionNew(area, points, opts.width, opts.height);
+          if (!isCollision) break;
+          if (breaknum == 1000) {
+            area = [-100, -100, -100, -100];
+            break;
+          }
+        };
+        points[i].area = area;
+      }
+      break;
+    case 'vertical':var
+      Spin = function Spin() {
+        //获取均匀随机值，是否旋转，旋转的概率为（1-0.5）
+        if (Math.random() > 0.7) {
+          return true;
+        } else {return false;};
+      };;
+      for (var _i15 = 0; _i15 < points.length; _i15++) {
+        var _text = points[_i15].name;
+        var _tHeight = points[_i15].textSize;
+        var _tWidth = measureText(_text, _tHeight);
+        var isSpin = Spin();
+        var _x = void 0,_y = void 0,_area = void 0,areav = void 0;
+        var _breaknum = 0;
+        while (true) {
+          _breaknum++;
+          var _isCollision = void 0;
+          if (isSpin) {
+            _x = normalInt(-opts.width / 2, opts.width / 2, 5) - _tWidth / 2;
+            _y = normalInt(-opts.height / 2, opts.height / 2, 5) + _tHeight / 2;
+            _area = [_y - 5 - _tWidth + opts.width / 2, -_x - 5 + opts.height / 2, _y + 5 + opts.width / 2, -_x + _tHeight + 5 + opts.height / 2];
+            areav = [opts.width - (opts.width / 2 - opts.height / 2) - (-_x + _tHeight + 5 + opts.height / 2) - 5, opts.height / 2 - opts.width / 2 + (_y - 5 - _tWidth + opts.width / 2) - 5, opts.width - (opts.width / 2 - opts.height / 2) - (-_x + _tHeight + 5 + opts.height / 2) + _tHeight, opts.height / 2 - opts.width / 2 + (_y - 5 - _tWidth + opts.width / 2) + _tWidth + 5];
+            _isCollision = collisionNew(areav, points, opts.height, opts.width);
+          } else {
+            _x = normalInt(-opts.width / 2, opts.width / 2, 5) - _tWidth / 2;
+            _y = normalInt(-opts.height / 2, opts.height / 2, 5) + _tHeight / 2;
+            _area = [_x - 5 + opts.width / 2, _y - 5 - _tHeight + opts.height / 2, _x + _tWidth + 5 + opts.width / 2, _y + 5 + opts.height / 2];
+            _isCollision = collisionNew(_area, points, opts.width, opts.height);
+          }
+          if (!_isCollision) break;
+          if (_breaknum == 1000) {
+            _area = [-1000, -1000, -1000, -1000];
+            break;
+          }
+        };
+        if (isSpin) {
+          points[_i15].area = areav;
+          points[_i15].areav = _area;
+        } else {
+          points[_i15].area = _area;
+        }
+        points[_i15].rotate = isSpin;
+      };
+      break;}
+
+  return points;
+}
+
+
+function drawWordCloudDataPoints(series, opts, config, context) {
+  var process = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
+  var wordOption = assign({}, {
+    type: 'normal',
+    autoColors: true },
+  opts.extra.word);
+
+  context.beginPath();
+  context.setFillStyle(opts.background || '#FFFFFF');
+  context.rect(0, 0, opts.width, opts.height);
+  context.fill();
+  context.save();
+  var points = opts.chartData.wordCloudData;
+  context.translate(opts.width / 2, opts.height / 2);
+
+  for (var i = 0; i < points.length; i++) {
+    context.save();
+    if (points[i].rotate) {
+      context.rotate(90 * Math.PI / 180);
+    }
+    var text = points[i].name;
+    var tHeight = points[i].textSize;
+    var tWidth = measureText(text, tHeight);
+    context.beginPath();
+    context.setStrokeStyle(points[i].color);
+    context.setFillStyle(points[i].color);
+    context.setFontSize(tHeight);
+    if (points[i].rotate) {
+      if (points[i].areav[0] > 0) {
+        if (opts.tooltip) {
+          if (opts.tooltip.index == i) {
+            context.strokeText(text, (points[i].areav[0] + 5 - opts.width / 2) * process - tWidth * (1 - process) / 2, (points[i].areav[1] + 5 + tHeight - opts.height / 2) * process);
+          } else {
+            context.fillText(text, (points[i].areav[0] + 5 - opts.width / 2) * process - tWidth * (1 - process) / 2, (points[i].areav[1] + 5 + tHeight - opts.height / 2) * process);
+          }
+        } else {
+          context.fillText(text, (points[i].areav[0] + 5 - opts.width / 2) * process - tWidth * (1 - process) / 2, (points[i].areav[1] + 5 + tHeight - opts.height / 2) * process);
+        }
+      }
+    } else {
+      if (points[i].area[0] > 0) {
+        if (opts.tooltip) {
+          if (opts.tooltip.index == i) {
+            context.strokeText(text, (points[i].area[0] + 5 - opts.width / 2) * process - tWidth * (1 - process) / 2, (points[i].area[1] + 5 + tHeight - opts.height / 2) * process);
+          } else {
+            context.fillText(text, (points[i].area[0] + 5 - opts.width / 2) * process - tWidth * (1 - process) / 2, (points[i].area[1] + 5 + tHeight - opts.height / 2) * process);
+          }
+        } else {
+          context.fillText(text, (points[i].area[0] + 5 - opts.width / 2) * process - tWidth * (1 - process) / 2, (points[i].area[1] + 5 + tHeight - opts.height / 2) * process);
+        }
+
+      }
+    }
+
+    context.stroke();
+    context.restore();
+  }
+  context.restore();
+}
+
+function drawFunnelDataPoints(series, opts, config, context) {
+  var process = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
+  var funnelOption = assign({}, {
+    activeWidth: 10,
+    activeOpacity: 0.3,
+    border: false,
+    borderWidth: 2,
+    borderColor: '#FFFFFF',
+    fillOpacity: 1,
+    labelAlign: 'right' },
+  opts.extra.funnel);
+  var eachSpacing = (opts.height - opts.area[0] - opts.area[2]) / series.length;
+  var centerPosition = {
+    x: opts.area[3] + (opts.width - opts.area[1] - opts.area[3]) / 2,
+    y: opts.height - opts.area[2] };
+
+  var activeWidth = funnelOption.activeWidth;
+  var radius = Math.min((opts.width - opts.area[1] - opts.area[3]) / 2 - activeWidth, (opts.height - opts.area[0] - opts.area[2]) / 2 - activeWidth);
+  series = getFunnelDataPoints(series, radius, process);
+  context.save();
+  context.translate(centerPosition.x, centerPosition.y);
+  for (var i = 0; i < series.length; i++) {
+    if (i == 0) {
+      if (opts.tooltip) {
+        if (opts.tooltip.index == i) {
+          context.beginPath();
+          context.setFillStyle(hexToRgb(series[i].color, funnelOption.activeOpacity));
+          context.moveTo(-activeWidth, 0);
+          context.lineTo(-series[i].radius - activeWidth, -eachSpacing);
+          context.lineTo(series[i].radius + activeWidth, -eachSpacing);
+          context.lineTo(activeWidth, 0);
+          context.lineTo(-activeWidth, 0);
+          context.closePath();
+          context.fill();
+        }
+      }
+      series[i].funnelArea = [centerPosition.x - series[i].radius, centerPosition.y - eachSpacing, centerPosition.x + series[i].radius, centerPosition.y];
+      context.beginPath();
+      context.setLineWidth(funnelOption.borderWidth * opts.pixelRatio);
+      context.setStrokeStyle(funnelOption.borderColor);
+      context.setFillStyle(hexToRgb(series[i].color, funnelOption.fillOpacity));
+      context.moveTo(0, 0);
+      context.lineTo(-series[i].radius, -eachSpacing);
+      context.lineTo(series[i].radius, -eachSpacing);
+      context.lineTo(0, 0);
+      context.closePath();
+      context.fill();
+      if (funnelOption.border == true) {
+        context.stroke();
+      }
+    } else {
+      if (opts.tooltip) {
+        if (opts.tooltip.index == i) {
+          context.beginPath();
+          context.setFillStyle(hexToRgb(series[i].color, funnelOption.activeOpacity));
+          context.moveTo(0, 0);
+          context.lineTo(-series[i - 1].radius - activeWidth, 0);
+          context.lineTo(-series[i].radius - activeWidth, -eachSpacing);
+          context.lineTo(series[i].radius + activeWidth, -eachSpacing);
+          context.lineTo(series[i - 1].radius + activeWidth, 0);
+          context.lineTo(0, 0);
+          context.closePath();
+          context.fill();
+          context.closePath();
+          context.fill();
+        }
+      }
+      series[i].funnelArea = [centerPosition.x - series[i].radius, centerPosition.y - eachSpacing * (i + 1), centerPosition.x + series[i].radius, centerPosition.y - eachSpacing * i];
+      context.beginPath();
+      context.setLineWidth(funnelOption.borderWidth * opts.pixelRatio);
+      context.setStrokeStyle(funnelOption.borderColor);
+      context.setFillStyle(hexToRgb(series[i].color, funnelOption.fillOpacity));
+      context.moveTo(0, 0);
+      context.lineTo(-series[i - 1].radius, 0);
+      context.lineTo(-series[i].radius, -eachSpacing);
+      context.lineTo(series[i].radius, -eachSpacing);
+      context.lineTo(series[i - 1].radius, 0);
+      context.lineTo(0, 0);
+      context.closePath();
+      context.fill();
+      if (funnelOption.border == true) {
+        context.stroke();
+      }
+    }
+    context.translate(0, -eachSpacing);
+  }
+  context.restore();
+
+  if (opts.dataLabel !== false && process === 1) {
+    drawFunnelText(series, opts, context, eachSpacing, funnelOption.labelAlign, activeWidth, centerPosition);
+  }
+
+  return {
+    center: centerPosition,
+    radius: radius,
+    series: series };
+
+}
+
+function drawFunnelText(series, opts, context, eachSpacing, labelAlign, activeWidth, centerPosition) {
+  for (var i = 0; i < series.length; i++) {
+    var item = series[i];
+    var startX = void 0,endX = void 0,startY = void 0,fontSize = void 0;
+    var text = item.format ? item.format(+item._proportion_.toFixed(2)) : util.toFixed(item._proportion_ * 100) + '%';
+    if (labelAlign == 'right') {
+      if (i == 0) {
+        startX = (item.funnelArea[2] + centerPosition.x) / 2;
+      } else {
+        startX = (item.funnelArea[2] + series[i - 1].funnelArea[2]) / 2;
+      }
+      endX = startX + activeWidth * 2;
+      startY = item.funnelArea[1] + eachSpacing / 2;
+      fontSize = item.textSize || opts.fontSize;
+      context.setLineWidth(1 * opts.pixelRatio);
+      context.setStrokeStyle(item.color);
+      context.setFillStyle(item.color);
+      context.beginPath();
+      context.moveTo(startX, startY);
+      context.lineTo(endX, startY);
+      context.stroke();
+      context.closePath();
+      context.beginPath();
+      context.moveTo(endX, startY);
+      context.arc(endX, startY, 2, 0, 2 * Math.PI);
+      context.closePath();
+      context.fill();
+      context.beginPath();
+      context.setFontSize(fontSize);
+      context.setFillStyle(item.textColor || '#666666');
+      context.fillText(text, endX + 5, startY + fontSize / 2 - 2);
+      context.closePath();
+      context.stroke();
+      context.closePath();
+    } else {
+      if (i == 0) {
+        startX = (item.funnelArea[0] + centerPosition.x) / 2;
+      } else {
+        startX = (item.funnelArea[0] + series[i - 1].funnelArea[0]) / 2;
+      }
+      endX = startX - activeWidth * 2;
+      startY = item.funnelArea[1] + eachSpacing / 2;
+      fontSize = item.textSize || opts.fontSize;
+      context.setLineWidth(1 * opts.pixelRatio);
+      context.setStrokeStyle(item.color);
+      context.setFillStyle(item.color);
+      context.beginPath();
+      context.moveTo(startX, startY);
+      context.lineTo(endX, startY);
+      context.stroke();
+      context.closePath();
+      context.beginPath();
+      context.moveTo(endX, startY);
+      context.arc(endX, startY, 2, 0, 2 * Math.PI);
+      context.closePath();
+      context.fill();
+      context.beginPath();
+      context.setFontSize(fontSize);
+      context.setFillStyle(item.textColor || '#666666');
+      context.fillText(text, endX - 5 - measureText(text), startY + fontSize / 2 - 2);
+      context.closePath();
+      context.stroke();
+      context.closePath();
+    }
+
+  }
+}
+
+
+function drawCanvas(opts, context) {
+  context.draw();
+}
+
+var Timing = {
+  easeIn: function easeIn(pos) {
+    return Math.pow(pos, 3);
+  },
+  easeOut: function easeOut(pos) {
+    return Math.pow(pos - 1, 3) + 1;
+  },
+  easeInOut: function easeInOut(pos) {
+    if ((pos /= 0.5) < 1) {
+      return 0.5 * Math.pow(pos, 3);
+    } else {
+      return 0.5 * (Math.pow(pos - 2, 3) + 2);
+    }
+  },
+  linear: function linear(pos) {
+    return pos;
+  } };
+
+
+function Animation(opts) {
+  this.isStop = false;
+  opts.duration = typeof opts.duration === 'undefined' ? 1000 : opts.duration;
+  opts.timing = opts.timing || 'linear';
+  var delay = 17;
+
+  function createAnimationFrame() {
+    if (typeof setTimeout !== 'undefined') {
+      return function (step, delay) {
+        setTimeout(function () {
+          var timeStamp = +new Date();
+          step(timeStamp);
+        }, delay);
+      };
+    } else if (typeof requestAnimationFrame !== 'undefined') {
+      return requestAnimationFrame;
+    } else {
+      return function (step) {
+        step(null);
+      };
+    }
+  };
+  var animationFrame = createAnimationFrame();
+  var startTimeStamp = null;
+  var _step = function step(timestamp) {
+    if (timestamp === null || this.isStop === true) {
+      opts.onProcess && opts.onProcess(1);
+      opts.onAnimationFinish && opts.onAnimationFinish();
+      return;
+    }
+    if (startTimeStamp === null) {
+      startTimeStamp = timestamp;
+    }
+    if (timestamp - startTimeStamp < opts.duration) {
+      var process = (timestamp - startTimeStamp) / opts.duration;
+      var timingFunction = Timing[opts.timing];
+      process = timingFunction(process);
+
+      opts.onProcess && opts.onProcess(process);
+      animationFrame(_step, delay);
+    } else {
+      opts.onProcess && opts.onProcess(1);
+      opts.onAnimationFinish && opts.onAnimationFinish();
+    }
+  };
+  _step = _step.bind(this);
+  animationFrame(_step, delay);
+}
+
+// stop animation immediately
+// and tigger onAnimationFinish
+Animation.prototype.stop = function () {
+  this.isStop = true;
+};
+
+function drawCharts(type, opts, config, context) {
+  var _this = this;
+  var series = opts.series;
+  var categories = opts.categories;
+  series = fillSeries(series, opts, config);
+  var duration = opts.animation ? opts.duration : 0;
+  this.animationInstance && this.animationInstance.stop();
+  var seriesMA = null;
+  if (type == 'candle') {
+    var average = assign({}, opts.extra.candle.average);
+    if (average.show) {
+      seriesMA = calCandleMA(average.day, average.name, average.color, series[0].data);
+      seriesMA = fillSeries(seriesMA, opts, config);
+      opts.seriesMA = seriesMA;
+    } else if (opts.seriesMA) {
+      seriesMA = opts.seriesMA = fillSeries(opts.seriesMA, opts, config);
+    } else {
+      seriesMA = series;
+    }
+  } else {
+    seriesMA = series;
+  }
+
+  /* 过滤掉show=false的series */
+  opts._series_ = series = filterSeries(series);
+
+  //重新计算图表区域
+
+  opts.area = new Array(4);
+  //复位绘图区域
+  for (var j = 0; j < 4; j++) {
+    opts.area[j] = opts.padding[j];
+  }
+
+  //通过计算三大区域：图例、X轴、Y轴的大小，确定绘图区域
+  var _calLegendData = calLegendData(seriesMA, opts, config, opts.chartData),
+  legendHeight = _calLegendData.area.wholeHeight,
+  legendWidth = _calLegendData.area.wholeWidth;
+  //TODO废弃config.legendHeight参数
+  config.legendHeight = legendHeight;
+  switch (opts.legend.position) {
+    case 'top':
+      opts.area[0] += legendHeight;
+      break;
+    case 'bottom':
+      opts.area[2] += legendHeight;
+      break;
+    case 'left':
+      opts.area[3] += legendWidth;
+      break;
+    case 'right':
+      opts.area[1] += legendWidth;
+      break;}
+
+
+  var _calYAxisData = {},yAxisWidth = 0;
+  if (opts.type === 'line' || opts.type === 'column' || opts.type === 'area' || opts.type === 'mix' || opts.type === 'candle') {
+    _calYAxisData = calYAxisData(series, opts, config);
+    yAxisWidth = _calYAxisData.yAxisWidth;
+    config.yAxisWidth = yAxisWidth;
+    opts.area[3] += yAxisWidth;
+  } else {
+    config.yAxisWidth = yAxisWidth;
+  }
+  opts.chartData.yAxisData = _calYAxisData;
+
+  if (opts.categories && opts.categories.length) {
+    opts.chartData.xAxisData = getXAxisPoints(opts.categories, opts, config);
+    var _calCategoriesData = calCategoriesData(opts.categories, opts, config, opts.chartData.xAxisData.eachSpacing),
+    xAxisHeight = _calCategoriesData.xAxisHeight,
+    angle = _calCategoriesData.angle;
+    config.xAxisHeight = xAxisHeight;
+    config._xAxisTextAngle_ = angle;
+    opts.area[2] += xAxisHeight;
+    opts.chartData.categoriesData = _calCategoriesData;
+  }
+
+  //计算右对齐偏移距离
+  if (opts.enableScroll && opts.xAxis.scrollAlign == 'right' && opts._scrollDistance_ === undefined) {
+    var offsetLeft = 0,
+    xAxisPoints = opts.chartData.xAxisData.xAxisPoints,
+    startX = opts.chartData.xAxisData.startX,
+    endX = opts.chartData.xAxisData.endX,
+    eachSpacing = opts.chartData.xAxisData.eachSpacing;
+    var totalWidth = eachSpacing * (xAxisPoints.length - 1);
+    var screenWidth = endX - startX;
+    offsetLeft = screenWidth - totalWidth;
+    _this.scrollOption = {
+      currentOffset: offsetLeft,
+      startTouchX: offsetLeft,
+      distance: 0,
+      lastMoveTime: 0 };
+
+    opts._scrollDistance_ = offsetLeft;
+  }
+
+  if (type === 'pie' || type === 'ring' || type === 'rose') {
+    config._pieTextMaxLength_ = opts.dataLabel === false ? 0 : getPieTextMaxLength(seriesMA);
+  }
+
+  switch (type) {
+    case 'word':
+      var wordOption = assign({}, {
+        type: 'normal',
+        autoColors: true },
+      opts.extra.word);
+      if (opts.updateData == true || opts.updateData == undefined) {
+        opts.chartData.wordCloudData = getWordCloudPoint(opts, wordOption.type);
+      }
+      this.animationInstance = new Animation({
+        timing: 'easeInOut',
+        duration: duration,
+        onProcess: function onProcess(process) {
+          context.clearRect(0, 0, opts.width, opts.height);
+          if (opts.rotate) {
+            contextRotate(context, opts);
+          }
+          drawWordCloudDataPoints(series, opts, config, context, process);
+          drawCanvas(opts, context);
+        },
+        onAnimationFinish: function onAnimationFinish() {
+          _this.event.trigger('renderComplete');
+        } });
+
+      break;
+    case 'map':
+      context.clearRect(0, 0, opts.width, opts.height);
+      drawMapDataPoints(series, opts, config, context);
+      break;
+    case 'funnel':
+      this.animationInstance = new Animation({
+        timing: 'easeInOut',
+        duration: duration,
+        onProcess: function onProcess(process) {
+          context.clearRect(0, 0, opts.width, opts.height);
+          if (opts.rotate) {
+            contextRotate(context, opts);
+          }
+          opts.chartData.funnelData = drawFunnelDataPoints(series, opts, config, context, process);
+          drawLegend(opts.series, opts, config, context, opts.chartData);
+          drawToolTipBridge(opts, config, context, process);
+          drawCanvas(opts, context);
+        },
+        onAnimationFinish: function onAnimationFinish() {
+          _this.event.trigger('renderComplete');
+        } });
+
+      break;
+    case 'line':
+      this.animationInstance = new Animation({
+        timing: 'easeIn',
+        duration: duration,
+        onProcess: function onProcess(process) {
+          context.clearRect(0, 0, opts.width, opts.height);
+          if (opts.rotate) {
+            contextRotate(context, opts);
+          }
+          drawYAxisGrid(categories, opts, config, context);
+          drawXAxis(categories, opts, config, context);
+          var _drawLineDataPoints = drawLineDataPoints(series, opts, config, context, process),
+          xAxisPoints = _drawLineDataPoints.xAxisPoints,
+          calPoints = _drawLineDataPoints.calPoints,
+          eachSpacing = _drawLineDataPoints.eachSpacing,
+          minRange = _drawLineDataPoints.minRange,
+          maxRange = _drawLineDataPoints.maxRange;
+          opts.chartData.xAxisPoints = xAxisPoints;
+          opts.chartData.calPoints = calPoints;
+          opts.chartData.eachSpacing = eachSpacing;
+          drawYAxis(series, opts, config, context);
+          if (opts.enableMarkLine !== false && process === 1) {
+            drawMarkLine(minRange, maxRange, opts, config, context);
+          }
+          drawLegend(opts.series, opts, config, context, opts.chartData);
+          drawToolTipBridge(opts, config, context, process, eachSpacing, xAxisPoints);
+          drawCanvas(opts, context);
+
+        },
+        onAnimationFinish: function onAnimationFinish() {
+          _this.event.trigger('renderComplete');
+        } });
+
+      break;
+    case 'mix':
+      this.animationInstance = new Animation({
+        timing: 'easeIn',
+        duration: duration,
+        onProcess: function onProcess(process) {
+          context.clearRect(0, 0, opts.width, opts.height);
+          if (opts.rotate) {
+            contextRotate(context, opts);
+          }
+          drawYAxisGrid(categories, opts, config, context);
+          drawXAxis(categories, opts, config, context);
+          var _drawMixDataPoints = drawMixDataPoints(series, opts, config, context, process),
+          xAxisPoints = _drawMixDataPoints.xAxisPoints,
+          calPoints = _drawMixDataPoints.calPoints,
+          eachSpacing = _drawMixDataPoints.eachSpacing,
+          minRange = _drawMixDataPoints.minRange,
+          maxRange = _drawMixDataPoints.maxRange;
+          opts.chartData.xAxisPoints = xAxisPoints;
+          opts.chartData.calPoints = calPoints;
+          opts.chartData.eachSpacing = eachSpacing;
+          drawYAxis(series, opts, config, context);
+          if (opts.enableMarkLine !== false && process === 1) {
+            drawMarkLine(minRange, maxRange, opts, config, context);
+          }
+          drawLegend(opts.series, opts, config, context, opts.chartData);
+          drawToolTipBridge(opts, config, context, process, eachSpacing, xAxisPoints);
+          drawCanvas(opts, context);
+        },
+        onAnimationFinish: function onAnimationFinish() {
+          _this.event.trigger('renderComplete');
+        } });
+
+      break;
+    case 'column':
+      this.animationInstance = new Animation({
+        timing: 'easeIn',
+        duration: duration,
+        onProcess: function onProcess(process) {
+          context.clearRect(0, 0, opts.width, opts.height);
+          if (opts.rotate) {
+            contextRotate(context, opts);
+          }
+          drawYAxisGrid(categories, opts, config, context);
+          drawXAxis(categories, opts, config, context);
+          var _drawColumnDataPoints = drawColumnDataPoints(series, opts, config, context, process),
+          xAxisPoints = _drawColumnDataPoints.xAxisPoints,
+          calPoints = _drawColumnDataPoints.calPoints,
+          eachSpacing = _drawColumnDataPoints.eachSpacing,
+          minRange = _drawColumnDataPoints.minRange,
+          maxRange = _drawColumnDataPoints.maxRange;
+          opts.chartData.xAxisPoints = xAxisPoints;
+          opts.chartData.calPoints = calPoints;
+          opts.chartData.eachSpacing = eachSpacing;
+          drawYAxis(series, opts, config, context);
+          if (opts.enableMarkLine !== false && process === 1) {
+            drawMarkLine(minRange, maxRange, opts, config, context);
+          }
+          drawLegend(opts.series, opts, config, context, opts.chartData);
+          drawToolTipBridge(opts, config, context, process, eachSpacing, xAxisPoints);
+          drawCanvas(opts, context);
+        },
+        onAnimationFinish: function onAnimationFinish() {
+          _this.event.trigger('renderComplete');
+        } });
+
+      break;
+    case 'area':
+      this.animationInstance = new Animation({
+        timing: 'easeIn',
+        duration: duration,
+        onProcess: function onProcess(process) {
+          context.clearRect(0, 0, opts.width, opts.height);
+          if (opts.rotate) {
+            contextRotate(context, opts);
+          }
+          drawYAxisGrid(categories, opts, config, context);
+          drawXAxis(categories, opts, config, context);
+          var _drawAreaDataPoints = drawAreaDataPoints(series, opts, config, context, process),
+          xAxisPoints = _drawAreaDataPoints.xAxisPoints,
+          calPoints = _drawAreaDataPoints.calPoints,
+          eachSpacing = _drawAreaDataPoints.eachSpacing,
+          minRange = _drawAreaDataPoints.minRange,
+          maxRange = _drawAreaDataPoints.maxRange;
+          opts.chartData.xAxisPoints = xAxisPoints;
+          opts.chartData.calPoints = calPoints;
+          opts.chartData.eachSpacing = eachSpacing;
+          drawYAxis(series, opts, config, context);
+          if (opts.enableMarkLine !== false && process === 1) {
+            drawMarkLine(minRange, maxRange, opts, config, context);
+          }
+          drawLegend(opts.series, opts, config, context, opts.chartData);
+          drawToolTipBridge(opts, config, context, process, eachSpacing, xAxisPoints);
+          drawCanvas(opts, context);
+        },
+        onAnimationFinish: function onAnimationFinish() {
+          _this.event.trigger('renderComplete');
+        } });
+
+      break;
+    case 'ring':
+    case 'pie':
+      this.animationInstance = new Animation({
+        timing: 'easeInOut',
+        duration: duration,
+        onProcess: function onProcess(process) {
+          context.clearRect(0, 0, opts.width, opts.height);
+          if (opts.rotate) {
+            contextRotate(context, opts);
+          }
+          opts.chartData.pieData = drawPieDataPoints(series, opts, config, context, process);
+          drawLegend(opts.series, opts, config, context, opts.chartData);
+          drawToolTipBridge(opts, config, context, process);
+          drawCanvas(opts, context);
+        },
+        onAnimationFinish: function onAnimationFinish() {
+          _this.event.trigger('renderComplete');
+        } });
+
+      break;
+    case 'rose':
+      this.animationInstance = new Animation({
+        timing: 'easeInOut',
+        duration: duration,
+        onProcess: function onProcess(process) {
+          context.clearRect(0, 0, opts.width, opts.height);
+          if (opts.rotate) {
+            contextRotate(context, opts);
+          }
+          opts.chartData.pieData = drawRoseDataPoints(series, opts, config, context, process);
+          drawLegend(opts.series, opts, config, context, opts.chartData);
+          drawToolTipBridge(opts, config, context, process);
+          drawCanvas(opts, context);
+        },
+        onAnimationFinish: function onAnimationFinish() {
+          _this.event.trigger('renderComplete');
+        } });
+
+      break;
+    case 'radar':
+      this.animationInstance = new Animation({
+        timing: 'easeInOut',
+        duration: duration,
+        onProcess: function onProcess(process) {
+          context.clearRect(0, 0, opts.width, opts.height);
+          if (opts.rotate) {
+            contextRotate(context, opts);
+          }
+          opts.chartData.radarData = drawRadarDataPoints(series, opts, config, context, process);
+          drawLegend(opts.series, opts, config, context, opts.chartData);
+          drawToolTipBridge(opts, config, context, process);
+          drawCanvas(opts, context);
+        },
+        onAnimationFinish: function onAnimationFinish() {
+          _this.event.trigger('renderComplete');
+        } });
+
+      break;
+    case 'arcbar':
+      this.animationInstance = new Animation({
+        timing: 'easeInOut',
+        duration: duration,
+        onProcess: function onProcess(process) {
+          context.clearRect(0, 0, opts.width, opts.height);
+          if (opts.rotate) {
+            contextRotate(context, opts);
+          }
+          opts.chartData.arcbarData = drawArcbarDataPoints(series, opts, config, context, process);
+          drawCanvas(opts, context);
+        },
+        onAnimationFinish: function onAnimationFinish() {
+          _this.event.trigger('renderComplete');
+        } });
+
+      break;
+    case 'gauge':
+      this.animationInstance = new Animation({
+        timing: 'easeInOut',
+        duration: duration,
+        onProcess: function onProcess(process) {
+          context.clearRect(0, 0, opts.width, opts.height);
+          if (opts.rotate) {
+            contextRotate(context, opts);
+          }
+          opts.chartData.gaugeData = drawGaugeDataPoints(categories, series, opts, config, context, process);
+          drawCanvas(opts, context);
+        },
+        onAnimationFinish: function onAnimationFinish() {
+          _this.event.trigger('renderComplete');
+        } });
+
+      break;
+    case 'candle':
+      this.animationInstance = new Animation({
+        timing: 'easeIn',
+        duration: duration,
+        onProcess: function onProcess(process) {
+          context.clearRect(0, 0, opts.width, opts.height);
+          if (opts.rotate) {
+            contextRotate(context, opts);
+          }
+          drawYAxisGrid(categories, opts, config, context);
+          drawXAxis(categories, opts, config, context);
+          var _drawCandleDataPoints = drawCandleDataPoints(series, seriesMA, opts, config, context, process),
+          xAxisPoints = _drawCandleDataPoints.xAxisPoints,
+          calPoints = _drawCandleDataPoints.calPoints,
+          eachSpacing = _drawCandleDataPoints.eachSpacing,
+          minRange = _drawCandleDataPoints.minRange,
+          maxRange = _drawCandleDataPoints.maxRange;
+          opts.chartData.xAxisPoints = xAxisPoints;
+          opts.chartData.calPoints = calPoints;
+          opts.chartData.eachSpacing = eachSpacing;
+          drawYAxis(series, opts, config, context);
+          if (opts.enableMarkLine !== false && process === 1) {
+            drawMarkLine(minRange, maxRange, opts, config, context);
+          }
+          if (seriesMA) {
+            drawLegend(seriesMA, opts, config, context, opts.chartData);
+          } else {
+            drawLegend(opts.series, opts, config, context, opts.chartData);
+          }
+          drawToolTipBridge(opts, config, context, process, eachSpacing, xAxisPoints);
+          drawCanvas(opts, context);
+        },
+        onAnimationFinish: function onAnimationFinish() {
+          _this.event.trigger('renderComplete');
+        } });
+
+      break;}
+
+}
+
+// simple event implement
+
+function Event() {
+  this.events = {};
+}
+
+Event.prototype.addEventListener = function (type, listener) {
+  this.events[type] = this.events[type] || [];
+  this.events[type].push(listener);
+};
+
+Event.prototype.trigger = function () {
+  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+    args[_key] = arguments[_key];
+  }
+
+  var type = args[0];
+  var params = args.slice(1);
+  if (!!this.events[type]) {
+    this.events[type].forEach(function (listener) {
+      try {
+        listener.apply(null, params);
+      } catch (e) {
+        console.error(e);
+      }
+    });
+  }
+};
+
+var Charts = function Charts(opts) {
+  opts.pixelRatio = opts.pixelRatio ? opts.pixelRatio : 1;
+  opts.fontSize = opts.fontSize ? opts.fontSize * opts.pixelRatio : 13 * opts.pixelRatio;
+  opts.title = assign({}, opts.title);
+  opts.subtitle = assign({}, opts.subtitle);
+  opts.duration = opts.duration ? opts.duration : 1000;
+  opts.yAxis = assign({}, {
+    gridType: 'solid',
+    dashLength: 4 * opts.pixelRatio },
+  opts.yAxis);
+  opts.xAxis = assign({}, {
+    rotateLabel: false,
+    type: 'calibration',
+    gridType: 'solid',
+    dashLength: 4 * opts.pixelRatio,
+    scrollAlign: 'left',
+    boundaryGap: 'center' },
+  opts.xAxis);
+  opts.legend = assign({}, {
+    show: true,
+    position: 'bottom',
+    float: 'center',
+    backgroundColor: 'rgba(0,0,0,0)',
+    borderColor: 'rgba(0,0,0,0)',
+    borderWidth: 0,
+    padding: 5,
+    margin: 5,
+    itemGap: 10,
+    fontSize: opts.fontSize,
+    lineHeight: opts.fontSize,
+    fontColor: '#333333',
+    format: {},
+    hiddenColor: '#CECECE' },
+  opts.legend);
+  opts.legend.borderWidth = opts.legend.borderWidth * opts.pixelRatio;
+  opts.legend.itemGap = opts.legend.itemGap * opts.pixelRatio;
+  opts.legend.padding = opts.legend.padding * opts.pixelRatio;
+  opts.legend.margin = opts.legend.margin * opts.pixelRatio;
+  opts.extra = assign({}, opts.extra);
+  opts.rotate = opts.rotate ? true : false;
+  opts.animation = opts.animation ? true : false;
+
+  var config$$1 = JSON.parse(JSON.stringify(config));
+  config$$1.colors = opts.colors ? opts.colors : config$$1.colors;
+  config$$1.yAxisTitleWidth = opts.yAxis.disabled !== true && opts.yAxis.title ? config$$1.yAxisTitleWidth : 0;
+  if (opts.type == 'pie' || opts.type == 'ring') {
+    config$$1.pieChartLinePadding = opts.dataLabel === false ? 0 : opts.extra.pie.labelWidth * opts.pixelRatio || config$$1.pieChartLinePadding * opts.pixelRatio;
+  }
+  if (opts.type == 'rose') {
+    config$$1.pieChartLinePadding = opts.dataLabel === false ? 0 : opts.extra.rose.labelWidth * opts.pixelRatio || config$$1.pieChartLinePadding * opts.pixelRatio;
+  }
+  config$$1.pieChartTextPadding = opts.dataLabel === false ? 0 : config$$1.pieChartTextPadding * opts.pixelRatio;
+  config$$1.yAxisSplit = opts.yAxis.splitNumber ? opts.yAxis.splitNumber : config.yAxisSplit;
+
+  //屏幕旋转
+  config$$1.rotate = opts.rotate;
+  if (opts.rotate) {
+    var tempWidth = opts.width;
+    var tempHeight = opts.height;
+    opts.width = tempHeight;
+    opts.height = tempWidth;
+  }
+
+  //适配高分屏
+  opts.padding = opts.padding ? opts.padding : config$$1.padding;
+  for (var i = 0; i < 4; i++) {
+    opts.padding[i] *= opts.pixelRatio;
+  }
+  config$$1.yAxisWidth = config.yAxisWidth * opts.pixelRatio;
+  config$$1.xAxisHeight = config.xAxisHeight * opts.pixelRatio;
+  if (opts.enableScroll && opts.xAxis.scrollShow) {
+    config$$1.xAxisHeight += 6 * opts.pixelRatio;
+  }
+  config$$1.xAxisLineHeight = config.xAxisLineHeight * opts.pixelRatio;
+  config$$1.legendHeight = config.legendHeight * opts.pixelRatio;
+  config$$1.fontSize = opts.fontSize;
+  config$$1.titleFontSize = config.titleFontSize * opts.pixelRatio;
+  config$$1.subtitleFontSize = config.subtitleFontSize * opts.pixelRatio;
+  config$$1.toolTipPadding = config.toolTipPadding * opts.pixelRatio;
+  config$$1.toolTipLineHeight = config.toolTipLineHeight * opts.pixelRatio;
+  config$$1.columePadding = config.columePadding * opts.pixelRatio;
+  opts.$this = opts.$this ? opts.$this : this;
+
+  this.context = uni.createCanvasContext(opts.canvasId, opts.$this);
+  /* 兼容原生H5
+                                                                     this.context = document.getElementById(opts.canvasId).getContext("2d");
+                                                                     this.context.setStrokeStyle = function(e){ return this.strokeStyle=e; }
+                                                                     this.context.setLineWidth = function(e){ return this.lineWidth=e; }
+                                                                     this.context.setLineCap = function(e){ return this.lineCap=e; }
+                                                                     this.context.setFontSize = function(e){ return this.font=e+"px sans-serif"; }
+                                                                     this.context.setFillStyle = function(e){ return this.fillStyle=e; }
+                                                                     this.context.draw = function(){ }
+                                                                     */
+
+  opts.chartData = {};
+  this.event = new Event();
+  this.scrollOption = {
+    currentOffset: 0,
+    startTouchX: 0,
+    distance: 0,
+    lastMoveTime: 0 };
+
+
+  this.opts = opts;
+  this.config = config$$1;
+
+  drawCharts.call(this, opts.type, opts, config$$1, this.context);
+};
+
+Charts.prototype.updateData = function () {
+  var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  this.opts = assign({}, this.opts, data);
+  this.opts.updateData = true;
+  var scrollPosition = data.scrollPosition || 'current';
+  switch (scrollPosition) {
+    case 'current':
+      this.opts._scrollDistance_ = this.scrollOption.currentOffset;
+      break;
+    case 'left':
+      this.opts._scrollDistance_ = 0;
+      this.scrollOption = {
+        currentOffset: 0,
+        startTouchX: 0,
+        distance: 0,
+        lastMoveTime: 0 };
+
+      break;
+    case 'right':
+      var _calYAxisData = calYAxisData(this.opts.series, this.opts, this.config),
+      yAxisWidth = _calYAxisData.yAxisWidth;
+      this.config.yAxisWidth = yAxisWidth;
+      var offsetLeft = 0;
+      var _getXAxisPoints0 = getXAxisPoints(this.opts.categories, this.opts, this.config),
+      xAxisPoints = _getXAxisPoints0.xAxisPoints,
+      startX = _getXAxisPoints0.startX,
+      endX = _getXAxisPoints0.endX,
+      eachSpacing = _getXAxisPoints0.eachSpacing;
+      var totalWidth = eachSpacing * (xAxisPoints.length - 1);
+      var screenWidth = endX - startX;
+      offsetLeft = screenWidth - totalWidth;
+      this.scrollOption = {
+        currentOffset: offsetLeft,
+        startTouchX: offsetLeft,
+        distance: 0,
+        lastMoveTime: 0 };
+
+      this.opts._scrollDistance_ = offsetLeft;
+      break;}
+
+  drawCharts.call(this, this.opts.type, this.opts, this.config, this.context);
+};
+
+Charts.prototype.zoom = function () {
+  var val = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.opts.xAxis.itemCount;
+  if (this.opts.enableScroll !== true) {
+    console.log('请启用滚动条后使用！');
+    return;
+  }
+  //当前屏幕中间点
+  var centerPoint = Math.round(Math.abs(this.scrollOption.currentOffset) / this.opts.chartData.eachSpacing) + Math.round(
+  this.opts.xAxis.itemCount / 2);
+  this.opts.animation = false;
+  this.opts.xAxis.itemCount = val.itemCount;
+  //重新计算x轴偏移距离
+  var _calYAxisData = calYAxisData(this.opts.series, this.opts, this.config),
+  yAxisWidth = _calYAxisData.yAxisWidth;
+  this.config.yAxisWidth = yAxisWidth;
+  var offsetLeft = 0;
+  var _getXAxisPoints0 = getXAxisPoints(this.opts.categories, this.opts, this.config),
+  xAxisPoints = _getXAxisPoints0.xAxisPoints,
+  startX = _getXAxisPoints0.startX,
+  endX = _getXAxisPoints0.endX,
+  eachSpacing = _getXAxisPoints0.eachSpacing;
+  var centerLeft = eachSpacing * centerPoint;
+  var screenWidth = endX - startX;
+  var MaxLeft = screenWidth - eachSpacing * (xAxisPoints.length - 1);
+  offsetLeft = screenWidth / 2 - centerLeft;
+  if (offsetLeft > 0) {
+    offsetLeft = 0;
+  }
+  if (offsetLeft < MaxLeft) {
+    offsetLeft = MaxLeft;
+  }
+  this.scrollOption = {
+    currentOffset: offsetLeft,
+    startTouchX: offsetLeft,
+    distance: 0,
+    lastMoveTime: 0 };
+
+  this.opts._scrollDistance_ = offsetLeft;
+  drawCharts.call(this, this.opts.type, this.opts, this.config, this.context);
+};
+
+Charts.prototype.stopAnimation = function () {
+  this.animationInstance && this.animationInstance.stop();
+};
+
+Charts.prototype.addEventListener = function (type, listener) {
+  this.event.addEventListener(type, listener);
+};
+
+Charts.prototype.getCurrentDataIndex = function (e) {
+  var touches = null;
+  if (e.changedTouches) {
+    touches = e.changedTouches[0];
+  } else {
+    touches = e.mp.changedTouches[0];
+  }
+  if (touches) {
+    var _touches$ = getTouches(touches, this.opts, e);
+    if (this.opts.type === 'pie' || this.opts.type === 'ring' || this.opts.type === 'rose') {
+      return findPieChartCurrentIndex({
+        x: _touches$.x,
+        y: _touches$.y },
+      this.opts.chartData.pieData);
+    } else if (this.opts.type === 'radar') {
+      return findRadarChartCurrentIndex({
+        x: _touches$.x,
+        y: _touches$.y },
+      this.opts.chartData.radarData, this.opts.categories.length);
+    } else if (this.opts.type === 'funnel') {
+      return findFunnelChartCurrentIndex({
+        x: _touches$.x,
+        y: _touches$.y },
+      this.opts.chartData.funnelData);
+    } else if (this.opts.type === 'map') {
+      return findMapChartCurrentIndex({
+        x: _touches$.x,
+        y: _touches$.y },
+      this.opts);
+    } else if (this.opts.type === 'word') {
+      return findWordChartCurrentIndex({
+        x: _touches$.x,
+        y: _touches$.y },
+      this.opts.chartData.wordCloudData);
+    } else {
+      return findCurrentIndex({
+        x: _touches$.x,
+        y: _touches$.y },
+      this.opts.chartData.xAxisPoints, this.opts, this.config, Math.abs(this.scrollOption.currentOffset));
+    }
+  }
+  return -1;
+};
+
+Charts.prototype.getLegendDataIndex = function (e) {
+  var touches = null;
+  if (e.changedTouches) {
+    touches = e.changedTouches[0];
+  } else {
+    touches = e.mp.changedTouches[0];
+  }
+  if (touches) {
+    var _touches$ = getTouches(touches, this.opts, e);
+    return findLegendIndex({
+      x: _touches$.x,
+      y: _touches$.y },
+    this.opts.chartData.legendData);
+  }
+  return -1;
+};
+
+Charts.prototype.touchLegend = function (e) {
+  var option = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  var touches = null;
+  if (e.changedTouches) {
+    touches = e.changedTouches[0];
+  } else {
+    touches = e.mp.changedTouches[0];
+  }
+  if (touches) {
+    var _touches$ = getTouches(touches, this.opts, e);
+    var index = this.getLegendDataIndex(e);
+    if (index >= 0) {
+      this.opts.series[index].show = !this.opts.series[index].show;
+      this.opts.animation = option.animation ? true : false;
+      drawCharts.call(this, this.opts.type, this.opts, this.config, this.context);
+    }
+  }
+
+};
+
+Charts.prototype.showToolTip = function (e) {
+  var option = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  var touches = null;
+  if (e.changedTouches) {
+    touches = e.changedTouches[0];
+  } else {
+    touches = e.mp.changedTouches[0];
+  }
+  if (!touches) {
+    console.log("touchError");
+  }
+  var _touches$ = getTouches(touches, this.opts, e);
+  var currentOffset = this.scrollOption.currentOffset;
+  var opts = assign({}, this.opts, {
+    _scrollDistance_: currentOffset,
+    animation: false });
+
+  if (this.opts.type === 'line' || this.opts.type === 'area' || this.opts.type === 'column') {
+    var index = this.getCurrentDataIndex(e);
+    if (index > -1) {
+      var seriesData = getSeriesDataItem(this.opts.series, index);
+      if (seriesData.length !== 0) {
+        var _getToolTipData = getToolTipData(seriesData, this.opts.chartData.calPoints, index, this.opts.categories, option),
+        textList = _getToolTipData.textList,
+        offset = _getToolTipData.offset;
+        offset.y = _touches$.y;
+        opts.tooltip = {
+          textList: textList,
+          offset: offset,
+          option: option,
+          index: index };
+
+      }
+    }
+    drawCharts.call(this, opts.type, opts, this.config, this.context);
+  }
+  if (this.opts.type === 'mix') {
+    var index = this.getCurrentDataIndex(e);
+    if (index > -1) {
+      var currentOffset = this.scrollOption.currentOffset;
+      var opts = assign({}, this.opts, {
+        _scrollDistance_: currentOffset,
+        animation: false });
+
+      var seriesData = getSeriesDataItem(this.opts.series, index);
+      if (seriesData.length !== 0) {
+        var _getMixToolTipData = getMixToolTipData(seriesData, this.opts.chartData.calPoints, index, this.opts.categories, option),
+        textList = _getMixToolTipData.textList,
+        offset = _getMixToolTipData.offset;
+        offset.y = _touches$.y;
+        opts.tooltip = {
+          textList: textList,
+          offset: offset,
+          option: option,
+          index: index };
+
+      }
+    }
+    drawCharts.call(this, opts.type, opts, this.config, this.context);
+  }
+  if (this.opts.type === 'candle') {
+    var index = this.getCurrentDataIndex(e);
+    if (index > -1) {
+      var currentOffset = this.scrollOption.currentOffset;
+      var opts = assign({}, this.opts, {
+        _scrollDistance_: currentOffset,
+        animation: false });
+
+      var seriesData = getSeriesDataItem(this.opts.series, index);
+      if (seriesData.length !== 0) {
+        var _getToolTipData = getCandleToolTipData(this.opts.series[0].data, seriesData, this.opts.chartData.calPoints,
+        index, this.opts.categories, this.opts.extra.candle, option),
+        textList = _getToolTipData.textList,
+        offset = _getToolTipData.offset;
+        offset.y = _touches$.y;
+        opts.tooltip = {
+          textList: textList,
+          offset: offset,
+          option: option,
+          index: index };
+
+      }
+    }
+    drawCharts.call(this, opts.type, opts, this.config, this.context);
+  }
+  if (this.opts.type === 'pie' || this.opts.type === 'ring' || this.opts.type === 'rose' || this.opts.type === 'funnel') {
+    var index = this.getCurrentDataIndex(e);
+    if (index > -1) {
+      var currentOffset = this.scrollOption.currentOffset;
+      var opts = assign({}, this.opts, {
+        _scrollDistance_: currentOffset,
+        animation: false });
+
+      var seriesData = this.opts._series_[index];
+      var textList = [{
+        text: option.format ? option.format(seriesData) : seriesData.name + ': ' + seriesData.data,
+        color: seriesData.color }];
+
+      var offset = {
+        x: _touches$.x,
+        y: _touches$.y };
+
+      opts.tooltip = {
+        textList: textList,
+        offset: offset,
+        option: option,
+        index: index };
+
+    }
+    drawCharts.call(this, opts.type, opts, this.config, this.context);
+  }
+  if (this.opts.type === 'map' || this.opts.type === 'word') {
+    var index = this.getCurrentDataIndex(e);
+    if (index > -1) {
+      var currentOffset = this.scrollOption.currentOffset;
+      var opts = assign({}, this.opts, {
+        _scrollDistance_: currentOffset,
+        animation: false });
+
+      var seriesData = this.opts._series_[index];
+      var textList = [{
+        text: option.format ? option.format(seriesData) : seriesData.properties.name,
+        color: seriesData.color }];
+
+      var offset = {
+        x: _touches$.x,
+        y: _touches$.y };
+
+      opts.tooltip = {
+        textList: textList,
+        offset: offset,
+        option: option,
+        index: index };
+
+    }
+    opts.updateData = false;
+    drawCharts.call(this, opts.type, opts, this.config, this.context);
+  }
+  if (this.opts.type === 'radar') {
+    var index = this.getCurrentDataIndex(e);
+    if (index > -1) {
+      var currentOffset = this.scrollOption.currentOffset;
+      var opts = assign({}, this.opts, {
+        _scrollDistance_: currentOffset,
+        animation: false });
+
+      var seriesData = getSeriesDataItem(this.opts.series, index);
+      if (seriesData.length !== 0) {
+        var textList = seriesData.map(function (item) {
+          return {
+            text: option.format ? option.format(item) : item.name + ': ' + item.data,
+            color: item.color };
+
+        });
+        var offset = {
+          x: _touches$.x,
+          y: _touches$.y };
+
+        opts.tooltip = {
+          textList: textList,
+          offset: offset,
+          option: option,
+          index: index };
+
+      }
+    }
+    drawCharts.call(this, opts.type, opts, this.config, this.context);
+  }
+};
+
+Charts.prototype.translate = function (distance) {
+  this.scrollOption = {
+    currentOffset: distance,
+    startTouchX: distance,
+    distance: 0,
+    lastMoveTime: 0 };
+
+  var opts = assign({}, this.opts, {
+    _scrollDistance_: distance,
+    animation: false });
+
+  drawCharts.call(this, this.opts.type, opts, this.config, this.context);
+};
+
+Charts.prototype.scrollStart = function (e) {
+  var touches = null;
+  if (e.changedTouches) {
+    touches = e.changedTouches[0];
+  } else {
+    touches = e.mp.changedTouches[0];
+  }
+  var _touches$ = getTouches(touches, this.opts, e);
+  if (touches && this.opts.enableScroll === true) {
+    this.scrollOption.startTouchX = _touches$.x;
+  }
+};
+
+Charts.prototype.scroll = function (e) {
+  if (this.scrollOption.lastMoveTime === 0) {
+    this.scrollOption.lastMoveTime = Date.now();
+  }
+  var Limit = this.opts.extra.touchMoveLimit || 20;
+  var currMoveTime = Date.now();
+  var duration = currMoveTime - this.scrollOption.lastMoveTime;
+  if (duration < Math.floor(1000 / Limit)) return;
+  this.scrollOption.lastMoveTime = currMoveTime;
+  var touches = null;
+  if (e.changedTouches) {
+    touches = e.changedTouches[0];
+  } else {
+    touches = e.mp.changedTouches[0];
+  }
+  if (touches && this.opts.enableScroll === true) {
+    var _touches$ = getTouches(touches, this.opts, e);
+    var _distance;
+    _distance = _touches$.x - this.scrollOption.startTouchX;
+    var currentOffset = this.scrollOption.currentOffset;
+    var validDistance = calValidDistance(currentOffset + _distance, this.opts.chartData, this.config, this.opts);
+    this.scrollOption.distance = _distance = validDistance - currentOffset;
+    var opts = assign({}, this.opts, {
+      _scrollDistance_: currentOffset + _distance,
+      animation: false });
+
+    drawCharts.call(this, opts.type, opts, this.config, this.context);
+    return currentOffset + _distance;
+  }
+};
+
+Charts.prototype.scrollEnd = function (e) {
+  if (this.opts.enableScroll === true) {
+    var _scrollOption = this.scrollOption,
+    currentOffset = _scrollOption.currentOffset,
+    distance = _scrollOption.distance;
+    this.scrollOption.currentOffset = currentOffset + distance;
+    this.scrollOption.distance = 0;
+  }
+};
+if ( true && typeof module.exports === "object") {
+  module.exports = Charts;
+  //export default Charts;//建议使用nodejs的module导出方式，如报错请使用export方式导出
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+
+/***/ 89:
+/*!*************************************************************************************************************************!*\
+  !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/uni_modules/qiun-data-charts/js_sdk/u-charts/config-ucharts.js ***!
+  \*************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/*
+ * uCharts®
+ * 高性能跨平台图表库，支持H5、APP、小程序（微信/支付宝/百度/头条/QQ/360）、Vue、Taro等支持canvas的框架平台
+ * Copyright (c) 2021 QIUN®秋云 https://www.ucharts.cn All rights reserved.
+ * Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
+ * 复制使用请保留本段注释，感谢支持开源！
+ * 
+ * uCharts®官方网站
+ * https://www.uCharts.cn
+ * 
+ * 开源地址:
+ * https://gitee.com/uCharts/uCharts
+ * 
+ * uni-app插件市场地址：
+ * http://ext.dcloud.net.cn/plugin?id=271
+ * 
+ */
+
+// 主题颜色配置：如每个图表类型需要不同主题，请在对应图表类型上更改color属性
+var color = ['#1890FF', '#91CB74', '#FAC858', '#EE6666', '#73C0DE', '#3CA272', '#FC8452', '#9A60B4', '#ea7ccc'];
+
+module.exports = {
+  //demotype为自定义图表类型
+  "type": ["pie", "ring", "rose", "word", "funnel", "map", "arcbar", "line", "column", "area", "radar", "gauge", "candle", "mix", "demotype", "line1", "column1", "line2"],
+  "range": ["饼状图", "圆环图", "玫瑰图", "词云图", "漏斗图", "地图", "圆弧进度条", "折线图", "柱状图", "区域图", "雷达图", "仪表盘", "K线图", "混合图", "自定义类型", "自定义柱状图", "自定义折线图"],
+  //增加自定义图表类型，如果需要categories，请在这里加入您的图表类型例如最后的"demotype"
+  "categories": ["line", "column", "area", "radar", "gauge", "candle", "mix", "demotype", "line1", "column1", "line2"],
+  //instance为实例变量承载属性，option为eopts承载属性，不要删除
+  "instance": {},
+  "option": {},
+  //下面是自定义format配置，因除H5端外的其他端无法通过props传递函数，只能通过此属性对应下标的方式来替换
+  "formatter": {
+    "yAxisDemo1": function yAxisDemo1(val) {return val + '%';},
+    "yAxisDemo2": function yAxisDemo2(val) {return val.toFixed(2);},
+    "seriesDemo1": function seriesDemo1(val) {
+      return val + '元';
+    },
+    "seriesTips": function seriesTips(val) {
+      if (val < 0) {
+        return '-' + val;
+      }
+    },
+    "tooltipDemo1": function tooltipDemo1(item, category, index, opts) {
+      if (index == 0) {
+        return '随便用' + item.data + '年';
+      } else {
+        return '其他我没改' + item.data + '天';
+      }
+    },
+    "tooltips": function tooltips(item, category) {
+      return category + ' 累计收益率' + item.data + '%';
+    },
+    "pieDemo": function pieDemo(val, index, series) {
+      if (index !== undefined) {
+        return series[index].name + '：' + series[index].data + '元';
+      }
+    } },
+
+  //这里演示了自定义您的图表类型的option，可以随意命名，之后在组件上 type="demotype" 后，组件会调用这个花括号里的option，如果组件上还存在opts参数，会将demotype与opts中option合并后渲染图表。
+  "demotype": {
+    //我这里把曲线图当做了自定义图表类型，您可以根据需要随意指定类型或配置
+    "type": "line",
+    "color": color,
+    "padding": [15, 10, 0, 15],
+    "xAxis": {
+      "disableGrid": true },
+
+    "yAxis": {
+      "gridType": "dash",
+      "dashLength": 2 },
+
+    "legend": {},
+
+    "extra": {
+      "line": {
+        "type": "curve",
+        "width": 2 } } },
+
+
+
+  "column1": {
+    "type": "column",
+    "canvasId": "NQdtTYwbUfaQacybcWrUADxyYjK",
+    "canvas2d": true,
+    "background": "#333",
+    "animation": true,
+    "timing": "easeOut",
+    "duration": 1000,
+    "color": [
+    "#1890FF",
+    "#91CB74",
+    "#FAC858",
+    "#EE6666",
+    "#73C0DE",
+    "#3CA272",
+    "#FC8452",
+    "#9A60B4",
+    "#ea7ccc"],
+
+    "padding": [
+    15,
+    20,
+    20,
+    20],
+
+    "rotate": false,
+    "reserve": false,
+    "fontSize": 13,
+    "fontColor": "#fff",
+    "enableScroll": false,
+    "enableMarkLine": false,
+    "touchMoveLimit": 60,
+    "dataLabel": false,
+    "dataPointShape": true,
+    "dataPointShapeType": "solid",
+    "xAxis": {
+      "disabled": false,
+      "axisLine": true,
+      "axisLineColor": "#ccc",
+      "calibration": false,
+      "fontColor": "#fff",
+      "fontSize": 10,
+      "rotateLabel": false,
+      "labelCount": 4,
+      //"itemCount": 30,
+      "boundaryGap": "center",
+      "disableGrid": true,
+      "gridColor": "#CCCCCC",
+      "gridType": "solid",
+      "dashLength": 4,
+      "gridEval": 1,
+      "scrollShow": false,
+      "scrollAlign": "left",
+      "scrollColor": "#A6A6A6",
+      "scrollBackgroundColor": "#EFEBEF" },
+
+    "yAxis": {
+      "disabled": false,
+      "disableGrid": false,
+      "splitNumber": 5,
+      "gridType": "dash",
+      "dashLength": 8,
+      "gridColor": "#CCCCCC",
+      "padding": 10,
+      "showTitle": false,
+      "data": [] },
+
+    "legend": {
+      "show": true,
+      "position": "bottom",
+      "float": "center",
+      "padding": 5,
+      "margin": 5,
+      "backgroundColor": "rgba(0,0,0,0)",
+      "borderColor": "rgba(0,0,0,0)",
+      "borderWidth": 0,
+      "fontSize": 13,
+      "fontColor": "#666666",
+      "lineHeight": 11,
+      "hiddenColor": "#CECECE",
+      "itemGap": 10 },
+
+    "extra": {
+      "column": {
+        "type": "group",
+        "width": 10,
+        "seriesGap": 2,
+        "categoryGap": 3,
+        "barBorderCircle": false,
+        "linearType": "opacity",
+        "linearOpacity": 1,
+        "colorStop": 0,
+        "meterBorder": 1,
+        "meterFillColor": "#FFFFFF",
+        "activeBgColor": "#ff0000",
+        "activeBgOpacity": 0.08,
+        "meterBorde": 1 },
+
+      "tooltip": {
+        "showBox": true,
+        "showArrow": true,
+        "borderWidth": 0,
+        "borderRadius": 0,
+        "borderColor": "#000000",
+        "borderOpacity": 0.7,
+        "bgColor": "#000000",
+        "bgOpacity": 0.7,
+        "gridType": "solid",
+        "dashLength": 4,
+        "gridColor": "#CCCCCC",
+        "fontColor": "#FFFFFF",
+        "splitLine": true,
+        "horizentalLine": false,
+        "xAxisLabel": false,
+        "yAxisLabel": false,
+        "labelBgColor": "#FFFFFF",
+        "labelBgOpacity": 0.7,
+        "labelFontColor": "#666666" },
+
+      "markLine": {
+        "type": "dash",
+        "dashLength": 20,
+        "data": [
+          // // {
+          // //  "value": 0,
+          // //  "lineColor": "#ffffff",
+          // //  "showLabel": true,
+          // //  "labelFontColor": "#ffffff",
+          // //  "labelBgColor": "#333333",
+          // //  "labelBgOpacity": 0,
+          // //  "yAxisIndex": 0
+          // }
+        ] } } },
+
+
+
+  "line2": {
+    "type": "line",
+    "canvasId": "MCScEZfB5JkHmwLAOBSANGpfoHaViPSx",
+    "canvas2d": true,
+    "background": "#333333",
+    "animation": true,
+    "timing": "easeOut",
+    "duration": 1000,
+    "color": [
+    "#1890FF",
+    "#91CB74",
+    "#FAC858",
+    "#EE6666",
+    "#73C0DE",
+    "#3CA272",
+    "#FC8452",
+    "#9A60B4",
+    "#ea7ccc"],
+
+    "padding": [
+    15,
+    10,
+    0,
+    15],
+
+    "rotate": false,
+    "reserve": false,
+    "fontSize": 13,
+    "fontColor": "#fff",
+    "enableScroll": false,
+    "touchMoveLimit": 60,
+    "enableMarkLine": true,
+    "dataLabel": false,
+    "dataPointShape": false,
+    "dataPointShapeType": "hollow",
+    "xAxis": {
+      "disabled": false,
+      "axisLine": true,
+      "axisLineColor": "#CCCCCC",
+      "calibration": false,
+      "fontColor": "#fff",
+      "fontSize": 10,
+      "rotateLabel": false,
+      "labelCount": 3,
+      "itemCount": 30,
+      "boundaryGap": "center",
+      "disableGrid": true,
+      "gridColor": "#CCCCCC",
+      "gridType": "solid",
+      "dashLength": 4,
+      "gridEval": 1,
+      "scrollShow": false,
+      "scrollAlign": "left",
+      "scrollColor": "#A6A6A6",
+      "scrollBackgroundColor": "#EFEBEF" },
+
+    "yAxis": {
+      "disabled": false,
+      "disableGrid": false,
+      "splitNumber": 5,
+      "gridType": "dash",
+      "dashLength": 8,
+      "gridColor": "#CCCCCC",
+      "padding": 10,
+      "showTitle": false,
+      "data": [] },
+
+    "legend": {
+      "show": true,
+      "position": "bottom",
+      "float": "center",
+      "padding": 5,
+      "margin": 5,
+      "backgroundColor": "rgba(0,0,0,0)",
+      "borderColor": "rgba(0,0,0,0)",
+      "borderWidth": 0,
+      "fontSize": 13,
+      "fontColor": "#666666",
+      "lineHeight": 11,
+      "hiddenColor": "#CECECE",
+      "itemGap": 10 },
+
+    "extra": {
+      "line": {
+        "type": "straight",
+        "width": 2 },
+
+      "tooltip": {
+        "showBox": true,
+        "showArrow": true,
+        "borderWidth": 0,
+        "borderRadius": 0,
+        "borderColor": "#000000",
+        "borderOpacity": 0.7,
+        "bgColor": "#000000",
+        "bgOpacity": 0.7,
+        "gridType": "solid",
+        "dashLength": 4,
+        "gridColor": "#CCCCCC",
+        "fontColor": "#FFFFFF",
+        "splitLine": true,
+        "horizentalLine": false,
+        "xAxisLabel": false,
+        "yAxisLabel": false,
+        "labelBgColor": "#FFFFFF",
+        "labelBgOpacity": 0.7,
+        "labelFontColor": "#666666" },
+
+      "markLine": {
+        "type": "dash",
+        "dashLength": 8,
+        "data": [
+        {
+          "value": 0,
+          "lineColor": "rgba(255,255,255,0.5)",
+          "showLabel": false,
+          "labelFontColor": "#ffffff",
+          "labelBgColor": "#333333",
+          "labelBgOpacity": 0,
+          "yAxisIndex": 0 }] } } },
+
+
+
+
+  //下面是自定义配置，请添加项目所需的通用配置
+  "line1": {
+    "type": "line",
+    "canvasId": "NQdtTY3wbUf7aQ8acybcWrU9ADxyYj3K",
+    "canvas2d": true,
+    "background": "#333",
+    "animation": true,
+    "timing": "easeOut",
+    "duration": 1000,
+    "color": [
+    "#1890FF",
+    // "#91CB74",
+    // "#FAC858",
+    "#EE6666"
+    // "#73C0DE",
+    // "#3CA272",
+    // "#FC8452",
+    // "#9A60B4",
+    // "#ea7ccc"
+    ],
+    "padding": [
+    15,
+    10,
+    0,
+    0],
+
+    "rotate": false,
+    "rotateLock": false,
+    "fontSize": 13,
+    "fontColor": "#666666",
+    "touchMoveLimit": 60,
+    "enableMarkLine": true,
+    "dataLabel": false,
+    "dataPointShape": false,
+    "dataPointShapeType": "solid",
+    "xAxis": {
+      "disabled": true,
+      "axisLine": true,
+      "axisLineColor": "#CCCCCC",
+      "calibration": false,
+      "fontColor": "#666666",
+      "fontSize": 13,
+      "rotateLabel": false,
+      "itemCount": 5,
+      "boundaryGap": "center",
+      "disableGrid": true,
+      "gridColor": "#CCCCCC",
+      "gridType": "solid",
+      "dashLength": 4,
+      "gridEval": 1,
+      "scrollShow": true,
+      "scrollAlign": "left",
+      "scrollColor": "#A6A6A6",
+      "scrollBackgroundColor": "#EFEBEF" },
+
+    "yAxis": {
+      "disabled": false,
+      "disableGrid": false,
+      "splitNumber": 5,
+      "gridType": "dash",
+      "dashLength": 2,
+      "gridColor": "#CCCCCC",
+      "padding": 10,
+      "showTitle": false,
+      "data": [] },
+
+    "legend": {
+      "show": true,
+      "position": "bottom",
+      "float": "center",
+      "padding": 5,
+      "margin": 5,
+      "backgroundColor": "rgba(0,0,0,0)",
+      "borderColor": "rgba(0,0,0,0)",
+      "borderWidth": 0,
+      "fontSize": 13,
+      "fontColor": "#666666",
+      "lineHeight": 11,
+      "hiddenColor": "#CECECE",
+      "itemGap": 10 },
+
+    "extra": {
+      "line": {
+        "type": "curve",
+        "width": 3 },
+
+      "tooltip": {
+        "showBox": true,
+        "showArrow": true,
+        "borderWidth": 0,
+        "borderRadius": 0,
+        "borderColor": "#000000",
+        "borderOpacity": 0.7,
+        "bgColor": "#000000",
+        "bgOpacity": 0.7,
+        "gridType": "solid",
+        "dashLength": 4,
+        "gridColor": "#CCCCCC",
+        "fontColor": "#FFFFFF",
+        "splitLine": true,
+        "horizentalLine": false,
+        "xAxisLabel": true,
+        "yAxisLabel": false,
+        "labelBgColor": "#333333",
+        "labelBgOpacity": 0.7,
+        "labelFontColor": "#666666" },
+
+      "markLine": {
+        "type": "solid",
+        "dashLength": 4,
+        "data": [] } } },
+
+
+
+  "pie": {
+    "type": "pie",
+    "color": color,
+    "padding": [5, 5, 5, 5],
+    "extra": {
+      "pie": {
+        "activeOpacity": 0.5,
+        "activeRadius": 10,
+        "offsetAngle": 0,
+        "labelWidth": 15,
+        "border": true,
+        "borderWidth": 3,
+        "borderColor": "#FFFFFF" } } },
+
+
+
+  "ring": {
+    "type": "ring",
+    "color": color,
+    "padding": [5, 5, 5, 5],
+    "rotate": false,
+    "dataLabel": true,
+    "legend": {
+      "show": true,
+      "position": "right",
+      "lineHeight": 25 },
+
+    "title": {
+      "name": "收益率",
+      "fontSize": 15,
+      "color": "#666666" },
+
+    "subtitle": {
+      "name": "70%",
+      "fontSize": 25,
+      "color": "#7cb5ec" },
+
+    "extra": {
+      "ring": {
+        "ringWidth": 30,
+        "activeOpacity": 0.5,
+        "activeRadius": 10,
+        "offsetAngle": 0,
+        "labelWidth": 15,
+        "border": true,
+        "borderWidth": 3,
+        "borderColor": "#FFFFFF" } } },
+
+
+
+  "rose": {
+    "type": "rose",
+    "color": color,
+    "padding": [5, 5, 5, 5],
+    "legend": {
+      "show": true,
+      "position": "left",
+      "lineHeight": 25 },
+
+    "extra": {
+      "rose": {
+        "type": "area",
+        "minRadius": 50,
+        "activeOpacity": 0.5,
+        "activeRadius": 10,
+        "offsetAngle": 0,
+        "labelWidth": 15,
+        "border": false,
+        "borderWidth": 2,
+        "borderColor": "#FFFFFF" } } },
+
+
+
+  "word": {
+    "type": "word",
+    "color": color,
+    "extra": {
+      "word": {
+        "type": "normal",
+        "autoColors": false } } },
+
+
+
+  "funnel": {
+    "type": "funnel",
+    "color": color,
+    "padding": [15, 15, 0, 15],
+    "extra": {
+      "funnel": {
+        "activeOpacity": 0.3,
+        "activeWidth": 10,
+        "border": true,
+        "borderWidth": 2,
+        "borderColor": "#FFFFFF",
+        "fillOpacity": 1,
+        "labelAlign": "right" } } },
+
+
+
+  "map": {
+    "type": "map",
+    "color": color,
+    "padding": [0, 0, 0, 0],
+    "dataLabel": true,
+    "extra": {
+      "map": {
+        "border": true,
+        "borderWidth": 1,
+        "borderColor": "#666666",
+        "fillOpacity": 0.6,
+        "activeBorderColor": "#F04864",
+        "activeFillColor": "#FACC14",
+        "activeFillOpacity": 1 } } },
+
+
+
+  "arcbar": {
+    "type": "arcbar",
+    "color": color,
+    "title": {
+      "name": "百分比",
+      "fontSize": 25,
+      "color": "#00FF00" },
+
+    "subtitle": {
+      "name": "默认标题",
+      "fontSize": 15,
+      "color": "#666666" },
+
+    "extra": {
+      "arcbar": {
+        "type": "default",
+        "width": 12,
+        "backgroundColor": "#E9E9E9",
+        "startAngle": 0.75,
+        "endAngle": 0.25,
+        "gap": 2 } } },
+
+
+
+  "line": {
+    "type": "line",
+    "color": color,
+    "padding": [15, 10, 0, 15],
+    "xAxis": {
+      "disableGrid": true },
+
+    "yAxis": {
+      "gridType": "dash",
+      "dashLength": 2 },
+
+    "legend": {},
+
+    "extra": {
+      "line": {
+        "type": "straight",
+        "width": 2 } } },
+
+
+
+  "column": {
+    "type": "column",
+    "color": color,
+    "padding": [15, 15, 0, 5],
+    "xAxis": {
+      "disableGrid": true },
+
+    "yAxis": {},
+
+    "legend": {},
+
+    "extra": {
+      "column": {
+        "type": "group",
+        "width": 30,
+        "meterBorde": 1,
+        "meterFillColor": "#FFFFFF",
+        "activeBgColor": "#000000",
+        "activeBgOpacity": 0.08 } } },
+
+
+
+  "area": {
+    "type": "area",
+    "color": color,
+    "padding": [15, 15, 0, 15],
+    "xAxis": {
+      "disableGrid": true },
+
+    "yAxis": {
+      "gridType": "dash",
+      "dashLength": 2 },
+
+    "legend": {},
+
+    "extra": {
+      "area": {
+        "type": "straight",
+        "opacity": 0.2,
+        "addLine": true,
+        "width": 2,
+        "gradient": false } } },
+
+
+
+  "radar": {
+    "type": "radar",
+    "color": color,
+    "padding": [5, 5, 5, 5],
+    "legend": {
+      "show": true,
+      "position": "right",
+      "lineHeight": 25 },
+
+    "extra": {
+      "radar": {
+        "gridType": "radar",
+        "gridColor": "#CCCCCC",
+        "gridCount": 3,
+        "opacity": 0.2,
+        "labelColor": "#666666",
+        "max": 200 } } },
+
+
+
+  "gauge": {
+    "type": "gauge",
+    "color": color,
+    "title": {
+      "name": "66Km/H",
+      "fontSize": 25,
+      "color": "#2fc25b",
+      "offsetY": 50 },
+
+    "subtitle": {
+      "name": "实时速度",
+      "fontSize": 15,
+      "color": "#1890ff",
+      "offsetY": -50 },
+
+    "extra": {
+      "gauge": {
+        "type": "default",
+        "width": 30,
+        "labelColor": "#666666",
+        "startAngle": 0.75,
+        "endAngle": 0.25,
+        "startNumber": 0,
+        "endNumber": 100,
+        "labelFormat": "",
+        "splitLine": {
+          "fixRadius": 0,
+          "splitNumber": 10,
+          "width": 30,
+          "color": "#FFFFFF",
+          "childNumber": 5,
+          "childWidth": 12 },
+
+        "pointer": {
+          "width": 24,
+          "color": "auto" } } } },
+
+
+
+
+  "candle": {
+    "type": "candle",
+    "color": color,
+    "padding": [15, 15, 0, 15],
+    "enableScroll": true,
+    "enableMarkLine": true,
+    "dataLabel": false,
+    "xAxis": {
+      "labelCount": 4,
+      "itemCount": 40,
+      "disableGrid": true,
+      "gridColor": "#CCCCCC",
+      "gridType": "solid",
+      "dashLength": 4,
+      "scrollShow": true,
+      "scrollAlign": "left",
+      "scrollColor": "#A6A6A6",
+      "scrollBackgroundColor": "#EFEBEF" },
+
+    "yAxis": {},
+
+    "legend": {},
+
+    "extra": {
+      "candle": {
+        "color": {
+          "upLine": "#f04864",
+          "upFill": "#f04864",
+          "downLine": "#2fc25b",
+          "downFill": "#2fc25b" },
+
+        "average": {
+          "show": true,
+          "name": ["MA5", "MA10", "MA30"],
+          "day": [5, 10, 20],
+          "color": ["#1890ff", "#2fc25b", "#facc14"] } },
+
+
+      "markLine": {
+        "type": "dash",
+        "dashLength": 5,
+        "data": [
+        {
+          "value": 2150,
+          "lineColor": "#f04864",
+          "showLabel": true },
+
+        {
+          "value": 2350,
+          "lineColor": "#f04864",
+          "showLabel": true }] } } },
+
+
+
+
+
+  "mix": {
+    "type": "mix",
+    "color": color,
+    "padding": [15, 15, 0, 15],
+    "xAxis": {
+      "disableGrid": true },
+
+    "yAxis": {
+      "disabled": false,
+      "disableGrid": false,
+      "splitNumber": 5,
+      "gridType": "dash",
+      "dashLength": 4,
+      "gridColor": "#CCCCCC",
+      "padding": 10,
+      "showTitle": true,
+      "data": [] },
+
+    "legend": {},
+
+    "extra": {
+      "mix": {
+        "column": {
+          "width": 20 } } } },
+
+
+
+
+  "point": {
+    "type": "point",
+    "color": color,
+    "padding": [15, 15, 0, 15] },
+
+  "bubble": {
+    "type": "bubble",
+    "color": color,
+    "padding": [15, 15, 0, 15] } };
+
+/***/ }),
+
+/***/ 90:
+/*!******************************************************************************!*\
+  !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/api/overall_stat.js ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.getDaysProfit = getDaysProfit;exports.getProfit_cumulative = getProfit_cumulative;var _http = _interopRequireDefault(__webpack_require__(/*! @/common/http.js */ 45));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+function getDaysProfit(strategistId, date_limit) {
+  var url = getApp().globalData.serverUrl + "/strategys/profit/yield_curverch";
+  var token = uni.getStorageSync('wx_login_token');
+  var params = {
+    token: token,
+    strategist_id: strategistId,
+    date_limit: date_limit };
+
+
+  var resp = _http.default.request(url, params);
+  return resp;
+}
+
+function getProfit_cumulative(strategistId, date_limit) {
+  var url = getApp().globalData.serverUrl + "/strategys/profit/cumulative_show/earnings";
+  var token = uni.getStorageSync('wx_login_token');
+  var params = {
+    token: token,
+    strategist_id: strategistId,
+    date_limit: date_limit };
+
+  var resp = _http.default.request(url, params);
+  return resp;
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+
+/***/ 99:
 /*!***********************************************************************************!*\
   !*** D:/svn_xiaochengxu/kunpeng_strategy/client_side_v2/mock/transaction_list.js ***!
   \***********************************************************************************/

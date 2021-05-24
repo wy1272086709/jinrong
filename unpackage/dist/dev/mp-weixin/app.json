@@ -35,7 +35,7 @@
         "text": "策略"
       },
       {
-        "pagePath": "pages/transaction/list",
+        "pagePath": "pages/transaction/transaction",
         "iconPath": "static/image/overall_view/trade.png",
         "selectedIconPath": "static/image/overall_view/trade_avtive.png",
         "text": "交易"

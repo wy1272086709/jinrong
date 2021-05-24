@@ -22,7 +22,7 @@
 		<view class="u-dropdown__content" :style="[contentStyle, {
 			transition: `opacity ${duration / 1000}s linear`
 		}]" @tap="maskClick"  @touchmove.stop.prevent>
-			<view @tap.stop.prevent class="u-dropdown__content__popup" :style="[popupStyle]">
+			<view @tap="maskClick" @tap.stop.prevent class="u-dropdown__content__popup" :style="[popupStyle]">
 				<slot></slot>
 			</view>
 		</view>

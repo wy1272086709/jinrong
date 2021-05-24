@@ -68,7 +68,7 @@
 									<view class="left-view">
 										
 			
-										<view class="margin-css">
+										<view class="margin-css u-m-l-20">
 											<!-- <u-tag :text="info.statusTxt" :bg-color="info.statusTxt.indexOf('平空')!==-1 || info.statusTxt.indexOf('开多')!==-1? '#00C087':'#ED3F5D'"
 											:color="'#FFFFFF'" size="mini" border-color="transparent"  plain></u-tag> -->
 											<text :style="info.statusTxt.indexOf('买入')!==-1?'color:#24F5FD':'color:#FB3F69'">{{info.statusTxt}}</text>
@@ -83,13 +83,17 @@
 								
 								<view class="history-content-row-2">
 									<view class="left-view">
-										<text class="label-text" space="nbsp">数量</text>
-										<text class="u-m-l-40">{{info.sum_volume}}</text>
+										<text  space="nbsp">成交价格</text>
+										<text>/</text>
+										<text  space="nbsp">数量:</text>
+										<text class="u-m-l-20 text-color">{{info.avg_price}}</text>
+										<text class="text-color">/</text>
+										<text class="text-color">{{info.sum_volume}}</text>
 									</view>
 									<!-- light-font -->
 									<view class="right-view ">
-										<text class="label-text" space="nbsp">成交价格</text>
-										<text class="u-m-l-40">{{info.avg_price}}</text>
+										<text class="label-text text1-color" space="nbsp">成交金额</text>
+										<text class="u-m-l-20">{{info.turnover}}</text>
 									</view>
 								</view>
 								<u-gap height="2" bg-color="rgba(255,255,255,0.1)"></u-gap>
@@ -663,10 +667,16 @@
 }
 
 .left-view {
-	width: 55%;
+	width: 60%;
 	color: rgba($color: #c3c3c3, $alpha: 0.96);
 	display: flex;
-	margin-left: 20rpx;
+	//margin-left: 20rpx;
+}
+.text-color{
+	color: rgba($color: #ffffff, $alpha: 0.96);
+}
+.text1-color{
+	color: rgba($color: #c3c3c3, $alpha: 0.96);
 }
 .right-space{
 	display: flex;
@@ -674,7 +684,7 @@
 	justify-content: space-between;
 }
 .right-view {
-	width: 45%;
+	width: 40%;
 	display: flex;
 	color: rgba($color: #ffffff, $alpha: 0.96);
 	&-time {

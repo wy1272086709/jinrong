@@ -28,6 +28,7 @@
 .global-css {
   background-color: #333333;
   color: #FFFFFF;
+  height: 100vh;
 }
 scroll-view ::-webkit-scrollbar {
   display: none;
@@ -224,7 +225,7 @@ scroll-view ::-webkit-scrollbar {
 }
 .list {
   padding-bottom: 0;
-  padding-bottom: constant(safe-area-inset-bottom);
-  padding-bottom: env(safe-area-inset-bottom);
+  padding-bottom: 68rpx;
+  padding-bottom: 68rpx;
 }
 
