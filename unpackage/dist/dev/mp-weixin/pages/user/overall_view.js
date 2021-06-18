@@ -96,13 +96,13 @@ var components
 try {
   components = {
     uLine: function() {
-      return __webpack_require__.e(/*! import() | uview-ui/components/u-line/u-line */ "uview-ui/components/u-line/u-line").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-line/u-line.vue */ 189))
+      return __webpack_require__.e(/*! import() | uview-ui/components/u-line/u-line */ "uview-ui/components/u-line/u-line").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-line/u-line.vue */ 184))
     },
     uniDrawer: function() {
-      return __webpack_require__.e(/*! import() | components/uni-drawer/uni-drawer */ "components/uni-drawer/uni-drawer").then(__webpack_require__.bind(null, /*! @/components/uni-drawer/uni-drawer.vue */ 196))
+      return __webpack_require__.e(/*! import() | components/uni-drawer/uni-drawer */ "components/uni-drawer/uni-drawer").then(__webpack_require__.bind(null, /*! @/components/uni-drawer/uni-drawer.vue */ 191))
     },
     uModal: function() {
-      return __webpack_require__.e(/*! import() | uview-ui/components/u-modal/u-modal */ "uview-ui/components/u-modal/u-modal").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-modal/u-modal.vue */ 182))
+      return __webpack_require__.e(/*! import() | uview-ui/components/u-modal/u-modal */ "uview-ui/components/u-modal/u-modal").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-modal/u-modal.vue */ 177))
     }
   }
 } catch (e) {
@@ -215,6 +215,13 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
+
+
+
+
+
+
 
 
 
@@ -545,6 +552,7 @@ var statData = {};var _default =
     }
     var str = uni.getStorageSync('wx_strategist_list');
     this.userList = str ? JSON.parse(str) : [];
+
     var systemInfo = uni.getSystemInfoSync();
     var h = systemInfo.windowHeight;
     console.log('h' + h);
@@ -556,9 +564,15 @@ var statData = {};var _default =
   methods: {
     gotoStrategyGroupDetail: function gotoStrategyGroupDetail(strategy) {
       console.log('gotoStrategyGroupDetail click...' + JSON.stringify(strategy));
-      uni.navigateTo({
-        url: '/pages/user/category_view?groupId=' + strategy.group_id + '&title=' + strategy.title });
+      if (strategy.group_id != 5) {
+        uni.navigateTo({
+          url: '/pages/user/category-charts?groupId=' + strategy.group_id + '&title=' + strategy.title });
 
+      } else {
+        uni.navigateTo({
+          url: '/pages/user/category_view?groupId=' + strategy.group_id + '&title=' + strategy.title });
+
+      }
     },
     setIosBackground: function setIosBackground() {
       uni.setBackgroundColor({

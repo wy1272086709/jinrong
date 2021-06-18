@@ -1,127 +1,110 @@
 <template>
-	<!--
-	<view class="bar-sticky" id="root-view">
-		<u-sticky>
-		<u-tabs :list="[{name: '交易账单'}, {name: '收益详情'}, {name: '资金明细'}]" active-color="#333" inactive-color="#999999" bg-color="#F2F2F2" item-width="250"  bar-height="3" :current="1" @change="clickSwithTab"></u-tabs>
-		</u-sticky>
-		-->
 		<scroll-view :scroll-y="true" :style="{height: scrollHeight}">
-		<view class="content-view list" >
-			<view class="basic-info-border">
-				<text>基本信息</text>
+			<view class="myBorder1">
+				<view class="content-view" >
+					<view class="u-item-title">
+						<text>基本信息</text>
+					</view>
+					<view class="basic-info-list u-font-30">
+						<view class="basic-info-left">
+							<view class="u-m-t-10">
+								<text>策略周期:</text>
+							</view>
+							<view  class="u-m-t-10">
+								<text>开始运行时间:</text>
+							</view>
+							<view class="u-m-t-10">
+								<text>策略运行时长:</text>
+							</view>
+							<view class="u-m-t-10">
+								<text>合约:</text>
+							</view>
+							<view class="u-m-t-10">
+								<text>交易所:</text>
+							</view>
+						</view>
+						<view class="basic-info-right">
+							<view class="u-m-t-10" v-for="basic in basicInfoList" :key="basic.name">
+								<text >{{basic.val}}</text>
+							</view>
+						</view>
+					</view>
 			</view>
-			<view class="basic-info-list u-font-30">
-				<view class="basic-info-left">
-					<view class="u-m-t-10">
-						<text>策略周期:</text>
-					</view>
-					<view  class="u-m-t-10">
-						<text>开始运行时间:</text>
-					</view>
-					<view class="u-m-t-10">
-						<text>策略运行时长:</text>
-					</view>
-					<view class="u-m-t-10">
-						<text>合约:</text>
-					</view>
-					<view class="u-m-t-10">
-						<text>交易所:</text>
-					</view>
-				</view>
-				<view class="basic-info-right">
-					<view class="u-m-t-10" v-for="basic in basicInfoList" :key="basic.name">
-						<text >{{basic.val}}</text>
-					</view>
-				</view>
+		
+			
 			</view>
 			
-			
-			<!-- <view class="income-curve qiun-charts">
-				<view class="basic-info">
-					<text>收益曲线</text>
+			<view class="myBorder">
+				<view class="u-m-t-20 u-m-b-20 u-m-l-20 u-item-title">
+					<text class="title ">收益曲线</text>
 				</view>
-				<canvas canvas-id="canvasLineA" id="canvasLineA" class="canvasLineA charts" disable-scroll=true @touchstart="touchLineA" @touchmove="moveLineA" @touchend="touchEndLineA"></canvas>
-				<view class="incom-btn-view">
-					<u-button type="my"  class="stat-button" size="mini" @click="getStatData(30)" :customStyle="{ color: days == 30 ?  '#FFFFFF': '#ADADBD', backgroundColor: 'rgba(0,0,0, 0.2)' }">近一月</u-button>
-					<u-button type="my" class="stat-button" size="mini" @click="getStatData(183)" :customStyle="{ color: days == 183 ?  '#FFFFFF': '#ADADBD', backgroundColor: 'rgba(0, 0, 0, 0.2)' }">近半年</u-button>
-					<u-button type="my" class="stat-button" size="mini" @click="getStatData(365)" :customStyle="{ color: days == 365 ?  '#FFFFFF': '#ADADBD', backgroundColor: 'rgba(0, 0, 0, 0.2)' }">近一年</u-button>
-					<u-button type="my" class="stat-button" size="mini" @click="getStatData(0)" :custom-style="{ color: days == 0 ?  '#FFFFFF': '#ADADBD', backgroundColor: 'rgba(0,0, 0, 0.2)'}">累计</u-button>
-				</view>
-			</view> -->
-			<view class="basic-info-border u-m-t-40 u-m-b-20">
-				<text>收益曲线</text>
-			</view>
-			<view class="u-m-t-20">
+				
 				<view class="charts-box">
 				  <qiun-data-charts
-				    type="line1"
+				    type="line3"
 				    :chartData="chartData"
-				    :inScrollView="true"
-				    :disableScroll="true"
-					canvasId="NQdtTY3wbUf7aQ8acybcWrU9ADxyYj3K"
-					:canvas2d="true"
+				    canvasId="MCScEZfB5JkHmwLAOBSANGpfoHaViPSx"
+				    :canvas2d="true"
 				    background="#333"
-				    :animation="false"
-					:opts="{yAxis:{data:[{format:'yAxisDemo2'}]}}"
+					:disableScroll="true"
+				    opts="{enableScroll: false}"
+				    :ontouch="true"
+				    :onmovetip="true"
+				    @getTouchMove="getTouchMove"
 				  />
 				</view>
-				<view class="btn-month">
-					<u-button type="my" throttle-time="50"  class="stat-button" size="mini" @click="getStatData(30)" :customStyle="{ color: days == 30 ?  '#FFFFFF': '#ADADBD', backgroundColor: 'rgba(0,0,0, 0.2)' }">近一月</u-button>
-					<u-button type="my" throttle-time="50" class="stat-button" size="mini" @click="getStatData(183)" :customStyle="{ color: days == 183 ?  '#FFFFFF': '#ADADBD', backgroundColor: 'rgba(0, 0, 0, 0.2)' }">近半年</u-button>
-					<u-button type="my" throttle-time="50" class="stat-button" size="mini" @click="getStatData(365)" :customStyle="{ color: days == 365 ?  '#FFFFFF': '#ADADBD', backgroundColor: 'rgba(0, 0, 0, 0.2)' }">近一年</u-button>
-					<u-button type="my" throttle-time="50" class="stat-button" size="mini" @click="getStatData(0)" :custom-style="{ color: days == 0 ?  '#FFFFFF': '#ADADBD', backgroundColor: 'rgba(0,0, 0, 0.2)'}">累计</u-button>
+				
+				<view class="dataDate">
+					<u-subsection @change="sectionChange" :current="current" height="50" font-size="20" :list="list" mode="button" active-color="#1890FF" inactive-color="#4D5269"></u-subsection>
 				</view>
 			</view>
 			  
+			<view class="myBorder2">
+				<view class="u-m-l-20 u-m-t-20 u-m-b-20 u-item-title">
+					<text>收益情况</text>
+				</view>
+				<view class="income-contrast">
+					<!--
+					<vtable :columns="columns" :list="data" :row-class-name="'rowClassName'"></vtable>
+					-->
+					<!-- style="background-color: #333333;" -->
+					<u-table font-size="30" align="center" color="#b8b8b8" style="width: 686rpx;display: flex; margin-left: 20rpx;">
+						<u-tr>
+							<u-th width="171.5rpx">
+								<text class="mini-font">收益情况</text>
+							</u-th>
+							<u-th width="171.5rpx">
+								<text class="mini-font">策略收益(%)</text>
+							</u-th>
+							<u-th width="171.5rpx">
+								<text class="mini-font">持有收益(%)</text>
+							</u-th>
+							<u-th width="171.5rpx">
+								<text class="mini-font">最大回撤(%)</text>
+							</u-th>
+						</u-tr>
+						<u-tr v-for="item,index in data" :key="index">
+							<u-td width="171.5rpx">{{item.label}}</u-td>
+							<u-td width="171.5rpx" :customStyle="{ color:
+							getColor(item.strategy_profit) }">
+								{{item.strategy_profit}}
+							</u-td>
+							<u-td width="171.5rpx" :customStyle="{
+								color:getColor(item.market_profit)}">
+								{{item.market_profit}}
+							</u-td>
+							<u-td width="171.5rpx">
+								{{item.profit_drawdown}}
+							</u-td>
+						</u-tr>
+						
+					</u-table>
+				</view>
+			</view>
 			
-			<!--
-			<view class="basic-info">
-				<text>收益对比</text>
-			</view>
-			-->
-			<!-- 收益对比 -->
-			<view class="basic-info-border u-m-t-20 u-m-b-20">
-				<text>收益情况</text>
-			</view>
-			<view class="income-contrast ">
-				<!--
-				<vtable :columns="columns" :list="data" :row-class-name="'rowClassName'"></vtable>
-				-->
-				<u-table font-size="30" align="center" color="#b8b8b8" bg-color="#333" style="width: 686rpx;display: flex;">
-					<u-tr style="background-color: #333333;">
-						<u-th width="171.5rpx">
-							<text class="mini-font">收益情况</text>
-						</u-th>
-						<u-th width="171.5rpx">
-							<text class="mini-font">策略收益(%)</text>
-						</u-th>
-						<u-th width="171.5rpx">
-							<text class="mini-font">持有收益(%)</text>
-						</u-th>
-						<u-th width="171.5rpx">
-							<text class="mini-font">最大回撤(%)</text>
-						</u-th>
-					</u-tr>
-					<u-tr v-for="item,index in data" :key="index">
-						<u-td width="171.5rpx">{{item.label}}</u-td>
-						<u-td width="171.5rpx" :customStyle="{ color:
-						getColor(item.strategy_profit) }">
-							{{item.strategy_profit}}
-						</u-td>
-						<u-td width="171.5rpx" :customStyle="{
-							color:getColor(item.market_profit)}">
-							{{item.market_profit}}
-						</u-td>
-						<u-td width="171.5rpx" :customStyle="{color:getColor(item.profit_drawdown)}">
-							{{item.profit_drawdown}}
-						</u-td>
-					</u-tr>
-					
-				</u-table>
-			</view>
-		</view>
+		
 		</scroll-view>
-	</view>
+	
 </template>
 
 <script>
@@ -162,7 +145,22 @@
 				  series:[],
 				},
 				columns: [],
-				colW: ''
+				colW: '',
+				list:[
+					{
+						name:'近一月'
+					},
+					{
+						name:'近半年'
+					},
+					{
+						name:'近一年'
+					},
+					{
+						name:'近三年'
+					}
+				],
+				current:0,
 			}
 		},
 		props: {
@@ -222,6 +220,40 @@
 			console.log('component destory...')
 		},
 		methods: {
+			sectionChange(index){
+				console.log("sectionchange");
+				switch(index){
+					case 0:
+						console.log("sectionchange0");
+						
+						this.getStatData(30);
+						
+						break;
+					case 1:
+						console.log("sectionchange1");
+						
+						this.getStatData(183);
+						break;
+					case 2:
+						console.log("sectionchange2");
+						
+						this.getStatData(365);
+						break;
+					case 3:
+						console.log("sectionchange3");
+						
+						this.getStatData(0);
+						break;
+					default:
+						console.log("sectionchange9");
+						break;
+				}
+			},
+			getTouchMove(e){
+				
+				//uCharts.instance[e.id].showToolTip();
+				console.log("获取TouchMove",e);
+			},
 			clickSwithTab(index) {
 			
 			},
@@ -450,9 +482,58 @@
 
 <style lang="scss">
 	/* 请根据需求修改图表容器尺寸，如果父容器没有高度图表则会显示异常 */
+	.myBorder{
+		height: 560rpx;
+		border: 1px solid #333;
+		border-radius: 20rpx;
+		background-color: #333;
+		
+	}
+	.myBorder1{
+		
+		border: 1px solid #333;
+		border-radius: 20rpx;
+		background-color: #333;
+		
+		padding-bottom: 20rpx;
+	}
+	.myBorder2{
+		
+		border: 1px solid #333;
+		border-radius: 20rpx;
+		background-color: #333;
+		
+		padding-bottom: 20rpx;
+	}
+	.dataDate{
+		margin: 20rpx;
+		
+	}
 	.charts-box{
 	  width: 100%;
-	  height:300px;
+	  height:400rpx;
+	 
+	}
+	.u-item-title {
+		position: relative;
+		font-size: 15px;
+		padding-left: 8px;
+		line-height: 1;
+		margin-bottom: 11px;
+		margin-top: 20rpx;
+	}
+	
+	.u-item-title:after {
+		position: absolute;
+		width: 4px;
+		top: -1px;
+		height: 16px;
+		/* #ifndef APP-NVUE */
+		content: '';
+		/* #endif */
+		left: 0;
+		border-radius: 10px;
+		background-color: $u-type-primary;
 	}
 ::-webkit-scrollbar {
 	width: 0;
@@ -465,7 +546,7 @@
 	    padding-bottom: 0;  
 	    padding-bottom: constant(safe-area-inset-bottom);  
 	    padding-bottom: env(safe-area-inset-bottom);  
-		background-color: #333;
+		
 	}
 	.btn-month{
 		margin: 20rpx 0 20rpx 0;
@@ -581,7 +662,7 @@
 		margin-right: 20rpx;
 		display: flex;
 		flex-direction: column;
-		background-color: $kp-bg-color;
+		
 		color: $kp-font-color;
 		
 		
@@ -594,14 +675,13 @@
 			margin-bottom:10px;
 			margin-bottom: 10px;
 		}
-		.basic-info-border {
-			margin-top:20px;
-			padding-bottom: 10px;
-			font-weight: bolder;
-			border-bottom: 1px solid rgba($color: #FFFFFF, $alpha: 0.3);
+		.flex_center{
+			display: flex;
+			align-items: center;
+			justify-content: center;
 		}
 		.income-contrast {
-			display: flex;
+			
 			margin-bottom:20px;
 			.no-bad-table-wrap {
 				width:686rpx;

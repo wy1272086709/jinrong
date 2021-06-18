@@ -69,10 +69,10 @@
   color: rgba(255, 255, 255, 0.7);
 }
 .red-css {
-  color: #EE4368;
+  color: #ed3f5d;
 }
 .blue-css {
-  color: #0BF4FD;
+  color: #24F5FD;
 }
 .income {
   display: -webkit-box;

@@ -54,6 +54,7 @@
           flex-direction: column;
   background-color: #333333;
   color: #FFFFFF;
+  /** 最后一个元素,margin-bottom 为0px **/
 }
 #root-view  .u-hairline-border:after {
   border-width: 0px;
@@ -85,13 +86,19 @@
 #root-view  .u-default-plain-hover {
   background: rgba(255, 255, 255, 0.2) !important;
 }
+#root-view  .category-component-clazz {
+  margin-bottom: 20px;
+}
+#root-view  .category-component-clazz:nth-child(1) {
+  margin-top: 27rpx;
+}
 #root-view #strategy-search {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
-  height: 52px;
+  /*height: 104rpx;*/
   background-color: #333333;
   position: fixed;
   -webkit-box-orient: vertical;
@@ -163,12 +170,5 @@
   padding-bottom: 0;
   padding-bottom: constant(safe-area-inset-bottom);
   padding-bottom: env(safe-area-inset-bottom);
-}
-/** 最后一个元素,margin-bottom 为0px **/
- .category-component-clazz {
-  margin-bottom: 20px;
-}
- .category-component-clazz:nth-child(1) {
-  margin-top: 20px;
 }
 

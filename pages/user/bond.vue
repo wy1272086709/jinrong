@@ -5,7 +5,8 @@
 			<text class="u-m-l-20">{{userName}}</text>
 		</view> -->
 		<view class="u-width ">
-			<u-dropdown  :close-on-click-self="self_close" :close-on-click-mask="mask" ref="uDropdown" inactive-color="#fff" :activeColor="activeColor">
+			<view class="u-dropdown-css">
+			<u-dropdown  :close-on-click-self="true" :close-on-click-mask="true" ref="uDropdown" inactive-color="#fff" activeColor="#FFFFFF" >
 				<!-- <u-dropdown-item @change="change" v-model="value1" title="距离" :options="options1"></u-dropdown-item>
 				<u-dropdown-item @change="change" v-model="value2" title="温度" :options="options2"></u-dropdown-item> -->
 				<u-dropdown-item class="u-drop" :title="title" >
@@ -19,11 +20,18 @@
 					</view>
 				</u-dropdown-item>
 			</u-dropdown>
+			</view>
+			<view @click="showFilterModal" class="filter-view">
+				<image src="../../static/image/user/income_filter.png" style="width: 40rpx;height: 40rpx;"></image>
+			</view>
 		</view>
 		
 		<view class="mid">
 			<view class="choice">
-				<u-subsection inactive-color="#999999" active-color="#666666" @change="change" bg-color="rgba(255,255,255,0.2)" :list="group" :current="current"></u-subsection>
+				<u-subsection inactive-color="#999999" active-color="#666666" @change="change" bg-color="rgba(255,255,255,0.2)" :list="[
+					{name:'人工'},
+					{name:'量化'}
+				]" :current="current"></u-subsection>
 			</view>
 			<view class="mid_content">
 				<view class="mid_left">
@@ -42,7 +50,7 @@
 				<u-empty mode="history" margin-top="50"></u-empty>
 			</view>
 			<view v-else>
-				<view class="bottom_block" v-for="item in list" :key="item.nid">
+				<view class="bottom_block" v-for="item in boundList" :key="item.id">
 					<view class="bottom_top">
 						<text class="u-font-28">{{item.money>0?'增加保证金':'扣除保证金'}}</text>
 						<text v-if="item.money>=0" class="u-font-28 blue">{{item.money}}</text>
@@ -54,6 +62,30 @@
 				</view>
 			</view>
 		</view>
+		
+		<u-modal v-model="showModal" mask-close-able showCancelButton :show-title="false" @confirm="billSearch" :title-style="{color:'#FFFFFF'}" :modalStyle="{backgroundColor:'#333'}" :content-style="{ color: '#FFFFFF'}" confirmColor="#FFFFFF">
+			<view class="bill-content">
+				<view class="bill-content-title light-bold-text">
+					<view class="bill-content-title-left">
+						<text>账期筛选</text>
+					</view>
+					<view class="bill-content-title-right">
+						<checkbox-group @change="allSelectChange">
+							<checkbox value="1" :checked="allCheckboxStatus"></checkbox>
+							<text>全选</text>
+						</checkbox-group>
+					</view>
+				</view>
+				<view class="bill-content-list-box">
+					<checkbox-group @change="billCheck">
+						<view class="bill-content-list light-bold-text" v-for="item in billPeriods" :key="item">
+							<text>{{item}}</text>
+							<checkbox :value="item" :checked="allCheckboxStatus? true: (checkedPeriods.includes(item)? true: false)"></checkbox>
+						</view>
+					</checkbox-group>
+				</view>
+			</view>
+		</u-modal>
 	</view>
 </template>
 
@@ -66,26 +98,29 @@
 		data() {
 			return {
 				title:'',
-				man_fullBond:0,
-				lh_fullBond:0,
-				man_nowBond:0,
-				lh_nowBond:0,
+				//man_fullBond:0,
+				//lh_fullBond:0,
+				//man_nowBond:0,
+				//lh_nowBond:0,
 				fullBond:0,
 				nowBond:0,
 				hasOperate: false,
-				man_bond_list:[],
-				lh_bond_list:[],
-				list:[],
-				group:[
-					{name:'人工'},
-					{name:'量化'}
-				],
+				//man_bond_list:[],
+				//lh_bond_list:[],
+				showModal: false,
+				list: [],
+				// 所有的账期 日期列表
+				billPeriods: [],
+				// 选择的账期
+				checkedPeriods: [],
+				confirmCheckedPeriods: [],
+				allCheckboxStatus: false,
 				current: 0,
-				value1: '',
-				value2: '2',
-				mask: true,
-				self_close: true,
-				activeColor: '#FFFFFF',
+				//value1: '',
+				//value2: '2',
+				//mask: true,
+				//self_close: true,
+				//activeColor: '#FFFFFF',
 				userList:[]
 			}
 		},
@@ -98,6 +133,29 @@
 				// {
 				// 	this.current = 0;
 				// }
+			},
+			showFilterModal() {
+				if (this.billPeriods.length>0) {
+					this.showModal = true;
+				}
+			},
+			billSearch() {
+				this.confirmCheckedPeriods = this.checkedPeriods
+			},
+			allSelectChange(e) {
+				const values = e.detail.value;
+				if (values.length>0) {
+					this.allCheckboxStatus = true;
+					this.checkedPeriods = this.billPeriods;
+				} else {
+					this.allCheckboxStatus = false;
+					this.checkedPeriods = [];
+				}
+			},
+			billCheck(e) {
+				const values = e.detail.value;
+				this.checkedPeriods = values;
+				console.log(values)
 			},
 			async getData(index) {
 				const res =await getBondList(index);
@@ -155,6 +213,15 @@
 					default:
 						break;
 				}
+				const n = this.list.length
+				console.log('this.list')
+				console.log(this.list)
+				const periods = []
+				for(let m = 0;m<n;m++) {
+					periods.push(this.list[m].accounting_period)
+				}
+				this.checkedPeriods = this.confirmCheckedPeriods = []
+				this.billPeriods = periods
 			}
 		},
 		async onLoad() {
@@ -182,6 +249,17 @@
 				}
 				return uni.getStorageSync('wx_login_username')
 			},
+			// 保证金列表
+			boundList: function() {
+				const periods = this.confirmCheckedPeriods
+				console.log('computed ')
+				console.log(this.list)
+				const list = this.list.filter((row)=> {
+					return periods.length>0 ? periods.includes(row.accounting_period): true
+				})
+				console.log(this.list)
+				return list;
+			}
 		}
 	}
 </script>
@@ -193,11 +271,23 @@
 </style>
 <style lang="scss">
 	.u-width{
-		width: 40%;
-		background-color: rgba(255,255,255,0.1);
-		border-radius:8rpx;
+		display: flex;
 		margin-left: 20rpx;
 		margin-right: 20rpx;
+		justify-content: space-between;
+	}
+	.u-dropdown-css {
+		width: 40%;
+		display: flex;
+		background-color: rgba(255,255,255,0.1);
+		border-radius:8rpx;
+	}
+	.filter-view {
+		display: flex;
+		align-items: center;
+	}
+	::v-deep .hairline-left {
+		border-left: 1px solid #F2F2F2;
 	}
 	.font_class{
 		color: #fff;
@@ -214,7 +304,7 @@
 			flex-direction: column;
 			flex-wrap: nowrap;
 			justify-content: space-between;
-			
+			padding-right: 20rpx;
 			.item {
 				border: 1px solid #b2b2b2;
 				color: #b2b2b2;
@@ -314,4 +404,65 @@
 	.red{
 		color:#E34567;
 	}
+	.bill-content {
+		display: flex;
+		flex-direction: column;
+		padding-left: 32rpx;
+		margin-top: 40rpx;
+		padding-right: 32rpx;
+		&-title {
+			display: flex;
+			justify-content: space-between;
+			&-left {
+				
+			}
+			&-right {
+				display: flex;
+				align-items: center;
+				>checkbox-group {
+					display: flex;
+					align-items: center;
+					>checkbox {
+						transform: scale(0.6);
+					}
+					>text {
+						font-size: 24rpx;
+					}
+				}
+			}
+		}
+		&-list-box {
+			display: flex;
+			margin-bottom: 20rpx;
+			>checkbox-group {
+				width: 686rpx;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+			}
+			.bill-content-list {
+				font-size: 24rpx;
+				margin-top:10rpx;
+				margin-bottom: 10rpx;
+				
+				height: 48rpx;
+				line-height: 48rpx;
+				
+				>text {
+					margin-right: 10rpx;
+				}
+				>checkbox {
+					transform: scale(0.6);
+				}
+			}
+		}
+	}
+	.bill-date {
+		font-size: 20rpx;
+		font-family: SimHei;
+		font-weight: 400;
+		color: #FFFFFF;
+		opacity: 0.7;
+	}
+	
 </style>

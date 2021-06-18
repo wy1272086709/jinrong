@@ -34,7 +34,7 @@
 						<view class="left-view common-font1 color-1">{{row.created_at}}</view>
 						<view class="right-view">
 							<text style="margin-right: 10rpx;" class="color-2 common-font1">变更后实际资金: </text>
-							<text class="color-3 common-font1">{{row.end_capital}}</text>
+							<text class="color-3 common-font1">{{row.end_capital.toFixed(2)}}</text>
 						</view>
 					</view>
 				</view>
@@ -257,13 +257,14 @@
 				display: flex;
 				justify-content: space-between;
 				padding-bottom: 20rpx;
+				align-items: center;
 				
 			}
 			&-2 {
 				display: flex;
 				justify-content: space-between;
 				padding-bottom: 20rpx;
-				
+				align-items: center;
 			}
 		}
 	}

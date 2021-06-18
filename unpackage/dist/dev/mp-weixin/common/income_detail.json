@@ -2,7 +2,7 @@
   "component": true,
   "usingComponents": {
     "qiun-data-charts": "/uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts",
-    "u-button": "/uview-ui/components/u-button/u-button",
+    "u-subsection": "/uview-ui/components/u-subsection/u-subsection",
     "u-table": "/uview-ui/components/u-table/u-table",
     "u-tr": "/uview-ui/components/u-tr/u-tr",
     "u-th": "/uview-ui/components/u-th/u-th",

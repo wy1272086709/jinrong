@@ -3,9 +3,9 @@
 		<!-- <view class="header">
 			<text>{{user}}</text>
 		</view> -->
-		<view>
-			<view class="u-width ">
-				<u-dropdown  :close-on-click-self="self_close" :close-on-click-mask="mask" ref="uDropdown" inactive-color="#fff" :activeColor="activeColor">
+		<view class="fixed-css u-width" :style="{zIndex}">
+			<view class="u-300 bg-border">
+				<u-dropdown  :close-on-click-self="self_close" :close-on-click-mask="mask" ref="uDropdown" inactive-color="#fff" :activeColor="activeColor" @open="openDropdown" @close="closeDropdown">
 					<!-- <u-dropdown-item @change="change" v-model="value1" title="距离" :options="options1"></u-dropdown-item>
 					<u-dropdown-item @change="change" v-model="value2" title="温度" :options="options2"></u-dropdown-item> -->
 					<u-dropdown-item class="u-drop" :title="title" >
@@ -21,112 +21,114 @@
 				</u-dropdown>
 			</view>
 		</view>
-		<view class="body">
-			<view class="content">
-				<view class="content_top">
-					<view class="content_left">
-						<text>本月目标交易笔数:</text>
-						<text class="u-m-l-10">{{month_trade_target}}</text>
+		<scroll-view :scroll-y="true" :style="{height:scrollHeight, marginTop: '80rpx',zIndex:2}">
+			<view class="body">
+				<view class="content">
+					<view class="content_top">
+						<view class="content_left">
+							<text>本月目标交易笔数:</text>
+							<text class="u-m-l-10">{{month_trade_target}}</text>
+						</view>
+						<view class="content_right">
+							<text>已达成交易笔数:</text>
+							<text class="u-m-l-10">{{month_trade_now}}</text>
+						</view>
 					</view>
-					<view class="content_right">
-						<text>已达成交易笔数:</text>
-						<text class="u-m-l-10">{{month_trade_now}}</text>
-					</view>
-				</view>
-				<view class="content_bottom">
-					<view class="content_bottom_progress">
-						<u-line-progress active-color="#51DEFF" :percent="line_percent1" :show-percent="false" :striped="true" :striped-active="true"></u-line-progress>
-					</view>
-					<text class="u-font-20">{{line_percent1+'%'}}</text>
-				</view>
-			</view>
-			<view class="content">
-				<view class="content_top">
-					<view class="content_left">
-						<text>本月目标收益率:</text>
-						<text class="u-m-l-10">{{month_profit_target}}%</text>
-					</view>
-					<view class="content_right">
-						<text>已达成收益率:</text>
-						<text class="u-m-l-10">{{month_profit_now}}%</text>
+					<view class="content_bottom">
+						<view class="content_bottom_progress">
+							<u-line-progress active-color="#51DEFF" :percent="line_percent1" :show-percent="false" :striped="true" :striped-active="true"></u-line-progress>
+						</view>
+						<text class="u-font-20">{{line_percent1+'%'}}</text>
 					</view>
 				</view>
-				<view class="content_bottom">
-					<view class="content_bottom_progress">
-						<u-line-progress active-color="#FF3F6A" :percent="line_percent2" :show-percent="false" :striped="true" :striped-active="true"></u-line-progress>
+				<view class="content">
+					<view class="content_top">
+						<view class="content_left">
+							<text>本月目标收益率:</text>
+							<text class="u-m-l-10">{{month_profit_target}}%</text>
+						</view>
+						<view class="content_right">
+							<text>已达成收益率:</text>
+							<text class="u-m-l-10">{{month_profit_now}}%</text>
+						</view>
 					</view>
-					<text class="u-font-20">{{line_percent2+'%'}}</text>
-				</view>
-			</view>
-			<view class="content">
-				<view class="content_top">
-					<view class="content_left">
-						<text>本期目标交易笔数:</text>
-						<text class="u-m-l-10">{{threeMonth_trade_target}}</text>
-					</view>
-					<view class="content_right">
-						<text>已达成交易笔数:</text>
-						<text class="u-m-l-10">{{threeMonth_trade_now}}</text>
-					</view>
-				</view>
-				<view class="content_bottom">
-					<view class="content_bottom_progress">
-						<u-line-progress active-color="#51DEFF" :percent="line_percent3" :show-percent="false" :striped="true" :striped-active="true"></u-line-progress>
-					</view>
-					<text class="u-font-20">{{line_percent3+'%'}}</text>
-				</view>
-			</view>
-			<view class="content">
-				<view class="content_top">
-					<view class="content_left">
-						<text>本期目标收益率:</text>
-						<text class="u-m-l-10">{{threeMonth_profit_target}}%</text>
-					</view>
-					<view class="content_right">
-						<text>已达成收益率:</text>
-						<text class="u-m-l-10">{{threeMonth_profit_now}}%</text>
+					<view class="content_bottom">
+						<view class="content_bottom_progress">
+							<u-line-progress active-color="#FF3F6A" :percent="line_percent2" :show-percent="false" :striped="true" :striped-active="true"></u-line-progress>
+						</view>
+						<text class="u-font-20">{{line_percent2+'%'}}</text>
 					</view>
 				</view>
-				<view class="content_bottom">
-					<view class="content_bottom_progress">
-						<u-line-progress active-color="#FF3F6A" :percent="line_percent4" :show-percent="false" :striped="true" :striped-active="true"></u-line-progress>
+				<view class="content">
+					<view class="content_top">
+						<view class="content_left">
+							<text>本期目标交易笔数:</text>
+							<text class="u-m-l-10">{{threeMonth_trade_target}}</text>
+						</view>
+						<view class="content_right">
+							<text>已达成交易笔数:</text>
+							<text class="u-m-l-10">{{threeMonth_trade_now}}</text>
+						</view>
 					</view>
-					<text class="u-font-20">{{line_percent4+'%'}}</text>
+					<view class="content_bottom">
+						<view class="content_bottom_progress">
+							<u-line-progress active-color="#51DEFF" :percent="line_percent3" :show-percent="false" :striped="true" :striped-active="true"></u-line-progress>
+						</view>
+						<text class="u-font-20">{{line_percent3+'%'}}</text>
+					</view>
+				</view>
+				<view class="content">
+					<view class="content_top">
+						<view class="content_left">
+							<text>本期目标收益率:</text>
+							<text class="u-m-l-10">{{threeMonth_profit_target}}%</text>
+						</view>
+						<view class="content_right">
+							<text>已达成收益率:</text>
+							<text class="u-m-l-10">{{threeMonth_profit_now}}%</text>
+						</view>
+					</view>
+					<view class="content_bottom">
+						<view class="content_bottom_progress">
+							<u-line-progress active-color="#FF3F6A" :percent="line_percent4" :show-percent="false" :striped="true" :striped-active="true"></u-line-progress>
+						</view>
+						<text class="u-font-20">{{line_percent4+'%'}}</text>
+					</view>
 				</view>
 			</view>
-		</view>
-		<view class="foot">
-			<view v-if="circle_percent>=0 && circle_percent<10">
-				<u-circle-progress width="300" bg-color="#333" active-color="#28713E" :percent="circle_percent">
-					<view class="u-progress-content">
-						<text class="u-progress-info green">{{circle_percent}}%</text>
-					</view>
-				</u-circle-progress>	
+			<view class="foot">
+				<view v-if="circle_percent>=0 && circle_percent<10">
+					<u-circle-progress width="300" bg-color="#333" active-color="#28713E" :percent="circle_percent">
+						<view class="u-progress-content">
+							<text class="u-progress-info green">{{circle_percent}}%</text>
+						</view>
+					</u-circle-progress>	
+				</view>
+				<view v-else-if="circle_percent>=10 && circle_percent<20">
+					<u-circle-progress width="300" bg-color="#333" active-color="#F7BA0B" :percent="circle_percent">
+						<view class="u-progress-content">
+							<text class="u-progress-info yellow">{{circle_percent}}%</text>
+						</view>
+					</u-circle-progress>	
+				</view>
+				<view v-else="circle_percent>=20">
+					<u-circle-progress width="300" bg-color="#333" active-color="#ff0000" :percent="circle_percent">
+						<view class="u-progress-content">
+							<text class="u-progress-info red">{{circle_percent}}%</text>
+						</view>
+					</u-circle-progress>	
+				</view>
+				<view class="u-m-t-20">
+					<text class="font_class">最大回撤</text>
+				</view>
+				<view class="u-m-t-40 u-m-b-60 upgrade" @tap="upGrade">
+					<text>升级申请</text>
+				</view>
 			</view>
-			<view v-else-if="circle_percent>=10 && circle_percent<20">
-				<u-circle-progress width="300" bg-color="#333" active-color="#F7BA0B" :percent="circle_percent">
-					<view class="u-progress-content">
-						<text class="u-progress-info yellow">{{circle_percent}}%</text>
-					</view>
-				</u-circle-progress>	
+			<view>
+				<u-toast ref="uToast"></u-toast>
 			</view>
-			<view v-else="circle_percent>=20">
-				<u-circle-progress width="300" bg-color="#333" active-color="#ff0000" :percent="circle_percent">
-					<view class="u-progress-content">
-						<text class="u-progress-info red">{{circle_percent}}%</text>
-					</view>
-				</u-circle-progress>	
-			</view>
-			<view class="u-m-t-20">
-				<text class="font_class">最大回撤</text>
-			</view>
-			<view class="u-m-t-40 u-m-b-60 upgrade" @tap="upGrade">
-				<text>升级申请</text>
-			</view>
-		</view>
-		<view>
-			<u-toast ref="uToast"></u-toast>
-		</view>
+		</scroll-view>
 	</view>
 </template>
 
@@ -140,7 +142,7 @@
 		data() {
 			return {
 				title: 'admin',
-				
+				scrollHeight: '',
 				month_trade_target: 0,
 				month_trade_now: 0,
 				month_profit_target: 0,
@@ -152,7 +154,7 @@
 				threeMonth_profit_now: 0,
 				
 				max_retracement:0,
-				
+				dropdownIndex: '',
 				value1: '',
 				value2: '2',
 				mask: true,
@@ -174,7 +176,8 @@
 			const res = uni.getStorageSync('wx_strategist_list');
 			console.log("res",res);
 			// this.title = this.userName;
-			
+			const info = uni.getSystemInfoSync()
+			this.scrollHeight = info.windowHeight -uni.upx2px(80) +'px'
 			this.userList = JSON.parse(res);
 			
 			//this.userList = res;
@@ -189,6 +192,13 @@
 			}
 		},
 		methods: {
+			openDropdown(index) {
+				console.log('openDropdown+index'+index);
+				this.dropdownIndex = index;
+			},
+			closeDropdown(index) {
+				this.dropdownIndex = '';
+			},
 			format(data) {
 				var data1 = 0;
 				if(data >100)
@@ -311,6 +321,9 @@
 		
 		computed:{
 			...mapState(['strategistId']),
+			zIndex: function() {
+				return this.dropdownIndex!==''?99999999:'';
+			},
 			userName: function() {
 				if (this.$store.state && this.$store.state.userName) {
 					return this.$store.state.userName
@@ -321,13 +334,27 @@
 	}
 </script>
 
-<style>
-	page{
-		background-color: #333;
-	}
-</style>
+
 
 <style lang="scss">
+	page {
+		background-color: #333;
+	}
+	.fixed-css {
+		position: fixed;
+		/* #ifndef H5 */
+		top: 0px;
+		/* #endif */
+		/* #ifdef H5 */
+		top: 44px;
+		/* #endif */
+	}
+	::-webkit-scrollbar {
+		width: 0;
+		height: 0;
+		display: none;	
+		color:transparent;
+	}
 	.green{
 		color: #28713E;
 	}
@@ -340,22 +367,32 @@
 	.u-config-wrap {
 		padding: 40rpx;
 	}
+	.u-padding {
+		padding-left: 20rpx;
+		padding-right: 20rpx;
+	}
+	.u-300 {
+		width: 300rpx;
+	}
 	.u-width{
-		width: 40%;
+		@extend .u-padding;
+		width: 750rpx;
+	}
+	.bg-border {
 		background-color: rgba(255,255,255,0.1);
 		border-radius:8rpx;
-		margin-left: 20rpx;
-		margin-right: 20rpx;
+		height: 80rpx;
 	}
 	.font_class{
 		color: #fff;
 	}
 	.slot-content {
-		width: 40%;
+		width: 300rpx;
 		background-color: rgba(255,255,255,0.1);
-		margin-left: 20rpx;
+		/*margin-left: 20rpx;*/
 		//padding: 24rpx;
-		
+		padding-left: 20rpx;
+		box-sizing: content-box;
 		.item-box {
 			//margin-bottom: 50rpx;
 			display: flex;
@@ -396,8 +433,8 @@
 		justify-content: space-around;
 	}
 	.body{
-		margin-left: 20rpx;
-		margin-right: 20rpx;
+		padding-left: 20rpx;
+		padding-right: 20rpx;
 		color: #ffffff;
 		margin-top: 20rpx;
 		margin-bottom: 20rpx;

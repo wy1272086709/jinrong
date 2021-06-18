@@ -105,7 +105,7 @@
 }
 .user-logout-underline {
   padding-right: 20rpx;
-  color: #EE4368;
+  color: #ed3f5d;
   text-decoration: underline;
 }
 .flex-1 {
@@ -193,11 +193,11 @@
 }
 .red-css {
   font-size: 30rpx;
-  color: #EE4368;
+  color: #ed3f5d;
 }
 .blue-css {
   font-size: 30rpx;
-  color: #0BF4FD;
+  color: #24F5FD;
 }
 #admin-header {
   display: -webkit-box;

@@ -237,7 +237,7 @@
   font-size: 28rpx;
 }
 .blue-color {
-  color: #0BF4FD;
+  color: #24F5FD;
   font-weight: 500;
   font-family: SimHei;
   font-size: 28rpx;

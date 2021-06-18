@@ -67,11 +67,11 @@
 }
 .red-css {
   font-size: 48rpx;
-  color: #EE4368;
+  color: #ed3f5d;
 }
 .blue-css {
   font-size: 48rpx;
-  color: #0BF4FD;
+  color: #24F5FD;
 }
 scroll-view ::-webkit-scrollbar {
   display: none;

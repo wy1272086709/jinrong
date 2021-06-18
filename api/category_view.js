@@ -10,14 +10,33 @@ export function getStrategyChildGroupList(groupId, strategistId) {
 	return resp;
 }
 
-export  function getStrategyCategory(cid, status, strategistId) {
+// isCgroupId 为false 时候,cid 对应的是groupId
+// isCgroupId 为true 的时候,cid对应的是cgroup_id
+export  function getStrategyCategory(cid, status, strategistId, isCgroupId) {
 	const url = getApp().globalData.serverUrl+"/strategys/category";
+	const token = uni.getStorageSync('wx_login_token');
+	const params =  {
+		token: token,
+		strategist_id: strategistId,
+		status: status=== -1?0:status
+	}
+	if (!isCgroupId) {
+		params.groupId = cid;
+	}
+	else if (isCgroupId) {
+		params.cgroup_id = cid
+	}
+	const resp  = http.request(url,params);
+	return resp;
+}
+
+export function getCgrouplist(groupId, strategistId) {
+	const url = getApp().globalData.serverUrl+"/strategys/cgrouplist";
 	const token = uni.getStorageSync('wx_login_token');
 	const resp  = http.request(url, {
 		token: token,
-		groupId: cid,
-		strategist_id: strategistId,
-		status: status=== -1?0:status
+		group_id: groupId,
+		strategist_id: strategistId
 	});
 	return resp;
 }

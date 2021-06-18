@@ -19,13 +19,13 @@
 			</view>
 		</view>
 		<!-- 间隔52px -->
-		<u-gap height="4" :custom-style="{ 'margin-top': '52px' }" bg-color="#626262"></u-gap>
+		<u-gap height="4" :custom-style="{ 'margin-top': '75rpx' }" bg-color="#626262"></u-gap>
 		
 		<scroll-view :scroll-y="true" :style="'height:'+scrollHeight+ 'px'+';z-index:3'">
 			<view>
 				
 			<view class="category-component-clazz" :style="index == categoryList.length -1 ? 'margin-bottom:0px':''" v-for="categoryObject, index in categoryList" :key="categoryObject.title" @gotoCategoryView="gotoCategoryView" v-if="categoryList.length>0">
-				<view class="strategy-group-name">
+				<view class="strategy-group-name" v-if="!isCgroupId">
 					{{categoryObject.title}}
 				</view>
 				<strategy-component-item @stopOrStart="statusControl" :item="item"  v-for="item in categoryObject.slist" :key="item.id">
@@ -126,10 +126,11 @@
 					/*border: '1rpx solid rgba(38,214,80,1)'*/
 				},
 				isShowCancel: false,
-				marginTop: '',
 				showModal: false,
 				title1: '全部币种',
-				title2: '所有状态'
+				title2: '所有状态',
+				isCgroupId: false,
+				marginTop: ''
 			}
 		},
 		computed:{
@@ -148,16 +149,25 @@
 			this.width = info.windowWidth + 'px';
 			this.height= info.windowHeight + 'px';
 			
-			uni.setNavigationBarTitle({
-				title:option.title
-			});
-			this.groupId = option.groupId;
+			if (option.title) {
+				uni.setNavigationBarTitle({
+					title:option.title
+				});
+			}
+			if (option.groupId) {
+				this.groupId = option.groupId;
+				this.isCgroupId = false
+			} else if(option.cgroup_id) {
+				this.groupId = option.cgroup_id
+				this.isCgroupId = true
+			}
 			//console.log('list:'+JSON.stringify(this.categoryList));
 			this.options2 = getRunningStatus();
 			this.isIphoneX = getApp().globalData.isIphoneX
 			const iphoneXPadding = this.isIphoneX ? uni.upx2px(68): 0;
-			this.scrollHeight = info.windowHeight - 53 - iphoneXPadding;
-			this.marginTop = 40+'px';
+			this.scrollHeight = info.windowHeight - uni.upx2px(79-4) - iphoneXPadding;
+			//this.marginTop = 40+'px';
+			this.marginTop = uni.upx2px(79) 
 			this.setCategoryList()
 		},
 		onShow() {
@@ -250,7 +260,7 @@
 				});
 			},
 			async setCategoryList() {
-				const res  = await getStrategyCategory(this.groupId, this.value2, this.strategistId);
+				const res  = await getStrategyCategory(this.groupId, this.value2, this.strategistId, this.isCgroupId);
 				//console.log('res:'+JSON.stringify(res)+',title3:');
 				if (res.currency_list.length ==0) {
 					this.categoryList = [];
@@ -465,11 +475,19 @@
 		::v-deep .u-default-plain-hover {
 			background: rgba(255, 255, 255, 0.2) !important;
 		}
+		/** 最后一个元素,margin-bottom 为0px **/
+		::v-deep .category-component-clazz {
+			margin-bottom: 20px;
+		}
+		
+		::v-deep .category-component-clazz:nth-child(1) {
+			margin-top: 27rpx;
+		}
 		
 		#strategy-search {
 			display: flex;
 			box-sizing: content-box;
-			height: 52px;
+			/*height: 104rpx;*/
 			background-color: $kp-bg-color;
 			position: fixed;
 			flex-direction: column;
@@ -528,12 +546,5 @@
 		padding-bottom: constant(safe-area-inset-bottom);  
 		padding-bottom: env(safe-area-inset-bottom);  
 	}
-	/** 最后一个元素,margin-bottom 为0px **/
-	/deep/ .category-component-clazz {
-		margin-bottom: 20px;
-	}
 	
-	/deep/ .category-component-clazz:nth-child(1) {
-		margin-top: 20px;
-	}
 </style>

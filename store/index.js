@@ -18,6 +18,7 @@ const store = new Vuex.Store({
 		login(state, userName) {
 			state.userName = userName || 'Admin';
 			state.hasLogin = true;
+			state.strategistId = ''
 		},
 		setStrategistId(state, strategistId) {
 			state.strategistId = strategistId;

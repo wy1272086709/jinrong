@@ -167,7 +167,7 @@ view {
   /*padding-left: 20rpx;*/
   padding-right: 20rpx;
   /*margin-left: 5px;*/
-  color: #EE4368;
+  color: #ed3f5d;
   text-decoration: underline;
 }
 #overall_title_image_view {
@@ -592,15 +592,19 @@ view {
   display: flex;
 }
 .green-css {
-  color: #24BFB7;
+  color: #24F5FD;
+  font-weight: bold;
 }
 .red-css {
-  color: #EE4368;
+  color: #ed3f5d;
+  font-weight: bold;
 }
 .green-class {
-  color: #24BFB7;
+  color: #24F5FD;
+  font-weight: bold;
 }
 .red-class {
-  color: #EE4368;
+  color: #ed3f5d;
+  font-weight: bold;
 }
 

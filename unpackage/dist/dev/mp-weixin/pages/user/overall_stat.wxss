@@ -25,11 +25,32 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+  color: transparent;
+}
+.myBorder {
+  /*height: 560rpx;*/
+  height: 670rpx;
+  border: 1px solid #4D5269;
+  -webkit-border-radius: 20rpx;
+          border-radius: 20rpx;
+  background-color: #4D5269;
+  margin: 20rpx;
+}
+.dataDate {
+  margin: 20rpx;
+}
 .charts-box {
   width: 100%;
-  height: 300px;
-  background-color: #333333;
+  height: 500rpx;
 }
+/*.ec-canvas {
+  width: 100%;
+  height: 500rpx;
+} */
 .title {
   color: #FFFFFF;
 }
@@ -38,6 +59,24 @@
   background: #333333;
   min-height: 100vh;
   /*flex-direction: column;*/
+}
+.u-item-title {
+  position: relative;
+  font-size: 15px;
+  padding-left: 8px;
+  line-height: 1;
+  margin-bottom: 11px;
+}
+.u-item-title:after {
+  position: absolute;
+  width: 4px;
+  top: -1px;
+  height: 16px;
+  content: '';
+  left: 0;
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
+  background-color: #2979ff;
 }
 .charts {
   width: 666rpx;
@@ -152,11 +191,11 @@
   border-bottom: 1px solid #F2F2F2;
 }
 .red-css {
-  color: #EE4368;
+  color: #ed3f5d;
   font-weight: bold;
 }
 .green-css {
-  color: #0BF4FD;
+  color: #24F5FD;
   font-weight: bold;
 }
 

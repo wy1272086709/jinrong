@@ -54,7 +54,7 @@
 			<view class="left-text pre-text">
 				<view>
 					<text class="green-css">止盈</text>
-					<text class="u-m-l-60">{{delegateInfo.prof_price}}</text>
+					<text class="u-m-l-30">{{delegateInfo.prof_price}}</text>
 				</view>
 				<view class="u-m-l-10 u-font-20">
 					<text v-if="delegateInfo.prof_price>0" class="green-css">{{getFloatProfit(1)}}</text>
@@ -74,7 +74,7 @@
 			<view class="left-text pre-text">
 				<view>
 					<text class="red-css">止损</text>
-					<text class="u-m-l-60">{{delegateInfo.loss_price}}</text>	
+					<text class="u-m-l-30">{{delegateInfo.loss_price}}</text>	
 				</view>
 				<view class="u-m-l-10 u-font-20">
 					<text v-if="delegateInfo.loss_price>0" class="red-css">{{getFloatProfit(2)}}</text>
@@ -211,7 +211,7 @@
 					if(parseFloat(this.delegateInfo.loss_price) > 0)
 					{
 						const floatProfit = (parseFloat(this.delegateInfo.open_price) - parseFloat(this.delegateInfo.loss_price))*parseFloat(volume1) *this.info;
-						return "(预估亏损"+ Math.abs(parseFloat(floatProfit).toFixed(2))  + ")";
+						return "(预估亏损-"+ Math.abs(parseFloat(floatProfit).toFixed(2))  + ")";
 					}
 					else{
 						return "(预估亏损 0)";

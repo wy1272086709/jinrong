@@ -106,7 +106,6 @@ page {
   border-left: 1rpx solid #b1b7bc;
 }
 #root-view #icon-header-view {
-  padding-left: 32rpx;
   padding-right: 32rpx;
   display: -webkit-box;
   display: -webkit-flex;
@@ -800,7 +799,7 @@ padding-bottom: 20px;*/
 .user-logout-underline {
   padding-right: 20rpx;
   /*margin-left: 5px;*/
-  color: #EE4368;
+  color: #ed3f5d;
   text-decoration: underline;
 }
 .list {

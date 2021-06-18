@@ -2,7 +2,9 @@
   "navigationBarTitleText": "总收益统计",
   "enablePullDownRefresh": false,
   "usingComponents": {
-    "qiun-data-charts": "/uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts",
-    "u-button": "/uview-ui/components/u-button/u-button"
+    "u-no-network": "/uview-ui/components/u-no-network/u-no-network",
+    "u-subsection": "/uview-ui/components/u-subsection/u-subsection",
+    "u-loadmore": "/uview-ui/components/u-loadmore/u-loadmore",
+    "ec-canvas": "/components/uni-ec-canvas"
   }
 }

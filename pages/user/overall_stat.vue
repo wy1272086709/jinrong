@@ -1,14 +1,14 @@
 <template>
 	<!-- :style="{height}" -->
-	<view id="root-view" :style="{height}">
-		
+	<scroll-view id="root-view" :scroll-y="true" :style="{height}">
+		<u-no-network></u-no-network>
 		<view id="income-view">
 			<!--
 			<u-gap height="14"  bg-color="rgba(#4D5269, 0.5)"></u-gap>
 			-->
 			<view class="gap-view"></view>
 			<view class="income-view-table">
-				<view v-for="item,index in statRes" class="income-view-table-td">
+				<view v-for="item,index in statRes" class="income-view-table-td" :key="index">
 					<view class="income-view-table-td-top" :style="index == statRes.length -1 ? 'border-right:none': ''">
 						<view class="income-view-table-td-label">{{item.label}}</view>
 						<view :class="parseFloat(item.data[0])<0?'red-css':'green-css'">{{item.data[0]}}</view>
@@ -39,53 +39,78 @@
 				
 			</view>
 		</view> -->
-		<view class="u-m-t-20 u-m-b-20 u-m-l-20">
-			<text class="title ">每日收益</text>
-		</view>
-		<view class="charts-box">
-		  <qiun-data-charts
-		    type="column1"
-		    :chartData="chartData"
-		    :inScrollView="true"
-			canvasId="NQdtTYwbUfaQacybcWrUADxyYjK"
-		    :canvas2d="true"
-		    background="#333"
-		    :animation="false"
-		    :ontouch="true"
-			:opts="{extra:{tooltip:{showArrow: false,borderWidth: 1,borderRadius:8,borderColor: '#333',bgColor: '#333',bgOpacity: 0.9,fontColor: '#fff',splitLine: false}}}"
-			:tooltipCustom="{x:2,y:2}"
-		  />
-		</view>
-		<view id="income-curve-view">
-			<view id="income-curve-view-stat-button">
-				<u-button type="my" size="mini" :custom-style="{ backgroundColor: date_limit==0?'#676D81':'rgba(255,255,255, 0.1)', color: date_limit == 0? '#FFFFFF': '#C6C6C6'}" @click="getIncomeCurve(0)" throttleTime="50">近一月</u-button>
-				<u-button type="my" size="mini" :custom-style="{ backgroundColor: date_limit==1?'#676D81': 'rgba(255,255,255, 0.1)', color: date_limit == 1? '#FFFFFF': '#C6C6C6' }" @click="getIncomeCurve(1)" throttleTime="50">近半年</u-button>
-				<u-button type="my" :custom-style="{ backgroundColor: date_limit==2?'#676D81': 'rgba(255,255,255, 0.1)', color: date_limit == 2? '#FFFFFF': '#C6C6C6'}" size="mini" @click="getIncomeCurve(2)" throttleTime="50">近一年</u-button>
-				<u-button type="my" :custom-style="{ backgroundColor: date_limit==3?'#676D81':'rgba(255,255,255, 0.1)',  color: date_limit == 3? '#FFFFFF': '#C6C6C6'}" size="mini" @click="getIncomeCurve(3)" throttleTime="50">全部</u-button>
+		<view class="myBorder">
+			<view class="u-m-t-20 u-m-b-20 u-m-l-20 u-item-title">
+				<text class="title ">每日收益</text>
+			</view>
+			
+			<!--
+			<view>
+				<navigator url="/pages/user/test">跳转链接</navigator>
+			</view>
+			-->
+			<view class="charts-box">
+				<!--
+			  <qiun-data-charts
+			    type="column4"
+			    :chartData="chartData"
+			    canvasId="aF2d6ejUMpFr00Z9c1dREg7xaUup0Mpu"
+			    :canvas2d="true"
+			    background="#4D5269"
+				:disableScroll="true"
+			  	opts="{enableScroll: false}"
+			    :ontouch="true"
+			  	:onmovetip="true"
+			  	@getTouchMove="getTouchMove"
+				:opts="{xAxis:{format:'xAxis'}}"
+			  />
+			  -->
+			  <ec-canvas canvasId="mychart-dom" @onInit="renderChart1" :ec="ec"></ec-canvas>
+			
+			
+			</view>
+			
+			<view class="dataDate">
+				
+				<u-subsection @change="sectionChange" height="50" font-size="20" :list="list" mode="button" active-color="#1890FF" inactive-color="#4D5269"></u-subsection>
+				
 			</view>
 		</view>
 		
-		
-		<view class="u-m-t-20 u-m-b-20 u-m-l-20">
-			<text class="title ">累计盈亏</text>
-		</view>
-		
-		<view class="charts-box">
-		  <qiun-data-charts
-		    type="line2"
-		    :chartData="chartData1"
-		    :inScrollView="true"
-		    canvasId="MCScEZfB5JkHmwLAOBSANGpfoHaViPSx"
-		    :canvas2d="true"
-		    background="#333333"
-		    :animation="false"
-		    :ontouch="true"
+		<view class="myBorder">
+			<view class="u-m-t-20 u-m-b-20 u-m-l-20 u-item-title">
+				<text class="title ">累计盈亏</text>
+			</view>
 			
-		  />
+			<view class="charts-box">
+			<!--
+			  <qiun-data-charts
+			    type="line3"
+			    :chartData="chartData3"
+			    canvasId="MCScEZfB5JkHmwLAOBSANGpfoHaViPSx"
+			    :canvas2d="true"
+			    background="#4D5269"
+				:disableScroll="true"
+			    opts="{enableScroll: false}"
+			    :ontouch="true"
+			    :onmovetip="true"
+			    @getTouchMove="getTouchMove"
+			  />
+			  -->
+			  
+			  <ec-canvas canvasId="mychart-dom2" @onInit="renderChart1" :ec="ec2"></ec-canvas>
+			  
+			</view>
+			
+			<view class="dataDate">
+				
+				<u-subsection @change="sectionChange1" height="50" font-size="20" :list="list" mode="button" active-color="#1890FF" inactive-color="#4D5269"></u-subsection>
+				
+			</view>
 		</view>
+		<u-loadmore bg-color="#333" margin-top="20" margin-bottom="20" status="nomore"></u-loadmore>
 		
-		
-	</view>
+	</scroll-view>
 </template>
   
 <script>
@@ -93,31 +118,63 @@
 		mapState
 	} from 'vuex';
 	import http from '@/common/http.js';
-	import uCharts from '../../components/u-charts/u-charts.js';
-	import uCharts1 from '@/uni_modules/qiun-data-charts/js_sdk/u-charts/config-ucharts.js';
+	import * as echarts from '@/components/echarts.min.js';
+	//import uCharts from '../../components/u-charts/u-charts.js'
+	//import uCharts1 from '@/uni_modules/qiun-data-charts/js_sdk/u-charts/config-ucharts.js'
+	import ecCanvas from '@/components/uni-ec-canvas.vue'
+   import { commonConfig, lineConfig } from '@/components/echarts.config.js'
+    
 	import {getDaysProfit,getProfit_cumulative} from '@/api/overall_stat.js'
 	let canvaLineA = {};
 	let chart = null;
 	export default {
 		computed: {
-			...mapState([ 'strategistId']),
+			...mapState(['strategistId']),
+		},
+		components: {
+			ecCanvas
 		},
 		data() {
-			return {
+			const _self = this
+			const obj =  {
 				statRes: [
 					
 				],
+				ec: {
+					option: {}
+				},
+				ec2: {
+					option: {}
+				},
 				pixelRatio:1,
 				width: '',
+				lazyLoad: true,
 				height: '',
 				cWidth: '',
 				cHeight: '',
 				date_limit: 0,
 				chartData:{},
-				chartData1:{},
+				chartData3:{},
 				tips:'',
-				index:0
+				index:0,
+				list:[
+					{
+						name:'近一月'
+					},
+					{
+						name:'近半年'
+					},
+					{
+						name:'近一年'
+					},
+					{
+						name:'近三年'
+					}
+				],
+				current:0,
 			}
+			return obj
+			
 		},
 		onLoad() {
 			const info = uni.getSystemInfoSync();
@@ -128,11 +185,92 @@
 			this.cHeight = uni.upx2px(500);
 			this.getCategorySumStats();
 			this.getIncomeCurve(0);
-			
+			this.getcumulative(0);
+			console.log(commonConfig)
 		},
 		methods: {
+			async renderChart1(e) {
+				
+			},
+			sectionChange(index){
+				console.log("sectionchange");
+				switch(index){
+					case 0:
+						console.log("sectionchange0");
+						this.current = 0;
+						this.getIncomeCurve(0);
+						break;
+					case 1:
+						console.log("sectionchange1");
+						this.current = 1;
+						this.getIncomeCurve(1);
+						break;
+					case 2:
+						console.log("sectionchange2");
+						this.current = 2;
+						this.getIncomeCurve(2);
+						break;
+					case 3:
+						console.log("sectionchange3");
+						this.current = 3;
+						this.getIncomeCurve(3);
+						break;
+					default:
+						console.log("sectionchange9");
+						break;
+				}
+			},
+			sectionChange1(index){
+				console.log("sectionchange");
+				switch(index){
+					case 0:
+						console.log("sectionchange0");
+						this.current = 0;
+						this.getcumulative(0);
+						break;
+					case 1:
+						console.log("sectionchange1");
+						this.current = 1;
+						this.getcumulative(1);
+						break;
+					case 2:
+						console.log("sectionchange2");
+						this.current = 2;
+						this.getcumulative(2);
+						break;
+					case 3:
+						console.log("sectionchange3");
+						this.current = 3;
+						this.getcumulative(3);
+						break;
+					default:
+						console.log("sectionchange9");
+						break;
+				}
+			},
+			async getcumulative(dataLimit)
+			{
+				console.log('getcumulative')
+				console.log(this.strategistId)
+				let chartdata2 =await getProfit_cumulative(this.strategistId,dataLimit);
+				
+				if(dataLimit==0)
+				{
+					for(var j = 0 ;j<chartdata2.categories.length;j++)
+					{
+						chartdata2.categories[j] = chartdata2.categories[j].substr(5,9);
+					}
+				}
+				lineConfig.xAxis[0].data = chartdata2.categories
+				lineConfig.series[0].data = chartdata2.series[0].data
+				lineConfig.categories = chartdata2.categories
+				this.ec2.option = lineConfig
+				//this.chartData3= chartdata2				
+			},
 			async getIncomeCurve(dateLimit)
 			{
+				console.log('getINcomeCurve')
+				
 				this.date_limit = dateLimit;
 				const strategistId = this.strategistId;
 				let data = []
@@ -145,33 +283,48 @@
 				try{
 					if(data && !Array.isArray(data))
 					{
-						console.log('data',JSON.parse(JSON.stringify(data)));
-						let chartdata1 = JSON.parse(JSON.stringify(data));
-						chartdata1.series[0].name="收益(红色表示亏损,绿色表示盈利)";
-						//this.chartData1 = JSON.parse(JSON.stringify(data));
-						for(var i = 0;i<chartdata1.series[0].data.length;i++)
+						console.log('data here!')
+						let chartdata1 = data
+						console.log(data)
+						//console.log('data',JSON.parse(JSON.stringify(data)));
+						//let chartdata1 = JSON.parse(JSON.stringify(data));
+						// (红色表示亏损,绿色表示盈利)
+						chartdata1.series[0].name="收益";
+						chartdata1.series[0].type = 'bar'
+						if(dateLimit==0)
 						{
-							//chartdata1.series[0].format = "yAxisDemo2";
-							if(chartdata1.series[0].data[i]>=0)
+							for(var j = 0 ;j<chartdata1.categories.length;j++)
 							{
-								chartdata1.series[0].data[i]={value:Math.abs(chartdata1.series[0].data[i]),color:'#0BF4FD'}
-							}
-							else{
-								chartdata1.series[0].data[i]={value:Math.abs(chartdata1.series[0].data[i]),color:'#EE4368'}
+								chartdata1.categories[j] = chartdata1.categories[j].substr(5,9);
 							}
 						}
-						this.chartData = chartdata1;
+						for(var i = 0;i<chartdata1.series[0].data.length;i++)
+						{
+							const v = parseFloat(chartdata1.series[0].data[i])
+							if(chartdata1.series[0].data[i]>=0)
+							{
+								chartdata1.series[0].data[i]={ value: v.toFixed(2), itemStyle: { color:'#00C087'} }
+							}
+							else{
+								chartdata1.series[0].data[i]= { value: v.toFixed(2), itemStyle: { color:'#ED6160' } }
+							}
+						}
+						
+						commonConfig.series[0].data = chartdata1.series[0].data;
+						commonConfig.xAxis[0].data = chartdata1.categories
+						this.commonConfig = commonConfig  
+						console.log(commonConfig)
+						this.ec.option = commonConfig
 					}
-					
-					
 				} catch(e) {
-					this.chartData = []
+					
 				}
-				try {
-					this.chartData1 = await getProfit_cumulative(this.strategistId,dateLimit);
-				} catch(e) {
-					this.chartData1 = []
-				}
+			},
+			getTouchMove(e){
+				console.log("获取TouchMove",e);
+			},
+			getTouchMove1(e){
+				console.log("获取TouchMove",e);
 			},
 			getCategorySumStats()
 			{
@@ -202,14 +355,6 @@
 								data.overall.nearly_week + "%"
 							] },
 						]
-						
-						/*this.statRes[0].num = data.overall.accumulated_income;
-						this.statRes[1].num = data.overall.earnings.month;
-						this.statRes[2].num = data.overall.earnings.week;
-						this.statRes[3].num = data.overall.cumulative_rate + "%";
-						this.statRes[4].num = data.overall.nearly_month + "%";
-						this.statRes[5].num = data.overall.nearly_week + "%";
-						*/
 					}
 				});
 			},
@@ -218,12 +363,35 @@
 </script>
 
 <style lang="scss">
+	::-webkit-scrollbar {
+		width: 0;
+		height: 0;
+		display: none;	
+		color:transparent;
+	}
 	
+	.myBorder{
+		/*height: 560rpx;*/
+		height: 670rpx;
+		border: 1px solid #4D5269;
+		border-radius: 20rpx;
+		background-color: #4D5269;
+		margin: 20rpx;
+	}
+	.dataDate{
+		margin: 20rpx;
+		
+	}
 	.charts-box{
 	  width: 100%;
-	  height:300px;
-	  background-color: $kp-bg-color;
+	  height:500rpx;
 	}
+	
+	/*.ec-canvas {
+	  width: 100%;
+	  height: 500rpx;
+	} */
+	
 	.title{
 		color: #FFFFFF;
 	}
@@ -237,6 +405,28 @@
 		
 	}
 	
+	
+	
+	.u-item-title {
+		position: relative;
+		font-size: 15px;
+		padding-left: 8px;
+		line-height: 1;
+		margin-bottom: 11px;
+	}
+	
+	.u-item-title:after {
+		position: absolute;
+		width: 4px;
+		top: -1px;
+		height: 16px;
+		/* #ifndef APP-NVUE */
+		content: '';
+		/* #endif */
+		left: 0;
+		border-radius: 10px;
+		background-color: $u-type-primary;
+	}
 	.charts {
 		width: 666rpx;
 		height: 500rpx;

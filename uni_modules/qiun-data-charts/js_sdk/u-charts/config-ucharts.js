@@ -19,12 +19,33 @@
 // 主题颜色配置：如每个图表类型需要不同主题，请在对应图表类型上更改color属性
 const color = ['#1890FF', '#91CB74', '#FAC858', '#EE6666', '#73C0DE', '#3CA272', '#FC8452', '#9A60B4', '#ea7ccc'];
 
+const formatDateTime = (timeStamp, returnType)=>{
+  var date = new Date();
+  date.setTime(timeStamp * 1000);
+  var y = date.getFullYear();
+  var m = date.getMonth() + 1;
+  m = m < 10 ? ('0' + m) : m;
+  var d = date.getDate();
+  d = d < 10 ? ('0' + d) : d;
+  var h = date.getHours();
+  h = h < 10 ? ('0' + h) : h;
+  var minute = date.getMinutes();
+  var second = date.getSeconds();
+  minute = minute < 10 ? ('0' + minute) : minute;
+  second = second < 10 ? ('0' + second) : second;
+  if(returntype =='m-d') {return  m+'-'+d;}
+  if(returnType == 'full'){return y + '-' + m + '-' + d + ' '+ h +':' + minute + ':' + second;}
+  if(returnType == 'y-m-d'){return y + '-' + m + '-' + d;}
+  if(returnType == 'h:m'){return  h +':' + minute;}
+  if(returnType == 'h:m:s'){return  h +':' + minute +':' + second;}
+  return [y, m, d, h, minute, second];
+}
 module.exports = {
   //demotype为自定义图表类型
-	"type":["pie","ring","rose","word","funnel","map","arcbar","line","column","area","radar","gauge","candle","mix","demotype","line1","column1","line2"],
-	"range":["饼状图","圆环图","玫瑰图","词云图","漏斗图","地图","圆弧进度条","折线图","柱状图","区域图","雷达图","仪表盘","K线图","混合图","自定义类型","自定义柱状图","自定义折线图"],
+	"type":["pie","ring","rose","word","funnel","map","arcbar","line","column","area","radar","gauge","candle","mix","demotype","line1","column1","line2","column4","line3"],
+	"range":["饼状图","圆环图","玫瑰图","词云图","漏斗图","地图","圆弧进度条","折线图","柱状图","区域图","雷达图","仪表盘","K线图","混合图","自定义类型","自定义柱状图","自定义折线图","column4","line3"],
   //增加自定义图表类型，如果需要categories，请在这里加入您的图表类型例如最后的"demotype"
-	"categories":["line","column","area","radar","gauge","candle","mix","demotype","line1","column1","line2"],
+	"categories":["line","column","area","radar","gauge","candle","mix","demotype","line1","column1","line2","column4","line3"],
   //instance为实例变量承载属性，option为eopts承载属性，不要删除
   "instance":{},
   "option":{},
@@ -77,6 +98,255 @@ module.exports = {
     		"width": 2
     	},
     }
+  },
+  "line3":{
+      "type": "area",
+      "canvasId": "MCScEZfB5JkHmwLAOBSANGpfoHaViPSx",
+      "canvas2d": true,
+      "background": "#4D5269",
+      "animation": true,
+      "timing": "easeOut",
+      "duration": 1000,
+      "color": [
+          "#1890FF",
+          "#91CB74",
+          "#FAC858",
+          "#EE6666",
+          "#73C0DE",
+          "#3CA272",
+          "#FC8452",
+          "#9A60B4",
+          "#ea7ccc"
+      ],
+      "padding": [
+          15,
+          15,
+          0,
+          15
+      ],
+      "rotate": false,
+      "errorReload": true,
+      "fontSize": 10,
+      "fontColor": "#ffffff",
+      "enableScroll": false,
+      "touchMoveLimit": 60,
+      "enableMarkLine": false,
+      "dataLabel": false,
+      "dataPointShape": false,
+      "dataPointShapeType": "solid",
+      "xAxis": {
+          "disabled": false,
+          "axisLine": true,
+          "axisLineColor": "#CCCCCC",
+          "calibration": false,
+          "fontColor": "#fff",
+          "fontSize": 10,
+          "rotateLabel": false,
+          "labelCount": 3,
+          "itemCount": 0,
+          "boundaryGap": "center",
+          "disableGrid": true,
+          "gridColor": "#CCCCCC",
+          "gridType": "solid",
+          "dashLength": 4,
+          "gridEval": 1,
+          "scrollShow": false,
+          "scrollAlign": "left",
+          "scrollColor": "#A6A6A6",
+          "scrollBackgroundColor": "#EFEBEF",
+          "format": ""
+      },
+      "yAxis": {
+          "disabled": false,
+          "disableGrid": false,
+          "splitNumber": 5,
+          "gridType": "dash",
+          "dashLength": 2,
+          "gridColor": "#CCCCCC",
+          "padding": 10,
+          "showTitle": false,
+          "data": []
+      },
+      "legend": {
+          "show": false,
+          "position": "bottom",
+          "float": "center",
+          "padding": 5,
+          "margin": 5,
+          "backgroundColor": "rgba(0,0,0,0)",
+          "borderColor": "rgba(0,0,0,0)",
+          "borderWidth": 0,
+          "fontSize": 13,
+          "fontColor": "#666666",
+          "lineHeight": 11,
+          "hiddenColor": "#CECECE",
+          "itemGap": 10
+      },
+      "extra": {
+          "area": {
+              "type": "straight",
+              "opacity": 0.2,
+              "addLine": true,
+              "width": 2,
+              "gradient": false
+          },
+          "tooltip": {
+              "showBox": true,
+              "showArrow": true,
+              "showCategory": false,
+              "borderWidth": 0,
+              "borderRadius": 0,
+              "borderColor": "#000000",
+              "borderOpacity": 0.7,
+              "bgColor": "#000000",
+              "bgOpacity": 0.7,
+              "gridType": "solid",
+              "dashLength": 4,
+              "gridColor": "#CCCCCC",
+              "fontColor": "#FFFFFF",
+              "splitLine": true,
+              "horizentalLine": false,
+              "xAxisLabel": false,
+              "yAxisLabel": false,
+              "labelBgColor": "#FFFFFF",
+              "labelBgOpacity": 0.7,
+              "labelFontColor": "#666666"
+          },
+          "markLine": {
+              "type": "solid",
+              "dashLength": 4,
+              "data": []
+          }
+      }
+  },
+  "column4":{
+      "type": "column",
+     
+      "canvas2d": true,
+	  "canvasId": "aF2d6ejUMpFr00Z9c1dREg7xaUup0Mpu",
+      "background": "#666",
+      "animation": true,
+      "timing": "easeOut",
+      "duration": 1000,
+      "color": [
+          "#1890FF",
+          "#91CB74",
+          "#FAC858",
+          "#EE6666",
+          "#73C0DE",
+          "#3CA272",
+          "#FC8452",
+          "#9A60B4",
+          "#ea7ccc"
+      ],
+      "padding": [
+          10,
+          10,
+          10,
+          10
+      ],
+      "rotate": false,
+      "errorReload": true,
+      "fontSize": 10,
+      "fontColor": "#fff",
+      "enableScroll": false,
+      "touchMoveLimit": 60,
+      "enableMarkLine": false,
+      "dataLabel": false,
+      "dataPointShape": false,
+      "dataPointShapeType": "solid",
+      "xAxis": {
+          "disabled": false,
+          "axisLine": true,
+          "axisLineColor": "#CCCCCC",
+          "calibration": false,
+          "fontColor": "#fff",
+          "fontSize": 10,
+          "rotateLabel": false,
+          "labelCount": 3,
+          "itemCount": 0,
+          "boundaryGap": "center",
+          "disableGrid": true,
+          "gridColor": "#CCCCCC",
+          "gridType": "solid",
+          "dashLength": 4,
+          "gridEval": 1,
+          "scrollShow": false,
+          "scrollAlign": "left",
+          "scrollColor": "#A6A6A6",
+          "scrollBackgroundColor": "#EFEBEF",
+          "format": ""
+      },
+      "yAxis": {
+          "disabled": false,
+          "disableGrid": false,
+          "splitNumber": 5,
+          "gridType": "dash",
+          "dashLength": 2,
+          "gridColor": "#CCCCCC",
+          "padding": 10,
+          "showTitle": false,
+          "data": []
+      },
+      "legend": {
+          "show": false,
+          "position": "bottom",
+          "float": "center",
+          "padding": 5,
+          "margin": 5,
+          "backgroundColor": "rgba(0,0,0,0)",
+          "borderColor": "rgba(0,0,0,0)",
+          "borderWidth": 0,
+          "fontSize": 13,
+          "fontColor": "#666666",
+          "lineHeight": 11,
+          "hiddenColor": "#CECECE",
+          "itemGap": 10
+      },
+      "extra": {
+          "column": {
+              "type": "group",
+              "width": 10,
+              "seriesGap": 2,
+              "categoryGap": 3,
+              "barBorderCircle": false,
+              "linearType": "none",
+              "linearOpacity": 1,
+              "colorStop": 0,
+              "meterBorder": 1,
+              "meterFillColor": "#FFFFFF",
+              "activeBgColor": "#fff",
+              "activeBgOpacity": 0.1,
+              "meterBorde": 1
+          },
+          "tooltip": {
+              "showBox": true,
+              "showArrow": true,
+              "showCategory": false,
+              "borderWidth": 0,
+              "borderRadius": 0,
+              "borderColor": "#000",
+              "borderOpacity": 0.7,
+              "bgColor": "#000",
+              "bgOpacity": 0.7,
+              "gridType": "solid",
+              "dashLength": 4,
+              "gridColor": "#CCCCCC",
+              "fontColor": "#FFFFFF",
+              "splitLine": true,
+              "horizentalLine": false,
+              "xAxisLabel": false,
+              "yAxisLabel": false,
+              "labelBgColor": "#FFFFFF",
+              "labelBgOpacity": 0.7,
+              "labelFontColor": "#666666"
+          },
+          "markLine": {
+              "type": "solid",
+              "dashLength": 4,
+              "data": []
+          }
+      }
   },
   "column1":{
       "type": "column",

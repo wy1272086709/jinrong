@@ -96,7 +96,6 @@
 	export default {
 		computed: {
 			...mapState(['strategistId']),
-			
 			validBillList: function () {
 				const keys = Object.keys(this.billList)
 				const len  = keys.length

@@ -5,7 +5,6 @@
     "pages/user/checkup_system",
     "pages/user/category_view",
     "pages/user/overall_stat",
-    "pages/transaction/list",
     "pages/transaction/transaction",
     "pages/user/history_income",
     "pages/user/history_delegate_log",
@@ -13,7 +12,8 @@
     "pages/user/income_balance",
     "pages/user/income_detail",
     "pages/user/user_index_new",
-    "pages/user/bond"
+    "pages/user/bond",
+    "pages/user/category-charts"
   ],
   "subPackages": [],
   "window": {

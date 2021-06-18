@@ -191,7 +191,14 @@
 							
 							<icon type="success_no_circle" v-if="strategistId===index"></icon>
 						</view>
-						<view class="user-account-css">
+						<!--
+						<view v-for="(user, index) in userList" :key="index" class="user-account-css" @tap="switchStrategist(index)">
+							<text>{{ user }}</text>
+							
+							<icon type="success_no_circle" v-if="strategistId===index"></icon>
+						</view>
+						-->
+						<view style="height: 30px;">
 							<text></text>
 						</view>
 						
@@ -329,6 +336,7 @@
 			}
 			const str = uni.getStorageSync('wx_strategist_list');
 			this.userList = str ? JSON.parse(str): [];
+			
 			const systemInfo = uni.getSystemInfoSync();
 			const h = systemInfo.windowHeight;
 			console.log('h'+h)
@@ -340,9 +348,15 @@
 		methods: {
 			gotoStrategyGroupDetail(strategy) {
 				console.log('gotoStrategyGroupDetail click...'+JSON.stringify(strategy));
+				if (strategy.group_id !=5) {
+					uni.navigateTo({
+						url: '/pages/user/category-charts?groupId='+strategy.group_id+'&title='+strategy.title
+					})
+				} else {
 				uni.navigateTo({
 					url: '/pages/user/category_view?groupId='+strategy.group_id+'&title='+strategy.title
 				});
+				}
 			},
 			setIosBackground() {
 				uni.setBackgroundColor({
@@ -1058,16 +1072,20 @@
 	}
 	
 	.green-css {
-		color:$kp-green-color;
+		color:$kp-blue-color;
+		font-weight: bold;
 	}
 	.red-css {
 		color:$kp-red-color;
+		font-weight: bold;
 	}
 	.green-class {
-		color: $kp-green-color;
+		color: $kp-blue-color;
+		font-weight: bold;
 	}
 	
 	.red-class {
 		color: $kp-red-color;
+		font-weight: bold;
 	}
 </style>

@@ -2,7 +2,7 @@
 	<view id="root-view" @tap.stop="hideOption">
 		<template v-if="options1.length>0">
 			<view id="icon-header-view">
-				<u-icon :custom-style="{ paddingRight: '25px'}" name="list-dot" size="28" color="#FFFFFF"
+				<u-icon :custom-style="{ paddingRight: '40px', paddingLeft: '32rpx'}" name="list-dot" size="52" color="#FFFFFF"
 					@click.stop="showUserList" v-if="canSwithStrategIst"></u-icon>
 
 				<u-dropdown height="52" @open="openDropdown" @close="closeDropdown" inactiveColor="#FFF"
@@ -165,7 +165,7 @@
 
 				<!-- 持仓 -->
 				<swiper-item class="swiper-item">
-					<view :scroll-y="true" :style="{height: swiperHeight}">
+					<scroll-view :scroll-y="true" :style="{height: swiperHeight+'px'}">
 						<view class="cangwei-header">
 							<view class="cangwei-title">
 								<view class="title-left">
@@ -270,7 +270,7 @@
 								</view>
 							</view>
 						</view>
-					</view>
+					</scroll-view>
 				</swiper-item>
 
 			</swiper>
@@ -297,7 +297,7 @@
 		<template v-else>
 			<view style="height: 100vh;">
 				<view id="icon-header-view">
-					<u-icon :custom-style="{ paddingRight: '25px'}" name="list-dot" size="28" color="#FFFFFF"
+					<u-icon :custom-style="{ paddingRight: '40px', paddingLeft: '32rpx'}" name="list-dot" size="52" color="#FFFFFF"
 						@click.stop="showUserList" v-if="canSwithStrategIst"></u-icon>
 				</view>
 		<u-empty text="暂无交易策略,请重新选择用户" mode="list">
@@ -672,7 +672,15 @@
 			},
 			showUserList(e) {
 				console.log('showUserList:e' + e)
-				this.showDrawer('showLeft')
+				const _self = this
+				uni.hideTabBar({
+					animation:true,
+					success() {
+						console.log('hideTabBar success!');
+						_self.showDrawer('showLeft');
+					},
+				});
+				
 			},
 			showDrawer(e) {
 				//this.$refs[e].open()
@@ -1090,7 +1098,15 @@
 			},
 			closeDrawer(e) {
 				//this.$refs['showLeft'].close()
-				this.drawVisible = false
+				const _self = this
+				uni.showTabBar({
+					animation:true,
+					success() {
+						console.log('hideTabBar success!');
+						_self.drawVisible = false
+					},
+				});
+				
 				console.log('close closeDrawer');
 			},
 			changeDelegatePrice(e) {
@@ -1310,7 +1326,6 @@
 		}
 
 		#icon-header-view {
-			padding-left: 32rpx;
 			padding-right: 32rpx;
 			display: flex;
 
