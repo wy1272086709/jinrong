@@ -448,10 +448,10 @@ var chart = null;var _default =
                 }
                 _echartsConfig.lineConfig.xAxis[0].data = chartdata2.categories;
                 _echartsConfig.lineConfig.series[0].data = chartdata2.series[0].data;
-                _echartsConfig.lineConfig.categories = chartdata2.categories;
+                //lineConfig.categories = chartdata2.categories
                 _this.ec2.option = _echartsConfig.lineConfig;
                 //this.chartData3= chartdata2				
-              case 10:case "end":return _context2.stop();}}}, _callee2);}))();},
+              case 9:case "end":return _context2.stop();}}}, _callee2);}))();},
     getIncomeCurve: function getIncomeCurve(dateLimit)
     {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3() {var strategistId, data, chartdata1, j, i, v;return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:
                 console.log('getINcomeCurve');

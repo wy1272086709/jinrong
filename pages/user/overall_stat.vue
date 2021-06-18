@@ -263,7 +263,7 @@
 				}
 				lineConfig.xAxis[0].data = chartdata2.categories
 				lineConfig.series[0].data = chartdata2.series[0].data
-				lineConfig.categories = chartdata2.categories
+				//lineConfig.categories = chartdata2.categories
 				this.ec2.option = lineConfig
 				//this.chartData3= chartdata2				
 			},

@@ -20180,14 +20180,17 @@ exports.commonConfig = commonConfig;var lineConfig = {
     showDelay: 0, //显示延时，添加显示延时可以避免频繁切换
     hideDelay: 50, //隐藏延时
     axisPointer: { // 坐标轴指示器配置项。
-      type: 'line', // 'line' 直线指示器  'shadow' 阴影指示器  'none' 无指示
+      type: 'none', // 'line' 直线指示器  'shadow' 阴影指示器  'none' 无指示
       show: false,
       crossStyle: {
         color: '#fff',
         background: '#4D5269' } },
 
 
-    position: ['50%', '5%'] },
+    position: ['50%', '5%'],
+    formatter: function formatter(args) {
+      return "aaaaAAAAA";
+    } },
 
   toolbox: {
     show: false,
@@ -20251,10 +20254,10 @@ exports.commonConfig = commonConfig;var lineConfig = {
   //每一个series中的{}中数据代表一条折线
   series: [{
     showSymbol: false,
-    symbolSize: 8,
+    symbolSize: 4,
     emphasis: {
       borderColor: '#ed3f5d',
-      borderWidth: 8 },
+      borderWidth: 4 },
 
     name: '累计收益',
     type: 'line',
