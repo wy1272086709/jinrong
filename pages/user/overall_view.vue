@@ -112,8 +112,8 @@
 			</view>
 			<view class="flex-row-class margin-row-css">
 				<view>
-					<image v-if="strategy.month_profit>0" src="../../static/image/overall_view/up.png" style="width: 30rpx;height: 30rpx;"></image>
-					<image v-if="strategy.month_profit<=0" src="../../static/image/overall_view/down.png" style="width: 30rpx;height: 30rpx;"></image>
+					<image v-if="strategy.month_profit>=0" src="../../static/image/overall_view/up.png" style="width: 30rpx;height: 30rpx;"></image>
+					<image v-if="strategy.month_profit<0" src="../../static/image/overall_view/down.png" style="width: 30rpx;height: 30rpx;"></image>
 				</view>
 				<view class="font-class center-flex-row">
 					<!--   class="margin-css" -->
@@ -134,8 +134,8 @@
 			<u-line length="710" margin="0px 20rpx 0px 20rpx" color="#FFFFFF"></u-line>
 			<view class="flex-row-class flex-row-class2">
 				<view>
-					<image v-if="strategy.total_profit>0" src="../../static/image/overall_view/up.png" style="width: 30rpx;height: 30rpx;"></image>
-					<image v-if="strategy.total_profit<=0" src="../../static/image/overall_view/down.png" style="width: 30rpx;height: 30rpx;"></image>
+					<image v-if="strategy.total_profit>=0" src="../../static/image/overall_view/up.png" style="width: 30rpx;height: 30rpx;"></image>
+					<image v-if="strategy.total_profit<0" src="../../static/image/overall_view/down.png" style="width: 30rpx;height: 30rpx;"></image>
 				</view>
 				<view class="font-class center-flex-row">
 					<view space="ensp" class="margin-css">总收益:  </view>
@@ -147,8 +147,8 @@
 				</view>
 					
 					<view>
-						<image v-if="strategy.total_profit<=0" src="../../static/image/overall_view/next.png" style="width: 30rpx;height: 30rpx;"></image>
-						<image v-if="strategy.total_profit>0" src="../../static/image/overall_view/prev.png" style="width: 30rpx;height: 30rpx;"></image>
+						<image v-if="strategy.total_profit<0" src="../../static/image/overall_view/next.png" style="width: 30rpx;height: 30rpx;"></image>
+						<image v-if="strategy.total_profit>=0" src="../../static/image/overall_view/prev.png" style="width: 30rpx;height: 30rpx;"></image>
 					</view>
 				</view>
 			<!--

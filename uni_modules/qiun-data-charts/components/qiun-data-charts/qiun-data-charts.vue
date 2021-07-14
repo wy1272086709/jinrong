@@ -1,3 +1,41 @@
+<<<<<<< .mine
+||||||| .r580
+<!-- 
+ * qiun-data-charts 秋云高性能跨全端图表组件 v2.2.0-20210529
+ * Copyright (c) 2021 QIUN® 秋云 https://www.ucharts.cn All rights reserved.
+ * Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
+ * 复制使用请保留本段注释，感谢支持开源！
+ * 为方便更多开发者使用，如有更好的建议请提交码云 Pull Requests ！
+ *
+ * uCharts®官方网站
+ * https://www.uCharts.cn
+ * 
+ * 开源地址:
+ * https://gitee.com/uCharts/uCharts
+ * 
+ * uni-app插件市场地址：
+ * http://ext.dcloud.net.cn/plugin?id=271
+ * 
+ -->
+=======
+<!-- 
+ * qiun-data-charts 秋云高性能跨全端图表组件 v2.3.0-20210612
+ * Copyright (c) 2021 QIUN® 秋云 https://www.ucharts.cn All rights reserved.
+ * Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
+ * 复制使用请保留本段注释，感谢支持开源！
+ * 为方便更多开发者使用，如有更好的建议请提交码云 Pull Requests ！
+ *
+ * uCharts®官方网站
+ * https://www.uCharts.cn
+ * 
+ * 开源地址:
+ * https://gitee.com/uCharts/uCharts
+ * 
+ * uni-app插件市场地址：
+ * http://ext.dcloud.net.cn/plugin?id=271
+ * 
+ -->
+>>>>>>> .r586
 <template>
   <view class="chartsview" :id="'ChartBoxId'+cid">
     <view v-if="mixinDatacomLoading">
@@ -351,6 +389,10 @@ export default {
     directory: {
       type: String,
       default: '/'
+    },
+    tapLegend: {
+      type: Boolean,
+      default: true
     }
   },
   data() {
@@ -864,6 +906,7 @@ export default {
               cfu.option[cid].tooltipCustom = this.tooltipCustom;
               cfu.option[cid].inScrollView = this.inScrollView;
               cfu.option[cid].lastDrawTime = this.lastDrawTime;
+              cfu.option[cid].tapLegend = this.tapLegend;
             }
             //如果是H5或者App端，采用renderjs渲染图表
             if (this.inH5 || this.inApp) {
@@ -1063,11 +1106,13 @@ export default {
             }else{
               currentIndex = cfu.instance[cid].getCurrentDataIndex(e);
               legendIndex = cfu.instance[cid].getLegendDataIndex(e);
-              cfu.instance[cid].touchLegend(e);
+              if(this.tapLegend === true){
+                cfu.instance[cid].touchLegend(e);
+              }
               if (this.tooltipShow === true) {
                 this._showTooltip(e);
               }
-              this.emitMsg({name: 'getIndex', params: { type:"getIndex", event:{ x: e.detail.x - data.left, y: e.detail.y - data.top }, currentIndex: currentIndex, legendIndex: legendIndex, id: cid}});
+              this.emitMsg({name: 'getIndex', params: { type:"getIndex", event:{ x: e.detail.x - data.left, y: e.detail.y - data.top }, currentIndex: currentIndex, legendIndex: legendIndex, id: cid, opts: cfu.instance[cid].opts}});
             }
           })
           .exec();
@@ -1081,11 +1126,13 @@ export default {
           e.changedTouches.unshift({ x: e.detail.x - e.currentTarget.offsetLeft, y: e.detail.y - e.currentTarget.offsetTop });
           currentIndex = cfu.instance[cid].getCurrentDataIndex(e);
           legendIndex = cfu.instance[cid].getLegendDataIndex(e);
-          cfu.instance[cid].touchLegend(e);
+          if(this.tapLegend === true){
+            cfu.instance[cid].touchLegend(e);
+          }
           if (this.tooltipShow === true) {
             this._showTooltip(e);
           }
-          this.emitMsg({name: 'getIndex', params: {type:"getIndex", event:{ x: e.detail.x, y: e.detail.y - e.currentTarget.offsetTop }, currentIndex: currentIndex, legendIndex: legendIndex, id: cid}});
+          this.emitMsg({name: 'getIndex', params: {type:"getIndex", event:{ x: e.detail.x, y: e.detail.y - e.currentTarget.offsetTop }, currentIndex: currentIndex, legendIndex: legendIndex, id: cid, opts: cfu.instance[cid].opts}});
         }
       }
     },
@@ -1405,6 +1452,7 @@ export default {
       let cid = this.rid
       let ontap = cfu.option[cid].ontap
       let tooltipShow = cfu.option[cid].tooltipShow
+      let tapLegend = cfu.option[cid].tapLegend
       if(ontap == false) return;
       let currentIndex=null
       let legendIndex=null
@@ -1418,11 +1466,13 @@ export default {
       e.changedTouches.unshift(tmpe)
       currentIndex=cfu.instance[cid].getCurrentDataIndex(e)
       legendIndex=cfu.instance[cid].getLegendDataIndex(e)
-      cfu.instance[cid].touchLegend(e)
+      if(tapLegend === true){
+        cfu.instance[cid].touchLegend(e);
+      }
       if(tooltipShow==true){
         this.showTooltip(e,cid)
       }
-      that[cid].callMethod('emitMsg',{name:"getIndex",params:{type:"getIndex",event:tmpe,currentIndex:currentIndex,legendIndex:legendIndex,id:cid}})
+      that[cid].callMethod('emitMsg',{name:"getIndex",params:{type:"getIndex",event:tmpe,currentIndex:currentIndex,legendIndex:legendIndex,id:cid, opts: cfu.instance[cid].opts}})
     },
     touchStart(e) {
       let cid = this.rid

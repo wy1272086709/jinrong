@@ -24,10 +24,20 @@
 			//初始化echarts实例
 			const options = this.getOption()
 			this.options = options
-			this.$refs.mapChart.test()
+			console.log('onload...')
+			console.log(this.$children[0])
+			//this.$refs.mapChart.test()
 			/*setTimeout(()=> {
 				this.lazyLoad = false
 			}, 1000)*/
+		},
+		mounted() {
+			console.log('mounted..')
+			console.log(this.$children[0])
+		},
+		created() {
+			console.log('created..')
+			console.log(this.$children[0])
 		},
 		components: {
 			mpvueEcharts

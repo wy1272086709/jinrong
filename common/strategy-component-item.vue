@@ -94,7 +94,7 @@
 				<!-- 累计收益 -->
 				<view class="  flex-1">
 					<view class="gray-color-view">
-						<text class="">累计收益￥</text>
+						<text class="">累计收益($)</text>
 					</view>
 					<view class="total_amount_number cumulative_rate_number">
 						<text class="light-green-number-color" :style="item.accumulated_income>0? 'color:#24F5FD;': 'color:#ED4066;'">{{item.accumulated_income}}</text>

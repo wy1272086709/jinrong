@@ -1,16 +1,12 @@
 <template>
-	
-	
-		<view class="category-component-clazz">
-			
-			<view class="strategy-group-name">
-				{{categoryObject.title}}
-			</view>
-			
-			<strategy-component-item :item="item"  v-for="item in categoryObject.slist" :key="item.id">
-				<slot />
-			</strategy-component-item>
+	<view class="category-component-clazz">
+		<view class="strategy-group-name">
+			{{categoryObject.title}}
 		</view>
+		<strategy-component-item :item="item"  v-for="item in categoryObject.slist" :key="item.id">
+			<slot />
+		</strategy-component-item>
+	</view>
 </template>
 
 <script>

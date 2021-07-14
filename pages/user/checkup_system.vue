@@ -97,13 +97,15 @@
 				</view>
 			</view>
 			<view class="foot">
-				<view v-if="circle_percent>=0 && circle_percent<10">
-					<u-circle-progress width="300" bg-color="#333" active-color="#28713E" :percent="circle_percent">
+				
+				<view>
+					<u-circle-progress width="300" bg-color="#333" :active-color="circleActiveColor" :percent="circle_percent">
 						<view class="u-progress-content">
-							<text class="u-progress-info green">{{circle_percent}}%</text>
+							<text :class="['u-progress-info', percentCssName ]">{{circle_percent}}%</text>
 						</view>
 					</u-circle-progress>	
 				</view>
+				<!--
 				<view v-else-if="circle_percent>=10 && circle_percent<20">
 					<u-circle-progress width="300" bg-color="#333" active-color="#F7BA0B" :percent="circle_percent">
 						<view class="u-progress-content">
@@ -118,6 +120,7 @@
 						</view>
 					</u-circle-progress>	
 				</view>
+				-->
 				<view class="u-m-t-20">
 					<text class="font_class">最大回撤</text>
 				</view>
@@ -165,7 +168,6 @@
 				line_percent3:0,
 				line_percent4:0,
 				circle_percent:0,
-				activeColor: '#FFFFFF',
 				userList:[],
 				hasUpgrade:false,
 				apply:0,
@@ -324,6 +326,32 @@
 			zIndex: function() {
 				return this.dropdownIndex!==''?99999999:'';
 			},
+			circleActiveColor: function() {
+				const f = this.circle_percent
+				let color = '#fff'
+				if (f>=0 && f<10) {
+					color = '#28713E'
+				}
+				if (f>=10 && f<20) {
+					color = '#F7BA0B'
+				} else if (f>=20) {
+					color = '#ff0000'
+				}
+				return color
+			},
+			percentCssName() {
+				const f = this.circle_percent
+				let cssName = ''
+				if (f>=0 && f<10) {
+					cssName = 'green'
+				}
+				if (f>=10 && f<20) {
+					cssName = 'yellow'
+				} else if (f>=20) {
+					cssName = 'red'
+				}
+				return cssName
+			},
 			userName: function() {
 				if (this.$store.state && this.$store.state.userName) {
 					return this.$store.state.userName
@@ -391,7 +419,7 @@
 		background-color: rgba(255,255,255,0.1);
 		/*margin-left: 20rpx;*/
 		//padding: 24rpx;
-		padding-left: 20rpx;
+		margin-left: 20rpx;
 		box-sizing: content-box;
 		.item-box {
 			//margin-bottom: 50rpx;
@@ -479,15 +507,16 @@
 	}
 	.foot{
 		display: flex;
+		position: relative;
 		align-items: center;
 		flex-direction: column;
-		justify-content: space-around;
+		/*justify-content: space-around;*/
 		.upgrade{
 			width: 30%;
 			height: 60rpx;
 			background-color: #676D81;
 			display: flex;
-			justify-content: space-around;
+			justify-content: center;
 			align-items: center;
 			border-radius: 8rpx;
 		}

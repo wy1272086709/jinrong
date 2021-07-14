@@ -293,7 +293,7 @@
 		color: #fff;
 	}
 	.slot-content {
-		width: 40%;
+		width: 280rpx;
 		background-color: rgba(255,255,255,0.1);
 		margin-left: 20rpx;
 		//padding: 24rpx;
@@ -304,7 +304,6 @@
 			flex-direction: column;
 			flex-wrap: nowrap;
 			justify-content: space-between;
-			padding-right: 20rpx;
 			.item {
 				border: 1px solid #b2b2b2;
 				color: #b2b2b2;

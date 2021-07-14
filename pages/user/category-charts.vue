@@ -14,7 +14,7 @@
 					<view class="between-class flex-column-class flex-class">
 						<view class="flex-class w-css flex-bj">
 							<view class="flex-class">
-								<view style="margin-right: 15rpx;display: flex;" class="bold-text u-font-36">{{item.title}}</view>
+								<view style="margin-right: 15rpx;display: flex;" class="bold-text u-font-36 my-font-color">{{item.title}}</view>
 								<view class="vertical-center">
 									<u-tag size="mini" :text="item.isOpen? '已开仓':'未开仓'" bgColor="transparent" :color="item.isOpen ? '#2D8CF0':'#EE4368'" :borderColor="item.isOpen ? '#2D8CF0': '#EE4368'"></u-tag>
 								</view>
@@ -35,7 +35,7 @@
 						</view>
 						<view class="flex-class u-m-t-10 w-css flex-bj">
 							<view class="my-white-color u-font-24 flex-class u-flex">
-								<view >
+								<view my-font-color>
 									<text class="text-margin u-font-24">{{item.startDate}}</text>
 									<text class="u-font-24">开始</text>
 								</view>
@@ -385,6 +385,7 @@
 #root-view {
 	background-color: $kp-bg-color;
 	height: 100vh;
+	color: rgba($color: #ffffff, $alpha: 0.5);
 }
 .flex-class {
 	display: flex;
@@ -449,7 +450,7 @@ scroll-view ::-webkit-scrollbar {
 	display: flex;
 	flex-direction: column;
 	border-radius: 8rpx;
-	background-color: rgba($color: #FFFFFF, $alpha: 0.2);
+	background-color: rgba($color: #FFFFFF, $alpha: 0.1);
 }
 
 .between-class {
@@ -471,9 +472,12 @@ scroll-view ::-webkit-scrollbar {
 	margin-right: 30rpx;
 }
 .my-white-color {
+	font-family: SimHei;
 	color: rgba($color: #FFFFFF, $alpha: 0.8);
 }
-
+.my-font-color{
+	color: rgba($color: #ffffff, $alpha: 0.5);
+}
 .gray-color {
 	color: #999999;
 }
@@ -527,7 +531,7 @@ scroll-view ::-webkit-scrollbar {
 	}
 
 	.font-class {
-		color: $kp-font-color;
+		color: rgba($color: #ffffff, $alpha: 0.5);
 		font-size: 24rpx;
 	}
 

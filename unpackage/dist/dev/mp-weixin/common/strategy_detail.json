@@ -1,7 +1,0 @@
-{
-  "usingComponents": {
-    "u-line": "/uview-ui/components/u-line/u-line",
-    "u-loadmore": "/uview-ui/components/u-loadmore/u-loadmore"
-  },
-  "component": true
-}

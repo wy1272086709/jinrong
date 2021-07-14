@@ -8,8 +8,7 @@ export var commonConfig =  {
     },
     tooltip: {
 		trigger: "item",
-		position: ['50%', '0.5%'],
-	    
+		position: ['50%', '0.5%']
     },
     grid: {
       top: 30,
@@ -106,24 +105,26 @@ export var commonConfig =  {
 // 折线图配置
 export var lineConfig = {
 	　	tooltip: {
-			trigger: "axis",
+			trigger: "item",
 			showDelay: 0,//显示延时，添加显示延时可以避免频繁切换
 			hideDelay: 50,//隐藏延时
 			axisPointer: { // 坐标轴指示器配置项。
-				type: 'none', // 'line' 直线指示器  'shadow' 阴影指示器  'none' 无指示
-				show: false,
+				type: 'cross', // 'line' 直线指示器  'shadow' 阴影指示器  'none' 无指示
 				crossStyle: {
 				  color: '#fff',
-				  background: '#4D5269'
+				  shadowColor: 'rgba(0, 0, 0, 0.5)',
+				  opacity: 0.2,
 				}
 			},
 			position: [ '50%', '5%'],
-			formatter: function(args) {
-				return "aaaaAAAAA"
+			formatter: function(params) {
+				for(let x in params) {
+				    return params[x].name +":"+params[x].data.value+"/"+params[x].data.date;
+				}
 			}
 　　　　},
 		toolbox: {
-			show: false,
+			show: true,
 			y: 'bottom'
 		},
 　　　　legend: {　　//代表折线图上方的小标题

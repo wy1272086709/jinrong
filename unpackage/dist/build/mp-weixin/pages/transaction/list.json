@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "交易列表",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "u-dropdown": "/uview-ui/components/u-dropdown/u-dropdown",
+    "u-dropdown-item": "/uview-ui/components/u-dropdown-item/u-dropdown-item",
+    "uni-search-bar": "/components/uni-search-bar/uni-search-bar",
+    "u-loadmore": "/uview-ui/components/u-loadmore/u-loadmore",
+    "transaction-component-item": "/components/transaction_component_item"
+  }
+}
